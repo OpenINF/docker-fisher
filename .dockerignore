@@ -1,0 +1,6 @@
+.git
+**/*.md
+LICENSE
+renovate.json
+node_modules
+npm-debug.log
