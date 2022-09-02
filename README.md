@@ -18,7 +18,7 @@
 
 <!-- Give a ⭐️ if this project helped you! -->
 
-If you like the project, give it a star ⭐️, it will be a great encouragement to us.
+If you like the project, [give it a star ⭐️], it will be a great encouragement to us.
 
 <br /><br />
 
@@ -31,3 +31,11 @@ If you like the project, give it a star ⭐️, it will be a great encouragement
 </a>
 
 </div>
+
+<!-- prettier-ignore-start -->
+<!-- PRESERVE LINK DEFINITION LABEL CASE - START -->
+
+[give it a star ⭐️]: https://github.com/openinf/docker-fish/stargazers
+
+<!-- PRESERVE LINK DEFINITION LABEL CASE - END -->
+<!-- prettier-ignore-end -->
