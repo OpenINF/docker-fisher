@@ -28,8 +28,8 @@ fi
 if [ "${USERNAME}" = "auto" ] || [ "${USERNAME}" = "automatic" ]; then
     USERNAME=""
     POSSIBLE_USERS=("vscode" "node" "codespace" "$(awk -v val=1000 -F ":" '$3==val{print $1}' /etc/passwd)")
-    for CURRENT_USER in ${POSSIBLE_USERS[@]}; do
-        if id -u ${CURRENT_USER} > /dev/null 2>&1; then
+    for CURRENT_USER in "${POSSIBLE_USERS[@]}"; do
+        if id -u "${CURRENT_USER}" > /dev/null 2>&1; then
             USERNAME=${CURRENT_USER}
             break
         fi
@@ -44,7 +44,7 @@ fi
 # Function to run apt-get if needed
 apt_get_update_if_needed()
 {
-    if [ ! -d "/var/lib/apt/lists" ] || [ "$(ls /var/lib/apt/lists/ | wc -l)" = "0" ]; then
+    if [ ! -d "/var/lib/apt/lists" ] || [ "$(find /var/lib/apt/lists/ -maxdepth 1 | wc -l)" = "0" ]; then
         echo "Running apt-get update..."
         apt-get update
     else

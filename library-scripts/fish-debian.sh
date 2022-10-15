@@ -5,7 +5,7 @@
 #-------------------------------------------------------------------------------------------------------------
 #
 # ** This script is community supported **
-# Docs: https://github.com/openinf/openinf.github.io/blob/live/.devcontainer/library-scripts/docs/fish.md
+# Docs: https://github.com/openinf/docker-fish/blob/HEAD/library-scripts/docs/fish.md
 # Maintainer: @DerekNonGeneric
 #
 # Syntax: ./fish-debian.sh [non-root user]
@@ -28,8 +28,8 @@ chmod +x /etc/profile.d/00-restore-env.sh
 if [ "${USERNAME}" = "auto" ] || [ "${USERNAME}" = "automatic" ]; then
     USERNAME=""
     POSSIBLE_USERS=("vscode" "node" "codespace" "$(awk -v val=1000 -F ":" '$3==val{print $1}' /etc/passwd)")
-    for CURRENT_USER in ${POSSIBLE_USERS[@]}; do
-        if id -u ${CURRENT_USER} > /dev/null 2>&1; then
+    for CURRENT_USER in "${POSSIBLE_USERS[@]}"; do
+        if id -u "${CURRENT_USER}" > /dev/null 2>&1; then
             USERNAME=${CURRENT_USER}
             break
         fi

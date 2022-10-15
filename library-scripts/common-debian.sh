@@ -5,7 +5,7 @@
 #-------------------------------------------------------------------------------------------------------------
 #
 # ** This script is community supported **
-# Docs: https://github.com/openinf/openinf.github.io/blob/live/.devcontainer/library-scripts/docs/common.md
+# Docs: https://github.com/openinf/docker-fish/blob/HEAD/library-scripts/docs/common.md
 
 set -e
 
@@ -14,7 +14,7 @@ USER_UID=${2:-"automatic"}
 USER_GID=${3:-"automatic"}
 UPGRADE_PACKAGES=${4:-"true"}
 ADD_NON_FREE_PACKAGES=${5:-"false"}
-SCRIPT_DIR="$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 MARKER_FILE="/usr/local/etc/vscode-dev-containers/common"
 
 if [ "$(id -u)" -ne 0 ]; then
@@ -31,8 +31,8 @@ chmod +x /etc/profile.d/00-restore-env.sh
 if [ "${USERNAME}" = "auto" ] || [ "${USERNAME}" = "automatic" ]; then
     USERNAME=""
     POSSIBLE_USERS=("vscode" "node" "codespace" "$(awk -v val=1000 -F ":" '$3==val{print $1}' /etc/passwd)")
-    for CURRENT_USER in ${POSSIBLE_USERS[@]}; do
-        if id -u ${CURRENT_USER} > /dev/null 2>&1; then
+    for CURRENT_USER in "${POSSIBLE_USERS[@]}"; do
+        if id -u "${CURRENT_USER}" > /dev/null 2>&1; then
             USERNAME=${CURRENT_USER}
             break
         fi
@@ -50,6 +50,7 @@ fi
 if [ -f "${MARKER_FILE}" ]; then
     echo "Marker file found:"
     cat "${MARKER_FILE}"
+    # shellcheck source=/dev/null
     source "${MARKER_FILE}"
 fi
 
@@ -59,7 +60,7 @@ export DEBIAN_FRONTEND=noninteractive
 # Function to call apt-get if needed
 apt_get_update_if_needed()
 {
-    if [ ! -d "/var/lib/apt/lists" ] || [ "$(ls /var/lib/apt/lists/ | wc -l)" = "0" ]; then
+    if [ ! -d "/var/lib/apt/lists" ] || [ "$(find /var/lib/apt/lists/ -maxdepth 1 | wc -l)" = "0" ]; then
         echo "Running apt-get update..."
         apt-get update
     else
@@ -71,48 +72,49 @@ apt_get_update_if_needed()
 if [ "${PACKAGES_ALREADY_INSTALLED}" != "true" ]; then
 
     package_list="apt-utils \
-        openssh-client \
-        gnupg2 \
-        dirmngr \
-        iproute2 \
-        procps \
-        lsof \
-        htop \
-        net-tools \
-        psmisc \
-        curl \
-        wget \
-        rsync \
-        ca-certificates \
-        unzip \
-        zip \
-        nano \
-        vim-tiny \
-        less \
-        jq \
-        lsb-release \
         apt-transport-https \
+        ca-certificates \
+        curl \
         dialog \
+        dirmngr \
+        gnupg2 \
+        htop \
+        init-system-helpers \
+        iproute2 \
+        jq \
+        less \
         libc6 \
         libgcc1 \
-        libkrb5-3 \
         libgssapi-krb5-2 \
         libicu[0-9][0-9] \
+        libkrb5-3 \
         liblttng-ust0 \
         libstdc++6 \
-        zlib1g \
         locales \
-        sudo \
-        ncdu \
+        lsb-release \
+        lsof \
         man-db \
-        strace \
         manpages \
         manpages-dev \
-        init-system-helpers"
+        nano \
+        ncdu \
+        net-tools \
+        openssh-client \
+        procps \
+        psmisc \
+        rsync \
+        strace \
+        sudo \
+        unzip \
+        vim-tiny \
+        wget \
+        zip \
+        zlib1g"
 
     # Needed for adding manpages-posix and manpages-posix-dev which are non-free packages in Debian
     if [ "${ADD_NON_FREE_PACKAGES}" = "true" ]; then
         # Bring in variables from /etc/os-release like VERSION_CODENAME
+        # shellcheck source=/dev/null
         . /etc/os-release
         sed -i -E "s/deb http:\/\/(deb|httpredir)\.debian\.org\/debian ${VERSION_CODENAME} main/deb http:\/\/\1\.debian\.org\/debian ${VERSION_CODENAME} main contrib non-free/" /etc/apt/sources.list
         sed -i -E "s/deb-src http:\/\/(deb|httredir)\.debian\.org\/debian ${VERSION_CODENAME} main/deb http:\/\/\1\.debian\.org\/debian ${VERSION_CODENAME} main contrib non-free/" /etc/apt/sources.list
@@ -133,12 +135,12 @@ if [ "${PACKAGES_ALREADY_INSTALLED}" != "true" ]; then
     fi
 
     # Install libssl1.1 if available
-    if [[ ! -z $(apt-cache --names-only search ^libssl1.1$) ]]; then
+    if [[ -n $(apt-cache --names-only search ^libssl1.1$) ]]; then
         package_list="${package_list}       libssl1.1"
     fi
 
     echo "Packages to verify are installed: ${package_list}"
-    apt-get -y install --no-install-recommends ${package_list} 2> >( grep -v 'debconf: delaying package configuration, since apt-utils is not installed' >&2 )
+    apt-get -y install --no-install-recommends "${package_list}" 2> >( grep -v 'debconf: delaying package configuration, since apt-utils is not installed' >&2 )
 
     # Install git if not already installed (may be more recent than distro version)
     if ! type git > /dev/null 2>&1; then
@@ -169,7 +171,7 @@ if id -u ${USERNAME} > /dev/null 2>&1; then
     # User exists, update if needed
     if [ "${USER_GID}" != "automatic" ] && [ "$USER_GID" != "$(id -g $USERNAME)" ]; then
         group_name="$(id -gn $USERNAME)"
-        groupmod --gid $USER_GID ${group_name}
+        groupmod --gid $USER_GID "${group_name}"
         usermod --gid $USER_GID $USERNAME
     fi
     if [ "${USER_UID}" != "automatic" ] && [ "$USER_UID" != "$(id -u $USERNAME)" ]; then
@@ -264,12 +266,62 @@ cat << 'EOF' > /usr/local/bin/systemctl
 #!/bin/sh
 set -e
 if [ -d "/run/systemd/system" ]; then
-    exec /bin/systemctl/systemctl "$@"
+    exec /bin/systemctl "$@"
 else
     echo '\n"systemd" is not running in this container due to its overhead.\nUse the "service" command to start services intead. e.g.: \n\nservice --status-all'
 fi
 EOF
 chmod +x /usr/local/bin/systemctl
+# Codespaces bash and OMZ themes - partly inspired by https://github.com/ohmyzsh/ohmyzsh/blob/master/themes/robbyrussell.zsh-theme
+codespaces_bash="$(cat \
+<<'EOF'
+# Codespaces bash prompt theme
+__bash_prompt() {
+    local userpart='`export XIT=$? \
+        && [ ! -z "${GITHUB_USER}" ] && echo -n "\[\033[0;32m\]@${GITHUB_USER} " || echo -n "\[\033[0;32m\]\u " \
+        && [ "$XIT" -ne "0" ] && echo -n "\[\033[1;31m\]➜" || echo -n "\[\033[0m\]➜"`'
+    local gitbranch='`\
+        if [ "$(git config --get codespaces-theme.hide-status 2>/dev/null)" != 1 ]; then \
+            export BRANCH=$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null); \
+            if [ "${BRANCH}" != "" ]; then \
+                echo -n "\[\033[0;36m\](\[\033[1;31m\]${BRANCH}" \
+                && if git ls-files --error-unmatch -m --directory --no-empty-directory -o --exclude-standard ":/*" > /dev/null 2>&1; then \
+                        echo -n " \[\033[1;33m\]✗"; \
+                fi \
+                && echo -n "\[\033[0;36m\]) "; \
+            fi; \
+        fi`'
+    local lightblue='\[\033[1;34m\]'
+    local removecolor='\[\033[0m\]'
+    PS1="${userpart} ${lightblue}\w ${gitbranch}${removecolor}\$ "
+    unset -f __bash_prompt
+}
+__bash_prompt
+EOF
+)"
+codespaces_zsh="$(cat \
+<<'EOF'
+# Codespaces zsh prompt theme
+__zsh_prompt() {
+    local prompt_username
+    if [ ! -z "${GITHUB_USER}" ]; then 
+        prompt_username="@${GITHUB_USER}"
+    else
+        prompt_username="%n"
+    fi
+    PROMPT="%{$fg[green]%}${prompt_username} %(?:%{$reset_color%}➜ :%{$fg_bold[red]%}➜ )" # User/exit code arrow
+    PROMPT+='%{$fg_bold[blue]%}%(5~|%-1~/…/%3~|%4~)%{$reset_color%} ' # cwd
+    PROMPT+='$([ "$(git config --get codespaces-theme.hide-status 2>/dev/null)" != 1 ] && git_prompt_info)' # Git status
+    PROMPT+='%{$fg[white]%}$ %{$reset_color%}'
+    unset -f __zsh_prompt
+}
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[cyan]%}(%{$fg_bold[red]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
+ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg_bold[yellow]%}✗%{$fg_bold[cyan]%})"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[cyan]%})"
+__zsh_prompt
+EOF
+)"
 
 # Add RC snippet and custom bash prompt
 if [ "${RC_SNIPPET_ALREADY_ADDED}" != "true" ]; then
@@ -280,8 +332,48 @@ if [ "${RC_SNIPPET_ALREADY_ADDED}" != "true" ]; then
         echo "${codespaces_bash}" >> "/root/.bashrc"
         echo 'export PROMPT_DIRTRIM=4' >> "/root/.bashrc"
     fi
-    chown ${USERNAME}:${group_name} "${user_rc_path}/.bashrc"
+    chown ${USERNAME}:"${group_name}" "${user_rc_path}/.bashrc"
     RC_SNIPPET_ALREADY_ADDED="true"
+fi
+
+# Optionally install and configure zsh and Oh My Zsh!
+if [ "${INSTALL_ZSH}" = "true" ]; then
+    if ! type zsh > /dev/null 2>&1; then
+        apt_get_update_if_needed
+        apt-get install -y zsh
+    fi
+    if [ "${ZSH_ALREADY_INSTALLED}" != "true" ]; then
+        echo "${rc_snippet}" >> /etc/zsh/zshrc
+        ZSH_ALREADY_INSTALLED="true"
+    fi
+    # Adapted, simplified inline Oh My Zsh! install steps that adds, defaults to a codespaces theme.
+    # See https://github.com/ohmyzsh/ohmyzsh/blob/master/tools/install.sh for official script.
+    oh_my_install_dir="${user_rc_path}/.oh-my-zsh"
+    if [ ! -d "${oh_my_install_dir}" ] && [ "${INSTALL_OH_MYS}" = "true" ]; then
+        template_path="${oh_my_install_dir}/templates/zshrc.zsh-template"
+        user_rc_file="${user_rc_path}/.zshrc"
+        umask g-w,o-w
+        mkdir -p ${oh_my_install_dir}
+        git clone --depth=1 \
+            -c core.eol=lf \
+            -c core.autocrlf=false \
+            -c fsck.zeroPaddedFilemode=ignore \
+            -c fetch.fsck.zeroPaddedFilemode=ignore \
+            -c receive.fsck.zeroPaddedFilemode=ignore \
+            "https://github.com/ohmyzsh/ohmyzsh" "${oh_my_install_dir}" 2>&1
+        echo -e "$(cat "${template_path}")\nDISABLE_AUTO_UPDATE=true\nDISABLE_UPDATE_PROMPT=true" > ${user_rc_file}
+        sed -i -e 's/ZSH_THEME=.*/ZSH_THEME="codespaces"/g' ${user_rc_file}
+        mkdir -p ${oh_my_install_dir}/custom/themes
+        echo "${codespaces_zsh}" > "${oh_my_install_dir}/custom/themes/codespaces.zsh-theme"
+        # Shrink git while still enabling updates
+        cd "${oh_my_install_dir}"
+        git repack -a -d -f --depth=1 --window=1
+        # Copy to non-root user if one is specified
+        if [ "${USERNAME}" != "root" ]; then
+            cp -rf "${user_rc_file}" "${oh_my_install_dir}" /root
+            chown -R ${USERNAME}:${group_name} "${user_rc_path}"
+        fi
+    fi
 fi
 
 # Persist image metadata info, script if meta.env found in same directory
