@@ -5,6 +5,9 @@ ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 ARG UPGRADE_PACKAGES="false"
 
+USER ${USERNAME}
+ENV APP_TMP_DATA=/tmp
+
 COPY library-scripts/*.sh /tmp/library-scripts/
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
   && /bin/bash /tmp/library-scripts/common-debian.sh "${USERNAME}" "${USER_UID}" "${USER_GID}" "${UPGRADE_PACKAGES}" \
@@ -26,13 +29,13 @@ RUN echo  "StreamLocalBindUnlink yes" >> /etc/ssh/sshd_config && \
   systemctl enable ssh
 
 # Set up default Fish config.
-RUN su vscode -c "fish --command 'cp /usr/share/fish/config.fish ~/.config/fish/'"
+RUN su ${USERNAME} -c "fish --command 'cp /usr/share/fish/config.fish ~/.config/fish/'"
 
 # Configure default Git editor.
-RUN su vscode -c "echo 'set -Ux GIT_EDITOR vim' >> ~/.config/fish/config.fish"
+RUN su ${USERNAME} -c "echo 'set -Ux GIT_EDITOR vim' >> ~/.config/fish/config.fish"
 
 # Install rbenv.
-RUN su vscode -c "git clone --depth=1 \
+RUN su ${USERNAME} -c "git clone --depth=1 \
   -c core.eol=lf \
   -c core.autocrlf=false \
   -c fsck.zeroPaddedFilemode=ignore \
@@ -41,22 +44,22 @@ RUN su vscode -c "git clone --depth=1 \
   https://github.com/rbenv/rbenv.git ~/.rbenv"
 
 # Add rbenv to Fish user PATH.
-RUN su vscode -c "echo 'set -Ux fish_user_paths ~/.rbenv/bin $fish_user_paths' >> ~/.config/fish/config.fish"
-RUN su vscode -c "echo 'status --is-interactive; and rbenv init - | source' >> ~/.config/fish/config.fish"
+RUN su ${USERNAME} -c "echo 'set -Ux fish_user_paths ~/.rbenv/bin $fish_user_paths' >> ~/.config/fish/config.fish"
+RUN su ${USERNAME} -c "echo 'status --is-interactive; and rbenv init - | source' >> ~/.config/fish/config.fish"
 
 # Install rbenv ruby-build plugin.
-RUN su vscode -c "mkdir -p ~/.rbenv/bin/plugins"
-RUN su vscode -c "git clone --depth=1 \
+RUN su ${USERNAME} -c "mkdir -p ~/.rbenv/bin/plugins"
+RUN su ${USERNAME} -c "git clone --depth=1 \
   -c core.eol=lf \
   -c core.autocrlf=false \
   -c fsck.zeroPaddedFilemode=ignore \
   -c fetch.fsck.zeroPaddedFilemode=ignore \
   -c receive.fsck.zeroPaddedFilemode=ignore \
   https://github.com/rbenv/ruby-build.git ~/.rbenv/bin/plugins/ruby-build"
-RUN su vscode -c "sudo ~/.rbenv/bin/plugins/ruby-build/install.sh"
+RUN su ${USERNAME} -c "sudo ~/.rbenv/bin/plugins/ruby-build/install.sh"
 
 # Install Fisher and plugins.
-RUN su vscode -c "fish --command 'curl -sL https://git.io/fisher | source && fisher install jorgebucaran/{fisher,nvm.fish}'"
+RUN su ${USERNAME} -c "fish --command 'curl -sL https://git.io/fisher | source && fisher install jorgebucaran/{fisher,nvm.fish}'"
 
 # ENV Variables required by Jekyll.
 ENV LANG=en_US.UTF-8 \
