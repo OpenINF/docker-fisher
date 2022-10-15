@@ -138,7 +138,7 @@ if [ "$PACKAGES_ALREADY_INSTALLED" != "true" ]; then
   fi
 
   echo "Packages to verify are installed: $package_list"
-  apt-get -y install --no-install-recommends "$package_list" 2> >(grep -v 'debconf: delaying package configuration, since apt-utils is not installed' >&2)
+  apt-get -y install --no-install-recommends $package_list 2> >(grep -v 'debconf: delaying package configuration, since apt-utils is not installed' >&2)
 
   # Install git if not already installed (may be more recent than distro version)
   if ! type git >/dev/null 2>&1; then
