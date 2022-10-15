@@ -305,7 +305,7 @@ codespaces_zsh="$(
 # Codespaces zsh prompt theme
 __zsh_prompt() {
     local prompt_username
-    if [ ! -z "${GITHUB_USER}" ]; then 
+    if [ ! -z "${GITHUB_USER}" ]; then
         prompt_username="@${GITHUB_USER}"
     else
         prompt_username="%n"
