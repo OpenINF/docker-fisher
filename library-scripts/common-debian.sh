@@ -72,49 +72,48 @@ apt_get_update_if_needed()
 if [ "${PACKAGES_ALREADY_INSTALLED}" != "true" ]; then
 
     package_list="apt-utils \
-        apt-transport-https \
-        ca-certificates \
-        curl \
-        dialog \
-        dirmngr \
+        openssh-client \
         gnupg2 \
-        htop \
-        init-system-helpers \
+        dirmngr \
         iproute2 \
-        jq \
+        procps \
+        lsof \
+        htop \
+        net-tools \
+        psmisc \
+        curl \
+        wget \
+        rsync \
+        ca-certificates \
+        unzip \
+        zip \
+        nano \
+        vim-tiny \
         less \
+        jq \
+        lsb-release \
+        apt-transport-https \
+        dialog \
         libc6 \
         libgcc1 \
+        libkrb5-3 \
         libgssapi-krb5-2 \
         libicu[0-9][0-9] \
-        libkrb5-3 \
         liblttng-ust0 \
         libstdc++6 \
+        zlib1g \
         locales \
-        lsb-release \
-        lsof \
+        sudo \
+        ncdu \
         man-db \
+        strace \
         manpages \
         manpages-dev \
-        nano \
-        ncdu \
-        net-tools \
-        openssh-client \
-        procps \
-        psmisc \
-        rsync \
-        strace \
-        sudo \
-        unzip \
-        vim-tiny \
-        wget \
-        zip \
-        zlib1g"
+        init-system-helpers"
 
     # Needed for adding manpages-posix and manpages-posix-dev which are non-free packages in Debian
     if [ "${ADD_NON_FREE_PACKAGES}" = "true" ]; then
         # Bring in variables from /etc/os-release like VERSION_CODENAME
-        # shellcheck source=/dev/null
         . /etc/os-release
         sed -i -E "s/deb http:\/\/(deb|httpredir)\.debian\.org\/debian ${VERSION_CODENAME} main/deb http:\/\/\1\.debian\.org\/debian ${VERSION_CODENAME} main contrib non-free/" /etc/apt/sources.list
         sed -i -E "s/deb-src http:\/\/(deb|httredir)\.debian\.org\/debian ${VERSION_CODENAME} main/deb http:\/\/\1\.debian\.org\/debian ${VERSION_CODENAME} main contrib non-free/" /etc/apt/sources.list
@@ -135,12 +134,12 @@ if [ "${PACKAGES_ALREADY_INSTALLED}" != "true" ]; then
     fi
 
     # Install libssl1.1 if available
-    if [[ -n $(apt-cache --names-only search ^libssl1.1$) ]]; then
+    if [[ ! -z $(apt-cache --names-only search ^libssl1.1$) ]]; then
         package_list="${package_list}       libssl1.1"
     fi
 
     echo "Packages to verify are installed: ${package_list}"
-    apt-get -y install --no-install-recommends "${package_list}" 2> >( grep -v 'debconf: delaying package configuration, since apt-utils is not installed' >&2 )
+    apt-get -y install --no-install-recommends ${package_list} 2> >( grep -v 'debconf: delaying package configuration, since apt-utils is not installed' >&2 )
 
     # Install git if not already installed (may be more recent than distro version)
     if ! type git > /dev/null 2>&1; then
@@ -171,7 +170,7 @@ if id -u ${USERNAME} > /dev/null 2>&1; then
     # User exists, update if needed
     if [ "${USER_GID}" != "automatic" ] && [ "$USER_GID" != "$(id -g $USERNAME)" ]; then
         group_name="$(id -gn $USERNAME)"
-        groupmod --gid $USER_GID "${group_name}"
+        groupmod --gid $USER_GID ${group_name}
         usermod --gid $USER_GID $USERNAME
     fi
     if [ "${USER_UID}" != "automatic" ] && [ "$USER_UID" != "$(id -u $USERNAME)" ]; then

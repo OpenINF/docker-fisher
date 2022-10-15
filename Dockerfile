@@ -5,7 +5,6 @@ ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 ARG UPGRADE_PACKAGES="false"
 
-USER ${USERNAME}
 ENV APP_TMP_DATA=/tmp
 
 COPY library-scripts/*.sh /tmp/library-scripts/
@@ -69,5 +68,6 @@ ENV LANG=en_US.UTF-8 \
   LANG=en_US.UTF-8 \
   LANGUAGE=en_US
 
+USER ${USERNAME}
 ENTRYPOINT ["/usr/local/share/ssh-init.sh"]
 CMD ["sleep", "infinity"]
