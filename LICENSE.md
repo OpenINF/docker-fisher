@@ -1,4 +1,8 @@
-<!-- Begin GitHub-Flavored Markdown (GFM) -->
+
+<!-- Begin GitHub-Flavored Markdown (GFM) --
+- See: https://docs.github.com/get-started/writing-on-github
+- Spec: https://github.github.com/gfm
+-->
 
 Copright (c) The OpenINF Authors. All Rights Reserved. MIT License.
 
