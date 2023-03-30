@@ -17,7 +17,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
   # * TODO: Add any additional OS packages you want included in the definition *
   # * here. We want to do this before cleanup to keep the "layer" small.       *
   # ****************************************************************************
-  && apt-get -y install --no-install-recommends build-essential bzip2 default-jre gnupg2 systemd systemd-sysv zlib1g-dev zlib1g libreadline-dev libssl-dev vim \
+  # && apt-get -y install --no-install-recommends \
   #
   && apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
 
@@ -27,7 +27,7 @@ RUN echo  "StreamLocalBindUnlink yes" >> /etc/ssh/sshd_config && \
   gpg-agent-extra.socket gpg-agent-browser.socket && \
   systemctl enable ssh
 
-# Set up default Fish config.
+# Set up default fish config.
 RUN su ${USERNAME} -c "fish --command 'cp /usr/share/fish/config.fish ~/.config/fish/'"
 
 # Configure default Git editor.
@@ -42,9 +42,9 @@ RUN su ${USERNAME} -c "git clone --depth=1 \
   -c receive.fsck.zeroPaddedFilemode=ignore \
   https://github.com/rbenv/rbenv.git ~/.rbenv"
 
-# Add rbenv to Fish user PATH.
+# Add rbenv to fish user PATH.
 RUN su ${USERNAME} -c "echo 'set -Ux fish_user_paths ~/.rbenv/bin $fish_user_paths' >> ~/.config/fish/config.fish"
-RUN su ${USERNAME} -c "echo 'status --is-interactive; and rbenv init - | source' >> ~/.config/fish/config.fish"
+RUN su ${USERNAME} -c "echo 'status --is-interactive; and ~/.rbenv/bin/rbenv init - fish | source' >> ~/.config/fish/config.fish"
 
 # Install rbenv ruby-build plugin.
 RUN su ${USERNAME} -c "mkdir -p ~/.rbenv/bin/plugins"
