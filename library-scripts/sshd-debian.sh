@@ -17,7 +17,7 @@ NEW_PASSWORD="${NEW_PASSWORD:-"skip"}"
 set -e
 
 # Clean up
-rm -rf /var/lib/apt/lists/*
+# rm -rf /var/lib/apt/lists/*
 
 if [ "$(id -u)" -ne 0 ]; then
     echo -e 'Script must be run as root. Use sudo, su, or add "USER root" to your Dockerfile before running this script.'
@@ -129,6 +129,6 @@ if [ "${EMIT_PASSWORD}" = "true" ]; then
 fi
 
 # Clean up
-rm -rf /var/lib/apt/lists/*
+# rm -rf /var/lib/apt/lists/*
 
 echo -e "\nForward port ${SSHD_PORT} to your local machine and run:\n\n  ssh -p ${SSHD_PORT} -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o GlobalKnownHostsFile=/dev/null ${USERNAME}@localhost\n"
