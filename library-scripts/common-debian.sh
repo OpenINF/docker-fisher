@@ -111,7 +111,22 @@ if [ "${PACKAGES_ALREADY_INSTALLED}" != "true" ]; then
         strace \
         manpages \
         manpages-dev \
-        init-system-helpers"
+        init-system-helpers \
+        autoconf \
+        bison \
+        patch \
+        build-essential \
+        rustc \
+        libssl-dev \
+        libyaml-dev \
+        libreadline6-dev \
+        zlib1g-dev \
+        libgmp-dev \
+        libncurses5-dev \
+        libffi-dev \
+        libgdbm-dev \
+        libdb-dev \
+        uuid-dev"
 
     # Needed for adding manpages-posix and manpages-posix-dev which are non-free packages in Debian
     if [ "${ADD_NON_FREE_PACKAGES}" = "true" ]; then
