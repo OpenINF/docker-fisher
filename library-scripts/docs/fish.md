@@ -6,7 +6,7 @@ _Adds [fish shell](https://github.com/fish-shell/fish-shell) to a container._
 
 **Script status**: Stable
 
-**OS support**: Debian 11
+**OS support**: Debian 11/Ubuntu Lunar
 
 **Maintainer:** [@DerekNonGeneric](https://github.com/DerekNonGeneric)
 
