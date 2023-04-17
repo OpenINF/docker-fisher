@@ -1,9 +1,10 @@
-FROM debian:bullseye-slim
+FROM --platform=linux/amd64 ubuntu:lunar
 
 ARG USERNAME=vscode
-ARG USER_UID=1000
+ARG USER_UID=1001
 ARG USER_GID=$USER_UID
 ARG UPGRADE_PACKAGES="false"
+ARG TARGETARCH="amd64"
 
 ENV APP_TMP_DATA=/tmp
 

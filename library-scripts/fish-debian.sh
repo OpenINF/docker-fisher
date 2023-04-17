@@ -1,16 +1,17 @@
 #!/usr/bin/env bash
 #-------------------------------------------------------------------------------------------------------------
 # Copyright (c) The OpenINF Authors. All rights reserved.
-# Licensed under the MIT License. See the LICENSE file at the root of the source tree for license information.
+# Dual licensed under MIT/Apache-2.0. See the LICENSE.md file at the root of the source tree for more info.
 #-------------------------------------------------------------------------------------------------------------
 #
 # ** This script is community supported **
 # Docs: https://github.com/OpenINF/openinf-docker-fish/blob/HEAD/library-scripts/docs/fish.md
 # Maintainer: @DerekNonGeneric
 #
-# Syntax: ./fish-debian.sh [non-root user]
+# Syntax: ./fish-debian.sh [whether to install Fisher] [non-root user]
 
-USERNAME=${1:-"automatic"}
+INSTALL_FISHER=${1:-"true"}
+USERNAME=${2:-"automatic"}
 
 set -e
 
@@ -19,17 +20,14 @@ if [ "$(id -u)" -ne 0 ]; then
     exit 1
 fi
 
-# Ensure that login shells get the correct path if the user updated the PATH using ENV.
-rm -f /etc/profile.d/00-restore-env.sh
-echo "export PATH=${PATH//$(sh -lc 'echo $PATH')/\$PATH}" > /etc/profile.d/00-restore-env.sh
-chmod +x /etc/profile.d/00-restore-env.sh
+export DEBIAN_FRONTEND=noninteractive
 
 # Determine the appropriate non-root user
 if [ "${USERNAME}" = "auto" ] || [ "${USERNAME}" = "automatic" ]; then
     USERNAME=""
     POSSIBLE_USERS=("vscode" "node" "codespace" "$(awk -v val=1000 -F ":" '$3==val{print $1}' /etc/passwd)")
-    for CURRENT_USER in "${POSSIBLE_USERS[@]}"; do
-        if id -u "${CURRENT_USER}" > /dev/null 2>&1; then
+    for CURRENT_USER in ${POSSIBLE_USERS[@]}; do
+        if id -u ${CURRENT_USER} > /dev/null 2>&1; then
             USERNAME=${CURRENT_USER}
             break
         fi
@@ -41,13 +39,60 @@ elif [ "${USERNAME}" = "none" ] || ! id -u ${USERNAME} > /dev/null 2>&1; then
     USERNAME=root
 fi
 
-export DEBIAN_FRONTEND=noninteractive
+# Function to run apt-get if needed
+apt_get_update_if_needed()
+{
+    if [ ! -d "/var/lib/apt/lists" ] || [ "$(ls /var/lib/apt/lists/ | wc -l)" = "0" ]; then
+        echo "Running apt-get update..."
+        apt-get update
+    else
+        echo "Skipping apt-get update."
+    fi
+}
+
+# Checks if packages are installed and installs them if not
+check_packages() {
+    if ! dpkg -s "$@" > /dev/null 2>&1; then
+        apt_get_update_if_needed
+        apt-get -y install --no-install-recommends "$@"
+    fi
+}
+
+check_packages curl ca-certificates gnupg2 apt-transport-https
 
 # Install fish shell
-echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/3/Debian_11/ /' | sudo tee /etc/apt/sources.list.d/shells:fish:release:3.list
-curl -fsSL https://download.opensuse.org/repositories/shells:fish:release:3/Debian_11/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/shells_fish_release_3.gpg > /dev/null
-sudo apt-get update -y
-sudo apt-get install -y fish
-sudo apt-get autoremove -y
+echo "Installing fish shell..."
+if grep -q 'Ubuntu' < /etc/os-release; then
+    check_packages software-properties-common
+    apt-get -y update
+    apt-get -y install fish
+    apt-get -y autoremove
+elif grep -q 'Debian' < /etc/os-release; then
+    if grep -q 'stretch' < /etc/os-release; then
+        echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/3/Debian_9.0/ /' | tee /etc/apt/sources.list.d/shells:fish:release:3.list
+        curl -fsSL https://download.opensuse.org/repositories/shells:fish:release:3/Debian_9.0/Release.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/shells_fish_release_3.gpg > /dev/null
+    elif grep -q 'buster' < /etc/os-release; then
+        echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/3/Debian_10/ /' | tee /etc/apt/sources.list.d/shells:fish:release:3.list
+        curl -fsSL https://download.opensuse.org/repositories/shells:fish:release:3/Debian_10/Release.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/shells_fish_release_3.gpg > /dev/null
+    elif grep -q 'bullseye' < /etc/os-release; then
+        echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/3/Debian_11/ /' | tee /etc/apt/sources.list.d/shells:fish:release:3.list
+        curl -fsSL https://download.opensuse.org/repositories/shells:fish:release:3/Debian_11/Release.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/shells_fish_release_3.gpg > /dev/null
+    fi
+    apt-get -y update
+    apt-get -y install --no-install-recommends fish
+    apt-get -y autoremove
+fi
+
+fish -v
+
+# Install Fisher
+if [ "${INSTALL_FISHER}" = "true" ]; then
+    echo "Installing Fisher..."
+    fish -c 'curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher'
+    if [ "${USERNAME}" != "root" ]; then
+        sudo -u $USERNAME fish -c 'curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher'
+    fi
+    fish -c "fisher -v"
+fi
 
 echo "Done!"

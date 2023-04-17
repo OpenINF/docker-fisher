@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #-------------------------------------------------------------------------------------------------------------
 # Copyright (c) The OpenINF Authors. All rights reserved.
-# Licensed under the MIT License. See the LICENSE file at the root of the source tree for license information.
+# Dual licensed under MIT/Apache-2.0. See the LICENSE.md file at the root of the source tree for more info.
 #-------------------------------------------------------------------------------------------------------------
 #
 # ** This script is community supported **
@@ -129,7 +129,7 @@ if [ "${PACKAGES_ALREADY_INSTALLED}" != "true" ]; then
         sed -i "s/deb http:\/\/security\.debian\.org\/debian-security ${VERSION_CODENAME}-security main/deb http:\/\/security\.debian\.org\/debian-security ${VERSION_CODENAME}-security main contrib non-free/" /etc/apt/sources.list
         sed -i "s/deb-src http:\/\/security\.debian\.org\/debian-security ${VERSION_CODENAME}-security main/deb http:\/\/security\.debian\.org\/debian-security ${VERSION_CODENAME}-security main contrib non-free/" /etc/apt/sources.list
         echo "Running apt-get update..."
-        apt-get update
+        apt-get -y update
         package_list="${package_list} manpages-posix manpages-posix-dev"
     else
         apt_get_update_if_needed
