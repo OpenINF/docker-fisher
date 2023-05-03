@@ -23,10 +23,6 @@
 If you like the project (or want to bookmark it)&nbsp;&mdash;<br />
 &mdash;&nbsp;[give it a star ⭐️]&nbsp;&mdash;&nbsp;it will greatly encourage us.
 
-<br /><br /><br />
-  
-&copy; The OpenINF Authors
-
 <br /><br />
 
 <a title="The OpenINF website" href="https://open.inf.is" rel="author">
