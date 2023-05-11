@@ -1,6 +1,6 @@
 <div align="center">
 
-# @openinf/docker-fish
+## @openinf/docker-fish
 
 🐳 Dockerfiles for the fish shell
 
@@ -10,11 +10,11 @@
 
 ---
 
-<br /><br />
+<br />
 
 <div align="center">
 
-## Show Your Support
+### Show Your Support
 
 <br />
 
