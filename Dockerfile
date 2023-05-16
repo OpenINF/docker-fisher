@@ -11,18 +11,24 @@ ENV APP_TMP_DATA=/tmp
 COPY library-scripts/*.sh /tmp/library-scripts/
 # First adds the architecture to the system. This is necessary for the Docker image to be built on right architecture.
 RUN dpkg --add-architecture ${TARGETARCH} \
-  && apt-get -y update && export DEBIAN_FRONTEND=noninteractive \
+  && export DEBIAN_FRONTEND=noninteractive \
   && /bin/bash /tmp/library-scripts/common-debian.sh "${USERNAME}" "${USER_UID}" "${USER_GID}" "${UPGRADE_PACKAGES}" \
   && /bin/bash /tmp/library-scripts/fish-debian.sh "${USERNAME}" \
   && /bin/bash /tmp/library-scripts/sshd-debian.sh "2222" "${USERNAME}" "true" "root" \
+  && /bin/bash /tmp/library-scripts/github-debian.sh \
+  #
   #
   # ****************************************************************************
   # * TODO: Add any additional OS packages you want included in the definition *
   # * here. We want to do this before cleanup to keep the "layer" small.       *
   # ****************************************************************************
-  && apt-get -y install --no-install-recommends autoconf bison patch build-essential default-jre cmake pkg-config libc6:${TARGETARCH} libicu-dev rustc libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libcurl4-openssl-dev libgmp-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev uuid-dev vim \
+  # && apt-get -y install --no-install-recommends <your-package-list-here> \
   && apt-get autoremove -y && apt-get clean -y \
   && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
+
+# [Optional] Uncomment this section to install additional OS packages.
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+    && apt-get -y install --no-install-recommends autoconf bison patch build-essential default-jre cmake pkg-config libc6:${TARGETARCH} libicu-dev rustc libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libcurl4-openssl-dev libgmp-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev uuid-dev vim
 
 RUN echo "StreamLocalBindUnlink yes" >> /etc/ssh/sshd_config && \
   systemctl --global mask gpg-agent.service \
