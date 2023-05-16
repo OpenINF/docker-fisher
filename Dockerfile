@@ -1,16 +1,22 @@
-FROM --platform=linux/amd64 ubuntu:lunar
+# [Choice] Ubuntu version (use jammy or bionic on local arm64/Apple Silicon): jammy, focal, bionic
+ARG VARIANT="lunar"
+FROM --platform=linux/amd64 buildpack-deps:${VARIANT}-curl
 
+# Options for setup script
+ARG INSTALL_ZSH="false"
+ARG UPGRADE_PACKAGES="true"
 ARG USERNAME=vscode
 ARG USER_UID=1001
 ARG USER_GID=$USER_UID
-ARG UPGRADE_PACKAGES="false"
 ARG TARGETARCH="amd64"
 
 ENV APP_TMP_DATA=/tmp
+# Install needed packages and setup non-root user. Use a separate RUN statement to add your own dependencies.
+COPY library-scripts/*.sh library-scripts/*.env /tmp/library-scripts/
 
-COPY library-scripts/*.sh /tmp/library-scripts/
 # First adds the architecture to the system. This is necessary for the Docker image to be built on right architecture.
-RUN dpkg --add-architecture ${TARGETARCH} \
+RUN yes | unminimize 2>&1 \
+  && dpkg --add-architecture ${TARGETARCH} \
   && export DEBIAN_FRONTEND=noninteractive \
   && /bin/bash /tmp/library-scripts/common-debian.sh "${USERNAME}" "${USER_UID}" "${USER_GID}" "${UPGRADE_PACKAGES}" \
   && /bin/bash /tmp/library-scripts/fish-debian.sh "${USERNAME}" \

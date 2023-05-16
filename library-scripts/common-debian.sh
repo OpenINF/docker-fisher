@@ -135,7 +135,10 @@ if [ "${PACKAGES_ALREADY_INSTALLED}" != "true" ]; then
         apt_get_update_if_needed
     fi
 
-    # Install libssl1.1 if available
+    # Download libssl1.1 to apt archives cache.
+    curl -sL -o/var/cache/apt/archives/libssl1.1_1.1.1f-1ubuntu2_amd64.deb http://nz2.archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
+
+    # Install libssl1.1 if available.
     if [[ ! -z $(apt-cache --names-only search ^libssl1.1$) ]]; then
         package_list="${package_list}       libssl1.1"
     fi
