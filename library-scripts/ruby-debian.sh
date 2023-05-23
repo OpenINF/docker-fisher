@@ -223,4 +223,4 @@ sudo_if chmod 755 "$RBENV_ROOT/versions/$TOOLSET_VERSION/"
 sudo_if ln -s "$RUBY_VERSION_PATH/x64/*" "$RBENV_ROOT/versions/$TOOLSET_VERSION/"
 
 # Success!
-echo "Ruby has been installed successfully."
+echo "Ruby has been installed successfully!"
