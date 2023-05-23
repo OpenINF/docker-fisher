@@ -178,7 +178,6 @@ if [ ! -f "$COMPLETE_FILE_PATH" ]; then
 fi
 
 # Install rbenv/ruby-build for good measure
-# Install rbenv/ruby-build for good measure
 sudo_if git clone --depth=1 \
     -c core.eol=lf \
     -c core.autocrlf=false \
