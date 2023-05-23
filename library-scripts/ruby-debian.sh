@@ -218,7 +218,7 @@ sudo_if chown -R "$USERNAME" "$RBENV_ROOT/versions/$TOOLSET_VERSION/"
 # Change the permissions to 755.
 sudo_if chmod 755 "$RBENV_ROOT/versions/$TOOLSET_VERSION/"
 
-# Create a symbolic links.
+# Create symbolic links.
 sudo_if ln -s "$RUBY_VERSION_PATH/x64/*" "$RBENV_ROOT/versions/$TOOLSET_VERSION/"
 
 # Success!
