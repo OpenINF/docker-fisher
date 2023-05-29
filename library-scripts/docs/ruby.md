@@ -1,6 +1,6 @@
 ## Ruby Install Script
 
-*Installs Ruby, rvm, rbenv, common Ruby utilities, and needed dependencies.*
+*Installs Ruby, rbenv, common Ruby utilities, and needed dependencies.*
 
 **Script status**: Stable
 
