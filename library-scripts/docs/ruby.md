@@ -31,7 +31,7 @@ Or as a feature:
 
 ### Usage
 
-#### Feature use
+#### Feature Use
 
 To install these capabilities in your primary dev container, reference it in `devcontainer.json` as follows:
 
