@@ -43,7 +43,7 @@ To install these capabilities in your primary dev container, reference it in `de
 
 If you have already built your development container, run the **Rebuild Container** command from the command palette (<kbd>Ctrl/Cmd</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> or <kbd>F1</kbd>) to pick up the change.
 
-#### Script use
+#### Script Use
 
 Usage:
 
