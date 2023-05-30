@@ -1,6 +1,6 @@
 ## Ruby Install Script
 
-*Installs Ruby, rbenv, common Ruby utilities, and needed dependencies.*
+*Installs Ruby, rbenv.*
 
 **Script status**: Stable
 
@@ -11,7 +11,7 @@
 ### Syntax
 
 ```text
-./ruby-debian.sh [Ruby version] [Non-root user] [Add rvm to rc files flag] [Install tools flag]
+./ruby-debian.sh [Ruby version] [Non-root user] [Add rvm to rc files flag]
 ```
 
 Or as a feature:
@@ -26,8 +26,7 @@ Or as a feature:
 |----------------------|----------------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Ruby version         | `version`      | `latest`    | Version of Ruby to install. A value of `none` will skip this step and just install rvm, rbenv, and tools.                                                                                                                                                                   |
 | Non-root user        |                | `automatic` | Specifies a user in the container other than root that will use Ruby, rvm, and/or rbenv. A value of `automatic` will cause the script to check for a user called `vscode`, then `node`, `codespace`, and finally a user with a UID of `1000` before falling back to `root`. |
-| Add to rc files flag |                | `true`      | A `true`/`false` flag that indicates whether sourcing the rbenv script should be added to `/etc/fish/config.fish`.                                                                                                                                            |
-| Install tools flag   |                | `true`      | A `true`/`false` flag that indicates whether tools like `rake`, `ruby-debug-ide`, and `debase` should be installed.                                                                                                                                                         |
+| Add to rc files flag |                | `true`      | A `true`/`false` flag that indicates whether sourcing the rbenv script should be added to `/etc/fish/config.fish`.                                                                                                                                                          |
 
 ### Usage
 
@@ -52,14 +51,8 @@ Usage:
 2. Add the following to your `.devcontainer/Dockerfile`:
 
     ```Dockerfile
-    ENV GEM_PATH="/usr/local/rvm/gems/default:/usr/local/rvm/gems/default@global" \
-        GEM_HOME="/usr/local/rvm/gems/default" \
-        MY_RUBY_HOME="/usr/local/rvm/rubies/default" \
-        PATH="/usr/local/rvm/rubies/default/bin:/usr/local/rvm/gems/default@global/bin:/usr/local/rvm/rubies/default/bin:/usr/local/rvm/bin:${PATH}"
     COPY library-scripts/ruby-debian.sh /tmp/library-scripts/
     RUN apt-get update && bash /tmp/library-scripts/ruby-debian.sh
     ```
-
-The `ENV` parameters are technically optional (actually, ignore it), but allow the default `rvm` installed version of Ruby to be used in non-interactive terminals and shell scripts.
 
 That's it!
