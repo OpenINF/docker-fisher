@@ -11,7 +11,7 @@
 ### Syntax
 
 ```text
-./ruby-debian.sh [Ruby version] [Non-root user] [Add rvm to rc files flag]
+./ruby-debian.sh [Ruby version] [Non-root user] [Add rbenv to rc files flag]
 ```
 
 Or as a feature:
