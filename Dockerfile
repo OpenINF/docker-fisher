@@ -19,9 +19,10 @@ RUN yes | unminimize 2>&1 \
   && dpkg --add-architecture ${TARGETARCH} \
   && export DEBIAN_FRONTEND=noninteractive \
   && /bin/bash /tmp/library-scripts/common-debian.sh "${USERNAME}" "${USER_UID}" "${USER_GID}" "${UPGRADE_PACKAGES}" \
-  && /bin/bash /tmp/library-scripts/fish-debian.sh "${USERNAME}" \
+  && /bin/bash /tmp/library-scripts/fish-debian.sh "true" "${USERNAME}" \
   && /bin/bash /tmp/library-scripts/sshd-debian.sh "2222" "${USERNAME}" "true" "root" \
-  && /bin/bash /tmp/library-scripts/github-debian.sh \
+  && /bin/bash /tmp/library-scripts/github-debian.sh "${USERNAME}" \
+  && /bin/bash /tmp/library-scripts/ruby-debian.sh "3.2.2" "${USERNAME}" \
   #
   #
   # ****************************************************************************
@@ -47,30 +48,6 @@ RUN su ${USERNAME} -c "fish --command 'cp /usr/share/fish/config.fish ~/.config/
 
 # Configure default Git editor.
 RUN su ${USERNAME} -c "echo 'set -Ux GIT_EDITOR vim' >> ~/.config/fish/config.fish"
-
-# Install rbenv.
-RUN su ${USERNAME} -c "git clone --depth=1 \
-  -c core.eol=lf \
-  -c core.autocrlf=false \
-  -c fsck.zeroPaddedFilemode=ignore \
-  -c fetch.fsck.zeroPaddedFilemode=ignore \
-  -c receive.fsck.zeroPaddedFilemode=ignore \
-  https://github.com/rbenv/rbenv.git ~/.rbenv"
-
-# Add rbenv to fish user PATH.
-RUN su ${USERNAME} -c "echo 'set -Ux fish_user_paths ~/.rbenv/bin $fish_user_paths' >> ~/.config/fish/config.fish"
-RUN su ${USERNAME} -c "echo 'status --is-interactive; and ~/.rbenv/bin/rbenv init - fish | source' >> ~/.config/fish/config.fish"
-
-# Install rbenv ruby-build plugin.
-RUN su ${USERNAME} -c "mkdir -p ~/.rbenv/bin/plugins"
-RUN su ${USERNAME} -c "git clone --depth=1 \
-  -c core.eol=lf \
-  -c core.autocrlf=false \
-  -c fsck.zeroPaddedFilemode=ignore \
-  -c fetch.fsck.zeroPaddedFilemode=ignore \
-  -c receive.fsck.zeroPaddedFilemode=ignore \
-  https://github.com/rbenv/ruby-build.git ~/.rbenv/bin/plugins/ruby-build"
-RUN su ${USERNAME} -c "sudo ~/.rbenv/bin/plugins/ruby-build/install.sh"
 
 # Install Fisher and plugins.
 RUN su ${USERNAME} -c "fish --command 'curl -sL https://git.io/fisher | source && fisher install jorgebucaran/{fisher,nvm.fish}'"
