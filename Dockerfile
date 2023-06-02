@@ -35,7 +35,9 @@ RUN yes | unminimize 2>&1 \
 
 # [Optional] Uncomment this section to install additional OS packages.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends autoconf bison patch build-essential default-jre cmake pkg-config libc6:${TARGETARCH} libicu-dev rustc libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libcurl4-openssl-dev libgmp-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev uuid-dev vim
+    && apt-get -y install --no-install-recommends autoconf bison patch build-essential default-jre cmake pkg-config libc6:${TARGETARCH} libicu-dev rustc libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libcurl4-openssl-dev libgmp-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev uuid-dev vim \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN echo "StreamLocalBindUnlink yes" >> /etc/ssh/sshd_config && \
   systemctl --global mask gpg-agent.service \
