@@ -1,0 +1,22 @@
+{
+	"image": "mcr.microsoft.com/vscode/devcontainers/javascript-node:0-18",
+	"remoteUser": "node",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"mads-hartmann.bash-ide-vscode",
+				"bmalehorn.vscode-fish",
+				"timonwong.shellcheck",
+				"streetsidesoftware.code-spell-checker",
+				"ms-azuretools.vscode-docker"
+			]
+		}
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
+	},
+	"postCreateCommand": "npm install -g @devcontainers/cli && sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get install -y shellcheck",
+	"hostRequirements": {
+		"cpus": 4
+	}
+}
