@@ -41,15 +41,11 @@ Thanks!
 
 ### Acknowledgments
 
-This project was originally inspired by the [`docker-fish`][] project, which
-started out in 2020 (by [@andreiborisov][]) with the aim of building a
-somewhat-official Docker container for the [fish shell][]; however, that was
-solely for the Alpine distribution of Linux. Notably, that project was
-originally hosted on Andrei's personal GitHub account, but was later moved
-elsewhere some time _after_ we had re-imagined/revived it with community
-support. We are, however, not affiliated with the new organization it is home to
-nor are we involved in its day-to-day development and do not wish to impy that
-we make any endoresement; hence, the reason for this re-construction.
+This project was originally inspired by the [`docker-fish`][] project.
+
+`docker-fish` started out in 2020 by [@andreiborisov][] as a project to build
+[Alpine Linux][] Docker container(s) for the [fish shell][]. Notably, it was
+originally hosted on Andrei's personal GitHub account, but was later moved ooo.
 
 It was introduced to [@DerekNonGeneric][] by [@jorgebucaran][]: Thank you so
 much to [@jorgebucaran][] for the introduction as it is now able to serve as the
@@ -132,6 +128,7 @@ us.
 [@andreiborisov]: https://github.com/andreiborisov
 [@DerekNonGeneric]: https://github.com/DerekNonGeneric
 [@jorgebucaran]: https://github.com/jorgebucaran
+[Alpine Linux]: https://www.alpinelinux.org
 [Changelog]: https://github.com/OpenINF/openinf-docker-fisher/commits/HEAD 'Changelog'
 [conventional-commits-badge]: https://img.shields.io/badge/commit%20style-Conventional-%23fa6673?logoColor=white&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMCAzMCI+PHBhdGggc3R5bGU9ImZpbGw6ICNGRkYiIGQ9Ik0xNSwyQTEzLDEzLDAsMSwxLDIsMTUsMTMsMTMsMCwwLDEsMTUsMm0wLTJBMTUsMTUsMCwxLDAsMzAsMTUsMTUsMTUsMCwwLDAsMTUsMFoiLz48L3N2Zz4K 'Commit Style: Conventional Commits'
 [conventional-commits-url]: https://www.conventionalcommits.org 'Commit Style: Conventional Commits'
