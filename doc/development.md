@@ -6,6 +6,8 @@ create a disposable sandbox. This can be accomplished using virtualization softw
 such as [Oracle VM VirtualBox][] for local development or perhaps consider using
 cloud-based virtualization offerings.
 
+**Excerpt from Section 1.1, “Why is Virtualization Useful?” of the Oracle VM VirtualBox
+User Manual** ⤵️
 > Once installed, a virtual machine and its virtual hard disks can be considered
 > a container that can be arbitrarily frozen, woken up, copied, backed up, and
 > transported between hosts.
