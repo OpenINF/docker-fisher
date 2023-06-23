@@ -96,6 +96,26 @@ us.
 
 <br /><br />
 
+---
+
+<br />
+
+<div align="center">
+
+[Roadmap][] |
+[Development][] |
+[Issue Tracker][] |
+[Changelog][] |
+[Credits][]
+
+<br />
+
+[!['Project Type: Prototype'][project-type-badge--shields]](##)
+[!['Prototyping Scheme: Evolutionary'][prototyping-scheme-badge--shields]](##)
+[!['Status: Under construction'][project-status-badge--shields]](##)
+  
+<br /><br />
+
 <a title="The OpenINF website" href="https://open.inf.is" rel="author">
   <img alt="The OpenINF logo" height="32px" width="32px" src="https://raw.githubusercontent.com/openinf/openinf.github.io/live/assets/img/svg/logo.svg?sanitize=true" />
 </a>
@@ -103,32 +123,34 @@ us.
 </div>
 
 <br /><br />
-
+  
 [![Orange banner indicating a preview software component][release-level-banner--unstable]](##)
 
 <!-- BEGIN LINK DEFINITIONS -->
-
-<!-- prettier-ignore-start -->
-<!-- PRESERVE LINK DEFINITION LABEL CASE - START -->
 
 [`docker-fish`]: https://github.com/meaningful-ooo/docker-fish
 [@andreiborisov]: https://github.com/andreiborisov
 [@DerekNonGeneric]: https://github.com/DerekNonGeneric
 [@jorgebucaran]: https://github.com/jorgebucaran
+[Changelog]: https://github.com/OpenINF/openinf-docker-fisher/commits/HEAD 'Changelog'
 [conventional-commits-badge]: https://img.shields.io/badge/commit%20style-Conventional-%23fa6673?logoColor=white&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMCAzMCI+PHBhdGggc3R5bGU9ImZpbGw6ICNGRkYiIGQ9Ik0xNSwyQTEzLDEzLDAsMSwxLDIsMTUsMTMsMTMsMCwwLDEsMTUsMm0wLTJBMTUsMTUsMCwxLDAsMzAsMTUsMTUsMTUsMCwwLDAsMTUsMFoiLz48L3N2Zz4K 'Commit Style: Conventional Commits'
 [conventional-commits-url]: https://www.conventionalcommits.org 'Commit Style: Conventional Commits'
+[Credits]: https://github.com/OpenINF/openinf-docker-fisher/graphs/contributors 'Credits'
+[Development]: ./doc/development.md 'Development'
 [fish shell]: https://fishshell.com
-[give it a star ⭐️]: https://github.com/OpenINF/docker-fish/stargazers
+[give it a star ⭐️]: https://github.com/OpenINF//openinf-docker-fisher/stargazers
+[Issue Tracker]: https://github.com/OpenINF/openinf-docker-fisher/issues 'Issue Tracker'
 [license-badge--shields]: https://img.shields.io/badge/license-MIT%2FApache--2.0-blue.svg?logo=github 'License: MIT/Apache 2.0'
 [license-badge-url]: #license 'License: MIT/Apache 2.0'
 [matrix-badge--shields]: https://img.shields.io/badge/matrix-join%20chat-%2346BC99?logo=matrix 'Chat on Matrix'
 [matrix-url]: https://matrix.to/#/#openinf-space:matrix.org 'You&apos;re invited to talk on Matrix'
-[npm-badge--shields]: https://img.shields.io/npm/v/@openinf/util-types/latest.svg?logo=npm&color=fe7d37 'View on npm'
-[npm-badge-url]: https://www.npmjs.com/package/@openinf/util-types#top 'View on npm'
-[open an issue]: https://github.com/OpenINF/docker-fish/issues
+[open an issue]: https://github.com/OpenINF/openinf-docker-fish/issues
 [prettier-badge]: https://img.shields.io/badge/code_style-Prettier-ff69b4.svg?logo=prettier 'Code Style: Prettier'
 [prettier-url]: https://prettier.io/playground 'Code Style: Prettier'
+[project-status-badge--shields]: https://img.shields.io/badge/status-under%20construction-yellow.svg
+[project-type-badge--shields]: https://img.shields.io/badge/type-prototype-blue.svg
+[prototyping-scheme-badge--shields]: https://img.shields.io/badge/scheme-evolutionary-blue.svg
 [release-level-banner--unstable]: https://raw.githubusercontent.com/OpenINF/openinf.github.io/live/assets/img/svg/release-level-banner--unstable.svg?sanitize=true 'Banner for Release Level: Unstable'
+[Roadmap]: https://github.com/OpenINF/openinf-docker-fisher/issues 'Roadmap'
 
-<!-- PRESERVE LINK DEFINITION LABEL CASE - END -->
-<!-- prettier-ignore-end -->
+<!-- END LINK DEFINITIONS -->
