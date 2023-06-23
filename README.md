@@ -9,7 +9,7 @@
 
 ## `docker-fisher`
 
-> 🐳 Dockerfiles for plug-and-play [Fish 🐟 shell][] components powered by the scorching-fast [Fisher 🔥 plugin manager][]
+> Dockerfiles built for plug-and-play [Fish shell][] components powered by the scorching-fast [Fisher plugin manager][]
 
 <br />
 
@@ -137,9 +137,8 @@ us.
 [conventional-commits-url]: https://www.conventionalcommits.org 'Commit Style: Conventional Commits'
 [Credits]: https://github.com/OpenINF/openinf-docker-fisher/graphs/contributors 'Credits'
 [Development]: ./doc/development.md 'Development'
-[Fisher 🔥 plugin manager]: https://github.com/jorgebucaran/fisher
+[Fisher plugin manager]: https://github.com/jorgebucaran/fisher
 [fish shell]: https://fishshell.com
-[Fish 🐟 shell]: https://fishshell.com
 [give it a star ⭐️]: https://github.com/OpenINF//openinf-docker-fisher/stargazers
 [Issue Tracker]: https://github.com/OpenINF/openinf-docker-fisher/issues 'Issue Tracker'
 [license-badge--shields]: https://img.shields.io/badge/license-MIT%2FApache--2.0-blue.svg?logo=github 'License: MIT/Apache 2.0'
