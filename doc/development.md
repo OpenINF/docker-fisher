@@ -4,10 +4,15 @@ Before cloning this repository, please ensure appropriate safety precautions are
 by being sure to use an air-tight and ephemeral development environment to essentially
 create a disposable sandbox. This can be accomplished using virtualization software
 such as [Oracle VM VirtualBox][] for local development or perhaps consider using
-cloud-based virtualization offerings.
+cloud-based virtualization offerings.<br /><br />
 
-**Excerpt from Section 1.1, “Why is Virtualization Useful?” of the Oracle VM VirtualBox
-User Manual** ⤵️
+<details open><summary>
+[EXCERPT]：<em><a title="Oracle® VM VirtualBox® User Manual" <a
+  href="https://www.virtualbox.org/manual"
+                >VirtualBox User Manual</a></em>&nbsp;&mdash;&nbsp;
+  <b>Section 1.1, “Why is Virtualization Useful?”</b>
+</summary><br />
+
 > Once installed, a virtual machine and its virtual hard disks can be considered
 > a container that can be arbitrarily frozen, woken up, copied, backed up, and
 > transported between hosts.
@@ -28,7 +33,10 @@ User Manual** ⤵️
 > forward in virtual machine time. You can delete snapshots while a VM is
 > running to reclaim disk space.
 >
-> &mdash;https://www.virtualbox.org/manual/ch01.html#virt-why-useful
+> &mdash;&nbsp;https://www.virtualbox.org/manual/ch01.html#virt-why-useful
+
+</details><br />
+
 
 ### Building the Docker Images
 
@@ -54,6 +62,10 @@ repository.[^1]
 
 [Oracle VM VirtualBox]:
   https://www.virtualbox.org/
-  "Oracle VM VirtualBox"
+  'Oracle VM VirtualBox'
+
+[_VirtualBox User Manual_]:
+  https://www.virtualbox.org/manual/
+  'Oracle® VM VirtualBox® User Manual'
   
 <!-- END LINK DEFINITIONS -->
