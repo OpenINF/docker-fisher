@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
 #-------------------------------------------------------------------------------------------------------------
-# Copyright (c) Microsoft Corporation. All rights reserved.
-# Licensed under the MIT License. See https://go.microsoft.com/fwlink/?linkid=2090316 for license information.
+# Copyright (c) The OpenINF Authors. All rights reserved. Dual licensed under MIT/Apache-2.0.
+# See the LICENSE.md file at the root of the source tree for more info.
+# Adapted from https://github.com/microsoft/vscode-dev-containers/blob/main/script-library/sshd-debian.sh
+# Copyright (c) Microsoft Corporation and other contributors.
+# Original license at https://github.com/Microsoft/vscode-dev-containers/blob/main/LICENSE
 #-------------------------------------------------------------------------------------------------------------
 #
-# Docs: https://github.com/microsoft/vscode-dev-containers/blob/main/script-library/docs/sshd.md
-# Maintainer: The VS Code and Codespaces Teams
+# ** This script is community supported **
+# Docs: https://github.com/OpenINF/openinf-docker-fish/blob/HEAD/library-scripts/docs/ssh.md
+# Maintainer: The OpenINF Community
 #
 # Note: You can change your user's password with "sudo passwd $(whoami)" (or just "passwd" if running as root).
 
