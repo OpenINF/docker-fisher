@@ -41,13 +41,20 @@ Thanks!
 
 ### Acknowledgments
 
-`docker-fish` started out in 2020 by [@andreiborisov][] as a project to build
-Docker containers for the [fish shell][]. Its main purpose is to build/publish
-these fully-loaded fish shell containers for several operating systems.
+This project was originally inspired by the [`docker-fish`][] project, which
+started out in 2020 (by [@andreiborisov][]) with the aim of building a
+somewhat-official Docker container for the [fish shell][]; however, that was
+solely for the Alpine distribution of Linux. Notably, that project was
+originally hosted on Andrei's personal GitHub account, but was later moved
+elsewhere some time _after_ we had re-imagined/revived it with community
+support. We are, however, not affiliated with the new organization it is home to
+nor are we involved in its day-to-day development and do not wish to impy that
+we make any endoresement; hence, the reason for this re-construction.
 
 It was introduced to [@DerekNonGeneric][] by [@jorgebucaran][]: Thank you so
-much to [@jorgebucaran][] for the introduction as it is now able to serve as
-the inspiration/basis for this project. Thank you to all our contributors! <3
+much to [@jorgebucaran][] for the introduction as it is now able to serve as the
+inspiration/basis for this project. Thank you to all our contributors! <3
+
 
 <br />
 
@@ -104,6 +111,7 @@ us.
 <!-- prettier-ignore-start -->
 <!-- PRESERVE LINK DEFINITION LABEL CASE - START -->
 
+[`docker-fish`]: https://github.com/meaningful-ooo/docker-fish
 [@andreiborisov]: https://github.com/andreiborisov
 [@DerekNonGeneric]: https://github.com/DerekNonGeneric
 [@jorgebucaran]: https://github.com/jorgebucaran
