@@ -9,7 +9,7 @@
 
 ## `docker-fish`
 
-> Dockerfiles for the [fish shell](https://fishshell.com)
+> Dockerfiles for the [fish shell][]
 
 <br />
 
@@ -36,6 +36,18 @@ Thanks!
 <br /><br />
 
 ---
+
+<br />
+
+### Acknowledgments
+
+`docker-fish` started out in 2020 by [@andreiborisov][] as a project to build
+Docker containers for the [fish shell][]. Its main purpose is to build/publish
+these fully-loaded fish shell containers for several operating systems.
+
+It was introduced to [@DerekNonGeneric][] by [@jorgebucaran][]: Thank you so
+much to [@jorgebucaran][] for the introduction as it is now able to serve as
+the inspiration/basis for this project. Thank you to all our contributors! <3
 
 <br />
 
@@ -92,8 +104,12 @@ us.
 <!-- prettier-ignore-start -->
 <!-- PRESERVE LINK DEFINITION LABEL CASE - START -->
 
+[@andreiborisov]: https://github.com/andreiborisov
+[@DerekNonGeneric]: https://github.com/DerekNonGeneric
+[@jorgebucaran]: https://github.com/jorgebucaran
 [conventional-commits-badge]: https://img.shields.io/badge/commit%20style-Conventional-%23fa6673?logoColor=white&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMCAzMCI+PHBhdGggc3R5bGU9ImZpbGw6ICNGRkYiIGQ9Ik0xNSwyQTEzLDEzLDAsMSwxLDIsMTUsMTMsMTMsMCwwLDEsMTUsMm0wLTJBMTUsMTUsMCwxLDAsMzAsMTUsMTUsMTUsMCwwLDAsMTUsMFoiLz48L3N2Zz4K 'Commit Style: Conventional Commits'
 [conventional-commits-url]: https://www.conventionalcommits.org 'Commit Style: Conventional Commits'
+[fish shell]: https://fishshell.com
 [give it a star ⭐️]: https://github.com/OpenINF/docker-fish/stargazers
 [license-badge--shields]: https://img.shields.io/badge/license-MIT%2FApache--2.0-blue.svg?logo=github 'License: MIT/Apache 2.0'
 [license-badge-url]: #license 'License: MIT/Apache 2.0'
