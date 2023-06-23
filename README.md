@@ -7,7 +7,7 @@
 
 <div align="left">
 
-## `docker-fish`
+## `docker-fisher`
 
 > Dockerfiles for the [fish shell][]
 
