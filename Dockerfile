@@ -51,9 +51,6 @@ RUN su ${USERNAME} -c "fish --command 'cp /usr/share/fish/config.fish ~/.config/
 # Configure default Git editor.
 RUN su ${USERNAME} -c "echo 'set -Ux GIT_EDITOR vim' >> ~/.config/fish/config.fish"
 
-# Install Fisher and plugins.
-RUN su ${USERNAME} -c "fish --command 'curl -sL https://git.io/fisher | source && fisher install jorgebucaran/{fisher,nvm.fish}'"
-
 # ENV Variables required by Jekyll.
 ENV LANG=en_US.UTF-8 \
   LANGUAGE=en_US:en \
