@@ -9,7 +9,7 @@
 
 ## `docker-fisher`
 
-> Dockerfiles built for plug-and-play [Fish shell][] components powered by the scorching-fast [Fisher plugin manager][]
+> Dockerfiles built for plug-and-play [Fish&nbsp;shell][] components powered by the scorching&nbsp;fast [Fisher&nbsp;plugin&nbsp;manager][]
 
 <br />
 
@@ -44,12 +44,12 @@ Thanks!
 This project was originally inspired by the [`docker-fish`][] project.
 
 `docker-fish` started out in 2020 by [@andreiborisov][] as a project to build
-[Alpine Linux][] Docker container(s) for the [fish shell][]. Notably, it was
+[Alpine Linux][] Docker container(s) for the [fish&nbsp;shell][]. Notably, it was
 originally hosted on Andrei's personal GitHub account, but was later moved ooo.
 
 It was introduced to [@DerekNonGeneric][] by [@jorgebucaran][]: Thank you so
 much to [@jorgebucaran][] for the introduction as it is now able to serve as the
-inspiration/basis for this project. Thank you to all our contributors! <3
+inspiration/basis for this project. Thank you to all our contributors!&nbsp;<3
 
 
 <br />
@@ -134,8 +134,8 @@ us.
 [conventional-commits-url]: https://www.conventionalcommits.org 'Commit Style: Conventional Commits'
 [Credits]: https://github.com/OpenINF/openinf-docker-fisher/graphs/contributors 'Credits'
 [Development]: ./doc/development.md 'Development'
-[Fisher plugin manager]: https://github.com/jorgebucaran/fisher
-[fish shell]: https://fishshell.com
+[Fisher&nbsp;plugin&nbsp;manager]: https://github.com/jorgebucaran/fisher
+[fish&nbsp;shell]: https://fishshell.com
 [give it a star ⭐️]: https://github.com/OpenINF//openinf-docker-fisher/stargazers
 [Issue Tracker]: https://github.com/OpenINF/openinf-docker-fisher/issues 'Issue Tracker'
 [license-badge--shields]: https://img.shields.io/badge/license-MIT%2FApache--2.0-blue.svg?logo=github 'License: MIT/Apache 2.0'
