@@ -1,9 +1,9 @@
 ## Development
 
-Before cloning this repository, please ensure appropriate safety precautions are taken
-by being sure to use an air-tight and ephemeral development environment to essentially
-create a disposable sandbox. This can be accomplished using virtualization software
-such as [Oracle VM VirtualBox][] for local development or perhaps consider using
+Before cloning this repository, please ensure appropriate safety precautions are taken.
+This means being sure to use an air-tight and ephemeral development environment to
+essentially create a disposable sandbox. This may be accomplished using virtualization
+software such as [Oracle VM VirtualBox][] for local development or perhaps consider using
 cloud-based virtualization offerings.<br /><br />
 
 <details open><summary>
