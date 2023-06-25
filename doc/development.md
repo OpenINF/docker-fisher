@@ -37,6 +37,9 @@ cloud-based virtualization offerings.<br /><br />
 
 </details><br />
 
+We would be remiss to mention the air-tightness of a VM architecture without
+mentioning that having a [watertight privacy architecture][] would likewise
+be preferable. Whonix offers detailed VirtualBox import instructions.[^1]
 
 ### Building the Docker Images
 
@@ -49,12 +52,13 @@ The tasks to generate each docker image have predictable labels:
 Docker images are built from subdirectories of `taskcluster/docker`, using
 `docker build`. There is currently no capability for one Docker image to depend
 on another in-tree docker image, without uploading the latter to a Docker
-repository.[^1]
+repository.[^2]
 
 
 <!-- BEGIN LINK DEFINITIONS -->
 
-[^1]: https://firefox-source-docs.mozilla.org/taskcluster/kinds.html#docker-image
+[^1]: https://www.whonix.org/wiki/VirtualBox "Whonix ™ for Windows, macOS, Linux inside VirtualBox"
+[^2]: https://firefox-source-docs.mozilla.org/taskcluster/kinds.html#docker-image
 
 [`docker build`]:
   https://docs.docker.com/engine/reference/commandline/build/
@@ -63,6 +67,10 @@ repository.[^1]
 [Oracle VM VirtualBox]:
   https://www.virtualbox.org/
   'Oracle VM VirtualBox'
+
+[Watertight Privacy Architecture]:
+  https://www.whonix.org/#explain
+  ''
 
 [_VirtualBox User Manual_]:
   https://www.virtualbox.org/manual/
