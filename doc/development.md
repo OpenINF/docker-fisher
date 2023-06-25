@@ -41,6 +41,11 @@ We would be remiss to mention the air-tightness of a VM architecture without
 mentioning that having a [watertight privacy architecture][] would likewise
 be preferable. Whonix offers detailed VirtualBox import instructions.[^1]
 
+Please note usage of Whonix implies use of the Tor network, which it uses
+to provide the strongest protection of client IP addresses. However, this may
+be contentious in some academic and workplace settings. Usage of Whonix was,
+however, suggested to the original author of this document by his professor.
+
 ### Building the Docker Images
 
 Tasks of the `docker-image` kind build the Docker images in which other Docker
