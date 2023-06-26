@@ -52,16 +52,28 @@ however, suggested to the original author of this document by his professor.
 
 ### Building the Docker Images
 
-Tasks of the `docker-image` kind build the Docker images in which other Docker
-tasks run.
+<details open><summary>
+[EXCERPT]：<em><a title="Task Kinds &mdash; Firefox Source Documentation" <a
+  href="https://firefox-source-docs.mozilla.org/taskcluster/kinds.html#docker-image"
+                >Task Kinds &mdash; Firefox Source Documentation</a></em>&nbsp;&mdash;&nbsp;
+  <b>Firefox CI and Taskgraph Reference</b> Section identified, 
+  &ldquo;<code>docker-image</code>&rdquo;</b>
+</summary><br />
 
-The tasks to generate each docker image have predictable labels:
-`docker-image-<name>`.
+> Tasks of the `docker-image` kind build the Docker images in which other Docker
+> tasks run.
+>
+> The tasks to generate each docker image have predictable labels:
+> `docker-image-<name>`.
+>
+> Docker images are built from subdirectories of `taskcluster/docker`, using
+> `docker build`. There is currently no capability for one Docker image to depend
+> on another in-tree docker image, without uploading the latter to a Docker
+> repository.
+>
+> &mdash;&nbsp;https://firefox-source-docs.mozilla.org/taskcluster/kinds.html#docker-image
 
-Docker images are built from subdirectories of `taskcluster/docker`, using
-`docker build`. There is currently no capability for one Docker image to depend
-on another in-tree docker image, without uploading the latter to a Docker
-repository.[^2]
+</details><br />
 
 <br /><br />
   
@@ -72,10 +84,6 @@ repository.[^2]
 [^1]:
     https://www.whonix.org/wiki/VirtualBox 
     "Whonix ™ for Windows, macOS, Linux inside VirtualBox"
-
-[^2]:
-    https://firefox-source-docs.mozilla.org/taskcluster/kinds.html#docker-image
-    "Task Kinds &mdash; Firefox Source Documentation"
 
 [`docker build`]:
   https://docs.docker.com/engine/reference/commandline/build/
@@ -96,5 +104,7 @@ repository.[^2]
 [release-level-banner--unstable]:
   https://raw.githubusercontent.com/OpenINF/openinf.github.io/live/assets/img/svg/release-level-banner--unstable.svg?sanitize=true
   "Banner for Release Level: Unstable"
-  
+
+[Task Kinds  Firefox Source Documentation]
+
 <!-- END LINK DEFINITIONS -->
