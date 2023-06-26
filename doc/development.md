@@ -105,6 +105,4 @@ however, suggested to the original author of this document by his professor.
   https://raw.githubusercontent.com/OpenINF/openinf.github.io/live/assets/img/svg/release-level-banner--unstable.svg?sanitize=true
   "Banner for Release Level: Unstable"
 
-[Task Kinds  Firefox Source Documentation]
-
 <!-- END LINK DEFINITIONS -->
