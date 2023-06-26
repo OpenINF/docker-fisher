@@ -69,24 +69,29 @@ repository.[^2]
 
 <!-- BEGIN LINK DEFINITIONS -->
 
-[^1]: https://www.whonix.org/wiki/VirtualBox "Whonix ™ for Windows, macOS, Linux inside VirtualBox"
-[^2]: https://firefox-source-docs.mozilla.org/taskcluster/kinds.html#docker-image
+[^1]:
+    https://www.whonix.org/wiki/VirtualBox 
+    "Whonix ™ for Windows, macOS, Linux inside VirtualBox"
+
+[^2]:
+    https://firefox-source-docs.mozilla.org/taskcluster/kinds.html#docker-image
+    "Task Kinds &mdash; Firefox Source Documentation"
 
 [`docker build`]:
   https://docs.docker.com/engine/reference/commandline/build/
   "docker build | Docker Documentation"
 
 [Oracle VM VirtualBox]:
-  https://www.virtualbox.org/
-  'Oracle VM VirtualBox'
+  https://www.virtualbox.org
+  "Oracle VM VirtualBox"
 
 [Watertight Privacy Architecture]:
-  https://www.whonix.org/#explain
-  ''
+  https://www.whonix.org/wiki/About#Whonix_%E2%84%A2_Architecture
+  "Whonix ™ Architecture"
 
 [_VirtualBox User Manual_]:
   https://www.virtualbox.org/manual/
-  'Oracle® VM VirtualBox® User Manual'
+  "Oracle® VM VirtualBox® User Manual"
 
 [release-level-banner--unstable]:
   https://raw.githubusercontent.com/OpenINF/openinf.github.io/live/assets/img/svg/release-level-banner--unstable.svg?sanitize=true
