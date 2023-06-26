@@ -63,8 +63,8 @@ however, suggested to the original author of this document by his professor.
 [EXCERPT]：<em><a title="Task Kinds &mdash; Firefox Source Documentation" <a
   href="https://firefox-source-docs.mozilla.org/taskcluster/kinds.html"
                 >Task Kinds &mdash; Firefox Source Documentation</a></em>&nbsp;&mdash;&nbsp;
-  <b>Firefox CI and Taskgraph Reference</b> Section identified, 
-  &ldquo;<code>docker-image</code>&rdquo;</b>
+  <strong>Firefox CI and Taskgraph Reference</strong> Section identified, 
+  &ldquo;<code>docker-image</code>&rdquo;
 </summary><br />
 
 > Tasks of the `docker-image` kind build the Docker images in which other Docker
