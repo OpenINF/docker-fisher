@@ -54,7 +54,7 @@ however, suggested to the original author of this document by his professor.
 
 <details open><summary>
 [EXCERPT]：<em><a title="Task Kinds &mdash; Firefox Source Documentation" <a
-  href="https://firefox-source-docs.mozilla.org/taskcluster/kinds.html#docker-image"
+  href="https://firefox-source-docs.mozilla.org/taskcluster/kinds.html"
                 >Task Kinds &mdash; Firefox Source Documentation</a></em>&nbsp;&mdash;&nbsp;
   <b>Firefox CI and Taskgraph Reference</b> Section identified, 
   &ldquo;<code>docker-image</code>&rdquo;</b>
