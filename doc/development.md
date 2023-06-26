@@ -41,6 +41,8 @@ cloud-based virtualization offerings.<br /><br />
 
 </details><br />
 
+<!-- TODO(DerekNonGeneric):
+
 We would be remiss to mention the air-tightness of a VM architecture without
 mentioning that having a [watertight privacy architecture][] would likewise
 be preferable. Whonix offers detailed VirtualBox import instructions.[^1]
@@ -50,7 +52,11 @@ to provide the strongest protection of client IP addresses. However, this may
 be contentious in some academic and workplace settings. Usage of Whonix was,
 however, suggested to the original author of this document by his professor.
 
+-->
+
 ### Building the Docker Images
+
+<br />
 
 <details open><summary>
 [EXCERPT]：<em><a title="Task Kinds &mdash; Firefox Source Documentation" <a
