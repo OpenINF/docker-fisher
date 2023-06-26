@@ -1,3 +1,7 @@
+[![Orange banner indicating a preview software component][release-level-banner--unstable]](##)
+
+<br />
+
 ## Development
 
 Before cloning this repository, please ensure appropriate safety precautions are taken.
@@ -59,6 +63,9 @@ Docker images are built from subdirectories of `taskcluster/docker`, using
 on another in-tree docker image, without uploading the latter to a Docker
 repository.[^2]
 
+<br /><br />
+  
+[![Orange banner indicating a preview software component][release-level-banner--unstable]](##)
 
 <!-- BEGIN LINK DEFINITIONS -->
 
@@ -80,5 +87,9 @@ repository.[^2]
 [_VirtualBox User Manual_]:
   https://www.virtualbox.org/manual/
   'Oracle® VM VirtualBox® User Manual'
+
+[release-level-banner--unstable]:
+  https://raw.githubusercontent.com/OpenINF/openinf.github.io/live/assets/img/svg/release-level-banner--unstable.svg?sanitize=true
+  "Banner for Release Level: Unstable"
   
 <!-- END LINK DEFINITIONS -->
