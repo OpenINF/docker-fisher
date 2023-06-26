@@ -4,11 +4,12 @@
 
 ## Development
 
-Before cloning this repository, please ensure appropriate safety precautions are taken.
-This means being sure to use an air-tight and ephemeral development environment to
-essentially create a disposable sandbox. This may be accomplished using virtualization
-software such as [Oracle VM VirtualBox][] for local development or perhaps consider using
-cloud-based virtualization offerings.<br /><br />
+Before cloning this repository, please ensure appropriate safety precautions are
+taken. This means being sure to use an air-tight and ephemeral development
+environment to essentially create a disposable sandbox. This may be accomplished
+using virtualization software such as [Oracle VM VirtualBox][] for local
+development or perhaps consider using cloud-based virtualization
+offerings.<br /><br />
 
 <details open><summary>
 [EXCERPT]：<em><a title="Oracle® VM VirtualBox® User Manual" <a
@@ -73,16 +74,16 @@ however, suggested to the original author of this document by his professor.
 > `docker-image-<name>`.
 >
 > Docker images are built from subdirectories of `taskcluster/docker`, using
-> `docker build`. There is currently no capability for one Docker image to depend
-> on another in-tree docker image, without uploading the latter to a Docker
-> repository.
+> `docker build`. There is currently no capability for one Docker image to
+> depend on another in-tree docker image, without uploading the latter to a
+> Docker repository.
 >
 > &mdash;&nbsp;https://firefox-source-docs.mozilla.org/taskcluster/kinds.html#docker-image
 
 </details><br />
 
 <br /><br />
-  
+
 [![Orange banner indicating a preview software component][release-level-banner--unstable]](##)
 
 <!-- BEGIN LINK DEFINITIONS -->
