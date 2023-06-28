@@ -7,7 +7,7 @@
 
 <div align="left">
 
-## `docker-fisher`
+## `docker-fisher` [![Stars][stargazers-badge--shields]][stargazers-badge-url]
 
 > Dockerfiles built for plug-and-play [Fish&nbsp;shell][] components powered by the scorching&nbsp;fast [Fisher&nbsp;plugin&nbsp;manager][]
 
@@ -82,22 +82,6 @@ The [SPDX](https://spdx.dev) license identifier for this project is
 
 <div align="center">
 
-### Show Your Support
-
-<br />
-
-If you like the project (or want to bookmark it)&nbsp;&mdash;<br />
-&mdash;&nbsp;[give it a star ⭐️][]&nbsp;&mdash;&nbsp;it will greatly encourage
-us.
-
-<br /><br />
-
----
-
-<br />
-
-<div align="center">
-
 [Roadmap][] |
 [Development][] |
 [Issue Tracker][] |
@@ -136,7 +120,6 @@ us.
 [Development]: ./doc/development.md 'Development'
 [Fisher&nbsp;plugin&nbsp;manager]: https://github.com/jorgebucaran/fisher
 [fish&nbsp;shell]: https://fishshell.com
-[give it a star ⭐️]: https://github.com/OpenINF//openinf-docker-fisher/stargazers
 [Issue Tracker]: https://github.com/OpenINF/openinf-docker-fisher/issues 'Issue Tracker'
 [license-badge--shields]: https://img.shields.io/badge/license-MIT%2FApache--2.0-blue.svg?logo=github 'License: MIT/Apache 2.0'
 [license-badge-url]: #license 'License: MIT/Apache 2.0'
@@ -150,5 +133,11 @@ us.
 [prototyping-scheme-badge--shields]: https://img.shields.io/badge/scheme-evolutionary-blue.svg
 [release-level-banner--unstable]: https://raw.githubusercontent.com/OpenINF/openinf.github.io/live/assets/img/svg/release-level-banner--unstable.svg?sanitize=true 'Banner for Release Level: Unstable'
 [Roadmap]: https://github.com/OpenINF/openinf-docker-fisher/issues 'Roadmap'
+[stargazers-badge-url]:
+  https://github.com/OpenINF/.github/stargazers
+  'Stargazers'
+[stargazers-badge--shields]:
+  https://img.shields.io/github/stars/OpenINF/.github.svg?style=social&maxAge=3600&label=Star
+  'Stargazers'
 
 <!-- END LINK DEFINITIONS -->
