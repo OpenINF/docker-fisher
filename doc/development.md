@@ -7,9 +7,10 @@
 Before cloning this repository, please ensure appropriate safety precautions are
 taken. This means being sure to use an air-tight and ephemeral development
 environment to essentially create a disposable sandbox. This may be accomplished
-using virtualization software such as [Oracle VM VirtualBox][] for local
-development or perhaps consider using cloud-based virtualization
-offerings.<br /><br />
+using virtualization software. There are several excellent and free virtualization
+products (called hypervisors or virtual machine managers). One such as product is
+[Oracle VM VirtualBox][], which can be used for local development or perhaps
+consider using cloud-based virtualization offerings.<br /><br />
 
 <details open><summary>
 [EXCERPT]：<em><a title="Oracle® VM VirtualBox® User Manual" <a
