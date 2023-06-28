@@ -62,9 +62,10 @@ however, suggested to the original author of this document by his professor.
 <details open><summary>
 [EXCERPT]：<em><a title="Task Kinds &mdash; Firefox Source Documentation" <a
   href="https://firefox-source-docs.mozilla.org/taskcluster/kinds.html"
-                >Task Kinds &mdash; Firefox Source Documentation</a></em>&nbsp;&mdash;&nbsp;
-  <strong>Firefox CI and Taskgraph Reference</strong> Section identified, 
-  &ldquo;<code>docker-image</code>&rdquo;
+                >Task Kinds &mdash; Firefox Source
+                  Documentation</a></em>&nbsp;&mdash;&nbsp;
+  <strong>Section&nbsp;&ldquo;<code>docker-image</code>&rdquo;, Firefox CI and 
+    Taskgraph Reference</strong>
 </summary><br />
 
 > Tasks of the `docker-image` kind build the Docker images in which other Docker
@@ -74,7 +75,7 @@ however, suggested to the original author of this document by his professor.
 > `docker-image-<name>`.
 >
 > Docker images are built from subdirectories of `taskcluster/docker`, using
-> `docker build`. There is currently no capability for one Docker image to
+> [`docker build`][]. There is currently no capability for one Docker image to
 > depend on another in-tree docker image, without uploading the latter to a
 > Docker repository.
 >
