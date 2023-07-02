@@ -113,31 +113,31 @@ The [SPDX](https://spdx.dev) license identifier for this project is
 [@DerekNonGeneric]: https://github.com/DerekNonGeneric
 [@jorgebucaran]: https://github.com/jorgebucaran
 [Alpine Linux]: https://www.alpinelinux.org
-[Changelog]: https://github.com/OpenINF/openinf-docker-fisher/commits/HEAD 'Changelog'
+[Changelog]: https://github.com/OpenINF/docker-fisher/commits/HEAD 'Changelog'
 [conventional-commits-badge]: https://img.shields.io/badge/commit%20style-Conventional-%23fa6673?logoColor=white&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMCAzMCI+PHBhdGggc3R5bGU9ImZpbGw6ICNGRkYiIGQ9Ik0xNSwyQTEzLDEzLDAsMSwxLDIsMTUsMTMsMTMsMCwwLDEsMTUsMm0wLTJBMTUsMTUsMCwxLDAsMzAsMTUsMTUsMTUsMCwwLDAsMTUsMFoiLz48L3N2Zz4K 'Commit Style: Conventional Commits'
 [conventional-commits-url]: https://www.conventionalcommits.org 'Commit Style: Conventional Commits'
-[Credits]: https://github.com/OpenINF/openinf-docker-fisher/graphs/contributors 'Credits'
+[Credits]: https://github.com/OpenINF/docker-fisher/graphs/contributors 'Credits'
 [Development]: ./doc/development.md 'Development'
 [Fisher&nbsp;plugin&nbsp;manager]: https://github.com/jorgebucaran/fisher
 [fish&nbsp;shell]: https://fishshell.com
-[Issue Tracker]: https://github.com/OpenINF/openinf-docker-fisher/issues 'Issue Tracker'
+[Issue Tracker]: https://github.com/OpenINF/docker-fisher/issues 'Issue Tracker'
 [license-badge--shields]: https://img.shields.io/badge/license-MIT%2FApache--2.0-blue.svg?logo=github 'License: MIT/Apache 2.0'
 [license-badge-url]: #license 'License: MIT/Apache 2.0'
 [matrix-badge--shields]: https://img.shields.io/badge/matrix-join%20chat-%2346BC99?logo=matrix 'Chat on Matrix'
 [matrix-url]: https://matrix.to/#/#openinf-space:matrix.org 'You&apos;re invited to talk on Matrix'
-[open an issue]: https://github.com/OpenINF/openinf-docker-fish/issues
+[open an issue]: https://github.com/OpenINF/docker-fish/issues
 [prettier-badge]: https://img.shields.io/badge/code_style-Prettier-ff69b4.svg?logo=prettier 'Code Style: Prettier'
 [prettier-url]: https://prettier.io/playground 'Code Style: Prettier'
 [project-status-badge--shields]: https://img.shields.io/badge/status-under%20construction-yellow.svg
 [project-type-badge--shields]: https://img.shields.io/badge/type-prototype-blue.svg
 [prototyping-scheme-badge--shields]: https://img.shields.io/badge/scheme-evolutionary-blue.svg
 [release-level-banner--unstable]: https://raw.githubusercontent.com/OpenINF/openinf.github.io/live/assets/img/svg/release-level-banner--unstable.svg?sanitize=true 'Banner for Release Level: Unstable'
-[Roadmap]: https://github.com/OpenINF/openinf-docker-fisher/issues 'Roadmap'
+[Roadmap]: https://github.com/OpenINF/docker-fisher/issues 'Roadmap'
 [stargazers-badge-url]:
   https://github.com/OpenINF/.github/stargazers
   'Stargazers'
 [stargazers-badge--shields]:
-  https://img.shields.io/github/stars/OpenINF/.github.svg?style=social&maxAge=3600&label=Star
+  https://img.shields.io/github/stars/OpenINF/docker-fisher.svg?style=social&maxAge=3600&label=Star
   'Stargazers'
 
 <!-- END LINK DEFINITIONS -->
