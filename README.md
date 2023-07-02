@@ -125,7 +125,7 @@ The [SPDX](https://spdx.dev) license identifier for this project is
 [license-badge-url]: #license 'License: MIT/Apache 2.0'
 [matrix-badge--shields]: https://img.shields.io/badge/matrix-join%20chat-%2346BC99?logo=matrix 'Chat on Matrix'
 [matrix-url]: https://matrix.to/#/#openinf-space:matrix.org 'You&apos;re invited to talk on Matrix'
-[open an issue]: https://github.com/OpenINF/docker-fish/issues
+[open an issue]: https://github.com/OpenINF/docker-fisher/issues
 [prettier-badge]: https://img.shields.io/badge/code_style-Prettier-ff69b4.svg?logo=prettier 'Code Style: Prettier'
 [prettier-url]: https://prettier.io/playground 'Code Style: Prettier'
 [project-status-badge--shields]: https://img.shields.io/badge/status-under%20construction-yellow.svg
