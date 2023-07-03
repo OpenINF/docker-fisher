@@ -1,6 +1,6 @@
 <strong>📗 Atlas</strong>
 
-_Complex aspects of the codebase illustrated using charts, graphs, etc._
+_Various aspects of subject matter illustrated using charts, graphs, etc._
 
 ---
 
