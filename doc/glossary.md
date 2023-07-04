@@ -96,6 +96,40 @@ distribution.[^5]
 
 <br /><br />
 
+## H
+
+<br />
+
+<dl>
+
+<dt>Hypervisor</dt><br />
+<dd>
+
+Also known as a virtual machine monitor or VMM, is software that creates and
+runs virtual machines (VMs). A hypervisor allows one host computer to support
+multiple guest VMs by virtually sharing its resources, such as memory and
+processing.[^6]
+
+<dl>
+  <dt>Type 1 Hypervisor</dt><br />
+  <dd>
+    Also known as bare-metal or native hypervisor. It runs directly on the
+    host's hardware and controls the hardware and manages guest operating
+    systems.
+  </dd>
+  <dt>Type 2 Hypervisor</dt><br />
+  <dd>
+    Also known as hosted hypervisor. It runs as a software layer on an
+    operating system, like other computer programs.
+  </dd>
+</dl>
+
+</dd>
+
+</dl>
+
+<br /><br />
+
 ## O
 
 <br />
@@ -151,5 +185,6 @@ many system services from one interface.
 [^3]: https://docs.docker.com/build/guide/layers/
 [^4]: https://docs.docker.com/engine/reference/commandline/images/#description
 [^5]: https://docs.fedoraproject.org/en-US/quick-docs/fedora-and-red-hat-enterprise-linux/#relationship-between-fedora-and-red-hat-enterprise-linux
+[^6]: https://www.vmware.com/topics/glossary/content/hypervisor.html
 
 <!-- END LINK DEFINITIONS -->
