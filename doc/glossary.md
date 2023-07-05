@@ -114,13 +114,14 @@ processing.[^6]
   <dt>Type 1 Hypervisor</dt><br />
   <dd>
     Also known as bare-metal or native hypervisor. It runs directly on the
-    host's hardware and controls the hardware and manages guest operating
-    systems.
+    host's hardware and controls the hardware; manages and monitors guest
+    operating systems, which run on a separate level above the hypervisor.
   </dd>
   <dt>Type 2 Hypervisor</dt><br />
   <dd>
     Also known as hosted hypervisor. It runs as a software layer on an
-    operating system, like other computer programs.
+    operating system (the host OS), like other computer programs. Guest
+    operating systems run on a third level above the hardware (within host OS).
   </dd>
 </dl>
 
