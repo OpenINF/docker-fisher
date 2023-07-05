@@ -125,6 +125,17 @@ processing.[^6]
   </dd>
 </dl>
 
+<div align="center"><br /><br />
+<figure>
+  <img
+    alt="Type 1 and type 2 hypervisors"
+    src="./img/Type-1-and-type-2-hypervisors.png"
+  >
+  </img><br />
+  <figcaption>Type 1 and type 2 hypervisors</figcaption>
+</figure>
+</div><br /><br />
+
 </dd>
 
 </dl>
