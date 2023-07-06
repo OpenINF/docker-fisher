@@ -64,8 +64,7 @@ how a Dockerfile translates into a stack of layers in a container image.[^3]
   <img
     alt="From Dockerfile to layers"
     src="https://docs.docker.com/build/guide/images/layers.png"
-  >
-  </img>
+  /><br />
   <figcaption>From Dockerfile to layers</figcaption>
 </figure>
 </div><br /><br />
@@ -130,8 +129,7 @@ processing.[^6]
   <img
     alt="Type 1 and type 2 hypervisors"
     src="./img/Type-1-and-type-2-hypervisors.png"
-  >
-  </img><br />
+  /><br />
   <figcaption>Type 1 and type 2 hypervisors</figcaption>
 </figure>
 </div><br /><br />
