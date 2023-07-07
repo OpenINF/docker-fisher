@@ -304,8 +304,13 @@ hardware has enough resources.
 <br />
 
 <dl>
-<dt></dt><br />
+<dt>Syslog</dt><br />
 <dd>
+
+Syslog is a standard logging protocol that applications use to send event
+messages to a central location.[^7]
+
+[To be continued&hellip;]
 
 </dd>
 </dl>
@@ -417,5 +422,6 @@ many system services from one interface.
 [^4]: https://docs.docker.com/engine/reference/commandline/images/#description
 [^5]: https://docs.fedoraproject.org/en-US/quick-docs/fedora-and-red-hat-enterprise-linux/#relationship-between-fedora-and-red-hat-enterprise-linux
 [^6]: https://www.vmware.com/topics/glossary/content/hypervisor.html
+[^7]: https://download3.vmware.com/vcat/vmw-vcloud-architecture-toolkit-spv1-webworks/index.html#page/Cloud%2520Operations%2520and%2520Management%2FArchitecting%2520a%2520vRealize%2520Log%2520Insight%2520Solution%2FArchitecting%2520a%2520vRealize%2520Log%2520Insight%2520Solution.2.12.html%23
 
 <!-- END LINK DEFINITIONS -->
