@@ -2,7 +2,19 @@
 
 <br />
 
+<div align="center">
+<figure>
+  <img
+    alt="Depiction of the creation story"
+    src="./img/Jailbot_creation.png"
+  /><br />
+  <figcaption>Depiction of the creation story</figcaption>
+</figure>
+</div><br /><br />
+
 ## Development
+
+<br />
 
 Before cloning this repository, please ensure appropriate safety precautions are
 taken. This means being sure to use an air-tight and ephemeral development
