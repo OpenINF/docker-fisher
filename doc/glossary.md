@@ -17,7 +17,7 @@ the following happenstances.
 <dl>
 <dt>
   
-`/etc/mtab`
+#### `/etc/mtab`
 
 </dt><br />
 <dd>
@@ -43,7 +43,11 @@ system.
 <br />
 
 <dl>
-<dt>Community Enterprise Operating System (CentOS)</dt><br />
+<dt>
+
+#### Community Enterprise Operating System (CentOS)
+
+</dt><br />
 <dd>
 
 A Linux distribution derived from the sources of Red Hat Enterprise
@@ -59,7 +63,11 @@ Linux (RHEL).[^1]
 <br />
 
 <dl>
-<dt id="docker-image">Docker image</dt><br />
+<dt id="docker-image">
+
+#### Docker image
+
+</dt><br />
 <dd>
 
 An _image_ is a read-only template with instructions for creating a
@@ -70,7 +78,11 @@ application, as well as the configuration details needed to make your
 application run.[^2]
 
 </dd><br /><br />
-<dt id="docker-image-layer">Docker image layer</dt><br />
+<dt id="docker-image-layer">
+
+#### Docker image layer
+
+</dt><br />
 <dd>
 
 The order of Dockerfile instructions matter. A Docker build consists of
@@ -124,13 +136,21 @@ next `RUN` instruction.[^4.1]
 <br />
 
 <dl>
-<dt id="facility">facility</dt><br />
+<dt id="facility">
+  
+#### facility
+
+</dt><br />
 <dd>
 
 The type of <mark>event log</mark>ged by [syslog][].
 
 </dd><br />
-<dt>Fedora</dt><br />
+<dt>
+
+#### Fedora
+
+</dt><br />
 <dd>
 
 The upstream source of the commercial Red Hat Enterprise Linux
@@ -159,8 +179,11 @@ distribution.[^5]
 <br />
 
 <dl>
+<dt>
+  
+#### Hypervisor
 
-<dt>Hypervisor</dt><br />
+</dt><br />
 <dd>
 
 Also known as a virtual machine monitor or VMM, is software that creates and
@@ -282,7 +305,11 @@ processing.[^6]
 <br />
 
 <dl>
-<dt>Oracle VirtualBox</dt><br />
+<dt>
+  
+#### Oracle VM VirtualBox
+
+</dt><br />
 <dd>
 
 Runs multiple Linux distributions at the same time, assuming that
@@ -326,7 +353,7 @@ hardware has enough resources.
 <dl>
 <dt id="rsyslogd">
 
-`rsyslogd`
+#### `rsyslogd`
 
 </dt><br />
 <dd>
@@ -344,13 +371,21 @@ A faster [`syslog`][] program for Linux.
 
 <dl>
 
-<dt id="severity">severity</dt><br />
+<dt id="severity">
+  
+#### severity
+
+</dt><br />
 <dd>
 
 The importance of <mark>event log</mark>ged by [syslog][].
 
 </dd><br />
-<dt id="syslog">Syslog</dt><br />
+<dt id="syslog">
+  
+#### Syslog
+
+</dt><br />
 <dd>
 
 A de facto Unix and Linux protocol for storing event messages.
@@ -368,7 +403,7 @@ events in Linux.
 <anchor id="sysklogd"></anchor>
 <dt>
   
-`sysklogd`
+#### `sysklogd`
 
 </dt><br />
 <dd>
@@ -380,7 +415,7 @@ program to monitor the Linux kernel for events.
 </dd><br />
 <dt id="syslogd-ng">
   
-`syslogd-ng`
+#### `syslogd-ng`
 
 </dt><br />
 <dd>
@@ -412,7 +447,11 @@ and central log server.
 <br />
 
 <dl>
-<dt>﻿﻿Ubuntu</dt><br />
+<dt>﻿﻿
+  
+#### Ubuntu
+
+</dt><br />
 <dd>
 
 An open-source operating system based on the Debian Linux distribution.
@@ -466,7 +505,11 @@ An open-source operating system based on the Debian Linux distribution.
 <br />
 
 <dl>
-<dt>Yet another Setup Tool (YaST)</dt><br />
+<dt>
+  
+#### Yet another Setup Tool (YaST)
+
+</dt><br />
 <dd>
 
 An operating system setup and configuration tool unique to openSUSE.
