@@ -501,13 +501,13 @@ many system services from one interface.
 [^6]: https://www.vmware.com/topics/glossary/content/hypervisor.html
 [^7]: https://download3.vmware.com/vcat/vmw-vcloud-architecture-toolkit-spv1-webworks/index.html#page/Cloud%2520Operations%2520and%2520Management%2FArchitecting%2520a%2520vRealize%2520Log%2520Insight%2520Solution%2FArchitecting%2520a%2520vRealize%2520Log%2520Insight%2520Solution.2.12.html%23
 
-[`klogd`]: ./#klogd
-[`syslog`]: ./#syslog
-[`syslogd`]: ./#syslog
-[`sysklogd`]: ./#sysklogd
-[`syslogd-ng`]: ./#syslogd-ng
-[`rsyslogd`]: ./#rsyslogd
+[`klogd`]: ./glossary.md#klogd
+[`syslog`]: ./glossary.md#syslog
+[`syslogd`]: ./glossary.md#syslog
+[`sysklogd`]: ./glossary.md#sysklogd
+[`syslogd-ng`]: ./glossary.md#syslogd-ng
+[`rsyslogd`]: ./glossary.md#rsyslogd
 
-[Syslog]: ./#syslog
+[Syslog]: ./glossary.md#syslog
 
 <!-- END LINK DEFINITIONS -->
