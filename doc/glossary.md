@@ -127,7 +127,7 @@ next `RUN` instruction.[^4.1]
 <dt id="facility">facility</dt><br />
 <dd>
 
-The type of <mark>event log</mark>ged by [syslog](#syslog).
+The type of <mark>event log</mark>ged by [syslog][].
 
 </dd><br />
 <dt>Fedora</dt><br />
@@ -347,7 +347,7 @@ A faster [`syslog`][] program for Linux.
 <dt id="severity">severity</dt><br />
 <dd>
 
-The importance of <mark>event log</mark>ged by [syslog](#syslog).
+The importance of <mark>event log</mark>ged by [syslog][].
 
 </dd><br />
 <dt id="syslog">Syslog</dt><br />
@@ -363,9 +363,10 @@ applications all use the syslog protocol for managing system and application
 events in Linux.
 
 </dd><br />
-<link id="syslogd" />
-<link id="klogd" />
-<dt id="sysklogd">
+<anchor id="syslogd"></anchor>
+<anchor id="klogd"></anchor>
+<anchor id="sysklogd"></anchor>
+<dt>
   
 `sysklogd`
 
@@ -503,7 +504,7 @@ many system services from one interface.
 
 [`klogd`]: ./glossary.md#klogd
 [`syslog`]: ./glossary.md#syslog
-[`syslogd`]: ./glossary.md#syslog
+[`syslogd`]: ./glossary.md#syslogd
 [`sysklogd`]: ./glossary.md#sysklogd
 [`syslogd-ng`]: ./glossary.md#syslogd-ng
 [`rsyslogd`]: ./glossary.md#rsyslogd
