@@ -124,7 +124,12 @@ next `RUN` instruction.[^4.1]
 <br />
 
 <dl>
+<dt id="facility">facility</dt><br />
+<dd>
 
+The type of <mark>event log</mark>ged by [syslog](#syslog).
+
+</dd><br />
 <dt>Fedora</dt><br />
 <dd>
 
@@ -319,8 +324,14 @@ hardware has enough resources.
 <br />
 
 <dl>
-<dt></dt><br />
+<dt id="rsyslogd">
+
+`rsyslogd`
+
+</dt><br />
 <dd>
+
+A faster [`syslog`][] program for Linux.
 
 </dd>
 </dl>
@@ -332,13 +343,46 @@ hardware has enough resources.
 <br />
 
 <dl>
-<dt>Syslog</dt><br />
+
+<dt id="severity">severity</dt><br />
 <dd>
 
-Syslog is a standard logging protocol that applications use to send event
-messages to a central location.[^7]
+The importance of <mark>event log</mark>ged by [syslog](#syslog).
 
-[To be continued&hellip;]
+</dd><br />
+<dt id="syslog">Syslog</dt><br />
+<dd>
+
+A de facto Unix and Linux protocol for storing event messages.
+
+The syslog protocol has become the de facto standard for most Linux logging
+applications. It identifies events using a [facility](#facility) code, which
+defines the event type, and a [severity](#severity), which defines how important
+the event message is. The [`sysklogd`][], [`syslogd-ng`][], and [`rsyslogd`][]
+applications all use the syslog protocol for managing system and application
+events in Linux.
+
+</dd><br />
+<dt id="sysklogd">
+  
+`sysklogd`
+
+</dt><br />
+<dd>
+
+The original [`syslog`](#syslog) application.
+
+</dd><br />
+<dt id="syslogd-ng">
+  
+`syslogd-ng`
+
+</dt><br />
+<dd>
+
+An application that is used to manage log messages and implement centralized
+logging where the aim is to collect log messages of several devices on a single
+and central log server.
 
 </dd>
 </dl>
@@ -452,5 +496,10 @@ many system services from one interface.
 [^5]: https://docs.fedoraproject.org/en-US/quick-docs/fedora-and-red-hat-enterprise-linux/#relationship-between-fedora-and-red-hat-enterprise-linux
 [^6]: https://www.vmware.com/topics/glossary/content/hypervisor.html
 [^7]: https://download3.vmware.com/vcat/vmw-vcloud-architecture-toolkit-spv1-webworks/index.html#page/Cloud%2520Operations%2520and%2520Management%2FArchitecting%2520a%2520vRealize%2520Log%2520Insight%2520Solution%2FArchitecting%2520a%2520vRealize%2520Log%2520Insight%2520Solution.2.12.html%23
+
+[`syslog`]: #syslog
+[`sysklogd`]: #sysklogd
+[`syslogd-ng`]: #syslogd-ng
+[`rsyslogd`]: #rsyslogd
 
 <!-- END LINK DEFINITIONS -->
