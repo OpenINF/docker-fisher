@@ -351,6 +351,18 @@ hardware has enough resources.
 <br />
 
 <dl>
+<dt id="rsyslog">
+
+#### Rsyslog
+
+</dt>
+<dd>
+
+The project claims the <i>r</i> stands for <i>rocket fast</i>. Speed is the
+focus of the rsyslog project, and the rsyslog application had quickly become the
+standard logging package for many Linux distributions.
+
+</dd><br />
 <dt id="rsyslogd">
 
 #### `rsyslogd`
@@ -556,8 +568,10 @@ many system services from one interface.
 [`syslogd`]: ./glossary.md#syslogd
 [`sysklogd`]: ./glossary.md#sysklogd
 [`syslogd-ng`]: ./glossary.md#syslogd-ng
+[`rsyslog`]: ./glossary.md#rsyslog
 [`rsyslogd`]: ./glossary.md#rsyslogd
 
+[Rsyslog]: ./glossary.md#rsyslog
 [Syslog]: ./glossary.md#syslog
 
 <!-- END LINK DEFINITIONS -->
