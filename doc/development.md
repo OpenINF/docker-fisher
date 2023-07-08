@@ -2,6 +2,10 @@
 
 <br />
 
+## Development
+
+<br />
+
 <div align="center">
 <figure>
   <img
@@ -11,10 +15,6 @@
   <figcaption>Depiction of the creation story</figcaption>
 </figure>
 </div><br /><br />
-
-## Development
-
-<br />
 
 Before cloning this repository, please ensure appropriate safety precautions are
 taken. This means being sure to use an air-tight and ephemeral development
