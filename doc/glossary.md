@@ -363,6 +363,8 @@ applications all use the syslog protocol for managing system and application
 events in Linux.
 
 </dd><br />
+<link id="syslogd" />
+<link id="klogd" />
 <dt id="sysklogd">
   
 `sysklogd`
@@ -370,7 +372,9 @@ events in Linux.
 </dt><br />
 <dd>
 
-The original [`syslog`](#syslog) application.
+The original [Syslog][] application; includes two programs: the [`syslogd`][]
+program to monitor the system and applications for events and the [`klogd`][]
+program to monitor the Linux kernel for events.
 
 </dd><br />
 <dt id="syslogd-ng">
@@ -497,9 +501,13 @@ many system services from one interface.
 [^6]: https://www.vmware.com/topics/glossary/content/hypervisor.html
 [^7]: https://download3.vmware.com/vcat/vmw-vcloud-architecture-toolkit-spv1-webworks/index.html#page/Cloud%2520Operations%2520and%2520Management%2FArchitecting%2520a%2520vRealize%2520Log%2520Insight%2520Solution%2FArchitecting%2520a%2520vRealize%2520Log%2520Insight%2520Solution.2.12.html%23
 
-[`syslog`]: #syslog
-[`sysklogd`]: #sysklogd
-[`syslogd-ng`]: #syslogd-ng
-[`rsyslogd`]: #rsyslogd
+[`klogd`]: ./#klogd
+[`syslog`]: ./#syslog
+[`syslogd`]: ./#syslog
+[`sysklogd`]: ./#sysklogd
+[`syslogd-ng`]: ./#syslogd-ng
+[`rsyslogd`]: ./#rsyslogd
+
+[Syslog]: ./#syslog
 
 <!-- END LINK DEFINITIONS -->
