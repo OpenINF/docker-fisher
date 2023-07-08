@@ -422,7 +422,13 @@ program to monitor the Linux kernel for events.
 
 An application that is used to manage log messages and implement centralized
 logging where the aim is to collect log messages of several devices on a single
-and central log server.
+and central log server. This program added advanced features, such as message
+filtering and the ability to send messages to remote hosts.
+
+`syslog-ng` is available on a number of different Linux and Unix distributions.
+Some install it as the system default, or provide it as a package that replaces
+the previous standard syslogd. Several Linux distributions that used `syslog-ng`
+have replaced it with [`rsyslog`][].[^7]
 
 </dd>
 </dl>
@@ -543,7 +549,7 @@ many system services from one interface.
 [^4.1]: https://app.deepsource.com/directory/analyzers/docker/issues/DOK-W1001
 [^5]: https://docs.fedoraproject.org/en-US/quick-docs/fedora-and-red-hat-enterprise-linux/#relationship-between-fedora-and-red-hat-enterprise-linux
 [^6]: https://www.vmware.com/topics/glossary/content/hypervisor.html
-[^7]: https://download3.vmware.com/vcat/vmw-vcloud-architecture-toolkit-spv1-webworks/index.html#page/Cloud%2520Operations%2520and%2520Management%2FArchitecting%2520a%2520vRealize%2520Log%2520Insight%2520Solution%2FArchitecting%2520a%2520vRealize%2520Log%2520Insight%2520Solution.2.12.html%23
+[^7]: https://en.wikipedia.org/wiki/Syslog-ng#Distributions
 
 [`klogd`]: ./glossary.md#klogd
 [`syslog`]: ./glossary.md#syslog
