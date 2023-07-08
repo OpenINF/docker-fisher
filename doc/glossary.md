@@ -73,6 +73,14 @@ Docker images have _intermediate layers_ that increase reusability,
 decrease disk usage, and speed up docker build by allowing each step to
 be cached. These intermediate layers are not shown by default.[^4]
 
+Each `RUN` instruction will create a new layer in the resulting image.
+Therefore squashing consecutive `RUN` instructions will reduce the layer
+count (see https://docs.docker.com/develop/dev-best-practices/). In
+addition to that, each `RUN` instruction runs in its own shell, which
+can be the source of confusion when part of a `RUN` instruction changes
+something about the environment, because these changes may vanish in the
+next `RUN` instruction.[^4.1]
+
 </dd>
 </dl>
 
@@ -420,6 +428,7 @@ many system services from one interface.
 [^2]: https://docs.docker.com/get-started/overview/#images
 [^3]: https://docs.docker.com/build/guide/layers/
 [^4]: https://docs.docker.com/engine/reference/commandline/images/#description
+[^4.1]: https://app.deepsource.com/directory/analyzers/docker/issues/DOK-W1001
 [^5]: https://docs.fedoraproject.org/en-US/quick-docs/fedora-and-red-hat-enterprise-linux/#relationship-between-fedora-and-red-hat-enterprise-linux
 [^6]: https://www.vmware.com/topics/glossary/content/hypervisor.html
 [^7]: https://download3.vmware.com/vcat/vmw-vcloud-architecture-toolkit-spv1-webworks/index.html#page/Cloud%2520Operations%2520and%2520Management%2FArchitecting%2520a%2520vRealize%2520Log%2520Insight%2520Solution%2FArchitecting%2520a%2520vRealize%2520Log%2520Insight%2520Solution.2.12.html%23
