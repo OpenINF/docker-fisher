@@ -8,7 +8,27 @@ the following happenstances.
 - referring to the same thing using different names
 - referring to different things using the same name (even worse)
 
+<br /><br />
+
 ---
+
+<br />
+
+<dl>
+<dt>
+  
+`/etc/mtab`
+
+</dt><br />
+<dd>
+
+A dynamic file that identifies the currently mounted partitions on the Linux
+system.
+
+</dd>
+</dl>
+
+<br /><br />
 
 ## A
 
