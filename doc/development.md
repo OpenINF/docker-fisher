@@ -2,7 +2,9 @@
 
 <br />
 
-## Development
+**📘 Development**
+
+_Explains how to fork, set up a development environment, and iterate to get started contributing_
 
 <br />
 
