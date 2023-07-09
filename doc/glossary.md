@@ -233,10 +233,9 @@ processing.[^6]
 
 <div align="center"><br /><br />
 <figure>
-  <img
-    alt="Type 1 and type 2 hypervisors"
-    src="./img/Type-1-and-type-2-hypervisors.png"
-  /><br />
+  <a href="https://www.researchgate.net/figure/Type-1-and-type-2-hypervisors_fig2_335866538">
+  <img src="./img/Type-1-and-type-2-hypervisors.png" alt="Type 1 and type 2 hypervisors"/>
+  </a><br />
   <figcaption>Type 1 and type 2 hypervisors</figcaption>
 </figure>
 </div><br /><br />
