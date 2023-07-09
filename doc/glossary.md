@@ -486,6 +486,29 @@ Some install it as the system default, or provide it as a package that replaces
 the previous standard syslogd. Several Linux distributions that used `syslog-ng`
 have replaced it with [`rsyslog`][].[^7]
 
+</dd><br />
+<dt id="systemd">
+
+#### Systemd
+
+</dt>
+<dd>
+
+TBD
+
+</dd><br />
+<dt id="systemd-journald">
+
+#### `systemd-journald`
+
+</dt>
+<dd>
+
+This is part of the [Systemd][] application for system startup and initialization.
+Many Linux distributions are now using this for logging. It does not follow the
+[syslog][] protocol, but uses a completely different way of reporting and storing
+system and application events.
+
 </dd>
 </dl>
 
@@ -619,8 +642,9 @@ many system services from one interface.
 [`rsyslogd`]: ./glossary.md#rsyslogd
 
 [Rsyslog]: ./glossary.md#rsyslog
+[rsyslogd]: ./glossary.md#rsyslogd
 [Syslog]: ./glossary.md#syslog
 [syslogd]: ./glossary.md#syslogd
-[rsyslog]: ./glossary.md#rsyslogd
+[Systemd]: ./glossary.md#systemd
 
 <!-- END LINK DEFINITIONS -->
