@@ -358,9 +358,23 @@ hardware has enough resources.
 </dt>
 <dd>
 
-The project claims the <i>r</i> stands for <i>rocket fast</i>. Speed is the
+The project claims the <em>r</em> stands for <em>rocket fast</em>. Speed is the
 focus of the rsyslog project, and the rsyslog application had quickly become the
 standard logging package for many Linux distributions.
+
+It offers high-performance, great security features and a modular design. While
+it started as a regular [syslogd][], [rsyslog][] has evolved into a kind of swiss
+army knife of logging, being able to:
+
+- accept inputs from a wide variety of sources,
+- transform them,
+- output the results to diverse destinations.
+
+Rsyslog has a strong enterprise focus but also scales down to small systems. It
+supports, among others, MySQL, PostgreSQL, failover log destinations,
+ElasticSearch, syslog/tcp transport, fine grain output format control, high
+precision timestamps, queued operations and the ability to filter on any message
+part.[^8]
 
 </dd><br />
 <dt id="rsyslogd">
@@ -561,6 +575,7 @@ many system services from one interface.
 [^5]: https://docs.fedoraproject.org/en-US/quick-docs/fedora-and-red-hat-enterprise-linux/#relationship-between-fedora-and-red-hat-enterprise-linux
 [^6]: https://www.vmware.com/topics/glossary/content/hypervisor.html
 [^7]: https://en.wikipedia.org/wiki/Syslog-ng#Distributions
+[^8]: https://www.rsyslog.com/doc/master/index.html
 
 [`klogd`]: ./glossary.md#klogd
 [`syslog`]: ./glossary.md#syslog
@@ -572,5 +587,7 @@ many system services from one interface.
 
 [Rsyslog]: ./glossary.md#rsyslog
 [Syslog]: ./glossary.md#syslog
+[syslogd]: ./glossary.md#syslogd
+[rsyslog]: ./glossary.md#rsyslogd
 
 <!-- END LINK DEFINITIONS -->
