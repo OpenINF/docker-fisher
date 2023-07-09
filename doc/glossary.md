@@ -494,7 +494,16 @@ have replaced it with [`rsyslog`][].[^7]
 </dt>
 <dd>
 
-TBD
+A system and session manager for Linux, compatible with System V and
+LSB init scripts.[^10] The main features are:
+
+- provides aggressive parallelization capabilities
+- uses socket and D-Bus activation for starting services
+- offers on-demand starting of daemons
+- keeps track of processes using Linux cgroups
+- supports snapshotting and restoring of the system state
+- maintains mount and automount points
+- implements an elaborate transactional dependency-based service control logic
 
 </dd><br />
 <dt id="systemd-journald">
@@ -631,6 +640,7 @@ many system services from one interface.
 [^7]: https://en.wikipedia.org/wiki/Syslog-ng#Distributions
 [^8]: https://www.rsyslog.com/doc/master/index.html
 [^9]: https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/assembly_configuring-a-remote-logging-solution_configuring-basic-system-settings#the-rsyslog-logging-service_assembly_configuring-a-remote-logging-solution
+[^10]: https://documentation.suse.com/sles/12-SP5/html/SLES-all/cha-systemd.html#sec-boot-systemd-whatissystemd
 
 [`/etc/rsyslog.conf`]: ./glossary.md#etc-rsyslog-conf
 [`klogd`]: ./glossary.md#klogd
