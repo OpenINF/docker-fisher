@@ -25,6 +25,31 @@ the following happenstances.
 A dynamic file that identifies the currently mounted partitions on the Linux
 system.
 
+</dd><br />
+<dt id="etc-rsyslog-conf">
+
+#### `/etc/rsyslog.conf`
+
+</dt>
+<dd>
+
+The main configuration file for [`rsyslog`][], you can specify the rules
+according to which [`rsyslogd`][] handles the messages. Generally, you can
+classify messages by their source and topic (facility) and urgency (priority),
+and then assign an action that should be performed when a message fits these
+criteria.[^9]
+
+In `/etc/rsyslog.conf`, you can also see a list of log files maintained by
+`rsyslogd`. Most log files are located in the `/var/log/` directory. Some
+applications, such as `httpd` and `samba`, store their log files in a
+subdirectory within `/var/log/`.[^9]
+
+**Additional resources**
+
+- The `rsyslogd(8)` and `rsyslog.conf(5)` man pages.
+- Documentation installed with the `rsyslog-doc` package in the
+  `/usr/share/doc/rsyslog/html/index.html` file.[^9]
+
 </dd>
 </dl>
 
@@ -386,6 +411,13 @@ part.[^8]
 
 A faster [`syslog`][] program for Linux.
 
+The [`rsyslogd`][] daemon also provides extended filtering, encryption protected
+relaying of messages, input and output modules, and support for transportation
+using the TCP and UDP protocols.[^9]
+
+See entry for [`/etc/rsyslog.conf`][], which is the main configuration file for
+[`rsyslog`][].
+
 </dd>
 </dl>
 
@@ -576,7 +608,9 @@ many system services from one interface.
 [^6]: https://www.vmware.com/topics/glossary/content/hypervisor.html
 [^7]: https://en.wikipedia.org/wiki/Syslog-ng#Distributions
 [^8]: https://www.rsyslog.com/doc/master/index.html
+[^9]: https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/assembly_configuring-a-remote-logging-solution_configuring-basic-system-settings#the-rsyslog-logging-service_assembly_configuring-a-remote-logging-solution
 
+[`/etc/rsyslog.conf`]: ./glossary.md#etc-rsyslog-conf
 [`klogd`]: ./glossary.md#klogd
 [`syslog`]: ./glossary.md#syslog
 [`syslogd`]: ./glossary.md#syslogd
