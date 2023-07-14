@@ -15,6 +15,17 @@ the following happenstances.
 <br />
 
 <dl>
+<dt id="etc-fstab">
+  
+#### `/etc/fstab`
+
+</dt><br />
+<dd>
+
+A configuration file that contains entries identifying the storage device
+partitions Linux should mount at boot time.
+
+</dd><br />
 <dt>
   
 #### `/etc/mtab`
