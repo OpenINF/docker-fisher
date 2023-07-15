@@ -819,8 +819,8 @@ many system services from one interface.
 [syslogd]: ./glossary.md#syslogd
 [Systemd]: ./glossary.md#systemd
 
-[`su`]: <ref target="chap15">su</ref>
-[`sudo`]: <ref target="chap15">sudo</ref>
-[`sudoedit`]: <ref target="chap15">sudoedit</ref>
+[`su`]: ./glossary.md#su
+[`sudo`]: ./glossary.md#sudo
+[`sudoedit`]: ./glossary.md#sudoedit
 
 <!-- END LINK DEFINITIONS -->
