@@ -78,6 +78,34 @@ Table 2. Syslog Message Severities[^1]
 
 </figcaption>
 </figure>
+
+<br /><br />
+
+<figure>
+
+| Port Number | Protocol | Description                                                                                                                                               |
+| ----------- | -------- |:--------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 20 and 21   | FTP      | File Transfer Protocol is used for sending files to and from a server.                                                                                    |
+| 22          | SSH      | The Secure Shell protocol is used for sending encrypted data to a server.                                                                                 |
+| 23          | Telnet   | Telnet is an unsecure protocol for providing an interactive interface to the server shell.                                                                |
+| 25          | SMTP     | The Simple Mail Transport Protocol (SMTP) is used for sending email between servers.                                                                      |
+| 53          | DNS      | The Domain Name System (DNS) provides a name service to match IP addresses to computer names on a network.                                                |
+| 67          | DHCP     | The Dynamic Host Configuration Protocol (DHCP) enables client computers to obtain a valid IP address on a network automatically.                          |
+| 80          | HTTP     | The Hypertext Transfer Protocol (HTTP) allows clients to request web pages from servers.                                                                  |
+| 109 and 110 | POP      | The Post Office Protocol (POP) allows clients to communicate with a mail server to read messages in their mailbox.                                        |
+| 137–139     | SMB      | Microsoft servers use the Server Message Block (SMB) protocol for file and print sharing with clients.                                                    |
+| 143,220     | IMAP     | The Internet Message Access Protocol (IMAP) provides advanced mailbox services for clients.                                                               |
+| 389         | LDAP     | The Lightweight Directory Access Protocol (LDAP) provides access to directory services for authenticating users, workstations, and other network devices. |
+| 443         | HTTPS    | The secure version of HTTP provides encrypted communication with web servers.                                                                             |
+| 2049        | NFS      | The Network File System (NFS) provides file sharing between Unix and Linux systems.                                                                       |
+
+<figcaption>
+
+Table 2.1: Common Internet well-known port numbers
+
+</figcaption>
+</figure>
+
 </div><br /><br />
 
 ---
