@@ -15,20 +15,21 @@ the following happenstances.
 <br />
 
 <dl>
+
 <dt id="etc-dir">
-  
-#### `/etc/`: Host-specific System Configuration[^3.7]
+
+#### `/etc/`
 
 </dt><br />
-<dd>
+<dd><br />
 
-<br />
+<details><summary>Host-specific System Configuration</summary><br />
 
 _Purpose_
 
-The `/etc/` hierarchy contains configuration files. A "configuration file" is a
+The `/etc/` hierarchy contains configuration files. A "configuration file" is a 
 local file used to control the operation of a program; it must be static and
-cannot be an executable binary. 
+cannot be an executable binary.[^3.7]
 
 <br />
 
@@ -36,17 +37,14 @@ cannot be an executable binary.
 <sup>To be clear, `/etc/` may contain executable scripts, such as the command
 scripts commonly called by `init` to start and shut down the system and start
 daemon processes. "Executable binary" in this context refers to direct machine
-code or pseudocode not in a human-readable format, such as native ELF
+code or pseudocode not in a human-readable format, such as native ELF  
 executables.</sup>
-
-It is recommended that files be stored in subdirectories of `/etc/` rather than
-directly in `/etc/`.
 
 <br />
 
 _Requirements_
 
-No binaries may be located under `/etc/`.
+No binaries may be located under `/etc/`.[^3.7]
 
 The following directories, or symbolic links to directories are required in
 `/etc/`:
@@ -54,7 +52,7 @@ The following directories, or symbolic links to directories are required in
 <br />
 
 | Directory | Description               |
-| --------- | ------------------------- |
+| --------- | ------------------------- |  
 | `opt`     | Configuration for `/opt/` |
 
 <br />
@@ -74,7 +72,7 @@ if the corresponding subsystem is installed:
 
 <br />
 
-<sup>Systems that use the shadow password suite will have additional
+<sup>Systems that use the shadow password suite will have additional 
 configuration files in `/etc/` (`/etc/shadow/` and others) and programs in
 `/usr/sbin/` (**`useradd`**, **`usermod`**, and others).</sup>
 
@@ -98,7 +96,7 @@ corresponding subsystem is installed:
 | `hosts.deny`  | Host access file for TCP wrappers (optional)                        |
 | `hosts.equiv` | List of trusted hosts for rlogin, rsh, rcp (optional)               |
 | `hosts.lpd`   | List of trusted hosts for lpd (optional)                            |
-| `inetd.conf`  | Configuration file for inetd (optional)                             |
+| `inetd.conf`  | Configuration file for inetd (optional)                             |  
 | `inittab`     | Configuration file for init (optional)                              |
 | `issue`       | Pre-login message and identification file (optional)                |
 | `ld.so.conf`  | List of extra directories to search for shared libraries (optional) |
@@ -113,20 +111,21 @@ corresponding subsystem is installed:
 | `resolv.conf` | Resolver configuration file (optional)                              |
 | `rpc`         | RPC protocol listing (optional)                                     |
 | `securetty`   | TTY access control for root login (optional)                        |
-| `services`    | Port names for network services (optional)                          |
+| `services`    | Port names for network services (optional)                          | 
 | `shells`      | Pathnames of valid login shells (optional)                          |
 | `syslog.conf` | Configuration file for syslogd (optional)                           |
 
 <br />
 
 [`mtab`][] does not fit the static nature of `/etc/`: it is excepted for historical
-reasons.
+reasons.[^3.7]
 
 <br />
 
-<sup>On some Linux systems, [`/etc/mtab`][] may be a symbolic link to
+<sup>On some Linux systems, [`/etc/mtab`][] may be a symbolic link to 
 `/proc/mounts`, in which case this exception is not required.</sup>
 
+</details>
 </dd><br />
 <dt id="etc-fstab">
   
