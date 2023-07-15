@@ -211,6 +211,30 @@ Linux (RHEL).[^1]
 <br />
 
 <dl>
+<dt id="doas">
+
+#### `doas`
+
+</dt>
+<div align="right"><note place="source"><ref target="chap15">⓯📑</ref></note></div>
+<dd>
+
+A command-line command that allows a way to perform commands as another user. It
+aims to be a a simplified and lightweight replacement for [`sudo`][]. [`doas`][]
+is easy to configure and use and suits most use cases.[^15.4] The [`doas`][]
+tool was originally developed for OpenBSD as a simpler and safer [`sudo`][]
+replacement and was released with OpenBSD 5.8 in October 2015 replacing
+[`sudo`][].[^15.1][^15.2]
+
+For a smooth transition from [`sudo`][] to [`doas`][] and to stay downward
+compatible, one may add the following to one's own shell environment.[^15.3]
+
+```fish
+alias sudo='doas'
+alias sudoedit='doas rnano'
+```
+
+</dd><br/>
 <dt id="docker-image">
 
 #### Docker image
@@ -800,6 +824,12 @@ many system services from one interface.
 [^8]: https://www.rsyslog.com/doc/master/index.html
 [^9]: https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/assembly_configuring-a-remote-logging-solution_configuring-basic-system-settings#the-rsyslog-logging-service_assembly_configuring-a-remote-logging-solution
 [^10]: https://documentation.suse.com/sles/12-SP5/html/SLES-all/cha-systemd.html#sec-boot-systemd-whatissystemd
+[^15.1]: https://en.wikipedia.org/wiki/Doas
+[^15.2]: https://wiki.gentoo.org/wiki/Doas
+[^15.3]: https://wiki.archlinux.org/title/Doas
+[^15.4]: https://why-openbsd.rocks/fact/doas/
+
+[`doas`]: ./glossary.md#doas
 
 [`fstab`]: ./glossary.md#etc-fstab
 [`mtab`]: ./glossary.md#etc-mtab
