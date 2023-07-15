@@ -15,6 +15,119 @@ the following happenstances.
 <br />
 
 <dl>
+<dt id="etc-dir">
+  
+#### `/etc/`: Host-specific System Configuration[^3.7]
+
+</dt><br />
+<dd>
+
+<br />
+
+_Purpose_
+
+The `/etc/` hierarchy contains configuration files. A "configuration file" is a
+local file used to control the operation of a program; it must be static and
+cannot be an executable binary. 
+
+<br />
+
+
+<sup>To be clear, `/etc/` may contain executable scripts, such as the command
+scripts commonly called by `init` to start and shut down the system and start
+daemon processes. "Executable binary" in this context refers to direct machine
+code or pseudocode not in a human-readable format, such as native ELF
+executables.</sup>
+
+It is recommended that files be stored in subdirectories of `/etc/` rather than
+directly in `/etc/`.
+
+<br />
+
+_Requirements_
+
+No binaries may be located under `/etc/`.
+
+The following directories, or symbolic links to directories are required in
+`/etc/`:
+
+<br />
+
+| Directory | Description               |
+| --------- | ------------------------- |
+| `opt`     | Configuration for `/opt/` |
+
+<br />
+
+_Specific Options_
+
+The following directories, or symbolic links to directories must be in `/etc/`,
+if the corresponding subsystem is installed:
+
+<br />
+
+| Directory   | Description                                      |
+| :---------- | :----------------------------------------------- |
+| `X11`       | Configuration for the X Window system (optional) |
+| `sgml`      | Configuration for SGML (optional)                |
+| `xml`       | Configuration for XML (optional)                 |
+
+<br />
+
+<sup>Systems that use the shadow password suite will have additional
+configuration files in `/etc/` (`/etc/shadow/` and others) and programs in
+`/usr/sbin/` (**`useradd`**, **`usermod`**, and others).</sup>
+
+<br />
+
+The following files, or symbolic links to files, must be in `/etc/` if the
+corresponding subsystem is installed:
+
+| File          | Description                                                         |
+| :------------ | :------------------------------------------------------------------ |
+| `csh.login`   | Systemwide initialization file for C shell logins (optional)        |
+| `exports`     | NFS filesystem access control list (optional)                       |
+| [`fstab`][]   | Static information about filesystems (optional)                     |
+| `ftpusers`    | FTP daemon user access control list (optional)                      |
+| `gateways`    | File which lists gateways for routed (optional)                     |
+| `gettydefs`   | Speed and terminal settings used by getty (optional)                |
+| `group`       | User group file (optional)                                          |
+| `host.conf`   | Resolver configuration file (optional)                              |
+| `hosts`       | Static information about host names (optional)                      |
+| `hosts.allow` | Host access file for TCP wrappers (optional)                        |
+| `hosts.deny`  | Host access file for TCP wrappers (optional)                        |
+| `hosts.equiv` | List of trusted hosts for rlogin, rsh, rcp (optional)               |
+| `hosts.lpd`   | List of trusted hosts for lpd (optional)                            |
+| `inetd.conf`  | Configuration file for inetd (optional)                             |
+| `inittab`     | Configuration file for init (optional)                              |
+| `issue`       | Pre-login message and identification file (optional)                |
+| `ld.so.conf`  | List of extra directories to search for shared libraries (optional) |
+| `motd`        | Post-login message of the day file (optional)                       |
+| [`mtab`][]    | Dynamic information about filesystems (optional)                    |
+| `mtools.conf` | Configuration file for mtools (optional)                            |
+| `networks`    | Static information about network names (optional)                   |
+| `passwd`      | The password file (optional)                                        |
+| `printcap`    | The lpd printer capability database (optional)                      |
+| `profile`     | Systemwide initialization file for sh shell logins (optional)       |
+| `protocols`   | IP protocol listing (optional)                                      |
+| `resolv.conf` | Resolver configuration file (optional)                              |
+| `rpc`         | RPC protocol listing (optional)                                     |
+| `securetty`   | TTY access control for root login (optional)                        |
+| `services`    | Port names for network services (optional)                          |
+| `shells`      | Pathnames of valid login shells (optional)                          |
+| `syslog.conf` | Configuration file for syslogd (optional)                           |
+
+<br />
+
+[`mtab`][] does not fit the static nature of `/etc/`: it is excepted for historical
+reasons.
+
+<br />
+
+<sup>On some Linux systems, [`/etc/mtab`][] may be a symbolic link to
+`/proc/mounts`, in which case this exception is not required.</sup>
+
+</dd><br />
 <dt id="etc-fstab">
   
 #### `/etc/fstab`
@@ -26,7 +139,7 @@ A configuration file that contains entries identifying the storage device
 partitions Linux should mount at boot time.
 
 </dd><br />
-<dt>
+<dt id="etc-mtab">
   
 #### `/etc/mtab`
 
@@ -644,6 +757,7 @@ many system services from one interface.
 [^1]: https://www.redhat.com/en/topics/linux/what-is-centos
 [^2]: https://docs.docker.com/get-started/overview/#images
 [^3]: https://docs.docker.com/build/guide/layers/
+[^3.7]: https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s07.html
 [^4]: https://docs.docker.com/engine/reference/commandline/images/#description
 [^4.1]: https://app.deepsource.com/directory/analyzers/docker/issues/DOK-W1001
 [^5]: https://docs.fedoraproject.org/en-US/quick-docs/fedora-and-red-hat-enterprise-linux/#relationship-between-fedora-and-red-hat-enterprise-linux
@@ -653,6 +767,9 @@ many system services from one interface.
 [^9]: https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/assembly_configuring-a-remote-logging-solution_configuring-basic-system-settings#the-rsyslog-logging-service_assembly_configuring-a-remote-logging-solution
 [^10]: https://documentation.suse.com/sles/12-SP5/html/SLES-all/cha-systemd.html#sec-boot-systemd-whatissystemd
 
+[`fstab`]: ./glossary.md#etc-fstab
+[`mtab`]: ./glossary.md#etc-mtab
+[`/etc/mtab`]: ./glossary.md#etc-mtab
 [`/etc/rsyslog.conf`]: ./glossary.md#etc-rsyslog-conf
 [`klogd`]: ./glossary.md#klogd
 [`syslog`]: ./glossary.md#syslog
