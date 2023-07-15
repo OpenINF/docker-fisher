@@ -561,6 +561,41 @@ See entry for [`/etc/rsyslog.conf`][], which is the main configuration file for
 The importance of <mark>event log</mark>ged by [syslog][].
 
 </dd><br />
+<dt id="su">
+
+#### `su`
+
+</dt><br/>
+<div align="right"><note place="source"><ref target="chap15">⓯📑</ref></note></div>
+<dd>
+
+A command-line command that allows users to run applications as another user
+account on the system.
+
+</dd><br/>
+<dt id="sudo">
+
+#### `sudo`
+
+</dt><br/>
+<div align="right"><note place="source"><ref target="chap15">⓯📑</ref></note></div>
+<dd>
+
+A command-line command that allows users to run commands with root privileges.
+
+</dd><br/>
+<dt id="sudoedit">
+
+#### `sudoedit`
+
+</dt><br/>
+<div align="right"><note place="source"><ref target="chap15">⓯📑</ref></note></div>
+<dd>
+
+A command-line command that opens the specified file in an editor using the root
+account privileges.
+
+</dd><br />
 <dt id="syslog">
   
 #### Syslog
@@ -783,5 +818,9 @@ many system services from one interface.
 [Syslog]: ./glossary.md#syslog
 [syslogd]: ./glossary.md#syslogd
 [Systemd]: ./glossary.md#systemd
+
+[`su`]: <ref target="chap15">su</ref>
+[`sudo`]: <ref target="chap15">sudo</ref>
+[`sudoedit`]: <ref target="chap15">sudoedit</ref>
 
 <!-- END LINK DEFINITIONS -->
