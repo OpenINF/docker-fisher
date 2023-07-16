@@ -892,5 +892,15 @@ many system services from one interface.
 [⓲📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=19#top "uCertify ch. 18"
 [⓳📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=20#top "uCertify ch. 19"
 [⓴📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=21#top "uCertify ch. 20"
+[⓴❶📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=22#top "uCertify ch. 21"
+[⓴❷📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=23#top "uCertify ch. 22"
+[⓴❸📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=24#top "uCertify ch. 23"
+[⓴❹📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=25#top "uCertify ch. 24"
+[⓴❺📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=26#top "uCertify ch. 25"
+[⓴❻📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=27#top "uCertify ch. 26"
+[⓴❼📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=28#top "uCertify ch. 27"
+[⓴❽📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=29#top "uCertify ch. 28"
+[⓴❾📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=30#top "uCertify ch. 29"
+[⓴❿📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=31#top "uCertify ch. 30"
 
 <!-- END LINK DEFINITIONS -->
