@@ -134,7 +134,7 @@ The [SPDX](https://spdx.dev) license identifier for this project is
 [release-level-banner--unstable]: https://raw.githubusercontent.com/OpenINF/openinf.github.io/live/assets/img/svg/release-level-banner--unstable.svg?sanitize=true 'Banner for Release Level: Unstable'
 [Roadmap]: https://github.com/OpenINF/docker-fisher/issues 'Roadmap'
 [stargazers-badge-url]:
-  https://github.com/OpenINF/.github/stargazers
+  https://github.com/OpenINF/docker-fisher/stargazers
   'Stargazers'
 [stargazers-badge--shields]:
   https://img.shields.io/github/stars/OpenINF/docker-fisher.svg?style=social&maxAge=3600&label=Star
