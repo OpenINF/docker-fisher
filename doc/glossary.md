@@ -869,8 +869,6 @@ many system services from one interface.
 [`sudo`]: ./glossary.md#sudo
 [`sudoedit`]: ./glossary.md#sudoedit
 
-You're absolutely right, my apologies. Here are the negative circled numbers as Markdown list definition labels with the link label text starting at 0:
-
 <!-- uCertify Chapter Markers -->
 
 [⓿📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=1#top "uCertify ch. 0"
