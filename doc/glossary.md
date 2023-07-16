@@ -216,7 +216,11 @@ Linux (RHEL).[^1]
 #### `doas`
 
 </dt>
-<div align="right"><note place="source"><ref target="chap15">⓯📑</ref></note></div>
+<div align="right"><note place="source"><ref target="chap15">
+
+[⓯📑][]
+
+</ref></note></div>
 <dd>
 
 A command-line command that allows a way to perform commands as another user. It
@@ -589,8 +593,12 @@ The importance of <mark>event log</mark>ged by [syslog][].
 
 #### `su`
 
-</dt><br/>
-<div align="right"><note place="source"><ref target="chap15">⓯📑</ref></note></div>
+</dt>
+<div align="right"><note place="source"><ref target="chap15">
+
+[⓯📑][]
+
+</ref></note></div>
 <dd>
 
 A command-line command that allows users to run applications as another user
@@ -601,8 +609,12 @@ account on the system.
 
 #### `sudo`
 
-</dt><br/>
-<div align="right"><note place="source"><ref target="chap15">⓯📑</ref></note></div>
+</dt>
+<div align="right"><note place="source"><ref target="chap15">
+
+[⓯📑][]
+
+</ref></note></div>
 <dd>
 
 A command-line command that allows users to run commands with root privileges.
@@ -612,8 +624,12 @@ A command-line command that allows users to run commands with root privileges.
 
 #### `sudoedit`
 
-</dt><br/>
-<div align="right"><note place="source"><ref target="chap15">⓯📑</ref></note></div>
+</dt>
+<div align="right"><note place="source"><ref target="chap15">
+
+[⓯📑][]
+
+</ref></note></div>
 <dd>
 
 A command-line command that opens the specified file in an editor using the root
@@ -852,5 +868,31 @@ many system services from one interface.
 [`su`]: ./glossary.md#su
 [`sudo`]: ./glossary.md#sudo
 [`sudoedit`]: ./glossary.md#sudoedit
+
+You're absolutely right, my apologies. Here are the negative circled numbers as Markdown list definition labels with the link label text starting at 0:
+
+<!-- uCertify Chapter Markers -->
+
+[⓿📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=1#top "uCertify ch. 0"
+[❶📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=2#top "uCertify ch. 1"
+[❷📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=3#top "uCertify ch. 2" 
+[❸📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=4#top "uCertify ch. 3"
+[❹📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=5#top "uCertify ch. 4"
+[❺📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=6#top "uCertify ch. 5"
+[❻📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=7#top "uCertify ch. 6"
+[❼📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=8#top "uCertify ch. 7"  
+[❽📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=9#top "uCertify ch. 8"
+[❾📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=10#top "uCertify ch. 9"
+[❿📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=11#top "uCertify ch. 10" 
+[⓫📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=12#top "uCertify ch. 11"
+[⓬📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=13#top "uCertify ch. 12"
+[⓭📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=14#top "uCertify ch. 13"
+[⓮📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=15#top "uCertify ch. 14"
+[⓯📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=16#top "uCertify ch. 15"  
+[⓰📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=17#top "uCertify ch. 16"
+[⓱📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=18#top "uCertify ch. 17"
+[⓲📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=19#top "uCertify ch. 18"
+[⓳📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=20#top "uCertify ch. 19"
+[⓴📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=21#top "uCertify ch. 20"
 
 <!-- END LINK DEFINITIONS -->
