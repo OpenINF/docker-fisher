@@ -219,6 +219,22 @@ The next level of security involves setting context-based permissions à la
 Debian-based Linux distributions).
 
 </dd><br />
+<dt>
+
+### AppArmor
+
+</dt>
+<div align="right"><note place="source"><ref target="chap15">
+
+[⓯📑][]
+
+</ref></note></div>
+<dd>
+
+An application used by Debian-based distributions to implement context-based
+permissions for applications.
+
+</dd><br />
 </dl>
 
 <br /><br />
