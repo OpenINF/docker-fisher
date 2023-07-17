@@ -183,7 +183,7 @@ subdirectory within `/var/log/`.[^9]
 <br />
 
 <dl>
-<dt>
+<dt id="acl">
 
 #### access control list (ACL)
 
@@ -449,10 +449,37 @@ distribution.[^5]
 <br />
 
 <dl>
-<dt></dt><br />
+<dt id="getfacl">
+
+#### `getfacl`
+
+</dt>
+<div align="right"><note place="source"><ref target="chap15">
+
+[⓯📑][]
+
+</ref></note></div>
 <dd>
 
-</dd>
+A command-line command that displays the advanced [access control list (ACL)][]
+permission entries for a file or directory.
+
+</dd><br />
+<dt id="gid">
+  
+####  Group Identification Number (GID)
+
+</dt>
+<div align="right"><note place="source"><ref target="chap15">
+
+[⓯📑][]
+
+</ref></note></div>
+<dd>
+
+A number that is used by Linux to identify groups.
+
+</dd><br />
 </dl>
 
 <br /><br />
@@ -954,6 +981,7 @@ many system services from one interface.
 
 <!-- Glossary Entries -->
 
+[access control list (ACL)]: ./glossary.md#acl
 [AppArmor]: ./glossary.md#apparmor
 [`doas`]: ./glossary.md#doas
 
