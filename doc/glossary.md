@@ -180,10 +180,12 @@ subdirectory within `/var/log/`.[^9]
 
 ## A
 
+<br />
+
 <dl>
 <dt>
 
-### access control list (ACL)
+#### access control list (ACL)
 
 </dt>
 <div align="right"><note place="source"><ref target="chap15">
@@ -221,7 +223,7 @@ Debian-based Linux distributions).
 </dd><br />
 <dt>
 
-### AppArmor
+#### AppArmor
 
 </dt>
 <div align="right"><note place="source"><ref target="chap15">
