@@ -886,9 +886,17 @@ many system services from one interface.
 [^15.3]: https://wiki.archlinux.org/title/Doas
 [^15.4]: https://why-openbsd.rocks/fact/doas/
 
+<!-- Glossary Entries -->
+
+[`AppArmor`]: ./glossary.md#apparmor
 [`doas`]: ./glossary.md#doas
 
+[`chmod`]: ./glossary.md#chmod
+
 [`fstab`]: ./glossary.md#etc-fstab
+
+[`getfacl`]: ./glossary.md#getfacl
+
 [`mtab`]: ./glossary.md#etc-mtab
 [`/etc/mtab`]: ./glossary.md#etc-mtab
 [`/etc/rsyslog.conf`]: ./glossary.md#etc-rsyslog-conf
@@ -902,6 +910,9 @@ many system services from one interface.
 
 [Rsyslog]: ./glossary.md#rsyslog
 [rsyslogd]: ./glossary.md#rsyslogd
+
+[SELinux]: ./glossary.md#selinux
+[`setfacl`]: ./glossary.md#setfacl
 [Syslog]: ./glossary.md#syslog
 [syslogd]: ./glossary.md#syslogd
 [Systemd]: ./glossary.md#systemd
