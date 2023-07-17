@@ -197,13 +197,13 @@ subdirectory within `/var/log/`.[^9]
 
 A detailed method of assigning granular user and group permissions to files and
 directories in a Linux system distinct from and more advanced than that which is
-governed by the [`chmod`][] command; involves setting an access control list
-(ACL) for each file and directory. ACLs allow administrators to define not just
-read, write, and execute permissions for multiple users or groups but also more
-advanced rules like set user ID on execution, set group ID on execution, and
-inherited permissions. The [`setfacl`][] command allows one to set these
-permissions, and the [`getfacl`][] command allows one to view these permissions
-as they exist in real-time.
+governed by the [`chmod`][] command; involves setting an [access control list
+(ACL)][] for each file and directory. ACLs allow administrators to define not
+just read, write, and execute permissions for multiple users or groups but also
+more advanced rules like set user ID on execution, set group ID on execution,
+and [inherited permissions](#inheritance). The [`setfacl`][] command allows one
+to set these permissions, and the [`getfacl`][] command allows one to view these
+permissions as they exist in real-time.
 
 For example, an ACL could allow user Bob read/write access to `file1.txt` while
 denying access to `file2.txt`, allow the `sysadmin` group full access to a set
@@ -536,10 +536,23 @@ processing.[^6]
 <br />
 
 <dl>
-<dt></dt><br />
+<dt id="inheritance">
+  
+#### inheritance
+
+</dt>
+<div align="right"><note place="source"><ref target="chap15">
+
+[⓯📑][]
+
+</ref></note></div>
+
 <dd>
 
-</dd>
+The Linux system assigns the [access control list (ACL)][] permissions assigned to a
+directory to all files contained within the directory.
+
+</dd><br />
 </dl>
 
 <br /><br />
@@ -1089,6 +1102,8 @@ many system services from one interface.
 [`fstab`]: ./glossary.md#etc-fstab
 
 [`getfacl`]: ./glossary.md#getfacl
+
+[inheritance]: ./glossary.md#inheritance
 
 [`mtab`]: ./glossary.md#etc-mtab
 [`/etc/mtab`]: ./glossary.md#etc-mtab
