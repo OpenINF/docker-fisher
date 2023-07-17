@@ -215,8 +215,8 @@ implementing least privilege and defense in depth when securing sensitive Linux
 resources.
 
 The next level of security involves setting context-based permissions à la
-[SELinux][] for Red Hat–based Linux distributions and à la [AppArmor][] for
-Debian-based Linux distributions.
+[SELinux][] (for Red Hat–based Linux distributions) and [AppArmor][] (for
+Debian-based Linux distributions).
 
 </dd><br />
 </dl>
@@ -888,7 +888,7 @@ many system services from one interface.
 
 <!-- Glossary Entries -->
 
-[`AppArmor`]: ./glossary.md#apparmor
+[AppArmor]: ./glossary.md#apparmor
 [`doas`]: ./glossary.md#doas
 
 [`chmod`]: ./glossary.md#chmod
