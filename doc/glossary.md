@@ -627,6 +627,22 @@ directory to all files contained within the directory.
 <br />
 
 <dl>
+<dt id="octal-notation">
+  
+#### octal notation
+
+</dt>
+<div align="right"><note place="source"><ref target="chap15">
+
+[⓯📑][]
+
+</ref></note></div>
+<dd>
+
+The method of defining standard [UNIX file permissions][] of owner, group, and
+other permissions using three octal numbers.
+
+</dd><br />
 <dt>
   
 #### Oracle VM VirtualBox
@@ -994,7 +1010,23 @@ system and application events.
 
 An open-source operating system based on the Debian Linux distribution.
 
-</dd>
+</dd><br />
+<dt id="unix-file-perms">
+  
+#### UNIX File Permissions
+
+</dt>
+<div align="right"><note place="source"><ref target="chap15">
+
+[⓯📑][]
+
+</ref></note></div>
+<dd>
+
+The base standard file access control mechanism using POSIX.1 file permission
+model found on almost all UNIX-like systems nowadays.
+
+</dd><br />
 </dl>
 
 <br /><br />
