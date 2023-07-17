@@ -915,18 +915,19 @@ applications all use the syslog protocol for managing system and application
 events in Linux.
 
 </dd><br />
-<anchor 𝚡𝚖𝚕:id="klogd" />
-<anchor 𝚡𝚖𝚕:id="sysklogd" />
-<dt id="syslogd">
+<anchor 𝚡𝚖𝚕:id="syslogd" id="syslogd" />
+<anchor 𝚡𝚖𝚕:id="klogd" id="klogd" />
+<dt id="sysklogd">
   
 #### `sysklogd`
 
 </dt><br />
 <dd>
 
-The original [Syslog][] application; includes two programs: the [`syslogd`][]
-program to monitor the system and applications for events and the [`klogd`][]
-program to monitor the Linux kernel for events.
+The original [Syslog][] application; includes two programs:
+
+1. [`syslogd`][]: to monitor the system and applications for events
+2. [`klogd`][]: to monitor the Linux kernel for events
 
 </dd><br />
 <dt id="syslogd-ng">
