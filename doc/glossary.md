@@ -639,8 +639,8 @@ directory to all files contained within the directory.
 </ref></note></div>
 <dd>
 
-The method of defining standard [UNIX file permissions][] of owner, group, and
-other permissions using three octal numbers.
+The method of defining standard [Unix file permissions][] of owner, group, and
+other using three octal numbers.
 
 </dd><br />
 <dt>
@@ -1014,7 +1014,7 @@ An open-source operating system based on the Debian Linux distribution.
 </dd><br />
 <dt id="unix-file-perms">
   
-#### UNIX File Permissions
+#### Unix file permissions
 
 </dt>
 <div align="right"><note place="source"><ref target="chap15">
@@ -1022,10 +1022,12 @@ An open-source operating system based on the Debian Linux distribution.
 [⓯📑][]
 
 </ref></note></div>
+
 <dd>
 
-The base standard file access control mechanism using POSIX.1 file permission
-model found on almost all UNIX-like systems nowadays.
+The base standard POSIX file access control mechanism that uses file permission
+bits for the file permission model and is found on almost all Linux and
+Unix-like systems nowadays.
 
 </dd><br />
 </dl>
@@ -1161,6 +1163,8 @@ many system services from one interface.
 [`su`]: ./glossary.md#su
 [`sudo`]: ./glossary.md#sudo
 [`sudoedit`]: ./glossary.md#sudoedit
+
+[Unix file permissions]: ./glossary.md#unix-file-perms
 
 <!-- uCertify Chapter Markers -->
 
