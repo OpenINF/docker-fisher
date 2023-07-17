@@ -248,6 +248,54 @@ permissions for applications.
 <br />
 
 <dl>
+<dt id="chgrp">
+
+#### `chgrp`
+
+</dt>
+<div align="right"><note place="source"><ref target="chap15">
+
+[⓯📑][]
+
+</ref></note></div>
+<dd>
+
+A command-line command that allows the owner or system administrator to change
+the group assigned to a file or directory.
+
+</dd><br />
+<dt id="chmod">
+  
+#### `chmod`
+
+</dt>
+<div align="right"><note place="source"><ref target="chap15">
+
+[⓯📑][]
+
+</ref></note></div>
+<dd>
+
+A command-line command that allows the system administrator to change the
+permissions assigned to a file or directory.
+
+</dd><br />
+<dt id="chown">
+  
+#### `chown`
+
+</dt>
+<div align="right"><note place="source"><ref target="chap15">
+
+[⓯📑][]
+
+</ref></note></div>
+<dd>
+
+A command-line command that allows the system administrator to change the owner
+of a file or directory.
+
+</dd><br />
 <dt>
 
 #### Community Enterprise Operating System (CentOS)
