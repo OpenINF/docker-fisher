@@ -212,9 +212,9 @@ access for other users.
 
 ACLs are implemented as extended attributes in the Linux `ext` file systems and
 store the security rules in the metadata of the file or directory being
-protected. ACLs enhance the standard Unix permissions model and are critical for
-implementing least privilege and defense in depth when securing sensitive Linux
-resources.
+protected. ACLs enhance the standard [Unix file permissions][] model and are
+critical for implementing least privilege and defense in depth when securing
+sensitive Linux resources.
 
 The next level of security involves setting context-based permissions à la
 [SELinux][] (for Red Hat–based Linux distributions) and [AppArmor][] (for
