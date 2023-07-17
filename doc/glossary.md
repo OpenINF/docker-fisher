@@ -180,6 +180,47 @@ subdirectory within `/var/log/`.[^9]
 
 ## A
 
+<dl>
+<dt>
+
+### access control list (ACL)
+
+</dt>
+<div align="right"><note place="source"><ref target="chap15">
+
+[⓯📑][]
+
+</ref></note></div>
+<dd>
+
+A detailed method of assigning granular user and group permissions to files and
+directories in a Linux system distinct from and more advanced than that which is
+governed by the [`chmod`][] command; involves setting an access control list
+(ACL) for each file and directory. ACLs allow administrators to define not just
+read, write, and execute permissions for multiple users or groups but also more
+advanced rules like set user ID on execution, set group ID on execution, and
+inherited permissions. The [`setfacl`][] command allows one to set these
+permissions, and the [`getfacl`][] command allows one to view these permissions
+as they exist in real-time.
+
+For example, an ACL could allow user Bob read/write access to `file1.txt` while
+denying access to `file2.txt`, allow the `sysadmin` group full access to a set
+of configuration files, and set the `setuid` bit on a program while removing
+access for other users.
+
+ACLs are implemented as extended attributes in the Linux `ext` file systems and
+store the security rules in the metadata of the file or directory being
+protected. ACLs enhance the standard Unix permissions model and are critical for
+implementing least privilege and defense in depth when securing sensitive Linux
+resources.
+
+The next level of security involves setting context-based permissions à la
+[SELinux][] for Red Hat–based Linux distributions and à la [AppArmor][] for
+Debian-based Linux distributions.
+
+</dd><br />
+</dl>
+
 <br /><br />
 
 ## B
