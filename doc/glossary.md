@@ -198,10 +198,21 @@ subdirectory within `/var/log/`.[^9]
 A detailed method of assigning granular user and group permissions to files and
 directories in a Linux system distinct from and more advanced than that which is
 governed by the [`chmod`][] command; involves setting an [access control list
-(ACL)][] for each file and directory. ACLs allow administrators to define not
-just read, write, and execute permissions for multiple users or groups but also
-more advanced rules like set user ID on execution, set group ID on execution,
-and [inherited permissions](#inheritance). The [`setfacl`][] command allows one
+(ACL)][] for each file and directory.
+
+ACLs allow **system administrators** to define not just read, write, and execute
+permissions for multiple users or groups but also more advanced rules like set
+user ID on execution, set group ID on execution, and
+[inherited permissions](#inheritance).
+
+On the flip side, ACLs allow **file owners** to specify extended access information
+about a file, granting additional rights to users/groups other than those owning
+the file. This form of _discretionary access control_ allows users to manage
+their own collaborative projects without intervention of **system administrators**
+to maintain groups, but also without granting rights to all users on the system
+via use of the "other" permission bits.[^17.7]
+
+The [`setfacl`][] command allows one
 to set these permissions, and the [`getfacl`][] command allows one to view these
 permissions as they exist in real-time.
 
@@ -1126,6 +1137,8 @@ many system services from one interface.
 [^15.2]: https://wiki.gentoo.org/wiki/Doas
 [^15.3]: https://wiki.archlinux.org/title/Doas
 [^15.4]: https://why-openbsd.rocks/fact/doas/
+
+[^17.7]: http://www.watson.org/fbsd-hardening/posix1e/acl/
 
 <!-- Glossary Entries -->
 
