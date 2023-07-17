@@ -210,9 +210,10 @@ denying access to `file2.txt`, allow the `sysadmin` group full access to a set
 of configuration files, and set the `setuid` bit on a program while removing
 access for other users.
 
-ACLs are implemented as extended attributes in the Linux `ext` file systems and
-store the security rules in the metadata of the file or directory being
-protected. ACLs enhance the standard [Unix file permissions][] model and are
+ACLs are implemented as extended attributes in the [Linux ext file systems][]
+and store the security rules in the metadata of the file or directory being
+protected rather than altering the standard Unix permission bits. This allows
+them to augment and extend the standard [Unix file permissions][] model and are
 critical for implementing least privilege and defense in depth when securing
 sensitive Linux resources.
 
@@ -1139,6 +1140,8 @@ many system services from one interface.
 [`getfacl`]: ./glossary.md#getfacl
 
 [inheritance]: ./glossary.md#inheritance
+
+[Linux ext file systems]: https://ext4.wiki.kernel.org/index.php/Main_Page
 
 [`mtab`]: ./glossary.md#etc-mtab
 [`/etc/mtab`]: ./glossary.md#etc-mtab
