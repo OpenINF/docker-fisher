@@ -713,6 +713,88 @@ See entry for [`/etc/rsyslog.conf`][], which is the main configuration file for
 
 <dl>
 
+<dt id="security-context">
+  
+#### security context
+
+</dt>
+<div align="right"><note place="source"><ref target="chap15">
+
+[⓯📑][]
+
+</ref></note></div>
+<dd>
+
+Used in context-based permissions applications such as SELinux to define a user,
+role, and type assigned to a file or directory.
+
+</dd><br />
+<dt id="selinux">
+  
+#### Security-Enhanced Linux (SELinux)
+
+</dt>
+<div align="right"><note place="source"><ref target="chap15">
+
+[⓯📑][]
+
+</ref></note></div>
+<dd>
+
+An application commonly used on Red Hat-based Linux distributions to implement
+context-based permissions.
+
+</dd><br />
+<dt id="sgid">
+  
+####  Set Group ID (SGID) bit
+
+</dt>
+<div align="right"><note place="source"><ref target="chap15">
+
+[⓯📑][]
+
+</ref></note></div>
+
+<dd>
+
+A bit set on a directory that forces all files created in the directory to have
+the same group assigned as the directory and not that of the user who creates
+the file.
+
+</dd><br />
+<dt id="suid">
+  
+#### Set User ID (SUID) bit
+
+</dt>
+<div align="right"><note place="source"><ref target="chap15">
+
+[⓯📑][]
+
+</ref></note></div>
+<dd>
+
+A bit set on a file that allows standard users the ability to run the file as
+the file owner.
+
+</dd><br />
+<dt id="setfacl">
+
+#### `setfacl`
+
+</dt>
+<div align="right"><note place="source"><ref target="chap15">
+
+[⓯📑][]
+
+</ref></note></div>
+<dd>
+
+A command-line command to set the [access control list (ACL)][] permissions for a
+file or directory.
+
+</dd><br />
 <dt id="severity">
   
 #### severity
@@ -721,6 +803,23 @@ See entry for [`/etc/rsyslog.conf`][], which is the main configuration file for
 <dd>
 
 The importance of <mark>event log</mark>ged by [syslog][].
+
+</dd><br />
+<dt id="sticky-bit">
+  
+#### sticky bit
+
+</dt>
+<div align="right"><note place="source"><ref target="chap15">
+
+[⓯📑][]
+
+</ref></note></div>
+<dd>
+
+A bit set on a file that prevents users from deleting the file unless they are
+the file owner, even if the user is a member of the group that has write
+permissions to the file.
 
 </dd><br />
 <dt id="su">
