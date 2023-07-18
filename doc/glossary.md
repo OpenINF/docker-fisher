@@ -1024,6 +1024,21 @@ system and application events.
 An open-source operating system based on the Debian Linux distribution.
 
 </dd><br />
+<dt id="unix-access-mode">
+  
+#### Unix access mode
+
+</dt>
+<div align="right"><note place="source"><ref target="chap15">
+
+[⓯📑][]
+
+</ref></note></div>
+<dd>
+
+A particular form of access permitted to a file.[^17.2]
+
+</dd><br />
 <dt id="unix-file-perms">
   
 #### Unix file permissions
@@ -1138,6 +1153,7 @@ many system services from one interface.
 [^15.3]: https://wiki.archlinux.org/title/Doas
 [^15.4]: https://why-openbsd.rocks/fact/doas/
 
+[^17.2]: https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap03.html#tag_03_03
 [^17.7]: http://www.watson.org/fbsd-hardening/posix1e/acl/
 
 <!-- Glossary Entries -->
