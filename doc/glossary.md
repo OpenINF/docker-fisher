@@ -190,7 +190,7 @@ subdirectory within `/var/log/`.[^9]
 </dt>
 <div align="right"><note place="source"><ref target="chap15">
 
-[⓯📑][]
+[⑮📑][]
 
 </ref></note></div>
 <dd>
@@ -240,7 +240,7 @@ Debian-based Linux distributions).
 </dt>
 <div align="right"><note place="source"><ref target="chap15">
 
-[⓯📑][]
+[⑮📑][]
 
 </ref></note></div>
 <dd>
@@ -269,7 +269,7 @@ permissions for applications.
 </dt>
 <div align="right"><note place="source"><ref target="chap15">
 
-[⓯📑][]
+[⑮📑][]
 
 </ref></note></div>
 <dd>
@@ -285,7 +285,7 @@ the group assigned to a file or directory.
 </dt>
 <div align="right"><note place="source"><ref target="chap15">
 
-[⓯📑][]
+[⑮📑][]
 
 </ref></note></div>
 <dd>
@@ -301,7 +301,7 @@ permissions assigned to a file or directory.
 </dt>
 <div align="right"><note place="source"><ref target="chap15">
 
-[⓯📑][]
+[⑮📑][]
 
 </ref></note></div>
 <dd>
@@ -337,7 +337,7 @@ Linux (RHEL).[^1]
 </dt>
 <div align="right"><note place="source"><ref target="chap15">
 
-[⓯📑][]
+[⑮📑][]
 
 </ref></note></div>
 <dd>
@@ -468,7 +468,7 @@ distribution.[^5]
 </dt>
 <div align="right"><note place="source"><ref target="chap15">
 
-[⓯📑][]
+[⑮📑][]
 
 </ref></note></div>
 <dd>
@@ -484,7 +484,7 @@ permission entries for a file or directory.
 </dt>
 <div align="right"><note place="source"><ref target="chap15">
 
-[⓯📑][]
+[⑮📑][]
 
 </ref></note></div>
 <dd>
@@ -555,7 +555,7 @@ processing.[^6]
 </dt>
 <div align="right"><note place="source"><ref target="chap15">
 
-[⓯📑][]
+[⑮📑][]
 
 </ref></note></div>
 
@@ -646,7 +646,7 @@ directory to all files contained within the directory.
 </dt>
 <div align="right"><note place="source"><ref target="chap15">
 
-[⓯📑][]
+[⑮📑][]
 
 </ref></note></div>
 <dd>
@@ -761,7 +761,7 @@ See entry for [`/etc/rsyslog.conf`][], which is the main configuration file for
 </dt>
 <div align="right"><note place="source"><ref target="chap15">
 
-[⓯📑][]
+[⑮📑][]
 
 </ref></note></div>
 <dd>
@@ -777,7 +777,7 @@ role, and type assigned to a file or directory.
 </dt>
 <div align="right"><note place="source"><ref target="chap15">
 
-[⓯📑][]
+[⑮📑][]
 
 </ref></note></div>
 <dd>
@@ -793,7 +793,7 @@ context-based permissions.
 </dt>
 <div align="right"><note place="source"><ref target="chap15">
 
-[⓯📑][]
+[⑮📑][]
 
 </ref></note></div>
 
@@ -811,7 +811,7 @@ the file.
 </dt>
 <div align="right"><note place="source"><ref target="chap15">
 
-[⓯📑][]
+[⑮📑][]
 
 </ref></note></div>
 <dd>
@@ -827,7 +827,7 @@ the file owner.
 </dt>
 <div align="right"><note place="source"><ref target="chap15">
 
-[⓯📑][]
+[⑮📑][]
 
 </ref></note></div>
 <dd>
@@ -853,7 +853,7 @@ The importance of <mark>event log</mark>ged by [syslog][].
 </dt>
 <div align="right"><note place="source"><ref target="chap15">
 
-[⓯📑][]
+[⑮📑][]
 
 </ref></note></div>
 <dd>
@@ -870,7 +870,7 @@ permissions to the file.
 </dt>
 <div align="right"><note place="source"><ref target="chap15">
 
-[⓯📑][]
+[⑮📑][]
 
 </ref></note></div>
 <dd>
@@ -886,7 +886,7 @@ account on the system.
 </dt>
 <div align="right"><note place="source"><ref target="chap15">
 
-[⓯📑][]
+[⑮📑][]
 
 </ref></note></div>
 <dd>
@@ -901,7 +901,7 @@ A command-line command that allows users to run commands with root privileges.
 </dt>
 <div align="right"><note place="source"><ref target="chap15">
 
-[⓯📑][]
+[⑮📑][]
 
 </ref></note></div>
 <dd>
@@ -1031,7 +1031,7 @@ An open-source operating system based on the Debian Linux distribution.
 </dt>
 <div align="right"><note place="source"><ref target="chap15">
 
-[⓯📑][]
+[⑮📑][]
 
 </ref></note></div>
 <dd>
@@ -1046,7 +1046,7 @@ A particular form of access permitted to a file.[^17.2]
 </dt>
 <div align="right"><note place="source"><ref target="chap15">
 
-[⓯📑][]
+[⑮📑][]
 
 </ref></note></div>
 
