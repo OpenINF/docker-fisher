@@ -703,27 +703,52 @@ hardware has enough resources.
 <dl>
   <section id="rsyslog-section">
 
-<dt id="rsyslog-anchor">Rsyslog <a role="button" aria-expanded="false" tabindex="0" href="#rsyslog-section" id="rsyslog-ref">⚓</a></dt>
+<dt id="rsyslog-anchor">
+
+#### Rsyslog <a role="button" aria-expanded="false" tabindex="0" href="#rsyslog-section" id="rsyslog-ref">⚓</a>
+
+</dt>
+<div align="right"><note place="source"><ref target="chap17">
+
+[⑰📑][]
+
+</ref></note></div>
 <dd>
 <dfn>
-        
-The project claims the <em>r</em> stands for <em>rocket fast</em>. Speed is the focus of the rsyslog project, and the rsyslog application had quickly become the standard logging package for many Linux distributions.
-        
+  
+The project claims the _r_ stands for _rocket fast_. Speed is
+the focus of the rsyslog project and the rsyslog application had quickly
+become the standard logging package for many Linux distributions.
+
 </dfn>
-        
-It offers high performance, great security features, and a modular design. While it started as a regular [syslogd][], [rsyslog][] has evolved into a kind of Swiss army knife of logging, being able to:
-      
-- accept inputs from a wide variety of sources,
-- transform them,
+
+It offers high performance, great security features, and a modular design. While
+it started as a regular [syslogd][], [rsyslog][] has evolved into a kind of
+Swiss army knife of logging, being able to:
+
+- accept inputs from a wide variety of sources
+- transform them
 - output the results to diverse destinations
-      
-Rsyslog has a strong enterprise focus but also scales down to small systems. It supports, among others, MySQL, PostgreSQL, failover log destinations, ElasticSearch, syslog/tcp transport, fine grain output format control, high precision timestamps, queued operations, and the ability to filter on any message part.[^8]
+
+Rsyslog has a strong enterprise focus but also scales down to small systems. It
+supports, among others, MySQL, PostgreSQL, failover log destinations,
+ElasticSearch, syslog/tcp transport, fine grain output format control, high
+precision timestamps, queued operations, and the ability to filter on any
+message part.[^8]
 
 </dd>
 </section>
-
 <section id="rsyslogd-section">
-<dt id="rsyslogd-anchor">rsyslogd <a role="button" aria-expanded="false" tabindex="0" href="#rsyslogd-section" id="rsyslogd-ref">⚓</a></dt>
+<dt id="rsyslogd-anchor">
+  
+#### rsyslogd <a role="button" aria-expanded="false" tabindex="0" href="#rsyslogd-section" id="rsyslogd-ref">⚓</a>
+  
+</dt>
+<div align="right"><note place="source"><ref target="chap17">
+
+[⑰📑][]
+
+</ref></note></div>
 <dd>
 <dfn>
 
@@ -731,11 +756,12 @@ A faster [`syslog`][] program for Linux.
 
 </dfn>
 
-The [`rsyslogd`][] daemon also provides extended filtering, encryption-protected relaying of messages, input and output modules, and support for transportation using the TCP and UDP protocols.[^9]
+The [`rsyslogd`][] daemon also provides extended filtering, encryption-protected
+relaying of messages, input and output modules, and support for transportation
+using the TCP and UDP protocols.[^9]
 
-
-      
-See entry for [`/etc/rsyslog.conf`][], which is the main configuration file for [`rsyslog`][].
+See entry for [`/etc/rsyslog.conf`][], which is the main configuration file for
+[`rsyslog`][].
 
 </dd>
 </section>
