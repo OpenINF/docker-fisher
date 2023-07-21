@@ -701,13 +701,12 @@ hardware has enough resources.
 <br />
 
 <dl>
-  <section id="rsyslog-section">
 
-<dt id="rsyslog-anchor">
+<section id="rsyslog"><dt>
 
-#### Rsyslog <a role="button" aria-expanded="false" tabindex="0" href="#rsyslog-section" id="rsyslog-ref">⚓</a>
+#### rsyslog <a role="button" aria-expanded="false" tabindex="0" href="#rsyslog" id="rsyslog-ref">⚓</a>
 
-</dt>
+</dt><br />
 <div align="right"><note place="source"><ref target="chap17">
 
 [⑰📑][]
@@ -715,12 +714,17 @@ hardware has enough resources.
 </ref></note></div>
 <dd>
 <dfn>
-  
+
+A faster [`syslog`][] program for Linux.
+
+</dfn>
+<details>
+
+<summary>Learn more&hellip;</summary>
+
 The project claims the _r_ stands for _rocket fast_. Speed is
 the focus of the rsyslog project and the rsyslog application had quickly
 become the standard logging package for many Linux distributions.
-
-</dfn>
 
 It offers high performance, great security features, and a modular design. While
 it started as a regular [syslogd][], [rsyslog][] has evolved into a kind of
@@ -736,12 +740,12 @@ ElasticSearch, syslog/tcp transport, fine grain output format control, high
 precision timestamps, queued operations, and the ability to filter on any
 message part.[^8]
 
+</details>
 </dd>
-</section>
-<section id="rsyslogd-section">
-<dt id="rsyslogd-anchor">
+</section><br />
+<section id="rsyslogd"><dt>
   
-#### rsyslogd <a role="button" aria-expanded="false" tabindex="0" href="#rsyslogd-section" id="rsyslogd-ref">⚓</a>
+#### rsyslogd <a role="button" aria-expanded="false" tabindex="0" href="#rsyslogd" id="rsyslogd-ref">⚓</a>
   
 </dt>
 <div align="right"><note place="source"><ref target="chap17">
@@ -752,9 +756,11 @@ message part.[^8]
 <dd>
 <dfn>
 
-A faster [`syslog`][] program for Linux.
+The SysVinit method of logging events on a server and accepting log events from remote servers.
 
 </dfn>
+<details>
+<summary>Learn more&hellip;</summary>
 
 The [`rsyslogd`][] daemon also provides extended filtering, encryption-protected
 relaying of messages, input and output modules, and support for transportation
@@ -763,6 +769,7 @@ using the TCP and UDP protocols.[^9]
 See entry for [`/etc/rsyslog.conf`][], which is the main configuration file for
 [`rsyslog`][].
 
+</details>
 </dd>
 </section>
 </dl>
