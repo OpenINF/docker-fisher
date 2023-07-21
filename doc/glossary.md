@@ -706,7 +706,7 @@ hardware has enough resources.
 
 #### <dfn>rsyslog</dfn>&nbsp;<a role="button" aria-expanded="false" tabindex="0" href="#rsyslog" id="rsyslog-ref">⚓</a>
 
-</dt><br />
+</dt>
 <div align="right"><note place="source"><ref target="chap17">
 
 [⑰📑][]
@@ -739,7 +739,7 @@ message part.[^8]
 
 </details>
 </dd>
-</section>
+</section><br />
 <section id="rsyslogd"><dt>
   
 #### <dfn>rsyslogd</dfn>&nbsp;<a role="button" aria-expanded="false" tabindex="0" href="#rsyslogd" id="rsyslogd-ref">⚓</a>
