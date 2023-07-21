@@ -704,7 +704,7 @@ hardware has enough resources.
 
 <section id="rsyslog"><dt>
 
-#### rsyslog <a role="button" aria-expanded="false" tabindex="0" href="#rsyslog" id="rsyslog-ref">⚓</a>
+#### <dfn>rsyslog</dfn>&nbsp;<a role="button" aria-expanded="false" tabindex="0" href="#rsyslog" id="rsyslog-ref">⚓</a>
 
 </dt><br />
 <div align="right"><note place="source"><ref target="chap17">
@@ -713,13 +713,10 @@ hardware has enough resources.
 
 </ref></note></div>
 <dd>
-<dfn>
 
 A faster [`syslog`][] program for Linux.
 
-</dfn>
 <details>
-
 <summary>Learn more&hellip;</summary>
 
 The project claims the _r_ stands for _rocket fast_. Speed is
@@ -742,10 +739,10 @@ message part.[^8]
 
 </details>
 </dd>
-</section><br />
+</section>
 <section id="rsyslogd"><dt>
   
-#### rsyslogd <a role="button" aria-expanded="false" tabindex="0" href="#rsyslogd" id="rsyslogd-ref">⚓</a>
+#### <dfn>rsyslogd</dfn>&nbsp;<a role="button" aria-expanded="false" tabindex="0" href="#rsyslogd" id="rsyslogd-ref">⚓</a>
   
 </dt>
 <div align="right"><note place="source"><ref target="chap17">
@@ -754,11 +751,9 @@ message part.[^8]
 
 </ref></note></div>
 <dd>
-<dfn>
 
 The SysVinit method of logging events on a server and accepting log events from remote servers.
 
-</dfn>
 <details>
 <summary>Learn more&hellip;</summary>
 
