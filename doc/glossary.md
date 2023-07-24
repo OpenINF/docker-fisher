@@ -704,7 +704,7 @@ hardware has enough resources.
 
 <section id="rsyslog"><dt>
 
-#### <dfn>rsyslog</dfn>&nbsp;<a role="button" aria-expanded="false" tabindex="0" href="#rsyslog" id="rsyslog-ref">⚓</a>
+#### <dfn>RSyslog</dfn>&nbsp;<a role="button" aria-expanded="false" tabindex="0" href="#rsyslog" id="rsyslog-ref">⚓</a>
 
 </dt>
 <div align="right"><note place="source"><ref target="chap17">
@@ -712,9 +712,12 @@ hardware has enough resources.
 [⑰📑][]
 
 </ref></note></div>
-<dd>
+<div align="right"><note place="source"><ref target="chap17">
 
-A faster [`syslog`][] program for Linux.
+A faster ***[`syslog`][]*** program for Linux.</dfn>&nbsp;<a role="button" aria-expanded="false" tabindex="0" href="#rsyslog" id="rsyslog-ref">⚓</a>
+
+</div></dt>
+<dd>
 
 <details>
 <summary>Learn more&hellip;</summary>
