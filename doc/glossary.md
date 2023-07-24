@@ -752,7 +752,7 @@ message part.[^8]
 > rsyslog package has been demoted from the Important to the Optional priority,
 > which means it is no longer installed by default in a base Debian system”
 >
-> &hellip;🔗https://wiki.debian.org/Rsyslog
+> &mdash;🔗https://wiki.debian.org/Rsyslog
 
 </details>
 </dd>
