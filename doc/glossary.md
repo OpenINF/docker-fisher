@@ -714,7 +714,8 @@ hardware has enough resources.
 </ref></note></div>
 <div align="right"><note place="source"><ref target="chap17">
 
-A faster ***[`syslog`][]*** program for Linux.</dfn>&nbsp;<a role="button" aria-expanded="false" tabindex="0" href="#rsyslog" id="rsyslog-ref">⚓</a>
+A faster **_[`syslog`][]_** program for
+Linux.</dfn>&nbsp;<a role="button" aria-expanded="false" tabindex="0" href="#rsyslog" id="rsyslog-ref">⚓</a>
 
 </div></dt>
 <dd>
@@ -739,6 +740,19 @@ supports, among others, MySQL, PostgreSQL, failover log destinations,
 ElasticSearch, syslog/tcp transport, fine grain output format control, high
 precision timestamps, queued operations, and the ability to filter on any
 message part.[^8]
+
+---
+
+> History of Rsyslog in Debian
+>
+> Deprecation in Bookworm
+>
+> “In Bookworm, since the persistent journal from Systemd's journald has been
+> activated and most log messages would end up being written twice on disk, the
+> rsyslog package has been demoted from the Important to the Optional priority,
+> which means it is no longer installed by default in a base Debian system”
+>
+> &hellip;🔗https://wiki.debian.org/Rsyslog
 
 </details>
 </dd>
