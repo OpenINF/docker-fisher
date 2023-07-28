@@ -4,7 +4,7 @@ _Various aspects of subject matter illustrated using charts, graphs, etc._
 
 ---
 
-<div align="center"><br /><br />
+<br /><br />
 
 <section>
 
@@ -13,7 +13,7 @@ _Various aspects of subject matter illustrated using charts, graphs, etc._
 The following table lists all of the top-level directories in a root Unix
 filesystem, along with a brief description of each directory.
 
-
+<div align="center">
 <figure>
 
 | Directory | Description                                                                                           |
@@ -43,6 +43,10 @@ Unix filesystem.
 </figure>
 
 </section>
+
+</div><br /><br />
+
+---
 
 <!--
 
