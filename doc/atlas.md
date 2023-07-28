@@ -13,29 +13,29 @@ _Various aspects of subject matter illustrated using charts, graphs, etc._
 <div align="center">
 <figure>
 
-| Directory | Description                                                                                           |
-| ---------:|:----------------------------------------------------------------------------------------------------- |
-| `bin`     | Contains executable files.                                                                            |
-| `boot`    | Contains files needed to boot the system.                                                             |
-| `dev`     | Contains device nodes, which represent physical devices such as hard drives, keyboards, and monitors. |
-| `etc`     | Contains configuration files for the system.                                                          |
-| `home`    | Contains user home directories.                                                                       |
-| `lib`     | Contains shared libraries, which are used by executable files.                                        |
-| `media`   | Contains removable media such as USB drives and CDs.                                                  |
-| `mnt`     | Contains directories that are mounted from other filesystems.                                         |
-| `opt`     | Contains optional software packages.                                                                  |
-| `proc`    | Contains a pseudo-filesystem that provides information about the running processes.                   |
-| `root`    | The root directory, which is the top of the filesystem hierarchy.                                     |
-| `run`     | Contains temporary files created by the system.                                                       |
-| `sbin`    | Contains executable files for system administration tasks.                                            |
-| `srv`     | Contains files that are used by services.                                                             |
-| `tmp`     | Contains temporary files that can be deleted safely.                                                  |
-| `usr`     | Secondary hierarchy                                                                                   |
-| `var`     | Variable data                                                                                         |
+| Directory | Description                                                                                      |
+| --------: | :----------------------------------------------------------------------------------------------- |
+|     `bin` | Contains executable files                                                                        |
+|    `boot` | Contains files needed to boot the system                                                         |
+|     `dev` | Contains device nodes representing physical devices such as hard drives, keyboards, and monitors |
+|     `etc` | Contains configuration files for the system                                                      |
+|    `home` | Contains user home directories                                                                   |
+|     `lib` | Contains shared libraries, which are used by executable files                                    |
+|   `media` | Contains removable media such as USB drives and CDs                                              |
+|     `mnt` | Contains directories that are mounted from other filesystems                                     |
+|     `opt` | Contains optional software packages                                                              |
+|    `proc` | Contains a pseudo-filesystem that provides information about the running processes               |
+|    `root` | The root directory, which is the top of the filesystem hierarchy                                 |
+|     `run` | Contains temporary files created by the system                                                   |
+|    `sbin` | Contains executable files for system administration tasks                                        |
+|     `srv` | Contains files that are used by services                                                         |
+|     `tmp` | Contains temporary files that can be deleted safely                                              |
+|     `usr` | Secondary hierarchy                                                                              |
+|     `var` | Variable data                                                                                    |
 
 <figcaption>
 
-The top-level directories in a root Unix-like filesystem, along with a brief
+Table 0. The top-level directories in a root Unix-like filesystem, along with a brief
 description of each directory.
 
 </figcaption>
