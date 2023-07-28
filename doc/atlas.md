@@ -47,7 +47,7 @@ description of each directory.
 
 ---
 
-<be />
+<br />
 
 <div align="center">
 
@@ -145,7 +145,7 @@ Table 2.1: Common Internet well-known port numbers
 
 ---
 
-<br /><br />
+<br />
 
 <!-- BEGIN LINK DEFINITIONS -->
 
