@@ -2,16 +2,13 @@
 
 _Various aspects of subject matter illustrated using charts, graphs, etc._
 
----
-
 <br /><br />
 
-<section>
+---
 
-## Top-Level Directories in a Root Unix Filesystem
+<br />
 
-The following table lists all of the top-level directories in a root Unix
-filesystem, along with a brief description of each directory.
+<section id="top-level-directories-in-a-root-unix-filesystem">
 
 <div align="center">
 <figure>
@@ -33,11 +30,13 @@ filesystem, along with a brief description of each directory.
 | `sbin`    | Contains executable files for system administration tasks.                                            |
 | `srv`     | Contains files that are used by services.                                                             |
 | `tmp`     | Contains temporary files that can be deleted safely.                                                  |
+| `usr`     | Secondary hierarchy                                                                                   |
+| `var`     | Variable data                                                                                         |
 
 <figcaption>
 
-This table can help to quickly reference the top-level directories in a root
-Unix filesystem.
+The top-level directories in a root Unix-like filesystem, along with a brief
+description of each directory.
 
 </figcaption>
 </figure>
@@ -48,17 +47,9 @@ Unix filesystem.
 
 ---
 
-<!--
+<be />
 
-| Hypervisor                | Type    | Description                                                                                      |
-| ------------------------- | ------- | ------------------------------------------------------------------------------------------------ |
-| Oracle VM VirtualBox      | Type II | Runs multiple Linux distributions at the same time, assuming that hardware has enough resources. |
-| VMware Workstation Player | Type II | Allows running a single virtual machine at a time.                                               |
-| Microsoft Hyper-V         | Type I  | Runs multiple Linux distributions at the same time, assuming that hardware has enough resources. |
-
--->
-
-<div align="center"><br /><br />
+<div align="center">
 
 <figure>
 
