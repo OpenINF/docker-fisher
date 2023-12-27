@@ -662,7 +662,7 @@ $ mount
 rich@rich-TestBox2:~$
 ```
 
-<br /><figcaption>
+</div><br /><figcaption>
 
 **Listing 11.1: Output from the `mount` command.**
 
