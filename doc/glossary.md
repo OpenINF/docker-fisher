@@ -655,7 +655,7 @@ partial output from a [`mount`][] command.
 
 
 <div align="center"><br /><br />
-<figure><div align="left">
+<figure id="listing_11-1"><div align="left">
 
 ```console
 $ mount
