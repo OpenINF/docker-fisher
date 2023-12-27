@@ -664,7 +664,7 @@ rich@rich-TestBox2:~$
 
 </div><br /><figcaption>
 
-**Listing 11.1: Output from the `mount` command.**
+***Listing 11.1: Output from the [`mount`][] command.***
 
 </figcaption>
 </figure><br /><br />
