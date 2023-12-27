@@ -647,7 +647,7 @@ partial output from a `mount` command.
 
 
 <div align="center"><br /><br />
-<figure align="left">
+<figure><div align="left">
 
 ```console
 $ mount
