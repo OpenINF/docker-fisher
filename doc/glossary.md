@@ -622,20 +622,18 @@ directory to all files contained within the directory.
 [⑪📑][]
 </ref></note></div>
 <dd>
-<dd>
 
 To temporarily mount a filesystem to the Linux virtual directory, use the
-`mount` command. The basic format for the `mount` command is
+`mount` command. The basic format for the `mount` command is:
 
-```sh
-mount -t fstype device mountpoint
+```console
+$ mount -t fstype device mountpoint
 ```
 
 Use the `-t` command-line option to specify the filesystem type of the device:
 
 ```console
 $ sudo mount -t ext4 /dev/sdb1 /media/usb1
-$
 ```
 
 If you specify the `mount` command with no parameters, it displays all of the
