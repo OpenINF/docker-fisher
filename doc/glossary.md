@@ -685,7 +685,7 @@ the mount point, and how data is stored on the device. These options are shown
 in the output of the `mount` command. Usually, you can omit the `-o` option to
 use the system defaults for the new mount point.
 
-The downside to the `mount` command is that it only temporarily mounts the
+The downside to the [`mount`][] command is that it only temporarily mounts the
 device in the virtual directory. When you reboot the system, you have to
 manually mount the devices again. This is usually fine for removable devices,
 such as USB memory sticks, but for more permanent devices it would be nice if
