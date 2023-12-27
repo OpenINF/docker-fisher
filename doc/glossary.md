@@ -705,7 +705,7 @@ just that.
 
 To remove a mounted drive from the virtual directory, use the [`umount`][] command
 (note the missing _&ldquo;n&rdquo;_). One may remove the mounted drive by specifying either
-the device filename or the mountpoint directory.
+i) the device filename or ii) the mountpoint directory.
 
 </details>
 </dd>
