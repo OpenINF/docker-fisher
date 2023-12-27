@@ -644,6 +644,11 @@ though, as most Linux distributions mount many virtual devices in the virtual
 directory to provide information about system resources. Listing 11.1 shows a
 partial output from a `mount` command.
 
+
+
+<div align="center"><br /><br />
+<figure>
+
 ```console
 $ mount
 ...
@@ -657,7 +662,14 @@ $ mount
 rich@rich-TestBox2:~$
 ```
 
-**Listing 11.1: Output from the `mount` command**
+<br /><figcaption>
+
+**Listing 11.1: Output from the `mount` command.**
+
+</figcaption>
+</figure><br /><br />
+</div>
+
 
 To save space, we trimmed down the output from the `mount` command to show only
 the physical devices on the system. The main hard drive device (`/dev/sda`)
