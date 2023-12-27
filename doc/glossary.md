@@ -626,7 +626,7 @@ directory to all files contained within the directory.
 <dd>
 
 To temporarily mount a filesystem to the Linux virtual directory, use the
-`mount` command. The basic format for the `mount` command is:
+[`mount`][] command; the basic format for the [`mount`][] command is:
 
 ```console
 $ mount -t fstype device mountpoint
