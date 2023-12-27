@@ -613,9 +613,98 @@ directory to all files contained within the directory.
 <br />
 
 <dl>
-<dt></dt><br />
+<section id="mount"><dt>
+
+#### <dfn><code>mount</code></dfn>&nbsp;<a role="button" aria-expanded="false" tabindex="0" href="#mount" id="mount-ref">⚓</a>
+
+</dt>
+<div align="right"><note place="source"><ref target="chap11">
+
+[⑪📑][]
+
+</ref></note></div>
 <dd>
 
+The [`mount`][] command allows users to **_mount_**, i.e., attach additional
+child filesystems to a particular mount point on the currently accessible
+filesystem.
+
+<details>
+<summary>Learn more&hellip;</summary>
+
+
+To temporarily mount a filesystem to the Linux virtual directory, use the
+[`mount`][] command; the basic format for the [`mount`][] command is:
+
+```console
+$ mount -t fstype device mountpoint
+```
+
+Use the `-t` command-line option to specify the filesystem type of the device:
+
+```console
+$ sudo mount -t ext4 /dev/sdb1 /media/usb1
+```
+
+If one specifies the [`mount`][] command with no parameters, it displays all
+devices currently mounted on the Linux system. Be prepared for a long output
+though, as most Linux distributions mount many virtual devices in the virtual
+directory to provide information about system resources. [Listing 11.1][] shows a
+partial output from a [`mount`][] command.
+
+<div align="center"><br /><br />
+<figure id="listing_11-1"><div align="left">
+
+```console
+$ mount
+...
+/dev/sda2 on / type ext4 (rw,relatime,errors=remount-ro,data=ordered)
+/dev/sda1 on /boot/efi type vfat
+ (rw,relatime,fmask=0077,dmask=0077,codepage=437,iocharset=iso8859
+-1,shortname=mixed,errors=remount-ro)
+...
+/dev/sdb1 on /media/usb1 type ext4 (rw,relatime,data=ordered)
+/dev/sdb2 on /media/usb2 type ext4 (rw,relatime,data=ordered)
+rich@rich-TestBox2:~$
+```
+
+</div><br /><figcaption>
+
+***Listing 11.1 | Output from the [`mount`][] command.***
+
+</figcaption>
+</figure><br /><br />
+</div>
+
+To save space, the output from the [`mount`][] command was trimmed down to _only_ show
+the physical devices on the system. The main hard drive device (`/dev/sda`)
+contains two partitions, and the USB memory stick device (`/dev/sdb`) also
+contains two partitions.
+
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/OpenINF/GitHub-Markdown/HEAD/blockquotes/badge/light-theme/info.svg">
+  <img alt="Note" src="https://raw.githubusercontent.com/OpenINF/GitHub-Markdown/HEAD/blockquotes/badge/dark-theme/info.svg">
+</picture><br />
+<strong>Note</strong>
+
+The [`mount`][] command uses the `-o` option to specify additional features of the
+filesystem, such as mounting it in read-only mode, user permissions assigned to
+the mount point, and how data is stored on the device. These options are shown
+in the output of the [`mount`][] command. Usually, one may omit the `-o` option to
+use the system defaults for the new mountpoint.
+
+The downside to the [`mount`][] command is that it only **temporarily** mounts the
+device in the virtual directory. On rebooting the system, one must still
+manually mount the devices again. This is usually fine for removable devices,
+such as USB memory sticks, but for more permanent devices, it would be nice if
+Linux automatically mounted them for us &mdash; fortunately for us &mdash; Linux can do
+just that.
+
+To remove a mounted drive from the virtual directory, use the [`umount`][] command
+(note the missing _&ldquo;n&rdquo;_). One may remove the mounted drive by specifying either
+i) the device filename or ii) the mountpoint directory.
+
+</details>
 </dd>
 </dl>
 
@@ -1174,7 +1263,7 @@ many system services from one interface.
 
 <br /><br />
 
-<!-- BEGIN LINK DEFINITIONS -->
+<!-- BEGIN LINK LABEL DEFINITIONS -->
 
 [^1]: https://www.redhat.com/en/topics/linux/what-is-centos
 [^2]: https://docs.docker.com/get-started/overview/#images
@@ -1198,51 +1287,37 @@ many system services from one interface.
 
 <!-- Glossary Entries -->
 
-[access control list (ACL)]: ./glossary.md#acl
-[AppArmor]: ./glossary.md#apparmor
-[`doas`]: ./glossary.md#doas
-
-[`chmod`]: ./glossary.md#chmod
-
-[`fstab`]: ./glossary.md#etc-fstab
-
-[`getfacl`]: ./glossary.md#getfacl
-
-[inheritance]: ./glossary.md#inheritance
-
-[Linux ext file systems]: https://ext4.wiki.kernel.org/index.php/Main_Page
-
-[`mtab`]: ./glossary.md#etc-mtab
 [`/etc/mtab`]: ./glossary.md#etc-mtab
 [`/etc/rsyslog.conf`]: ./glossary.md#etc-rsyslog-conf
+[`chmod`]: ./glossary.md#chmod
+[`doas`]: ./glossary.md#doas
+[`fstab`]: ./glossary.md#etc-fstab
+[`getfacl`]: ./glossary.md#getfacl
 [`klogd`]: ./glossary.md#klogd
-[`syslog`]: ./glossary.md#syslog
-[`syslogd`]: ./glossary.md#syslogd
-[`sysklogd`]: ./glossary.md#sysklogd
-[`syslogd-ng`]: ./glossary.md#syslogd-ng
+[`mount`]: ./glossary.md#mount
+[`mtab`]: ./glossary.md#mtab
 [`rsyslog`]: ./glossary.md#rsyslog
 [`rsyslogd`]: ./glossary.md#rsyslogd
-
-[Rsyslog]: ./glossary.md#rsyslog
-[rsyslogd]: ./glossary.md#rsyslogd
-
-[SELinux]: ./glossary.md#selinux
 [`setfacl`]: ./glossary.md#setfacl
-[Syslog]: ./glossary.md#syslog
-[syslogd]: ./glossary.md#syslogd
-[Systemd]: ./glossary.md#systemd
-
 [`su`]: ./glossary.md#su
 [`sudo`]: ./glossary.md#sudo
 [`sudoedit`]: ./glossary.md#sudoedit
-
+[`sysklogd`]: ./glossary.md#sysklogd
+[`syslog`]: ./glossary.md#syslog
+[`syslogd-ng`]: ./glossary.md#syslogd-ng
+[`syslogd`]: ./glossary.md#syslogd
+[`umount`]: ./glossary.md#umount
+[access control list (ACL)]: ./glossary.md#acl
+[AppArmor]: ./glossary.md#apparmor
+[Listing 11.1]: ./glossary.md#listing_11-1
+[inheritance]: ./glossary.md#inheritance
+[Rsyslog]: ./glossary.md#rsyslog
+[rsyslogd]: ./glossary.md#rsyslogd
+[SELinux]: ./glossary.md#selinux
+[Syslog]: ./glossary.md#syslog
+[syslogd]: ./glossary.md#syslogd
+[Systemd]: ./glossary.md#systemd
 [Unix file permissions]: ./glossary.md#unix-file-perms
-
-<!-- uCertify Chapter Markers -->
-
-<!-- BEGIN LINK DEFINITIONS -->
-
-<!-- uCertify Chapter Markers -->
 
 [⓪📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=1#top "uCertify ch. 0"
 [①📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=2#top "uCertify ch. 1"
@@ -1296,4 +1371,4 @@ many system services from one interface.
 [㊾📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=50#top "uCertify ch. 49"
 [㊿📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=51#top "uCertify ch. 50"
 
-<!-- END LINK DEFINITIONS -->
+<!-- END LINK LABEL DEFINITIONS -->
