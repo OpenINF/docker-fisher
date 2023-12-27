@@ -676,7 +676,6 @@ rich@rich-TestBox2:~$
 </figure><br /><br />
 </div>
 
-
 To save space, the output from the [`mount`][] command was trimmed down to _only_ show
 the physical devices on the system. The main hard drive device (`/dev/sda`)
 contains two partitions, and the USB memory stick device (`/dev/sdb`) also
