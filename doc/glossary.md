@@ -619,7 +619,9 @@ directory to all files contained within the directory.
 
 </dt>
 <div align="right"><note place="source"><ref target="chap11">
+
 [⑪📑][]
+
 </ref></note></div>
 <dd>
 
