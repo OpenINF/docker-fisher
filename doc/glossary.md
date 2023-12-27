@@ -694,7 +694,7 @@ The [`mount`][] command uses the `-o` option to specify additional features of t
 filesystem, such as mounting it in read-only mode, user permissions assigned to
 the mount point, and how data is stored on the device. These options are shown
 in the output of the [`mount`][] command. Usually, one may omit the `-o` option to
-use the system defaults for the new mount point.
+use the system defaults for the new mountpoint.
 
 The downside to the [`mount`][] command is that it only **temporarily** mounts the
 device in the virtual directory. On rebooting the system, one must still
