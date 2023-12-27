@@ -652,8 +652,6 @@ though, as most Linux distributions mount many virtual devices in the virtual
 directory to provide information about system resources. [Listing 11.1][] shows a
 partial output from a [`mount`][] command.
 
-
-
 <div align="center"><br /><br />
 <figure id="listing_11-1"><div align="left">
 
