@@ -613,8 +613,72 @@ directory to all files contained within the directory.
 <br />
 
 <dl>
-<dt></dt><br />
+<dt>
+
+[`mount`][]
+
+</dt><br />
 <dd>
+
+To temporarily mount a filesystem to the Linux virtual directory, use the
+`mount` command. The basic format for the `mount` command is
+
+```sh
+mount -t fstype device mountpoint
+```
+
+Use the `-t` command-line option to specify the filesystem type of the device:
+
+```console
+$ sudo mount -t ext4 /dev/sdb1 /media/usb1
+$
+```
+
+If you specify the `mount` command with no parameters, it displays all of the
+devices currently mounted on the Linux system. Be prepared for a long output
+though, as most Linux distributions mount many virtual devices in the virtual
+directory to provide information about system resources. Listing 11.1 shows a
+partial output from a `mount` command.
+
+```console
+$ mount
+...
+/dev/sda2 on / type ext4 (rw,relatime,errors=remount-ro,data=ordered)
+/dev/sda1 on /boot/efi type vfat
+ (rw,relatime,fmask=0077,dmask=0077,codepage=437,iocharset=iso8859
+-1,shortname=mixed,errors=remount-ro)
+...
+/dev/sdb1 on /media/usb1 type ext4 (rw,relatime,data=ordered)
+/dev/sdb2 on /media/usb2 type ext4 (rw,relatime,data=ordered)
+rich@rich-TestBox2:~$
+```
+
+**Listing 11.1: Output from the `mount` command**
+
+To save space, we trimmed down the output from the `mount` command to show only
+the physical devices on the system. The main hard drive device (`/dev/sda`)
+contains two partitions, and the USB memory stick device (`/dev/sdb`) also
+contains two partitions.
+
+<span class="fact_icon_v2 notes _v2"></span><span class="ebook_item_text"
+update="true">Note</span>
+
+The `mount` command uses the `-o` option to specify additional features of the
+filesystem, such as mounting it in read-only mode, user permissions assigned to
+the mount point, and how data is stored on the device. These options are shown
+in the output of the `mount` command. Usually, you can omit the `-o` option to
+use the system defaults for the new mount point.
+
+The downside to the `mount` command is that it only temporarily mounts the
+device in the virtual directory. When you reboot the system, you have to
+manually mount the devices again. This is usually fine for removable devices,
+such as USB memory sticks, but for more permanent devices it would be nice if
+Linux could mount them for us automatically. Fortunately for us, Linux can do
+just that.
+
+To remove a mounted drive from the virtual directory, use the `umount` command
+(note the missing _n_). You can remove the mounted drive by specifying either
+the device file name or the mount point directory.
 
 </dd>
 </dl>
@@ -1212,7 +1276,8 @@ many system services from one interface.
 
 [Linux ext file systems]: https://ext4.wiki.kernel.org/index.php/Main_Page
 
-[`mtab`]: ./glossary.md#etc-mtab
+[`mount`]: ./glossary.md#mount
+[`mtab`]: ./glossary.md#mtab
 [`/etc/mtab`]: ./glossary.md#etc-mtab
 [`/etc/rsyslog.conf`]: ./glossary.md#etc-rsyslog-conf
 [`klogd`]: ./glossary.md#klogd
