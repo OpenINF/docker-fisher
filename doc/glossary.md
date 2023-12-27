@@ -693,7 +693,7 @@ contains two partitions.
 The [`mount`][] command uses the `-o` option to specify additional features of the
 filesystem, such as mounting it in read-only mode, user permissions assigned to
 the mount point, and how data is stored on the device. These options are shown
-in the output of the [`mount`][] command. Usually, one can omit the `-o` option to
+in the output of the [`mount`][] command. Usually, one may omit the `-o` option to
 use the system defaults for the new mount point.
 
 The downside to the [`mount`][] command is that it only temporarily mounts the
