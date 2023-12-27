@@ -699,7 +699,7 @@ use the system defaults for the new mount point.
 The downside to the [`mount`][] command is that it only temporarily mounts the
 device in the virtual directory. On rebooting the system, one must still
 manually mount the devices again. This is usually fine for removable devices,
-such as USB memory sticks, but for more permanent devices it would be nice if
+such as USB memory sticks, but for more permanent devices, it would be nice if
 Linux could mount them for us automatically. Fortunately for us, Linux can do
 just that.
 
