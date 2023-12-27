@@ -1240,7 +1240,7 @@ many system services from one interface.
 
 <br /><br />
 
-<!-- BEGIN LINK DEFINITIONS -->
+<!-- BEGIN LINK LABEL DEFINITIONS -->
 
 [^1]: https://www.redhat.com/en/topics/linux/what-is-centos
 [^2]: https://docs.docker.com/get-started/overview/#images
@@ -1264,52 +1264,35 @@ many system services from one interface.
 
 <!-- Glossary Entries -->
 
-[access control list (ACL)]: ./glossary.md#acl
-[AppArmor]: ./glossary.md#apparmor
-[`doas`]: ./glossary.md#doas
-
-[`chmod`]: ./glossary.md#chmod
-
-[`fstab`]: ./glossary.md#etc-fstab
-
-[`getfacl`]: ./glossary.md#getfacl
-
-[inheritance]: ./glossary.md#inheritance
-
-[Linux ext file systems]: https://ext4.wiki.kernel.org/index.php/Main_Page
-
-[`mount`]: ./glossary.md#mount
-[`mtab`]: ./glossary.md#mtab
 [`/etc/mtab`]: ./glossary.md#etc-mtab
 [`/etc/rsyslog.conf`]: ./glossary.md#etc-rsyslog-conf
+[`chmod`]: ./glossary.md#chmod
+[`doas`]: ./glossary.md#doas
+[`fstab`]: ./glossary.md#etc-fstab
+[`getfacl`]: ./glossary.md#getfacl
 [`klogd`]: ./glossary.md#klogd
-[`syslog`]: ./glossary.md#syslog
-[`syslogd`]: ./glossary.md#syslogd
-[`sysklogd`]: ./glossary.md#sysklogd
-[`syslogd-ng`]: ./glossary.md#syslogd-ng
+[`mount`]: ./glossary.md#mount
+[`mtab`]: ./glossary.md#mtab
 [`rsyslog`]: ./glossary.md#rsyslog
 [`rsyslogd`]: ./glossary.md#rsyslogd
-
-[Rsyslog]: ./glossary.md#rsyslog
-[rsyslogd]: ./glossary.md#rsyslogd
-
-[SELinux]: ./glossary.md#selinux
 [`setfacl`]: ./glossary.md#setfacl
-[Syslog]: ./glossary.md#syslog
-[syslogd]: ./glossary.md#syslogd
-[Systemd]: ./glossary.md#systemd
-
 [`su`]: ./glossary.md#su
 [`sudo`]: ./glossary.md#sudo
 [`sudoedit`]: ./glossary.md#sudoedit
-
+[`sysklogd`]: ./glossary.md#sysklogd
+[`syslog`]: ./glossary.md#syslog
+[`syslogd-ng`]: ./glossary.md#syslogd-ng
+[`syslogd`]: ./glossary.md#syslogd
+[access control list (ACL)]: ./glossary.md#acl
+[AppArmor]: ./glossary.md#apparmor
+[inheritance]: ./glossary.md#inheritance
+[Rsyslog]: ./glossary.md#rsyslog
+[rsyslogd]: ./glossary.md#rsyslogd
+[SELinux]: ./glossary.md#selinux
+[Syslog]: ./glossary.md#syslog
+[syslogd]: ./glossary.md#syslogd
+[Systemd]: ./glossary.md#systemd
 [Unix file permissions]: ./glossary.md#unix-file-perms
-
-<!-- uCertify Chapter Markers -->
-
-<!-- BEGIN LINK DEFINITIONS -->
-
-<!-- uCertify Chapter Markers -->
 
 [⓪📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=1#top "uCertify ch. 0"
 [①📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=2#top "uCertify ch. 1"
@@ -1363,4 +1346,4 @@ many system services from one interface.
 [㊾📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=50#top "uCertify ch. 49"
 [㊿📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=51#top "uCertify ch. 50"
 
-<!-- END LINK DEFINITIONS -->
+<!-- END LINK LABEL DEFINITIONS -->
