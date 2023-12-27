@@ -1297,6 +1297,7 @@ many system services from one interface.
 [`syslog`]: ./glossary.md#syslog
 [`syslogd-ng`]: ./glossary.md#syslogd-ng
 [`syslogd`]: ./glossary.md#syslogd
+[`umount`]: ./glossary.md#umount
 [access control list (ACL)]: ./glossary.md#acl
 [AppArmor]: ./glossary.md#apparmor
 [inheritance]: ./glossary.md#inheritance
