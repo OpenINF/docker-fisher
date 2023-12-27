@@ -679,7 +679,7 @@ contains two partitions.
 <span class="fact_icon_v2 notes _v2"></span><span class="ebook_item_text"
 update="true">Note</span>
 
-The `mount` command uses the `-o` option to specify additional features of the
+The [`mount`][] command uses the `-o` option to specify additional features of the
 filesystem, such as mounting it in read-only mode, user permissions assigned to
 the mount point, and how data is stored on the device. These options are shown
 in the output of the [`mount`][] command. Usually, you can omit the `-o` option to
