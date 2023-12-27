@@ -700,7 +700,7 @@ The downside to the [`mount`][] command is that it only **temporarily** mounts t
 device in the virtual directory. On rebooting the system, one must still
 manually mount the devices again. This is usually fine for removable devices,
 such as USB memory sticks, but for more permanent devices, it would be nice if
-Linux could mount them for us automatically. Fortunately for us, Linux can do
+Linux automatically mounted them for us &mdash; fortunately for us &mdash; Linux can do
 just that.
 
 To remove a mounted drive from the virtual directory, use the [`umount`][] command
