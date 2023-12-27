@@ -642,7 +642,7 @@ If you specify the [`mount`][] command with no parameters, it displays all of th
 devices currently mounted on the Linux system. Be prepared for a long output
 though, as most Linux distributions mount many virtual devices in the virtual
 directory to provide information about system resources. Listing 11.1 shows a
-partial output from a `mount` command.
+partial output from a [`mount`][] command.
 
 
 
