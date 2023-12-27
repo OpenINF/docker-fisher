@@ -676,8 +676,11 @@ the physical devices on the system. The main hard drive device (`/dev/sda`)
 contains two partitions, and the USB memory stick device (`/dev/sdb`) also
 contains two partitions.
 
-<span class="fact_icon_v2 notes _v2"></span><span class="ebook_item_text"
-update="true">Note</span>
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/OpenINF/GitHub-Markdown/HEAD/blockquotes/badge/light-theme/info.svg">
+  <img alt="Note" src="https://raw.githubusercontent.com/OpenINF/GitHub-Markdown/HEAD/blockquotes/badge/dark-theme/info.svg">
+</picture><br />
+<span>Note</span>
 
 The [`mount`][] command uses the `-o` option to specify additional features of the
 filesystem, such as mounting it in read-only mode, user permissions assigned to
