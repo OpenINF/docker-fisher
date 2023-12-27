@@ -692,7 +692,7 @@ such as USB memory sticks, but for more permanent devices it would be nice if
 Linux could mount them for us automatically. Fortunately for us, Linux can do
 just that.
 
-To remove a mounted drive from the virtual directory, use the `umount` command
+To remove a mounted drive from the virtual directory, use the [`umount`][] command
 (note the missing _n_). You can remove the mounted drive by specifying either
 the device file name or the mount point directory.
 
