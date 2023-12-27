@@ -638,7 +638,7 @@ Use the `-t` command-line option to specify the filesystem type of the device:
 $ sudo mount -t ext4 /dev/sdb1 /media/usb1
 ```
 
-If you specify the `mount` command with no parameters, it displays all of the
+If you specify the [`mount`][] command with no parameters, it displays all of the
 devices currently mounted on the Linux system. Be prepared for a long output
 though, as most Linux distributions mount many virtual devices in the virtual
 directory to provide information about system resources. Listing 11.1 shows a
