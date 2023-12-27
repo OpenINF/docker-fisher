@@ -625,6 +625,14 @@ directory to all files contained within the directory.
 </ref></note></div>
 <dd>
 
+The [`mount`][] command allows users to **_mount_**, i.e., attach additional
+child filesystems to a particular mount point on the currently accessible
+filesystem.
+
+<details>
+<summary>Learn more&hellip;</summary>
+
+
 To temporarily mount a filesystem to the Linux virtual directory, use the
 [`mount`][] command; the basic format for the [`mount`][] command is:
 
