@@ -613,11 +613,15 @@ directory to all files contained within the directory.
 <br />
 
 <dl>
-<dt>
+<section id="mount"><dt>
 
-[`mount`][]
+#### <dfn><code>mount</code></dfn>&nbsp;<a role="button" aria-expanded="false" tabindex="0" href="#mount" id="mount-ref">⚓</a>
 
-</dt><br />
+</dt>
+<div align="right"><note place="source"><ref target="chap11">
+[⑪📑][]
+</ref></note></div>
+<dd>
 <dd>
 
 To temporarily mount a filesystem to the Linux virtual directory, use the
