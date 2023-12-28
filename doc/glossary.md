@@ -143,7 +143,7 @@ A configuration file that contains entries identifying the storage device
 partitions Linux should mount at boot time.
 
 <details>
-<summary>🧠 Learn more&hellip;</summary>
+<summary>👁️‍🗨️&nbsp;Learn&nbsp;more&hellip;</summary>
 
 <!-- TODO(@DerekNonGeneric): Self-explanatory, but elaborate on that. -->
 
