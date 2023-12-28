@@ -129,7 +129,7 @@ reasons.[^3.7]
 </dd><br />
 <dt id="etc-fstab">
 
-#### <dfn><code>/etc/fstab</code></dfn>&nbsp;<a role="button" aria-expanded="false" tabindex="0" href="#etc-fstab" id="mount-ref">⚓</a>
+#### <dfn><code>/etc/fstab</code></dfn>&nbsp;<a role="button" aria-expanded="false" tabindex="0" href="#etc-fstab" id="etc-fstab-ref">⚓</a>
 
 </dt>
 <div align="right"><note place="source"><ref target="chap11">
