@@ -128,15 +128,29 @@ reasons.[^3.7]
 </details>
 </dd><br />
 <dt id="etc-fstab">
-  
-#### `/etc/fstab`
 
-</dt><br />
+#### <dfn><code>/etc/fstab</code></dfn>&nbsp;<a role="button" aria-expanded="false" tabindex="0" href="#etc-fstab" id="etc-fstab-ref">⚓</a>
+
+</dt>
+<div align="right"><note place="source"><ref target="chap11">
+
+[⑪📑][]
+
+</ref></note></div>
 <dd>
 
 A configuration file that contains entries identifying the storage device
 partitions Linux should mount at boot time.
 
+<details>
+<summary>👁️‍🗨️&nbsp;Learn&nbsp;more&hellip;</summary>
+
+<!-- TODO(@DerekNonGeneric): Elaboration here should be perforamative @ addressing:
+
+- https://github.com/OpenINF/docker-fisher/issues/16#issuecomment-1870122434
+  -->
+
+</details>
 </dd><br />
 <dt id="etc-mtab">
   
