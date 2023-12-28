@@ -685,7 +685,6 @@ contains two partitions.
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/OpenINF/GitHub-Markdown/HEAD/blockquotes/badge/light-theme/info.svg">
   <img alt="Note" src="https://raw.githubusercontent.com/OpenINF/GitHub-Markdown/HEAD/blockquotes/badge/dark-theme/info.svg">
 </picture><br />
-<strong>Note</strong>
 
 The [`mount`][] command uses the `-o` option to specify additional features of the
 filesystem, such as mounting it in read-only mode, user permissions assigned to
