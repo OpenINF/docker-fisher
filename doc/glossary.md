@@ -145,7 +145,10 @@ partitions Linux should mount at boot time.
 <details>
 <summary>👁️‍🗨️&nbsp;Learn&nbsp;more&hellip;</summary>
 
-<!-- TODO(@DerekNonGeneric): Self-explanatory, but elaborate on that. -->
+<!-- TODO(@DerekNonGeneric): Elaboration here should be perforamative @ addressing:
+
+- https://github.com/OpenINF/docker-fisher/issues/16#issuecomment-1870122434
+  -->
 
 </details>
 </dd><br />
