@@ -537,7 +537,7 @@ processing.[^6]
   </a><br />
   <figcaption>
   
-Fig. | Depiction of hypervisors type one and two.
+**Fig. | _Depiction of hypervisors type one and two._**
 
 </figcaption>
 </figure>
