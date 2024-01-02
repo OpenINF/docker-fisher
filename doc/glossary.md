@@ -535,7 +535,7 @@ processing.[^6]
 <img src="./img/hypervisor_types.png" alt="Type 1 and type 2 hypervisors"/>
 
   </a><br />
-  <figcaption>Type 1 and type 2 hypervisors</figcaption>
+  <figcaption>Depiction representing hypervisors of type one and two</figcaption>
 </figure>
 </div><br /><br />
 
