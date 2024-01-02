@@ -531,7 +531,9 @@ processing.[^6]
 <div align="center"><br /><br />
 <figure>
   <a href="https://www.researchgate.net/figure/Type-1-and-type-2-hypervisors_fig2_335866538">
-  <img src="./img/hypervisor_types.png" alt="Type 1 and type 2 hypervisors"/>
+
+<img src="./img/hypervisor_types.png" alt="Type 1 and type 2 hypervisors"/>
+
   </a><br />
   <figcaption>Type 1 and type 2 hypervisors</figcaption>
 </figure>
