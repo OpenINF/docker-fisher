@@ -8,7 +8,7 @@ _Explains how to fork, set up a development environment, and iterate to get star
 
 <br />
 
-<div align="center">
+<!--<div align="center">
 <figure>
   <img
     alt="Depiction of the creation story"
@@ -16,7 +16,7 @@ _Explains how to fork, set up a development environment, and iterate to get star
   /><br />
   <figcaption>Depiction of the creation story</figcaption>
 </figure>
-</div><br /><br />
+</div><br /><br />-->
 
 Before cloning this repository, please ensure appropriate safety precautions are
 taken. This means being sure to use an air-tight and ephemeral development
