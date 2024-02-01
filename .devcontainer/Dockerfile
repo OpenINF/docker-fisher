@@ -10,7 +10,8 @@ RUN yum update -y \
   && yum clean all
 
 # Test dependency
-RUN yum install -y expect vim-common
+RUN yum install -y expect vim-common \
+  && yum clean all
 
 # ADD . /src
 # WORKDIR /src
