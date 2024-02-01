@@ -1,5 +1,5 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/debian
+// README at: https://github.com/openinf/docker-fisher/tree/main/templates/centos7
 {
 	"name": "CentOS",
 
@@ -34,6 +34,7 @@
 	// "remoteUser": "node",
 
 	// "postCreateCommand": "npm install -g @devcontainers/cli && sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get install -y shellcheck",
+
 	"hostRequirements": {
 		"cpus": 4
 	}
