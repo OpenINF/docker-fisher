@@ -1,28 +1,42 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/docker-outside-of-docker-compose
+// README at: https://github.com/devcontainers/templates/tree/main/src/debian
 {
-	"name": "Docker from Docker Compose",
-	"dockerComposeFile": "docker-compose.yml",
-	"service": "app",
-	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"name": "CentOS",
 
-	// Use this environment variable if you need to bind mount your local source code into a new container.
-	"remoteEnv": {
-		"LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
-	},
+    "build": {
+        // Path is relative to the devcontainer.json file.
+        "dockerfile": "Dockerfile"
+    },
 
-	"features": {
-		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
-		"ghcr.io/devcontainers-contrib/features/curl-homebrew:1": {},
-		"ghcr.io/devcontainers-contrib/features/dprint-asdf:2": {},
-		"ghcr.io/devcontainers-contrib/features/fish-apt-get:1": {},
-		"ghcr.io/stuartleeks/dev-container-features/shell-history:0": {}
-	},
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {
+		// "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+	// },
+
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 
-	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "docker --version",
+	// Configure tool-specific properties.
+	// "customizations": {},
+
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"mads-hartmann.bash-ide-vscode",
+				"bmalehorn.vscode-fish",
+				"timonwong.shellcheck",
+				"streetsidesoftware.code-spell-checker",
+				"ms-azuretools.vscode-docker"
+			]
+		}
+	},
+
+	// "remoteUser": "node",
+
+	// "postCreateCommand": "npm install -g @devcontainers/cli && sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get install -y shellcheck",
+	"hostRequirements": {
+		"cpus": 4
+	}
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
