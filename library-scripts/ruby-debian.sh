@@ -5,7 +5,7 @@
 #-------------------------------------------------------------------------------------------------------------
 #
 # ** This script is community supported **
-# Docs: https://github.com/OpenINF/docker-fish/blob/HEAD/library-scripts/docs/ruby.md
+# Docs: https://github.com/OpenINF/docker-fish/blob/HEAD/library-scripts/docs/ruby-debian.md
 # Maintainer: The OpenINF Community
 #
 # Syntax: ./ruby-debian.sh [Ruby version] [non-root user] [Add to rc files flag]

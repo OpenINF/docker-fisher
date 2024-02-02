@@ -5,7 +5,7 @@
 #-------------------------------------------------------------------------------------------------------------
 #
 # ** This script is community supported **
-# Docs: https://github.com/OpenINF/openinf-docker-fish/blob/HEAD/library-scripts/docs/common-centos7.md
+# Docs: https://github.com/OpenINF/docker-fish/blob/HEAD/library-scripts/docs/common-centos7.md
 # Maintainer: The OpenINF Community
 #
 # Syntax: ./common-centos7.sh [username] [user UID] [user GID] [upgrade packages flag] [Add non-free packages]
