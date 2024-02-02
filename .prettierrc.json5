@@ -14,7 +14,7 @@
       }
     },
     {
-      "files": ["OWNERS", "**/**.json?(5|c)", ".ecrc"],
+      "files": ["**/**.json?(5|c)],
       "options": {
         "parser": "json"
       }
