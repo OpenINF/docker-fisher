@@ -5,7 +5,7 @@
 #-------------------------------------------------------------------------------------------------------------
 #
 # ** This script is community supported **
-# Docs: https://github.com/OpenINF/docker-fish/blob/HEAD/library-scripts/docs/common-debian.md
+# Docs: https://github.com/OpenINF/docker-fisher/blob/HEAD/library-scripts/docs/common-debian.md
 # Maintainer: The OpenINF Community
 #
 # Syntax: ./common-debian.sh [username] [user UID] [user GID] [upgrade packages flag] [Add non-free packages]
