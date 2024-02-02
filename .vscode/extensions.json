@@ -1,6 +1,8 @@
 {
     "recommendations": [
+        // https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+        "esbenp.prettier-vscode",
+        // https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck
         "timonwong.shellcheck",
-        "esbenp.prettier-vscode"
     ]
 }

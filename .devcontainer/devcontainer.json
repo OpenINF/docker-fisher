@@ -6,5 +6,15 @@
     "build": {
         // Path is relative to the devcontainer.json file.
         "dockerfile": "Dockerfile"
-    }
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				// https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+				"esbenp.prettier-vscode",
+				// https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck
+				"timonwong.shellcheck",
+			]
+		}
+	}
 }
