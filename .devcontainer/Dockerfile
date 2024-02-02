@@ -13,11 +13,6 @@ RUN yum update -y \
 RUN yum install -y expect vim-common \
   && yum clean all
 
-# TODO(DerekNonGeneric): resolve the outstand below
-# err spawnn fish: ENOENT -- install fish
-# git command unknown location -- install git
-# install nodejs, ruby runtime
-
 # ADD . /src
 # WORKDIR /src
 
