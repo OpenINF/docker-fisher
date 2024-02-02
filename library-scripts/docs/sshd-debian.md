@@ -1,4 +1,4 @@
-# SSHD Install Script
+## SSHD Install Script
 
 _Adds a SSH server into a container so that you can use an external terminal,
 sftp, or [SSHFS](#using-sshfs) to interact with it._
@@ -9,7 +9,9 @@ sftp, or [SSHFS](#using-sshfs) to interact with it._
 
 **Maintainer:** The OpenINF Community
 
-## Syntax
+---
+
+### Syntax
 
 ```text
 ./sshd-debian.sh [SSH Port] [Non-root user] [Start SSHD now flag] [New password for user] [Fix environment flag]
@@ -31,12 +33,12 @@ Or as a feature:
 | New password for user |                | `skip`      | Sets a new password for the specified non-root user. A value of `skip` will skip this step. A value of `random` will generate a random password and print it out when the script finishes.                                                              |
 | Fix environment flag  |                | `true`      | Connections using the SSH daemon use "fresh" login shells. While Remote - Containers and Codespaces handle most environment variables automatically, Codespaces secrets require additional processing.                                                  |
 
-## Usage
+### Usage
 
 This script can be used as a feature, ad-hoc in an already running container, or
 in a Dockerfile.
 
-### Feature use
+#### Feature Use
 
 To install these capabilities in your primary dev container, reference it in
 `devcontainer.json` as follows:
@@ -51,7 +53,7 @@ If you have already built your development container, run the **Rebuild
 Container** command from the command palette (<kbd>Ctrl/Cmd</kbd> +
 <kbd>Shift</kbd> + <kbd>P</kbd> or <kbd>F1</kbd>) to pick up the change.
 
-### Usage when this script is already installed in an image
+#### Usage when this script is already installed in an image
 
 The SSH script is included in the default Codespaces image (codespaces-linux)
 that is used in Codespaces when you do not have a custom `devcontainer.json`. It
@@ -100,7 +102,7 @@ Usage:
 1. Next time you connect to your container/codespace, just repeat steps 2 and 3
    and use the same password you set in step 1.
 
-### Usage in a Dockerfile
+#### Usage in a Dockerfile
 
 You can add this script to your own Dockerfile as follows.
 
@@ -163,7 +165,7 @@ local port because 2222 was busy. Open the \***\*Ports\*\*** tab next to the
 Terminal tab, take note of the **local address port** for port 2222 in the
 container and update `-p 2222` to match.
 
-### Ad-hoc Usage
+#### Ad-hoc Usage
 
 If you already have a running container, you can use the script to spin up SSH
 inside it.
@@ -236,7 +238,7 @@ to use it with a dev container.
      The arguments are similar to the normal `ssh` command but with a few
      additions. For example:
 
-     ```
+     ```shell
      mkdir -p ~/sshfs/devcontainer
      sshfs "vscode@localhost:/workspaces" "$HOME/sshfs/devcontainer" -p 2222 -o follow_symlinks -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o GlobalKnownHostsFile=/dev/null -C
      ```
@@ -248,7 +250,7 @@ to use it with a dev container.
    - **Windows:** Press Window+R and enter the following in the "Open" field in
      the Run dialog:
 
-     ```
+     ```shell
      \\sshfs.r\vscode@localhost!2222\workspaces
      ```
 
