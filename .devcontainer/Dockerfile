@@ -1,7 +1,7 @@
 # Ethically sourced from official fish-shell/fish-shell project:
 # See: https://github.com/fish-shell/fish-shell/blob/HEAD/Dockerfile
 
-FROM centos:centos7
+FROM centos:centos7@sha256:be65f488b7764ad3638f236b7b515b3678369a5124c47b8d32916d6487418ea4
 
 # Build dependency # skipcq: DOK-W1003
 RUN yum update -y \
