@@ -5,7 +5,7 @@
 #-------------------------------------------------------------------------------------------------------------
 #
 # ** This script is community supported **
-# Docs: https://github.com/OpenINF/docker-fish/blob/HEAD/library-scripts/docs/fish-debian.md
+# Docs: https://github.com/OpenINF/docker-fisher/blob/HEAD/library-scripts/docs/fish-debian.md
 # Maintainer: The OpenINF Community
 #
 # Syntax: ./fish-debian.sh [whether to install Fisher] [non-root user]
