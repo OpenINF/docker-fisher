@@ -11,7 +11,10 @@
 # Docs: https://github.com/OpenINF/docker-fish/blob/HEAD/library-scripts/docs/sshd-debian.md
 # Maintainer: The OpenINF Community
 #
-# Note: You can change your user's password with "sudo passwd $(whoami)" (or just "passwd" if running as root).
+# ///NOTE/// One may change their users' password with a command line of:
+# "sudo passwd $(whoami)", or, if preferable, single-commanded-ly:
+# "passwd $(whoami)"; however, that works _exclusively_ in situations
+#  where the user is _already_ running as the ***root*** user account.
 
 SSHD_PORT="${SSHD_PORT:-"2222"}"
 USERNAME="${USERNAME:-"${_REMOTE_USER:-"automatic"}"}"
