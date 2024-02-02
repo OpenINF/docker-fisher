@@ -5,7 +5,7 @@
 #-------------------------------------------------------------------------------------------------------------
 #
 # ** This script is community supported **
-# Docs: https://github.com/OpenINF/docker-fish/blob/HEAD/library-scripts/docs/github-debian.md
+# Docs: https://github.com/OpenINF/docker-fisher/blob/HEAD/library-scripts/docs/github-debian.md
 # Maintainer: The OpenINF Community
 
 CLI_VERSION=${VERSION:-"latest"}
