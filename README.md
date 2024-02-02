@@ -51,7 +51,6 @@ It was introduced to [@DerekNonGeneric][] by [@jorgebucaran][]: Thank you so
 much to [@jorgebucaran][] for the introduction as it is now able to serve as the
 inspiration/basis for this project. Thank you to all our contributors!&nbsp;<3
 
-
 <br />
 
 ### Contributing
@@ -106,7 +105,7 @@ The [SPDX](https://spdx.dev) license identifier for this project is
   
 [![Orange banner indicating a preview software component][release-level-banner--unstable]](##)
 
-<!-- BEGIN LINK DEFINITIONS -->
+<!-- LINK LABEL DEFINITIONS - START -->
 
 [`docker-fish`]: https://github.com/meaningful-ooo/docker-fish
 [@andreiborisov]: https://github.com/andreiborisov
@@ -140,4 +139,4 @@ The [SPDX](https://spdx.dev) license identifier for this project is
   https://img.shields.io/github/stars/OpenINF/docker-fisher.svg?style=social&maxAge=3600&label=Star
   'Stargazers'
 
-<!-- END LINK DEFINITIONS -->
+<!-- LINK LABEL DEFINITIONS - END -->

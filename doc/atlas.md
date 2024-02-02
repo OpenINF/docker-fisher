@@ -82,7 +82,6 @@ description of each directory.
 
 <figcaption>
 
-
 Table 1.  Syslog Message Facilities[^1]
 
 <sup>Each message Priority also has a decimal Severity level indicator.</sup><br />
@@ -147,11 +146,11 @@ Table 2.1: Common Internet well-known port numbers
 
 <br />
 
-<!-- BEGIN LINK DEFINITIONS -->
+<!-- LINK LABEL DEFINITIONS - START -->
 
-[^1]: https://datatracker.ietf.org/doc/html/rfc5424#section-6.2.1
+[^1]: <https://datatracker.ietf.org/doc/html/rfc5424#section-6.2.1>
 
 [syslogd]: ./glossary.md#syslogd
 [`syslog`]: ./glossary.md#syslog
 
-<!-- END LINK DEFINITIONS -->
+<!-- LINK LABEL DEFINITIONS - END -->

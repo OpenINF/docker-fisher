@@ -38,3 +38,7 @@ _Installs a set of common command line utilities and sets up a non-root user._
    ```
 
 That's it!
+
+<!-- LINK LABEL DEFINITIONS - START -->
+
+<!-- LINK LABEL DEFINITIONS - END -->

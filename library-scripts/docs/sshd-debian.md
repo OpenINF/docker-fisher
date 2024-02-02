@@ -261,3 +261,9 @@ to use it with a dev container.
 4. Your dev container's filesystem should now be available in the
    `~/sshfs/devcontainer` folder on macOS or Linux or in a new explorer window
    on Windows.
+
+That's it!
+
+<!-- LINK LABEL DEFINITIONS - START -->
+
+<!-- LINK LABEL DEFINITIONS - END -->

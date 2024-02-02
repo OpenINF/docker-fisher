@@ -1282,7 +1282,7 @@ many system services from one interface.
 
 <br /><br />
 
-<!-- BEGIN LINK LABEL DEFINITIONS -->
+<!-- LINK LABEL DEFINITIONS - START -->
 
 [^1]: https://www.redhat.com/en/topics/linux/what-is-centos
 [^2]: https://docs.docker.com/get-started/overview/#images
@@ -1390,4 +1390,4 @@ many system services from one interface.
 [㊾📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=50#top "uCertify ch. 49"
 [㊿📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=51#top "uCertify ch. 50"
 
-<!-- END LINK LABEL DEFINITIONS -->
+<!-- LINK LABEL DEFINITIONS - END -->

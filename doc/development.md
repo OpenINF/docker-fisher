@@ -53,7 +53,7 @@ consider using cloud-based virtualization offerings.<br /><br />
 > forward in virtual machine time. You can delete snapshots while a VM is
 > running to reclaim disk space.
 >
-> &mdash;&nbsp;https://www.virtualbox.org/manual/ch01.html#virt-why-useful
+> &mdash;&nbsp;<https://www.virtualbox.org/manual/ch01.html#virt-why-useful>
 
 </details><br />
 
@@ -79,7 +79,7 @@ however, suggested to the original author of this document by his professor.
   href="https://firefox-source-docs.mozilla.org/taskcluster/kinds.html"
                 >Task Kinds &mdash; Firefox Source
                   Documentation</a></em>&nbsp;&mdash;&nbsp;
-  <strong>Section&nbsp;&ldquo;<code>docker-image</code>&rdquo;, Firefox CI and 
+  <strong>Section&nbsp;&ldquo;<code>docker-image</code>&rdquo;, Firefox CI and
     Taskgraph Reference</strong>
 </summary><br />
 
@@ -94,7 +94,7 @@ however, suggested to the original author of this document by his professor.
 > depend on another in-tree docker image, without uploading the latter to a
 > Docker repository.
 >
-> &mdash;&nbsp;https://firefox-source-docs.mozilla.org/taskcluster/kinds.html#docker-image
+> &mdash;&nbsp;<https://firefox-source-docs.mozilla.org/taskcluster/kinds.html#docker-image>
 
 </details><br />
 
@@ -102,10 +102,10 @@ however, suggested to the original author of this document by his professor.
 
 [![Orange banner indicating a preview software component][release-level-banner--unstable]](##)
 
-<!-- BEGIN LINK DEFINITIONS -->
+<!-- LINK LABEL DEFINITIONS - START -->
 
 [^1]:
-    https://www.whonix.org/wiki/VirtualBox 
+    <https://www.whonix.org/wiki/VirtualBox>
     "Whonix ™ for Windows, macOS, Linux inside VirtualBox"
 
 [`docker build`]:
@@ -128,4 +128,4 @@ however, suggested to the original author of this document by his professor.
   https://raw.githubusercontent.com/OpenINF/openinf.github.io/live/assets/img/svg/release-level-banner--unstable.svg?sanitize=true
   "Banner for Release Level: Unstable"
 
-<!-- END LINK DEFINITIONS -->
+<!-- LINK LABEL DEFINITIONS - END -->
