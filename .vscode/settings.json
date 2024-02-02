@@ -21,7 +21,6 @@
     "tsconfig.json": "jsonc",
     ".ecrc.json": "json",
     ".eslintrc.json": "jsonc",
-    ".prettierrc.json": "json5",
     ".prettierrc.json5": "json5",
     ".deepsource.toml": "toml",
     ".renovaterc.json": "json5",
