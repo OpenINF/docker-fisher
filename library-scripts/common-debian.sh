@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 #-------------------------------------------------------------------------------------------------------------
 # Copyright (c) The OpenINF Authors. All rights reserved.
-# Dual licensed under MIT/Apache-2.0. See the LICENSE.md file at the root of the source tree for more info.
+# Dual licensed under MIT/Apache-2.0. See the LICENSE folder at the root of the source tree for more info.
 #-------------------------------------------------------------------------------------------------------------
 #
 # ** This script is community supported **
-# Docs: https://github.com/OpenINF/openinf-docker-fish/blob/HEAD/library-scripts/docs/common.md
+# Docs: https://github.com/OpenINF/openinf-docker-fish/blob/HEAD/library-scripts/docs/common-debian.md
 # Maintainer: The OpenINF Community
 #
 # Syntax: ./common-debian.sh [username] [user UID] [user GID] [upgrade packages flag] [Add non-free packages]
