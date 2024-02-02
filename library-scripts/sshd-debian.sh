@@ -8,7 +8,7 @@
 #-------------------------------------------------------------------------------------------------------------
 #
 # ** This script is community supported **
-# Docs: https://github.com/OpenINF/docker-fish/blob/HEAD/library-scripts/docs/sshd-debian.md
+# Docs: https://github.com/OpenINF/docker-fisher/blob/HEAD/library-scripts/docs/sshd-debian.md
 # Maintainer: The OpenINF Community
 #
 # ///NOTE/// One may change their users' password with a command line of:
