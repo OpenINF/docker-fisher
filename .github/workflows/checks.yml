@@ -72,6 +72,10 @@
           - name: Linting Fish
             if: ${{ steps.changes.outputs.fish == 'true' }}
             run: npm run lint:fish
+
+          - name: Linting Dockerfiles
+            if: ${{ steps.changes.outputs.dockerfile == 'true' }}
+            run: npm run lint:dockerfile
     
       test:
         needs: queue
