@@ -15,7 +15,7 @@
               cancel_others: true
               skip_after_successful_duplicate: true
               do_not_skip: '["workflow_dispatch", "schedule"]'
-    
+
       lint:
         needs: queue
         runs-on: ubuntu-latest
@@ -45,7 +45,7 @@
           - name: Setting up Node.js
             uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
             with:
-              cache: pnpm
+              cache: npm
               node-version: 20
     
           - name: Installing Node.js packages
@@ -104,7 +104,7 @@
           - name: Setting up Node.js
             uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
             with:
-              cache: pnpm
+              cache: npm
               node-version: 20
     
           - name: Installing Node.js packages
@@ -116,6 +116,8 @@
           - name: Running tests
             if: ${{ steps.changes.outputs.js == 'true' }}
             run: |
+              corepack enable
+              corepack prepare pnpm@latest --activate
               pnpm run test
     
       build:
@@ -128,7 +130,7 @@
           - name: Setting up Node.js
             uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
             with:
-              cache: pnpm
+              cache: npm
               node-version: 20
     
           - name: Installing Node.js packages
@@ -142,5 +144,8 @@
               # Increase memory limit as a full build requires around 8GB
               NODE_OPTIONS: --max_old_space_size=8192
               ELEVENTY_ENV: staging
-            run: pnpm run build
+            run:
+              corepack enable
+              corepack prepare pnpm@latest --activate
+              pnpm run build
     
