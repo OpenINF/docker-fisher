@@ -1,4 +1,118 @@
-#
-# This is where we perform ci-checks on the changed files.
-#
-#
+---
+    name: 'Check'
+    
+    on: pull_request
+    
+    jobs:
+      queue:
+        runs-on: ubuntu-latest
+        steps:
+          - id: skip
+            uses: fkirc/skip-duplicate-actions@master
+            with:
+              concurrent_skipping: 'outdated_runs'
+              cancel_others: true
+              skip_after_successful_duplicate: true
+              do_not_skip: '["workflow_dispatch", "schedule"]'
+    
+      lint:
+        needs: queue
+        runs-on: ubuntu-latest
+        steps:
+          - name: Getting changes
+            id: changes
+            uses: dorny/paths-filter@v2
+            with:
+              filters: |
+                js:
+                  - '**/*.js'
+                  - '**/*.json'
+                md:
+                  - '**/*.md'
+                scss:
+                  - '**/*.scss'
+    
+          - name: Cloning repository
+            uses: actions/checkout@v3
+    
+          - name: Setting up Node.js
+            uses: actions/setup-node@v3
+            with:
+              cache: npm
+              node-version: 20
+    
+          - name: Installing Node.js packages
+            run: npm ci
+    
+          - name: Lint Tags
+            if: ${{ steps.filter.outputs.tags == 'true' || steps.filter.outputs.md == 'true' }}
+            uses: ./.github/actions/lint-tags
+    
+          - name: Linting JavaScript
+            if: ${{ steps.changes.outputs.js == 'true' }}
+            run: |
+              npm run lint:js
+    
+          - name: Linting Markdown
+            if: ${{ steps.changes.outputs.md == 'true' }}
+            run: npm run lint:md
+    
+          - name: Linting SCSS
+            if: ${{ steps.changes.outputs.scss == 'true' }}
+            run: npm run lint:scss
+    
+      test:
+        needs: queue
+        runs-on: ubuntu-latest
+        steps:
+          - name: Getting changes
+            id: changes
+            uses: dorny/paths-filter@v2
+            with:
+              filters: |
+                js:
+                  - 'package.json'
+                  - 'site/**/*.js'
+                  - 'server/**.js'
+                  - 'tests/**.js'
+    
+          - name: Cloning repository
+            uses: actions/checkout@v3
+    
+          - name: Setting up Node.js
+            uses: actions/setup-node@v3
+            with:
+              cache: npm
+              node-version: 16
+    
+          - name: Installing Node.js packages
+            run: npm ci
+    
+          - name: Running tests
+            if: ${{ steps.changes.outputs.js == 'true' }}
+            run: |
+              npm run test
+    
+      build:
+        needs: queue
+        runs-on: ubuntu-latest
+        steps:
+          - name: Cloning repository
+            uses: actions/checkout@v3
+    
+          - name: Setting up Node.js
+            uses: actions/setup-node@v3
+            with:
+              cache: npm
+              node-version: 16
+    
+          - name: Installing Node.js packages
+            run: npm ci
+    
+          - name: Building containers
+            env:
+              # Increase memory limit as a full build requires around 8GB
+              NODE_OPTIONS: --max_old_space_size=8192
+              ELEVENTY_ENV: staging
+            run: npm run build
+    
