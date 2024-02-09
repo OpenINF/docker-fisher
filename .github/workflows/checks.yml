@@ -131,7 +131,10 @@
               node-version: 20
     
           - name: Installing Node.js packages
-            run: npm ci
+            run: |
+              corepack enable
+              corepack prepare pnpm@latest --activate
+              pnpm install
     
           - name: Building containers
             env:
