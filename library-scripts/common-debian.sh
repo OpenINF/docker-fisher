@@ -31,29 +31,29 @@ echo "export PATH=${PATH//$(sh -lc 'echo $PATH')/\$PATH}" >/etc/profile.d/00-res
 chmod +x /etc/profile.d/00-restore-env.sh
 
 # If in automatic mode, determine if a user already exists, if not use vscode
-if [ "${USERNAME}" = "auto" ] || [ "${USERNAME}" = "automatic" ]; then
+if [ "$USERNAME" = "auto" ] || [ "$USERNAME" = "automatic" ]; then
     USERNAME=""
     POSSIBLE_USERS=("vscode" "node" "codespace" "$(awk -v val=1000 -F ":" '$3==val{print $1}' /etc/passwd)")
-    for CURRENT_USER in ${POSSIBLE_USERS[@]}; do
-        if id -u "${CURRENT_USER}" > /dev/null 2>&1; then
-            USERNAME=${CURRENT_USER}
+    for CURRENT_USER in "${POSSIBLE_USERS[@]}"; do
+        if id -u "$CURRENT_USER" > /dev/null 2>&1; then
+            USERNAME=$CURRENT_USER
             break
         fi
     done
-    if [ "${USERNAME}" = "" ]; then
+    if [ "$USERNAME" = "" ]; then
         USERNAME=vscode
     fi
-elif [ "${USERNAME}" = "none" ]; then
+elif [ "$USERNAME" = "none" ]; then
     USERNAME=root
     USER_UID=0
     USER_GID=0
 fi
 
 # Load markers to see which steps have already run
-if [ -f "${MARKER_FILE}" ]; then
+if [ -f "$MARKER_FILE" ]; then
     echo "Marker file found:"
-    cat "${MARKER_FILE}"
-    source "${MARKER_FILE}"
+    cat "$MARKER_FILE"
+    source "$MARKER_FILE"
 fi
 
 # Ensure apt is in non-interactive to avoid prompts
@@ -71,7 +71,7 @@ apt_get_update_if_needed()
 }
 
 # Run install apt-utils to avoid debconf warning then verify presence of other common developer tools and dependencies
-if [ "${PACKAGES_ALREADY_INSTALLED}" != "true" ]; then
+if [ "$PACKAGES_ALREADY_INSTALLED" != "true" ]; then
 
     package_list="apt-utils \
         openssh-client \
@@ -114,23 +114,23 @@ if [ "${PACKAGES_ALREADY_INSTALLED}" != "true" ]; then
         init-system-helpers"
 
     # Needed for adding manpages-posix and manpages-posix-dev which are non-free packages in Debian
-    if [ "${ADD_NON_FREE_PACKAGES}" = "true" ]; then
+    if [ "$ADD_NON_FREE_PACKAGES" = "true" ]; then
         # Bring in variables from /etc/os-release like VERSION_CODENAME
         . /etc/os-release
-        sed -i -E "s/deb http:\/\/(deb|httpredir)\.debian\.org\/debian ${VERSION_CODENAME} main/deb http:\/\/\1\.debian\.org\/debian ${VERSION_CODENAME} main contrib non-free/" /etc/apt/sources.list
-        sed -i -E "s/deb-src http:\/\/(deb|httredir)\.debian\.org\/debian ${VERSION_CODENAME} main/deb http:\/\/\1\.debian\.org\/debian ${VERSION_CODENAME} main contrib non-free/" /etc/apt/sources.list
-        sed -i -E "s/deb http:\/\/(deb|httpredir)\.debian\.org\/debian ${VERSION_CODENAME}-updates main/deb http:\/\/\1\.debian\.org\/debian ${VERSION_CODENAME}-updates main contrib non-free/" /etc/apt/sources.list
-        sed -i -E "s/deb-src http:\/\/(deb|httpredir)\.debian\.org\/debian ${VERSION_CODENAME}-updates main/deb http:\/\/\1\.debian\.org\/debian ${VERSION_CODENAME}-updates main contrib non-free/" /etc/apt/sources.list
-        sed -i "s/deb http:\/\/security\.debian\.org\/debian-security ${VERSION_CODENAME}\/updates main/deb http:\/\/security\.debian\.org\/debian-security ${VERSION_CODENAME}\/updates main contrib non-free/" /etc/apt/sources.list
-        sed -i "s/deb-src http:\/\/security\.debian\.org\/debian-security ${VERSION_CODENAME}\/updates main/deb http:\/\/security\.debian\.org\/debian-security ${VERSION_CODENAME}\/updates main contrib non-free/" /etc/apt/sources.list
-        sed -i "s/deb http:\/\/deb\.debian\.org\/debian ${VERSION_CODENAME}-backports main/deb http:\/\/deb\.debian\.org\/debian ${VERSION_CODENAME}-backports main contrib non-free/" /etc/apt/sources.list 
-        sed -i "s/deb-src http:\/\/deb\.debian\.org\/debian ${VERSION_CODENAME}-backports main/deb http:\/\/deb\.debian\.org\/debian ${VERSION_CODENAME}-backports main contrib non-free/" /etc/apt/sources.list
+        sed -i -E "s/deb http:\/\/(deb|httpredir)\.debian\.org\/debian $VERSION_CODENAME main/deb http:\/\/\1\.debian\.org\/debian $VERSION_CODENAME main contrib non-free/" /etc/apt/sources.list
+        sed -i -E "s/deb-src http:\/\/(deb|httredir)\.debian\.org\/debian $VERSION_CODENAME main/deb http:\/\/\1\.debian\.org\/debian $VERSION_CODENAME main contrib non-free/" /etc/apt/sources.list
+        sed -i -E "s/deb http:\/\/(deb|httpredir)\.debian\.org\/debian $VERSION_CODENAME-updates main/deb http:\/\/\1\.debian\.org\/debian $VERSION_CODENAME-updates main contrib non-free/" /etc/apt/sources.list
+        sed -i -E "s/deb-src http:\/\/(deb|httpredir)\.debian\.org\/debian $VERSION_CODENAME-updates main/deb http:\/\/\1\.debian\.org\/debian $VERSION_CODENAME-updates main contrib non-free/" /etc/apt/sources.list
+        sed -i "s/deb http:\/\/security\.debian\.org\/debian-security $VERSION_CODENAME\/updates main/deb http:\/\/security\.debian\.org\/debian-security $VERSION_CODENAME\/updates main contrib non-free/" /etc/apt/sources.list
+        sed -i "s/deb-src http:\/\/security\.debian\.org\/debian-security $VERSION_CODENAME\/updates main/deb http:\/\/security\.debian\.org\/debian-security $VERSION_CODENAME\/updates main contrib non-free/" /etc/apt/sources.list
+        sed -i "s/deb http:\/\/deb\.debian\.org\/debian $VERSION_CODENAME-backports main/deb http:\/\/deb\.debian\.org\/debian $VERSION_CODENAME-backports main contrib non-free/" /etc/apt/sources.list 
+        sed -i "s/deb-src http:\/\/deb\.debian\.org\/debian $VERSION_CODENAME-backports main/deb http:\/\/deb\.debian\.org\/debian $VERSION_CODENAME-backports main contrib non-free/" /etc/apt/sources.list
         # Handle bullseye location for security https://www.debian.org/releases/bullseye/amd64/release-notes/ch-information.en.html
-        sed -i "s/deb http:\/\/security\.debian\.org\/debian-security ${VERSION_CODENAME}-security main/deb http:\/\/security\.debian\.org\/debian-security ${VERSION_CODENAME}-security main contrib non-free/" /etc/apt/sources.list
-        sed -i "s/deb-src http:\/\/security\.debian\.org\/debian-security ${VERSION_CODENAME}-security main/deb http:\/\/security\.debian\.org\/debian-security ${VERSION_CODENAME}-security main contrib non-free/" /etc/apt/sources.list
+        sed -i "s/deb http:\/\/security\.debian\.org\/debian-security $VERSION_CODENAME-security main/deb http:\/\/security\.debian\.org\/debian-security $VERSION_CODENAME-security main contrib non-free/" /etc/apt/sources.list
+        sed -i "s/deb-src http:\/\/security\.debian\.org\/debian-security $VERSION_CODENAME-security main/deb http:\/\/security\.debian\.org\/debian-security $VERSION_CODENAME-security main contrib non-free/" /etc/apt/sources.list
         echo "Running apt-get update..."
         apt-get -y update
-        package_list="${package_list} manpages-posix manpages-posix-dev"
+        package_list="$package_list manpages-posix manpages-posix-dev"
     else
         apt_get_update_if_needed
     fi
@@ -140,11 +140,11 @@ if [ "${PACKAGES_ALREADY_INSTALLED}" != "true" ]; then
 
     # Install libssl1.1 if available.
     if [[ ! -z $(apt-cache --names-only search ^libssl1.1$) ]]; then
-        package_list="${package_list}       libssl1.1"
+        package_list="$package_list       libssl1.1"
     fi
 
-    echo "Packages to verify are installed: ${package_list}"
-    apt-get -y install --no-install-recommends "${package_list}" 2> >( grep -v 'debconf: delaying package configuration, since apt-utils is not installed' >&2 )
+    echo "Packages to verify are installed: $package_list"
+    apt-get -y install --no-install-recommends "$package_list" 2> >( grep -v 'debconf: delaying package configuration, since apt-utils is not installed' >&2 )
         
     # Install git if not already installed (may be more recent than distro version)
     if ! type git > /dev/null 2>&1; then
@@ -169,25 +169,25 @@ if [ "$LOCALE_ALREADY_SET" != "true" ] && ! grep -o -E '^\s*en_US.UTF-8\s+UTF-8'
 fi
 
 # Create or update a non-root user to match UID/GID.
-group_name="${USERNAME}"
-if id -u "${USERNAME}" > /dev/null 2>&1; then
+group_name="$USERNAME"
+if id -u "$USERNAME" > /dev/null 2>&1; then
     # User exists, update if needed
-    if [ "${USER_GID}" != "automatic" ] && [ "$USER_GID" != "$(id -g "$USERNAME")" ]; then 
+    if [ "$USER_GID" != "automatic" ] && [ "$USER_GID" != "$(id -g "$USERNAME")" ]; then 
         group_name="$(id -gn "$USERNAME")"
-        groupmod --gid "$USER_GID" "${group_name}"
+        groupmod --gid "$USER_GID" "$group_name"
         usermod --gid "$USER_GID" "$USERNAME"
     fi
-    if [ "${USER_UID}" != "automatic" ] && [ "$USER_UID" != "$(id -u "$USERNAME")" ]; then 
+    if [ "$USER_UID" != "automatic" ] && [ "$USER_UID" != "$(id -u "$USERNAME")" ]; then 
         usermod --uid "$USER_UID" "$USERNAME"
     fi
 else
     # Create user
-    if [ "${USER_GID}" = "automatic" ]; then
+    if [ "$USER_GID" = "automatic" ]; then
         groupadd "$USERNAME"
     else
         groupadd --gid "$USER_GID" "$USERNAME"
     fi
-    if [ "${USER_UID}" = "automatic" ]; then 
+    if [ "$USER_UID" = "automatic" ]; then 
         useradd -s /bin/bash --gid "$USERNAME" -m "$USERNAME"
     else
         useradd -s /bin/bash --uid "$USER_UID" --gid "$USERNAME" -m "$USERNAME"
@@ -195,10 +195,10 @@ else
 fi
 
 # Add sudo support for non-root user
-if [ "${USERNAME}" != "root" ] && [ "${EXISTING_NON_ROOT_USER}" != "${USERNAME}" ]; then
+if [ "$USERNAME" != "root" ] && [ "$EXISTING_NON_ROOT_USER" != "$USERNAME" ]; then
     echo "$USERNAME" ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/"$USERNAME"
     chmod 0440 /etc/sudoers.d/"$USERNAME"
-    EXISTING_NON_ROOT_USER="${USERNAME}"
+    EXISTING_NON_ROOT_USER="$USERNAME"
 fi
 
 # ** Shell customization section **
@@ -209,13 +209,13 @@ else
 fi
 
 # Restore user .bashrc defaults from skeleton file if it doesn't exist or is empty
-if [ ! -f "${user_rc_path}/.bashrc" ] || [ ! -s "${user_rc_path}/.bashrc" ] ; then
-    cp  /etc/skel/.bashrc "${user_rc_path}/.bashrc"
+if [ ! -f "$user_rc_path/.bashrc" ] || [ ! -s "$user_rc_path/.bashrc" ] ; then
+    cp  /etc/skel/.bashrc "$user_rc_path/.bashrc"
 fi
 
 # Restore user .profile defaults from skeleton file if it doesn't exist or is empty
-if  [ ! -f "${user_rc_path}/.profile" ] || [ ! -s "${user_rc_path}/.profile" ] ; then
-    cp  /etc/skel/.profile "${user_rc_path}/.profile"
+if  [ ! -f "$user_rc_path/.profile" ] || [ ! -s "$user_rc_path/.profile" ] ; then
+    cp  /etc/skel/.profile "$user_rc_path/.profile"
 fi
 
 # .bashrc snippet
@@ -277,15 +277,15 @@ EOF
 chmod +x /usr/local/bin/systemctl
 
 # Add RC snippet and custom bash prompt
-if [ "${RC_SNIPPET_ALREADY_ADDED}" != "true" ]; then
-    echo "${rc_snippet}" >> /etc/bash.bashrc
-    echo "${codespaces_bash}" >> "${user_rc_path}/.bashrc"
-    echo 'export PROMPT_DIRTRIM=4' >> "${user_rc_path}/.bashrc"
-    if [ "${USERNAME}" != "root" ]; then
-        echo "${codespaces_bash}" >> "/root/.bashrc"
+if [ "$RC_SNIPPET_ALREADY_ADDED" != "true" ]; then
+    echo "$rc_snippet" >> /etc/bash.bashrc
+    echo "$codespaces_bash" >> "$user_rc_path/.bashrc"
+    echo 'export PROMPT_DIRTRIM=4' >> "$user_rc_path/.bashrc"
+    if [ "$USERNAME" != "root" ]; then
+        echo "$codespaces_bash" >> "/root/.bashrc"
         echo 'export PROMPT_DIRTRIM=4' >> "/root/.bashrc"
     fi
-    chown "${USERNAME}":"${group_name}" "${user_rc_path}/.bashrc"
+    chown "$USERNAME":"$group_name" "$user_rc_path/.bashrc"
     RC_SNIPPET_ALREADY_ADDED="true"
 fi
 
@@ -318,19 +318,19 @@ if [ ! -z "${CONTENTS_URL}" ]; then echo && echo "More info: ${CONTENTS_URL}"; f
 echo
 EOF
 )"
-if [ -f "${SCRIPT_DIR}/meta.env" ]; then
+if [ -f "$SCRIPT_DIR/meta.env" ]; then
     mkdir -p /usr/local/etc/vscode-dev-containers/
-    cp -f "${SCRIPT_DIR}/meta.env" /usr/local/etc/vscode-dev-containers/meta.env
-    echo "${meta_info_script}" > /usr/local/bin/devcontainer-info
+    cp -f "$SCRIPT_DIR/meta.env" /usr/local/etc/vscode-dev-containers/meta.env
+    echo "$meta_info_script" > /usr/local/bin/devcontainer-info
     chmod +x /usr/local/bin/devcontainer-info
 fi
 
 # Write marker file
-mkdir -p "$(dirname "${MARKER_FILE}")"
+mkdir -p "$(dirname "$MARKER_FILE")"
 echo -e "\
-    PACKAGES_ALREADY_INSTALLED=${PACKAGES_ALREADY_INSTALLED}\n\
-    LOCALE_ALREADY_SET=${LOCALE_ALREADY_SET}\n\
-    EXISTING_NON_ROOT_USER=${EXISTING_NON_ROOT_USER}\n\
-    RC_SNIPPET_ALREADY_ADDED=${RC_SNIPPET_ALREADY_ADDED}"
+    PACKAGES_ALREADY_INSTALLED=$PACKAGES_ALREADY_INSTALLED\n\
+    LOCALE_ALREADY_SET=$LOCALE_ALREADY_SET\n\
+    EXISTING_NON_ROOT_USER=$EXISTING_NON_ROOT_USER\n\
+    RC_SNIPPET_ALREADY_ADDED=$RC_SNIPPET_ALREADY_ADDED"
 
 echo "Done!"

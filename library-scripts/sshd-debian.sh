@@ -32,25 +32,25 @@ if [ "$(id -u)" -ne 0 ]; then
 fi
 
 # Determine the appropriate non-root user
-if [ "${USERNAME}" = "auto" ] || [ "${USERNAME}" = "automatic" ]; then
+if [ ""$USERNAME = "auto" ] || [ ""$USERNAME = "automatic" ]; then
     USERNAME=""
-    POSSIBLE_USERS=("vscode" "node" "codespace" "$(awk -v val=1000 -F ":" '$3==val{print $1}' /etc/passwd)")
-    for CURRENT_USER in "${POSSIBLE_USERS[@]}"; do
-        if id -u "${CURRENT_USER}" > /dev/null 2>&1; then
-            USERNAME=${CURRENT_USER}
+    POSSIBLE_USERS=("vscode" "node" "codespace" ""$(awk -v val=1000 -F ":" '$3==val{print $1}' /etc/passwd))
+    for CURRENT_USER in ""${POSSIBLE_USERS[@]}; do
+        if id -u ""$CURRENT_USER > /dev/null 2>&1; then
+            USERNAME=$CURRENT_USER
             break
         fi
     done
-    if [ "${USERNAME}" = "" ]; then
+    if [ ""$USERNAME = "" ]; then
         USERNAME=root
     fi
-elif [ "${USERNAME}" = "none" ] || ! id -u "${USERNAME}" > /dev/null 2>&1; then
+elif [ ""$USERNAME = "none" ] || ! id -u ""$USERNAME > /dev/null 2>&1; then
     USERNAME=root
 fi
 
 apt_get_update()
 {
-    if [ "$(find /var/lib/apt/lists/* | wc -l)" = "0" ]; then
+    if [ ""$(find /var/lib/apt/lists/* | wc -l) = "0" ]; then
         echo "Running apt-get update..."
         apt-get update -y
     fi
@@ -58,9 +58,9 @@ apt_get_update()
 
 # Checks if packages are installed and installs them if not
 check_packages() {
-    if ! dpkg -s "$@" > /dev/null 2>&1; then
+    if ! dpkg -s ""$@ > /dev/null 2>&1; then
         apt_get_update
-        apt-get -y install --no-install-recommends "$@"
+        apt-get -y install --no-install-recommends ""$@
     fi
 }
 
@@ -71,12 +71,12 @@ export DEBIAN_FRONTEND=noninteractive
 check_packages openssh-server openssh-client lsof
 
 # Generate password if new password set to the word "random"
-if [ "${NEW_PASSWORD}" = "random" ]; then
-    NEW_PASSWORD="$(openssl rand -hex 16)"
+if [ ""$NEW_PASSWORD = "random" ]; then
+    NEW_PASSWORD=""$(openssl rand -hex 16)
     EMIT_PASSWORD="true"
-elif [ "${NEW_PASSWORD}" != "skip" ]; then
+elif [ ""$NEW_PASSWORD != "skip" ]; then
     # If new password not set to skip, set it for the specified user
-    echo "${USERNAME}:${NEW_PASSWORD}" | chpasswd
+    echo ""$USERNAME:$NEW_PASSWORD | chpasswd
 fi
 
 if [ $(getent group ssh) ]; then
@@ -87,8 +87,8 @@ else
 fi
 
 # Add user to ssh group
-if [ "${USERNAME}" != "root" ]; then
-    usermod -aG ssh "${USERNAME}"
+if [ ""$USERNAME != "root" ]; then
+    usermod -aG ssh ""$USERNAME
 fi
 
 # Setup sshd
@@ -125,17 +125,17 @@ EOF
 chmod +x /usr/local/share/ssh-init.sh
 
 # If we should start sshd now, do so
-if [ "${START_SSHD}" = "true" ]; then
+if [ "$START_SSHD" = "true" ]; then
     /usr/local/share/ssh-init.sh
 fi
 
 # Output success details
-echo -e "Done!\n\n- Port: ${SSHD_PORT}\n- User: ${USERNAME}"
-if [ "${EMIT_PASSWORD}" = "true" ]; then
-    echo "- Password: ${NEW_PASSWORD}"
+echo -e "Done!\n\n- Port: $SSHD_PORT\n- User: $USERNAME"
+if [ "$EMIT_PASSWORD" = "true" ]; then
+    echo "- Password: $NEW_PASSWORD"
 fi
 
 # Clean up
 # rm -rf /var/lib/apt/lists/*
 
-echo -e "\nForward port ${SSHD_PORT} to your local machine and run:\n\n  ssh -p ${SSHD_PORT} -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o GlobalKnownHostsFile=/dev/null ${USERNAME}@localhost\n"
+echo -e "\nForward port $SSHD_PORT to your local machine and run:\n\n  ssh -p $SSHD_PORT -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o GlobalKnownHostsFile=/dev/null $USERNAME@localhost\n"
