@@ -9,7 +9,7 @@
 #
 # ** This script is community supported **
 # Docs: https://github.com/OpenINF/docker-fisher/blob/HEAD/library-scripts/docs/sshd-debian.md
-# Maintainer: The OpenINF Community
+# Maintainer: _[The OpenINF Community][]_
 #
 # ///NOTE/// One may change their users' password with a command line of:
 # "sudo passwd $(whoami)", or, if preferable, single-commanded-ly:
