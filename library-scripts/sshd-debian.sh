@@ -104,7 +104,7 @@ tee /usr/local/share/ssh-init.sh >/dev/null \
 #!/usr/bin/env bash
 # This script is intended to be run as root with a container that runs as root (even if you connect with a different user)
 # However, it supports running as a user other than root if passwordless sudo is configured for that same user.
-set -e 
+set -e
 sudoIf()
 {
     if [ "$(id -u)" -ne 0 ]; then

@@ -36,7 +36,7 @@ cannot be an executable binary.[^3.7]
 <sup>To be clear, `/etc/` may contain executable scripts, such as the command
 scripts commonly called by `init` to start and shut down the system and start
 daemon processes. "Executable binary" in this context refers to direct machine
-code or pseudocode not in a human-readable format, such as native ELF  
+code or pseudocode not in a human-readable format, such as native ELF
 executables.</sup>
 
 <br />
@@ -153,7 +153,7 @@ partitions Linux should mount at boot time.
 </details>
 </dd><br />
 <dt id="etc-mtab">
-  
+
 #### `/etc/mtab`
 
 </dt><br />
@@ -296,7 +296,7 @@ the group assigned to a file or directory.
 
 </dd><br />
 <dt id="chmod">
-  
+
 #### `chmod`
 
 </dt>
@@ -313,7 +313,7 @@ permissions assigned to a file or directory.
 
 </dd><br />
 <dt id="chown">
-  
+
 #### `chown`
 
 </dt>
@@ -450,7 +450,7 @@ because these changes may vanish in the next `RUN` instruction.[^4.1]
 
 <dl>
 <dt id="facility">
-  
+
 #### facility
 
 </dt><br />
@@ -496,7 +496,7 @@ permission entries for a file or directory.
 
 </dd><br />
 <dt id="gid">
-  
+
 ####  Group Identification Number (GID)
 
 </dt>
@@ -521,7 +521,7 @@ A number that is used by Linux to identify groups.
 
 <dl>
 <dt>
-  
+
 #### Hypervisor
 
 </dt><br />
@@ -556,7 +556,7 @@ processing.[^6]
 </a><br />
 
   <figcaption>
-  
+
 **Fig. | _Depiction of hypervisors type one and two._**
 
 </figcaption>
@@ -575,7 +575,7 @@ processing.[^6]
 
 <dl>
 <dt id="inheritance">
-  
+
 #### inheritance
 
 </dt>
@@ -754,7 +754,7 @@ by specifying either i) the device filename or ii) the mountpoint directory.
 
 <dl>
 <dt id="octal-notation">
-  
+
 #### octal notation
 
 </dt>
@@ -771,7 +771,7 @@ other using three octal numbers.
 
 </dd><br />
 <dt>
-  
+
 #### Oracle VM VirtualBox
 
 </dt><br />
@@ -874,9 +874,9 @@ message part.[^8]
 </dd>
 </section><br />
 <section id="rsyslogd"><dt>
-  
+
 #### <dfn>rsyslogd</dfn>&nbsp;<a role="button" aria-expanded="false" tabindex="0" href="#rsyslogd" id="rsyslogd-ref">⚓</a>
-  
+
 </dt>
 <div align="right"><note place="source"><ref target="chap17">
 
@@ -913,7 +913,7 @@ See entry for [`/etc/rsyslog.conf`][], which is the main configuration file for
 <dl>
 
 <dt id="security-context">
-  
+
 #### security context
 
 </dt>
@@ -930,7 +930,7 @@ role, and type assigned to a file or directory.
 
 </dd><br />
 <dt id="selinux">
-  
+
 #### Security-Enhanced Linux (SELinux)
 
 </dt>
@@ -947,7 +947,7 @@ context-based permissions.
 
 </dd><br />
 <dt id="sgid">
-  
+
 ####  Set Group ID (SGID) bit
 
 </dt>
@@ -965,7 +965,7 @@ the file.
 
 </dd><br />
 <dt id="suid">
-  
+
 #### Set User ID (SUID) bit
 
 </dt>
@@ -999,7 +999,7 @@ a file or directory.
 
 </dd><br />
 <dt id="severity">
-  
+
 #### severity
 
 </dt><br />
@@ -1009,7 +1009,7 @@ The importance of <mark>event log</mark>ged by [syslog][].
 
 </dd><br />
 <dt id="sticky-bit">
-  
+
 #### sticky bit
 
 </dt>
@@ -1077,7 +1077,7 @@ account privileges.
 
 </dd><br />
 <dt id="syslog">
-  
+
 #### Syslog
 
 </dt><br />
@@ -1096,7 +1096,7 @@ events in Linux.
 <anchor 𝚡𝚖𝚕:id="syslogd" id="syslogd" />
 <anchor 𝚡𝚖𝚕:id="klogd" id="klogd" />
 <dt id="sysklogd">
-  
+
 #### `sysklogd`
 
 </dt><br />
@@ -1109,7 +1109,7 @@ The original [Syslog][] application; includes two programs:
 
 </dd><br />
 <dt id="syslogd-ng">
-  
+
 #### `syslogd-ng`
 
 </dt><br />
@@ -1181,7 +1181,7 @@ reporting and storing system and application events.
 
 <dl>
 <dt>﻿﻿
-  
+
 #### Ubuntu
 
 </dt><br />
@@ -1191,7 +1191,7 @@ An open-source operating system based on the Debian Linux distribution.
 
 </dd><br />
 <dt id="unix-access-mode">
-  
+
 #### Unix access mode
 
 </dt>
@@ -1207,7 +1207,7 @@ A particular form of access permitted to a file.[^17.2]
 
 </dd><br />
 <dt id="unix-file-perms">
-  
+
 #### Unix file permissions
 
 </dt>
@@ -1273,7 +1273,7 @@ Unix-like systems nowadays.
 
 <dl>
 <dt>
-  
+
 #### Yet another Setup Tool (YaST)
 
 </dt><br />
