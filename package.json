@@ -1,4 +1,6 @@
 {
+  "#": "Derivative of https://github.com/OpenINF/openinf.github.io/blob/main/package.json",
+  "##": "All Rights Reserved.",
   "name": "@openinf/docker-fisher",
   "private": "true",
   "description": "The OpenINF Docker container construction yard",
