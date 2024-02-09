@@ -64,6 +64,14 @@
           - name: Linting SCSS
             if: ${{ steps.changes.outputs.scss == 'true' }}
             run: npm run lint:scss
+
+          - name: Linting Bash
+            if: ${{ steps.changes.outputs.bash == 'true' }}
+            run: npm run lint:bash
+          
+          - name: Linting Fish
+            if: ${{ steps.changes.outputs.fish == 'true' }}
+            run: npm run lint:fish
     
       test:
         needs: queue
