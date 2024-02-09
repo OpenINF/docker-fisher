@@ -48,7 +48,10 @@
               node-version: 20
     
           - name: Installing Node.js packages
-            run: npm ci
+            run: |
+              corepack enable
+              corepack prepare pnpm@latest --activate
+              pnpm install
     
           - name: Lint Tags
             if: ${{ steps.filter.outputs.tags == 'true' || steps.filter.outputs.md == 'true' }}
