@@ -44,7 +44,7 @@
           - name: Setting up Node.js
             uses: actions/setup-node@v3
             with:
-              cache: npm
+              cache: pnpm
               node-version: 20
     
           - name: Installing Node.js packages
@@ -60,27 +60,27 @@
           - name: Linting JavaScript
             if: ${{ steps.changes.outputs.js == 'true' }}
             run: |
-              npm run lint:js
+              pnpm run lint:js
     
           - name: Linting Markdown
             if: ${{ steps.changes.outputs.md == 'true' }}
-            run: npm run lint:md
+            run: pnpm run lint:md
     
           - name: Linting SCSS
             if: ${{ steps.changes.outputs.scss == 'true' }}
-            run: npm run lint:scss
+            run: pnpm run lint:scss
 
           - name: Linting Bash
             if: ${{ steps.changes.outputs.bash == 'true' }}
-            run: npm run lint:bash
+            run: pnpm run lint:bash
           
           - name: Linting Fish
             if: ${{ steps.changes.outputs.fish == 'true' }}
-            run: npm run lint:fish
+            run: pnpm run lint:fish
 
           - name: Linting Dockerfiles
             if: ${{ steps.changes.outputs.dockerfile == 'true' }}
-            run: npm run lint:dockerfile
+            run: pnpm run lint:dockerfile
     
       test:
         needs: queue
@@ -103,7 +103,7 @@
           - name: Setting up Node.js
             uses: actions/setup-node@v3
             with:
-              cache: npm
+              cache: pnpm
               node-version: 20
     
           - name: Installing Node.js packages
@@ -115,7 +115,7 @@
           - name: Running tests
             if: ${{ steps.changes.outputs.js == 'true' }}
             run: |
-              npm run test
+              pnpm run test
     
       build:
         needs: queue
@@ -127,7 +127,7 @@
           - name: Setting up Node.js
             uses: actions/setup-node@v3
             with:
-              cache: npm
+              cache: pnpm
               node-version: 20
     
           - name: Installing Node.js packages
@@ -141,5 +141,5 @@
               # Increase memory limit as a full build requires around 8GB
               NODE_OPTIONS: --max_old_space_size=8192
               ELEVENTY_ENV: staging
-            run: npm run build
+            run: pnpm run build
     
