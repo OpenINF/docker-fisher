@@ -27,7 +27,7 @@
     "verify:all": "for i in build/tasks/verify/*.mjs; do node \"$i\"; done",
     "verify:css": "node build/tasks/verify/verify-css.mjs",
     "verify:ec-harmony": "node build/tasks/verify/verify-ec-harmony.mjs",
-    "verify:shellcheck-harmony": "node build/tasks/verify/verify-shellcheck-harmony.mjs",
+    "verify:sc-harmony": "node build/tasks/verify/verify-sc-harmony.mjs",
     "verify:html": "node build/tasks/verify/verify-html.mjs",
     "verify:js": "node build/tasks/verify/verify-js.mjs",
     "verify:json": "node build/tasks/verify/verify-json.mjs",
