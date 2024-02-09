@@ -497,7 +497,7 @@ permission entries for a file or directory.
 </dd><br />
 <dt id="gid">
 
-####  Group Identification Number (GID)
+#### Group Identification Number (GID)
 
 </dt>
 <div align="right"><note place="source"><ref target="chap15">
@@ -948,7 +948,7 @@ context-based permissions.
 </dd><br />
 <dt id="sgid">
 
-####  Set Group ID (SGID) bit
+#### Set Group ID (SGID) bit
 
 </dt>
 <div align="right"><note place="source"><ref target="chap15">
