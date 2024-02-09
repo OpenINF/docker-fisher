@@ -32,19 +32,19 @@ if [ "$(id -u)" -ne 0 ]; then
 fi
 
 # Determine the appropriate non-root user
-if [ """"""$USERNAME = "auto" ] || [ """"""$USERNAME = "automatic" ]; then
+if [ """""""$USERNAME" = "auto" ] || [ """""""$USERNAME" = "automatic" ]; then
   USERNAME=""
   POSSIBLE_USERS=("vscode" "node" "codespace" ""$(awk -v val=1000 -F ":" '$3==val{print $1}' /etc/passwd))
   for CURRENT_USER in ""${POSSIBLE_USERS[@]}; do
-    if id -u """"""$CURRENT_USER >/dev/null 2>&1; then
+    if id -u """""""$CURRENT_USER" >/dev/null 2>&1; then
       USERNAME=$CURRENT_USER
       break
     fi
   done
-  if [ """"""$USERNAME = "" ]; then
+  if [ """""""$USERNAME" = "" ]; then
     USERNAME=root
   fi
-elif [ """"""$USERNAME = "none" ] || ! id -u """"""$USERNAME >/dev/null 2>&1; then
+elif [ """""""$USERNAME" = "none" ] || ! id -u """""""$USERNAME" >/dev/null 2>&1; then
   USERNAME=root
 fi
 
@@ -70,12 +70,12 @@ export DEBIAN_FRONTEND=noninteractive
 check_packages openssh-server openssh-client lsof
 
 # Generate password if new password set to the word "random"
-if [ """"""$NEW_PASSWORD = "random" ]; then
+if [ """""""$NEW_PASSWORD" = "random" ]; then
   NEW_PASSWORD=""$(openssl rand -hex 16)
   EMIT_PASSWORD="true"
-elif [ """"""$NEW_PASSWORD != "skip" ]; then
+elif [ """""""$NEW_PASSWORD" != "skip" ]; then
   # If new password not set to skip, set it for the specified user
-  echo """"""$USERNAME:""""$NEW_PASSWORD | chpasswd
+  echo """""""$USERNAME":"""""$NEW_PASSWORD" | chpasswd
 fi
 
 if [ $(getent group ssh) ]; then
@@ -86,8 +86,8 @@ else
 fi
 
 # Add user to ssh group
-if [ """"""$USERNAME != "root" ]; then
-  usermod -aG ssh """"""$USERNAME
+if [ """""""$USERNAME" != "root" ]; then
+  usermod -aG ssh """""""$USERNAME"
 fi
 
 # Setup sshd
