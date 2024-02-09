@@ -35,6 +35,8 @@
                   - '**/*.bash'
                 fish:
                   - '**/*.fish'
+                dockerfile:
+                  - '**/Dockerfile'
     
           - name: Cloning repository
             uses: actions/checkout@v3
