@@ -8,7 +8,7 @@ _Adds [fish shell](https://github.com/fish-shell/fish-shell) to a container._
 
 **OS support**: Debian 11/Ubuntu Lunar
 
-**Maintainer:**  The OpenINF Community
+**Maintainer:** The OpenINF Community
 
 ### Syntax
 

@@ -4,7 +4,8 @@
 
 **📘 Development**
 
-_Explains how to fork, set up a development environment, and iterate to get started contributing_
+_Explains how to fork, set up a development environment, and iterate to get
+started contributing_
 
 <br />
 
@@ -21,10 +22,11 @@ _Explains how to fork, set up a development environment, and iterate to get star
 Before cloning this repository, please ensure appropriate safety precautions are
 taken. This means being sure to use an air-tight and ephemeral development
 environment to essentially create a disposable sandbox. This may be accomplished
-using virtualization software. There are several excellent and free virtualization
-products (called hypervisors or virtual machine managers). One such as product is
-[Oracle VM VirtualBox][], which can be used for local development or perhaps
-consider using cloud-based virtualization offerings.<br /><br />
+using virtualization software. There are several excellent and free
+virtualization products (called hypervisors or virtual machine managers). One
+such as product is [Oracle VM VirtualBox][], which can be used for local
+development or perhaps consider using cloud-based virtualization
+offerings.<br /><br />
 
 <details open><summary>
 [EXCERPT]：<em><a title="Oracle® VM VirtualBox® User Manual" <a
@@ -105,27 +107,21 @@ however, suggested to the original author of this document by his professor.
 <!-- LINK LABEL DEFINITIONS - START -->
 
 [^1]:
-    <https://www.whonix.org/wiki/VirtualBox>
-    "Whonix ™ for Windows, macOS, Linux inside VirtualBox"
+    <https://www.whonix.org/wiki/VirtualBox> "Whonix ™ for Windows, macOS,
+    Linux inside VirtualBox"
 
 [`docker build`]:
   https://docs.docker.com/engine/reference/commandline/build/
-  "docker build | Docker Documentation"
-
-[Oracle VM VirtualBox]:
-  https://www.virtualbox.org
-  "Oracle VM VirtualBox"
-
+  'docker build | Docker Documentation'
+[Oracle VM VirtualBox]: https://www.virtualbox.org 'Oracle VM VirtualBox'
 [Watertight Privacy Architecture]:
   https://www.whonix.org/wiki/About#Whonix_%E2%84%A2_Architecture
-  "Whonix ™ Architecture"
-
+  'Whonix ™ Architecture'
 [_VirtualBox User Manual_]:
   https://www.virtualbox.org/manual/
-  "Oracle® VM VirtualBox® User Manual"
-
+  'Oracle® VM VirtualBox® User Manual'
 [release-level-banner--unstable]:
   https://raw.githubusercontent.com/OpenINF/openinf.github.io/live/assets/img/svg/release-level-banner--unstable.svg?sanitize=true
-  "Banner for Release Level: Unstable"
+  'Banner for Release Level: Unstable'
 
 <!-- LINK LABEL DEFINITIONS - END -->
