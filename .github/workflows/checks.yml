@@ -31,6 +31,10 @@
                   - '**/*.md'
                 scss:
                   - '**/*.scss'
+                bash:
+                  - '**/*.bash'
+                fish:
+                  - '**/*.fish'
     
           - name: Cloning repository
             uses: actions/checkout@v3
