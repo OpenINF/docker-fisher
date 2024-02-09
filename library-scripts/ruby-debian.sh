@@ -36,7 +36,7 @@ fi
 rm -f /etc/profile.d/00-restore-env.sh
 
 # Create a new 00-restore-env.sh file.
-echo "export PATH=${PATH//$(sh -lc 'echo $PATH')/\$PATH}" > /etc/profile.d/00-restore-env.sh
+echo "export PATH=${PATH//$(sh -lc 'echo $PATH')/\$PATH}" >/etc/profile.d/00-restore-env.sh
 
 # Change the permissions of the 00-restore-env.sh file to make it executable.
 chmod +x /etc/profile.d/00-restore-env.sh
@@ -65,15 +65,15 @@ echo "The username is: $USERNAME"
 # Returns:
 # Nothing.
 updaterc() {
-    if [ "$UPDATE_RC" = "true" ]; then
-        echo "Updating /etc/fish/config.fish..."
-        if [ ! -f "/etc/fish/config.fish" ]; then
-            echo -e "$1" > /etc/fish/config.fish
-        fi
-        if [[ "$(cat /etc/fish/config.fish)" != *"$1"* ]]; then
-            echo -e "$1" >> /etc/fish/config.fish
-        fi
+  if [ "$UPDATE_RC" = "true" ]; then
+    echo "Updating /etc/fish/config.fish..."
+    if [ ! -f "/etc/fish/config.fish" ]; then
+      echo -e "$1" >/etc/fish/config.fish
     fi
+    if [[ "$(cat /etc/fish/config.fish)" != *"$1"* ]]; then
+      echo -e "$1" >>/etc/fish/config.fish
+    fi
+  fi
 }
 
 # Executes a command with sudo privileges if the current user is not root.
@@ -84,53 +84,53 @@ updaterc() {
 # Returns:
 # The output of the command.
 sudo_if() {
-    COMMAND="$*"
-    if [ "$(id -u)" -eq 0 ] && [ "$USERNAME" != "root" ]; then
-        su - "$USERNAME" -c "$COMMAND"
-    else
-        "$COMMAND"
-    fi
+  COMMAND="$*"
+  if [ "$(id -u)" -eq 0 ] && [ "$USERNAME" != "root" ]; then
+    su - "$USERNAME" -c "$COMMAND"
+  else
+    "$COMMAND"
+  fi
 }
 
 # Ensure apt is in non-interactive to avoid prompts
 export DEBIAN_FRONTEND=noninteractive
 
 download_with_retries() {
-# Due to restrictions of bash functions, positional arguments are used here.
-# In case if you using latest argument NAME, you should also set value to all previous parameters.
-# Example: download_with_retries $ANDROID_SDK_URL "." "android_sdk.zip"
-    local URL="$1"
-    local DEST="${2:-.}"
-    local NAME="${3:-${URL##*/}}"
-    local COMPRESSED="$4"
+  # Due to restrictions of bash functions, positional arguments are used here.
+  # In case if you using latest argument NAME, you should also set value to all previous parameters.
+  # Example: download_with_retries $ANDROID_SDK_URL "." "android_sdk.zip"
+  local URL="$1"
+  local DEST="${2:-.}"
+  local NAME="${3:-${URL##*/}}"
+  local COMPRESSED="$4"
 
-    if [[ $COMPRESSED == "compressed" ]]; then
-        local COMMAND="curl $URL -4 -sL --compressed -o '$DEST/$NAME' -w '%{http_code}'"
+  if [[ $COMPRESSED == "compressed" ]]; then
+    local COMMAND="curl $URL -4 -sL --compressed -o '$DEST/$NAME' -w '%{http_code}'"
+  else
+    local COMMAND="curl $URL -4 -sL -o '$DEST/$NAME' -w '%{http_code}'"
+  fi
+
+  echo "Downloading '$URL' to '$DEST/$NAME'..."
+  retries=20
+  interval=30
+  while [ "$retries" -gt 0 ]; do
+    ((retries--))
+    # Temporary disable exit on error to retry on non-zero exit code
+    set +e
+    http_code=$(eval "$COMMAND")
+    exit_code=$?
+    set -e
+    if [ "$http_code" -eq 200 ] && [ "$exit_code" -eq 0 ]; then
+      echo "Download completed"
+      return 0
     else
-        local COMMAND="curl $URL -4 -sL -o '$DEST/$NAME' -w '%{http_code}'"
+      echo "Error — Either HTTP response code for '$URL' is wrong - '$http_code' or exit code is not 0 - '$exit_code'. Waiting $interval seconds before the next attempt, $retries attempts left"
+      sleep "$interval"
     fi
+  done
 
-    echo "Downloading '$URL' to '$DEST/$NAME'..."
-    retries=20
-    interval=30
-    while [ "$retries" -gt 0 ]; do
-        ((retries--))
-        # Temporary disable exit on error to retry on non-zero exit code
-        set +e
-        http_code=$(eval "$COMMAND")
-        exit_code=$?
-        set -e
-        if [ "$http_code" -eq 200 ] && [ "$exit_code" -eq 0 ]; then
-            echo "Download completed"
-            return 0
-        else
-            echo "Error — Either HTTP response code for '$URL' is wrong - '$http_code' or exit code is not 0 - '$exit_code'. Waiting $interval seconds before the next attempt, $retries attempts left"
-            sleep "$interval"
-        fi
-    done
-
-    echo "Could not download $URL"
-    return 1
+  echo "Could not download $URL"
+  return 1
 }
 
 echo "Install Ruby from toolset..."
@@ -147,7 +147,7 @@ RBENV_ROOT=/home/$USERNAME/.rbenv
 
 echo "Check if Ruby hostedtoolcache folder exist..."
 if [ ! -d "$RUBY_PATH" ]; then
-    mkdir -p "$RUBY_PATH"
+  mkdir -p "$RUBY_PATH"
 fi
 
 echo "Create Ruby $RUBY_VERSION directory..."
@@ -163,18 +163,18 @@ tar -xzf "/tmp/$TARBALL_NAME" -C "$RUBY_VERSION_PATH"
 
 COMPLETE_FILE_PATH="$RUBY_VERSION_PATH/x64.complete"
 if [ ! -f "$COMPLETE_FILE_PATH" ]; then
-    echo "Create complete file"
-    touch "$COMPLETE_FILE_PATH"
+  echo "Create complete file"
+  touch "$COMPLETE_FILE_PATH"
 fi
 
 # Install rbenv/ruby-build for good measure
 sudo_if git clone --depth=1 \
-    -c core.eol=lf \
-    -c core.autocrlf=false \
-    -c fsck.zeroPaddedFilemode=ignore \
-    -c fetch.fsck.zeroPaddedFilemode=ignore \
-    -c receive.fsck.zeroPaddedFilemode=ignore \
-    https://github.com/rbenv/rbenv.git "$RBENV_ROOT"
+  -c core.eol=lf \
+  -c core.autocrlf=false \
+  -c fsck.zeroPaddedFilemode=ignore \
+  -c fetch.fsck.zeroPaddedFilemode=ignore \
+  -c receive.fsck.zeroPaddedFilemode=ignore \
+  https://github.com/rbenv/rbenv.git "$RBENV_ROOT"
 
 # Add rbenv to fish user PATH while in fish shell.
 updaterc "set rbenv_root \$HOME/.rbenv"
@@ -182,19 +182,18 @@ updaterc "set -Ux fish_user_paths \$rbenv_root/bin \$fish_user_paths"
 updaterc "status --is-interactive; and rbenv init - fish | source"
 
 if [ "$USERNAME" != "root" ]; then
-    sudo_if mkdir -p "$RBENV_ROOT/plugins"
-    sudo_if chown -R "$USERNAME" "$RBENV_ROOT"
-    # sudo_if ln -s /usr/local/share/ruby-build $RBENV_ROOT/plugins/ruby-build
+  sudo_if mkdir -p "$RBENV_ROOT/plugins"
+  sudo_if chown -R "$USERNAME" "$RBENV_ROOT"
+  # sudo_if ln -s /usr/local/share/ruby-build $RBENV_ROOT/plugins/ruby-build
 fi
 
 sudo_if git clone --depth=1 \
-    -c core.eol=lf \
-    -c core.autocrlf=false \
-    -c fsck.zeroPaddedFilemode=ignore \
-    -c fetch.fsck.zeroPaddedFilemode=ignore \
-    -c receive.fsck.zeroPaddedFilemode=ignore \
-    https://github.com/rbenv/ruby-build.git "$RBENV_ROOT/plugins/ruby-build"
-
+  -c core.eol=lf \
+  -c core.autocrlf=false \
+  -c fsck.zeroPaddedFilemode=ignore \
+  -c fetch.fsck.zeroPaddedFilemode=ignore \
+  -c receive.fsck.zeroPaddedFilemode=ignore \
+  https://github.com/rbenv/ruby-build.git "$RBENV_ROOT/plugins/ruby-build"
 
 # So instead of building into ${RBENV_ROOT}/versions/<version>, which is the default for `rbenv install <version>`,
 # instead we must install into RUNNER_TOOL_CACHE/Ruby/<version>/x64 and symlink so rbenv continues to work as before.

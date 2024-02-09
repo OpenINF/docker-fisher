@@ -1,3 +1,1 @@
-
-
 sudo yum install ShellCheck
