@@ -47,7 +47,7 @@ receive_gpg_keys() {
     until [ "${gpg_ok}" = "true" ] || [ "${retry_count}" -eq "5" ]; 
     do
         echo "(*) Downloading GPG key..."
-        ( echo "${keys}" | xargs -n 1 gpg -q ${keyring_args} --recv-keys) 2>&1 && gpg_ok="true"
+        ( echo "${keys}" | xargs -n 1 gpg -q "${keyring_args}" --recv-keys) 2>&1 && gpg_ok="true"
         if [ "${gpg_ok}" != "true" ]; then
             echo "(*) Failed getting key, retring in 10s..."
             (( retry_count++ ))
@@ -95,12 +95,12 @@ find_version_from_git_tags() {
             last_part="${escaped_separator}[0-9]+"
         fi
         local regex="${prefix}\\K[0-9]+${escaped_separator}[0-9]+${last_part}$"
-        local version_list="$(git ls-remote --tags ${repository} | grep -oP "${regex}" | tr -d ' ' | tr "${separator}" "." | sort -rV)"
+        local version_list="$(git ls-remote --tags "${repository}" | grep -oP "${regex}" | tr -d ' ' | tr "${separator}" "." | sort -rV)"
         if [ "${requested_version}" = "latest" ] || [ "${requested_version}" = "current" ] || [ "${requested_version}" = "lts" ]; then
-            declare -g ${variable_name}="$(echo "${version_list}" | head -n 1)"
+            declare -g "${variable_name}"="$(echo "${version_list}" | head -n 1)"
         else
             set +e
-            declare -g ${variable_name}="$(echo "${version_list}" | grep -E -m 1 "^${requested_version//./\\.}([\\.\\s]|$)")"
+            declare -g "${variable_name}"="$(echo "${version_list}" | grep -E -m 1 "^${requested_version//./\\.}([\\.\\s]|$)")"
             set -e
         fi
     fi
@@ -132,21 +132,21 @@ find_prev_version_from_git_tags() {
 
         if [ "${minor}" = "0" ] && [ "${breakfix}" = "0" ]; then
             ((major=major-1))
-            declare -g ${variable_name}="${major}"
+            declare -g "${variable_name}"="${major}"
             # Look for latest version from previous major release
             find_version_from_git_tags "${variable_name}" "${repository}" "${prefix}" "${separator}" "${last_part_optional}"
         # Handle situations like Go's odd version pattern where "0" releases omit the last part
         elif [ "${breakfix}" = "" ] || [ "${breakfix}" = "0" ]; then
             ((minor=minor-1))
-            declare -g ${variable_name}="${major}.${minor}"
+            declare -g "${variable_name}"="${major}.${minor}"
             # Look for latest version from previous minor release
             find_version_from_git_tags "${variable_name}" "${repository}" "${prefix}" "${separator}" "${last_part_optional}"
         else
             ((breakfix=breakfix-1))
             if [ "${breakfix}" = "0" ] && [ "${last_part_optional}" = "true" ]; then
-                declare -g ${variable_name}="${major}.${minor}"
+                declare -g "${variable_name}"="${major}.${minor}"
             else 
-                declare -g ${variable_name}="${major}.${minor}.${breakfix}"
+                declare -g "${variable_name}"="${major}.${minor}.${breakfix}"
             fi
         fi
     set -e
@@ -163,17 +163,17 @@ install_deb_using_github() {
 
     mkdir -p /tmp/ghcli
     pushd /tmp/ghcli
-    wget https://github.com/cli/cli/releases/download/v${CLI_VERSION}/${cli_filename}
+    wget https://github.com/cli/cli/releases/download/v"${CLI_VERSION}"/"${cli_filename}"
     exit_code=$?
     set -e
     if [ "$exit_code" != "0" ]; then
         # Handle situation where git tags are ahead of what was is available to actually download
         echo "(!) github-cli version ${CLI_VERSION} failed to download. Attempting to fall back one version to retry..."
         find_prev_version_from_git_tags CLI_VERSION https://github.com/cli/cli
-        wget https://github.com/cli/cli/releases/download/v${CLI_VERSION}/${cli_filename}
+        wget https://github.com/cli/cli/releases/download/v"${CLI_VERSION}"/"${cli_filename}"
     fi
 
-    dpkg -i /tmp/ghcli/${cli_filename}
+    dpkg -i /tmp/ghcli/"${cli_filename}"
     popd
     rm -rf /tmp/ghcli
 }
