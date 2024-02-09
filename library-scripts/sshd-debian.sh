@@ -49,7 +49,7 @@ elif [ """"""$USERNAME = "none" ] || ! id -u """"""$USERNAME >/dev/null 2>&1; th
 fi
 
 apt_get_update() {
-  if [ ""$(find /var/lib/apt/lists/* | wc -l) = "0" ]; then
+  if [ "$(find /var/lib/apt/lists/* | wc -l)" = "0" ]; then
     echo "Running apt-get update..."
     apt-get update -y
   fi
