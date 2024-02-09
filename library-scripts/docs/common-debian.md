@@ -1,4 +1,4 @@
-# Common Utility and Non-Root User Install Script
+## Common Debian Utility and Non-Root User Install Script
 
 _Installs a set of common command line utilities and sets up a non-root user._
 
@@ -8,7 +8,7 @@ _Installs a set of common command line utilities and sets up a non-root user._
 
 **Maintainer:** The OpenINF Community
 
-## Syntax
+### Syntax
 
 ```text
 ./common-debian.sh [Non-root user] [User UID] [User GID] [Upgrade packages flag]
@@ -23,7 +23,7 @@ _Installs a set of common command line utilities and sets up a non-root user._
 | User GID              | `automatic` | A specific GID (e.g. `1000`) for the user's group that will be created modified. A value of `automatic` will pick a free one if the group is created.                                                                                                                                                           |
 | Upgrade packages flag | `true`      | A `true`/`false` flag that indicates whether packages should be upgraded to the latest for the distro.                                                                                                                                                                                                          |
 
-## Usage
+### Usage
 
 **Ubuntu / Debian:**
 
@@ -38,3 +38,7 @@ _Installs a set of common command line utilities and sets up a non-root user._
    ```
 
 That's it!
+
+<!-- LINK LABEL DEFINITIONS - START -->
+
+<!-- LINK LABEL DEFINITIONS - END -->

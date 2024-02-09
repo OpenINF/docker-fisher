@@ -1,0 +1,146 @@
+--- # Derivative of https://github.com/GoogleChrome/web.dev/blob/main/.github/workflows/check.yml
+    # Copyrights retained by their respective owners.
+    name: 'Check'
+    
+    on: pull_request
+    
+    jobs:
+      queue:
+        runs-on: ubuntu-latest
+        steps:
+          - id: skip
+            uses: fkirc/skip-duplicate-actions@master
+            with:
+              concurrent_skipping: 'outdated_runs'
+              cancel_others: true
+              skip_after_successful_duplicate: true
+              do_not_skip: '["workflow_dispatch", "schedule"]'
+    
+      lint:
+        needs: queue
+        runs-on: ubuntu-latest
+        steps:
+          - name: Getting changes
+            id: changes
+            uses: dorny/paths-filter@v2
+            with:
+              filters: |
+                js:
+                  - '**/*.js'
+                  - '**/*.json'
+                md:
+                  - '**/*.md'
+                scss:
+                  - '**/*.scss'
+                bash:
+                  - '**/*.bash'
+                fish:
+                  - '**/*.fish'
+                dockerfile:
+                  - '**/Dockerfile'
+    
+          - name: Cloning repository
+            uses: actions/checkout@v3
+    
+          - name: Setting up Node.js
+            uses: actions/setup-node@v3
+            with:
+              cache: pnpm
+              node-version: 20
+    
+          - name: Installing Node.js packages
+            run: |
+              corepack enable
+              corepack prepare pnpm@latest --activate
+              pnpm install
+    
+          - name: Lint Tags
+            if: ${{ steps.filter.outputs.tags == 'true' || steps.filter.outputs.md == 'true' }}
+            uses: ./.github/actions/lint-tags
+    
+          - name: Linting JavaScript
+            if: ${{ steps.changes.outputs.js == 'true' }}
+            run: |
+              pnpm run lint:js
+    
+          - name: Linting Markdown
+            if: ${{ steps.changes.outputs.md == 'true' }}
+            run: pnpm run lint:md
+    
+          - name: Linting SCSS
+            if: ${{ steps.changes.outputs.scss == 'true' }}
+            run: pnpm run lint:scss
+
+          - name: Linting Bash
+            if: ${{ steps.changes.outputs.bash == 'true' }}
+            run: pnpm run lint:bash
+          
+          - name: Linting Fish
+            if: ${{ steps.changes.outputs.fish == 'true' }}
+            run: pnpm run lint:fish
+
+          - name: Linting Dockerfiles
+            if: ${{ steps.changes.outputs.dockerfile == 'true' }}
+            run: pnpm run lint:dockerfile
+    
+      test:
+        needs: queue
+        runs-on: ubuntu-latest
+        steps:
+          - name: Getting changes
+            id: changes
+            uses: dorny/paths-filter@v2
+            with:
+              filters: |
+                js:
+                  - 'package.json'
+                  - 'site/**/*.js'
+                  - 'server/**.js'
+                  - 'tests/**.js'
+    
+          - name: Cloning repository
+            uses: actions/checkout@v3
+    
+          - name: Setting up Node.js
+            uses: actions/setup-node@v3
+            with:
+              cache: pnpm
+              node-version: 20
+    
+          - name: Installing Node.js packages
+            run: |
+              corepack enable
+              corepack prepare pnpm@latest --activate
+              pnpm install
+    
+          - name: Running tests
+            if: ${{ steps.changes.outputs.js == 'true' }}
+            run: |
+              pnpm run test
+    
+      build:
+        needs: queue
+        runs-on: ubuntu-latest
+        steps:
+          - name: Cloning repository
+            uses: actions/checkout@v3
+    
+          - name: Setting up Node.js
+            uses: actions/setup-node@v3
+            with:
+              cache: pnpm
+              node-version: 20
+    
+          - name: Installing Node.js packages
+            run: |
+              corepack enable
+              corepack prepare pnpm@latest --activate
+              pnpm install
+    
+          - name: Building containers
+            env:
+              # Increase memory limit as a full build requires around 8GB
+              NODE_OPTIONS: --max_old_space_size=8192
+              ELEVENTY_ENV: staging
+            run: pnpm run build
+    

@@ -2,8 +2,8 @@
 
 _Defines all the specific terms and vocabulary used throughout_
 
-Participants should use this glossary to ensure consistency and avoid
-the following happenstances.
+Participants should use this glossary to ensure consistency and avoid the
+following happenstances.
 
 - referring to the same thing using different names
 - referring to different things using the same name (even worse)
@@ -27,17 +27,16 @@ the following happenstances.
 
 _Purpose_
 
-The `/etc/` hierarchy contains configuration files. A "configuration file" is a 
+The `/etc/` hierarchy contains configuration files. A "configuration file" is a
 local file used to control the operation of a program; it must be static and
 cannot be an executable binary.[^3.7]
 
 <br />
 
-
 <sup>To be clear, `/etc/` may contain executable scripts, such as the command
 scripts commonly called by `init` to start and shut down the system and start
 daemon processes. "Executable binary" in this context refers to direct machine
-code or pseudocode not in a human-readable format, such as native ELF  
+code or pseudocode not in a human-readable format, such as native ELF
 executables.</sup>
 
 <br />
@@ -52,7 +51,7 @@ The following directories, or symbolic links to directories are required in
 <br />
 
 | Directory | Description               |
-| --------- | ------------------------- |  
+| --------- | ------------------------- |
 | `opt`     | Configuration for `/opt/` |
 
 <br />
@@ -64,15 +63,15 @@ if the corresponding subsystem is installed:
 
 <br />
 
-| Directory   | Description                                      |
-| :---------- | :----------------------------------------------- |
-| `X11`       | Configuration for the X Window system (optional) |
-| `sgml`      | Configuration for SGML (optional)                |
-| `xml`       | Configuration for XML (optional)                 |
+| Directory | Description                                      |
+| :-------- | :----------------------------------------------- |
+| `X11`     | Configuration for the X Window system (optional) |
+| `sgml`    | Configuration for SGML (optional)                |
+| `xml`     | Configuration for XML (optional)                 |
 
 <br />
 
-<sup>Systems that use the shadow password suite will have additional 
+<sup>Systems that use the shadow password suite will have additional
 configuration files in `/etc/` (`/etc/shadow/` and others) and programs in
 `/usr/sbin/` (**`useradd`**, **`usermod`**, and others).</sup>
 
@@ -96,7 +95,7 @@ corresponding subsystem is installed:
 | `hosts.deny`  | Host access file for TCP wrappers (optional)                        |
 | `hosts.equiv` | List of trusted hosts for rlogin, rsh, rcp (optional)               |
 | `hosts.lpd`   | List of trusted hosts for lpd (optional)                            |
-| `inetd.conf`  | Configuration file for inetd (optional)                             |  
+| `inetd.conf`  | Configuration file for inetd (optional)                             |
 | `inittab`     | Configuration file for init (optional)                              |
 | `issue`       | Pre-login message and identification file (optional)                |
 | `ld.so.conf`  | List of extra directories to search for shared libraries (optional) |
@@ -111,18 +110,18 @@ corresponding subsystem is installed:
 | `resolv.conf` | Resolver configuration file (optional)                              |
 | `rpc`         | RPC protocol listing (optional)                                     |
 | `securetty`   | TTY access control for root login (optional)                        |
-| `services`    | Port names for network services (optional)                          | 
+| `services`    | Port names for network services (optional)                          |
 | `shells`      | Pathnames of valid login shells (optional)                          |
 | `syslog.conf` | Configuration file for syslogd (optional)                           |
 
 <br />
 
-[`mtab`][] does not fit the static nature of `/etc/`: it is excepted for historical
-reasons.[^3.7]
+[`mtab`][] does not fit the static nature of `/etc/`: it is excepted for
+historical reasons.[^3.7]
 
 <br />
 
-<sup>On some Linux systems, [`/etc/mtab`][] may be a symbolic link to 
+<sup>On some Linux systems, [`/etc/mtab`][] may be a symbolic link to
 `/proc/mounts`, in which case this exception is not required.</sup>
 
 </details>
@@ -137,6 +136,7 @@ reasons.[^3.7]
 [⑪📑][]
 
 </ref></note></div>
+
 <dd>
 
 A configuration file that contains entries identifying the storage device
@@ -153,7 +153,7 @@ partitions Linux should mount at boot time.
 </details>
 </dd><br />
 <dt id="etc-mtab">
-  
+
 #### `/etc/mtab`
 
 </dt><br />
@@ -207,6 +207,7 @@ subdirectory within `/var/log/`.[^9]
 [⑮📑][]
 
 </ref></note></div>
+
 <dd>
 
 A detailed method of assigning granular user and group permissions to files and
@@ -219,16 +220,16 @@ permissions for multiple users or groups but also more advanced rules like set
 user ID on execution, set group ID on execution, and
 [inherited permissions](#inheritance).
 
-On the flip side, ACLs allow **file owners** to specify extended access information
-about a file, granting additional rights to users/groups other than those owning
-the file. This form of _discretionary access control_ allows users to manage
-their own collaborative projects without intervention of **system administrators**
-to maintain groups, but also without granting rights to all users on the system
-via use of the "other" permission bits.[^17.7]
+On the flip side, ACLs allow **file owners** to specify extended access
+information about a file, granting additional rights to users/groups other than
+those owning the file. This form of _discretionary access control_ allows users
+to manage their own collaborative projects without intervention of **system
+administrators** to maintain groups, but also without granting rights to all
+users on the system via use of the "other" permission bits.[^17.7]
 
-The [`setfacl`][] command allows one
-to set these permissions, and the [`getfacl`][] command allows one to view these
-permissions as they exist in real-time.
+The [`setfacl`][] command allows one to set these permissions, and the
+[`getfacl`][] command allows one to view these permissions as they exist in
+real-time.
 
 For example, an ACL could allow user Bob read/write access to `file1.txt` while
 denying access to `file2.txt`, allow the `sysadmin` group full access to a set
@@ -257,6 +258,7 @@ Debian-based Linux distributions).
 [⑮📑][]
 
 </ref></note></div>
+
 <dd>
 
 An application used by Debian-based distributions to implement context-based
@@ -286,6 +288,7 @@ permissions for applications.
 [⑮📑][]
 
 </ref></note></div>
+
 <dd>
 
 A command-line command that allows the owner or system administrator to change
@@ -293,7 +296,7 @@ the group assigned to a file or directory.
 
 </dd><br />
 <dt id="chmod">
-  
+
 #### `chmod`
 
 </dt>
@@ -302,6 +305,7 @@ the group assigned to a file or directory.
 [⑮📑][]
 
 </ref></note></div>
+
 <dd>
 
 A command-line command that allows the system administrator to change the
@@ -309,7 +313,7 @@ permissions assigned to a file or directory.
 
 </dd><br />
 <dt id="chown">
-  
+
 #### `chown`
 
 </dt>
@@ -318,6 +322,7 @@ permissions assigned to a file or directory.
 [⑮📑][]
 
 </ref></note></div>
+
 <dd>
 
 A command-line command that allows the system administrator to change the owner
@@ -331,8 +336,8 @@ of a file or directory.
 </dt><br />
 <dd>
 
-A Linux distribution derived from the sources of Red Hat Enterprise
-Linux (RHEL).[^1]
+A Linux distribution derived from the sources of Red Hat Enterprise Linux
+(RHEL).[^1]
 
 </dd>
 </dl>
@@ -354,6 +359,7 @@ Linux (RHEL).[^1]
 [⑮📑][]
 
 </ref></note></div>
+
 <dd>
 
 A command-line command that allows a way to perform commands as another user. It
@@ -379,12 +385,11 @@ alias sudoedit='doas rnano'
 </dt><br />
 <dd>
 
-An _image_ is a read-only template with instructions for creating a
-Docker container. Often, an image is _based on_ another image, with some
-additional customization. For example, you may build an image which is
-based on the `ubuntu` image, but installs the Apache web server and your
-application, as well as the configuration details needed to make your
-application run.[^2]
+An _image_ is a read-only template with instructions for creating a Docker
+container. Often, an image is _based on_ another image, with some additional
+customization. For example, you may build an image which is based on the
+`ubuntu` image, but installs the Apache web server and your application, as well
+as the configuration details needed to make your application run.[^2]
 
 </dd><br /><br />
 <dt id="docker-image-layer">
@@ -394,10 +399,10 @@ application run.[^2]
 </dt><br />
 <dd>
 
-The order of Dockerfile instructions matter. A Docker build consists of
-a series of ordered build instructions. Each instruction in a Dockerfile
-roughly translates to an _image layer_. The following diagram illustrates
-how a Dockerfile translates into a stack of layers in a container image.[^3]
+The order of Dockerfile instructions matter. A Docker build consists of a series
+of ordered build instructions. Each instruction in a Dockerfile roughly
+translates to an _image layer_. The following diagram illustrates how a
+Dockerfile translates into a stack of layers in a container image.[^3]
 <br /><br />
 
 <div align="center">
@@ -410,17 +415,16 @@ how a Dockerfile translates into a stack of layers in a container image.[^3]
 </figure>
 </div><br /><br />
 
-Docker images have _intermediate layers_ that increase reusability,
-decrease disk usage, and speed up docker build by allowing each step to
-be cached. These intermediate layers are not shown by default.[^4]
+Docker images have _intermediate layers_ that increase reusability, decrease
+disk usage, and speed up docker build by allowing each step to be cached. These
+intermediate layers are not shown by default.[^4]
 
-Each `RUN` instruction will create a new layer in the resulting image.
-Therefore squashing consecutive `RUN` instructions will reduce the layer
-count (see https://docs.docker.com/develop/dev-best-practices/). In
-addition to that, each `RUN` instruction runs in its own shell, which
-can be the source of confusion when part of a `RUN` instruction changes
-something about the environment, because these changes may vanish in the
-next `RUN` instruction.[^4.1]
+Each `RUN` instruction will create a new layer in the resulting image. Therefore
+squashing consecutive `RUN` instructions will reduce the layer count (see
+https://docs.docker.com/develop/dev-best-practices/). In addition to that, each
+`RUN` instruction runs in its own shell, which can be the source of confusion
+when part of a `RUN` instruction changes something about the environment,
+because these changes may vanish in the next `RUN` instruction.[^4.1]
 
 </dd>
 </dl>
@@ -446,7 +450,7 @@ next `RUN` instruction.[^4.1]
 
 <dl>
 <dt id="facility">
-  
+
 #### facility
 
 </dt><br />
@@ -462,8 +466,7 @@ The type of <mark>event log</mark>ged by [syslog][].
 </dt><br />
 <dd>
 
-The upstream source of the commercial Red Hat Enterprise Linux
-distribution.[^5]
+The upstream source of the commercial Red Hat Enterprise Linux distribution.[^5]
 
 </dd>
 </dl>
@@ -485,6 +488,7 @@ distribution.[^5]
 [⑮📑][]
 
 </ref></note></div>
+
 <dd>
 
 A command-line command that displays the advanced [access control list (ACL)][]
@@ -492,8 +496,8 @@ permission entries for a file or directory.
 
 </dd><br />
 <dt id="gid">
-  
-####  Group Identification Number (GID)
+
+#### Group Identification Number (GID)
 
 </dt>
 <div align="right"><note place="source"><ref target="chap15">
@@ -501,6 +505,7 @@ permission entries for a file or directory.
 [⑮📑][]
 
 </ref></note></div>
+
 <dd>
 
 A number that is used by Linux to identify groups.
@@ -516,7 +521,7 @@ A number that is used by Linux to identify groups.
 
 <dl>
 <dt>
-  
+
 #### Hypervisor
 
 </dt><br />
@@ -548,9 +553,10 @@ processing.[^6]
 
 <img src="./img/hypervisor_types.png" alt="Type 1 and type 2 hypervisors"/>
 
-  </a><br />
+</a><br />
+
   <figcaption>
-  
+
 **Fig. | _Depiction of hypervisors type one and two._**
 
 </figcaption>
@@ -569,7 +575,7 @@ processing.[^6]
 
 <dl>
 <dt id="inheritance">
-  
+
 #### inheritance
 
 </dt>
@@ -581,8 +587,8 @@ processing.[^6]
 
 <dd>
 
-The Linux system assigns the [access control list (ACL)][] permissions assigned to a
-directory to all files contained within the directory.
+The Linux system assigns the [access control list (ACL)][] permissions assigned
+to a directory to all files contained within the directory.
 
 </dd><br />
 </dl>
@@ -643,6 +649,7 @@ directory to all files contained within the directory.
 [⑪📑][]
 
 </ref></note></div>
+
 <dd>
 
 The [`mount`][] command allows users to **_mount_**, i.e., attach additional
@@ -651,7 +658,6 @@ filesystem.
 
 <details>
 <summary>Learn more&hellip;</summary>
-
 
 To temporarily mount a filesystem to the Linux virtual directory, use the
 [`mount`][] command; the basic format for the [`mount`][] command is:
@@ -669,8 +675,8 @@ $ sudo mount -t ext4 /dev/sdb1 /media/usb1
 If one specifies the [`mount`][] command with no parameters, it displays all
 devices currently mounted on the Linux system. Be prepared for a long output
 though, as most Linux distributions mount many virtual devices in the virtual
-directory to provide information about system resources. [Listing 11.1][] shows a
-partial output from a [`mount`][] command.
+directory to provide information about system resources. [Listing 11.1][] shows
+a partial output from a [`mount`][] command.
 
 <div align="center"><br /><br />
 <figure id="listing_11-1"><div align="left">
@@ -690,38 +696,38 @@ rich@rich-TestBox2:~$
 
 </div><br /><figcaption>
 
-***Listing 11.1 | Output from the [`mount`][] command.***
+**_Listing 11.1 | Output from the [`mount`][] command._**
 
 </figcaption>
 </figure><br /><br />
 </div>
 
-To save space, the output from the [`mount`][] command was trimmed down to _only_ show
-the physical devices on the system. The main hard drive device (`/dev/sda`)
-contains two partitions, and the USB memory stick device (`/dev/sdb`) also
-contains two partitions.
+To save space, the output from the [`mount`][] command was trimmed down to
+_only_ show the physical devices on the system. The main hard drive device
+(`/dev/sda`) contains two partitions, and the USB memory stick device
+(`/dev/sdb`) also contains two partitions.
 
 <picture>
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/OpenINF/GitHub-Markdown/HEAD/blockquotes/badge/light-theme/info.svg">
   <img alt="Note" src="https://raw.githubusercontent.com/OpenINF/GitHub-Markdown/HEAD/blockquotes/badge/dark-theme/info.svg">
 </picture><br />
 
-The [`mount`][] command uses the `-o` option to specify additional features of the
-filesystem, such as mounting it in read-only mode, user permissions assigned to
-the mount point, and how data is stored on the device. These options are shown
-in the output of the [`mount`][] command. Usually, one may omit the `-o` option to
-use the system defaults for the new mountpoint.
+The [`mount`][] command uses the `-o` option to specify additional features of
+the filesystem, such as mounting it in read-only mode, user permissions assigned
+to the mount point, and how data is stored on the device. These options are
+shown in the output of the [`mount`][] command. Usually, one may omit the `-o`
+option to use the system defaults for the new mountpoint.
 
-The downside to the [`mount`][] command is that it only **temporarily** mounts the
-device in the virtual directory. On rebooting the system, one must still
+The downside to the [`mount`][] command is that it only **temporarily** mounts
+the device in the virtual directory. On rebooting the system, one must still
 manually mount the devices again. This is usually fine for removable devices,
 such as USB memory sticks, but for more permanent devices, it would be nice if
-Linux automatically mounted them for us &mdash; fortunately for us &mdash; Linux can do
-just that.
+Linux automatically mounted them for us &mdash; fortunately for us &mdash; Linux
+can do just that.
 
-To remove a mounted drive from the virtual directory, use the [`umount`][] command
-(note the missing _&ldquo;n&rdquo;_). One may remove the mounted drive by specifying either
-i) the device filename or ii) the mountpoint directory.
+To remove a mounted drive from the virtual directory, use the [`umount`][]
+command (note the missing _&ldquo;n&rdquo;_). One may remove the mounted drive
+by specifying either i) the device filename or ii) the mountpoint directory.
 
 </details>
 </dd>
@@ -748,7 +754,7 @@ i) the device filename or ii) the mountpoint directory.
 
 <dl>
 <dt id="octal-notation">
-  
+
 #### octal notation
 
 </dt>
@@ -757,6 +763,7 @@ i) the device filename or ii) the mountpoint directory.
 [⑮📑][]
 
 </ref></note></div>
+
 <dd>
 
 The method of defining standard [Unix file permissions][] of owner, group, and
@@ -764,14 +771,14 @@ other using three octal numbers.
 
 </dd><br />
 <dt>
-  
+
 #### Oracle VM VirtualBox
 
 </dt><br />
 <dd>
 
-Runs multiple Linux distributions at the same time, assuming that
-hardware has enough resources.
+Runs multiple Linux distributions at the same time, assuming that hardware has
+enough resources.
 
 </dd>
 </dl>
@@ -820,6 +827,7 @@ hardware has enough resources.
 [⑰📑][]
 
 </ref></note></div>
+
 <div align="right"><note place="source"><ref target="chap17">
 
 A faster **_[`syslog`][]_** program for
@@ -831,9 +839,9 @@ Linux.</dfn>&nbsp;<a role="button" aria-expanded="false" tabindex="0" href="#rsy
 <details>
 <summary>Learn more&hellip;</summary>
 
-The project claims the _r_ stands for _rocket fast_. Speed is
-the focus of the rsyslog project and the rsyslog application had quickly
-become the standard logging package for many Linux distributions.
+The project claims the _r_ stands for _rocket fast_. Speed is the focus of the
+rsyslog project and the rsyslog application had quickly become the standard
+logging package for many Linux distributions.
 
 It offers high performance, great security features, and a modular design. While
 it started as a regular [syslogd][], [rsyslog][] has evolved into a kind of
@@ -866,18 +874,20 @@ message part.[^8]
 </dd>
 </section><br />
 <section id="rsyslogd"><dt>
-  
+
 #### <dfn>rsyslogd</dfn>&nbsp;<a role="button" aria-expanded="false" tabindex="0" href="#rsyslogd" id="rsyslogd-ref">⚓</a>
-  
+
 </dt>
 <div align="right"><note place="source"><ref target="chap17">
 
 [⑰📑][]
 
 </ref></note></div>
+
 <dd>
 
-The SysVinit method of logging events on a server and accepting log events from remote servers.
+The SysVinit method of logging events on a server and accepting log events from
+remote servers.
 
 <details>
 <summary>Learn more&hellip;</summary>
@@ -903,7 +913,7 @@ See entry for [`/etc/rsyslog.conf`][], which is the main configuration file for
 <dl>
 
 <dt id="security-context">
-  
+
 #### security context
 
 </dt>
@@ -912,6 +922,7 @@ See entry for [`/etc/rsyslog.conf`][], which is the main configuration file for
 [⑮📑][]
 
 </ref></note></div>
+
 <dd>
 
 Used in context-based permissions applications such as SELinux to define a user,
@@ -919,7 +930,7 @@ role, and type assigned to a file or directory.
 
 </dd><br />
 <dt id="selinux">
-  
+
 #### Security-Enhanced Linux (SELinux)
 
 </dt>
@@ -928,6 +939,7 @@ role, and type assigned to a file or directory.
 [⑮📑][]
 
 </ref></note></div>
+
 <dd>
 
 An application commonly used on Red Hat-based Linux distributions to implement
@@ -935,8 +947,8 @@ context-based permissions.
 
 </dd><br />
 <dt id="sgid">
-  
-####  Set Group ID (SGID) bit
+
+#### Set Group ID (SGID) bit
 
 </dt>
 <div align="right"><note place="source"><ref target="chap15">
@@ -953,7 +965,7 @@ the file.
 
 </dd><br />
 <dt id="suid">
-  
+
 #### Set User ID (SUID) bit
 
 </dt>
@@ -962,6 +974,7 @@ the file.
 [⑮📑][]
 
 </ref></note></div>
+
 <dd>
 
 A bit set on a file that allows standard users the ability to run the file as
@@ -978,14 +991,15 @@ the file owner.
 [⑮📑][]
 
 </ref></note></div>
+
 <dd>
 
-A command-line command to set the [access control list (ACL)][] permissions for a
-file or directory.
+A command-line command to set the [access control list (ACL)][] permissions for
+a file or directory.
 
 </dd><br />
 <dt id="severity">
-  
+
 #### severity
 
 </dt><br />
@@ -995,7 +1009,7 @@ The importance of <mark>event log</mark>ged by [syslog][].
 
 </dd><br />
 <dt id="sticky-bit">
-  
+
 #### sticky bit
 
 </dt>
@@ -1004,6 +1018,7 @@ The importance of <mark>event log</mark>ged by [syslog][].
 [⑮📑][]
 
 </ref></note></div>
+
 <dd>
 
 A bit set on a file that prevents users from deleting the file unless they are
@@ -1021,6 +1036,7 @@ permissions to the file.
 [⑮📑][]
 
 </ref></note></div>
+
 <dd>
 
 A command-line command that allows users to run applications as another user
@@ -1037,6 +1053,7 @@ account on the system.
 [⑮📑][]
 
 </ref></note></div>
+
 <dd>
 
 A command-line command that allows users to run commands with root privileges.
@@ -1052,6 +1069,7 @@ A command-line command that allows users to run commands with root privileges.
 [⑮📑][]
 
 </ref></note></div>
+
 <dd>
 
 A command-line command that opens the specified file in an editor using the root
@@ -1059,7 +1077,7 @@ account privileges.
 
 </dd><br />
 <dt id="syslog">
-  
+
 #### Syslog
 
 </dt><br />
@@ -1078,7 +1096,7 @@ events in Linux.
 <anchor 𝚡𝚖𝚕:id="syslogd" id="syslogd" />
 <anchor 𝚡𝚖𝚕:id="klogd" id="klogd" />
 <dt id="sysklogd">
-  
+
 #### `sysklogd`
 
 </dt><br />
@@ -1091,7 +1109,7 @@ The original [Syslog][] application; includes two programs:
 
 </dd><br />
 <dt id="syslogd-ng">
-  
+
 #### `syslogd-ng`
 
 </dt><br />
@@ -1115,8 +1133,8 @@ have replaced it with [`rsyslog`][].[^7]
 </dt>
 <dd>
 
-A system and session manager for Linux, compatible with System V and
-LSB init scripts.[^10] The main features are:
+A system and session manager for Linux, compatible with System V and LSB init
+scripts.[^10] The main features are:
 
 - provides aggressive parallelization capabilities
 - uses socket and D-Bus activation for starting services
@@ -1134,10 +1152,10 @@ LSB init scripts.[^10] The main features are:
 </dt>
 <dd>
 
-This is part of the [Systemd][] application for system startup and initialization.
-Many Linux distributions are now using this for logging. It does not follow the
-[syslog][] protocol, but uses a completely different way of reporting and storing
-system and application events.
+This is part of the [Systemd][] application for system startup and
+initialization. Many Linux distributions are now using this for logging. It does
+not follow the [syslog][] protocol, but uses a completely different way of
+reporting and storing system and application events.
 
 </dd>
 </dl>
@@ -1163,7 +1181,7 @@ system and application events.
 
 <dl>
 <dt>﻿﻿
-  
+
 #### Ubuntu
 
 </dt><br />
@@ -1173,7 +1191,7 @@ An open-source operating system based on the Debian Linux distribution.
 
 </dd><br />
 <dt id="unix-access-mode">
-  
+
 #### Unix access mode
 
 </dt>
@@ -1182,13 +1200,14 @@ An open-source operating system based on the Debian Linux distribution.
 [⑮📑][]
 
 </ref></note></div>
+
 <dd>
 
 A particular form of access permitted to a file.[^17.2]
 
 </dd><br />
 <dt id="unix-file-perms">
-  
+
 #### Unix file permissions
 
 </dt>
@@ -1254,15 +1273,15 @@ Unix-like systems nowadays.
 
 <dl>
 <dt>
-  
+
 #### Yet another Setup Tool (YaST)
 
 </dt><br />
 <dd>
 
-An operating system setup and configuration tool unique to openSUSE.
-It can be thought of as a command-center utility; allows the control of
-many system services from one interface.
+An operating system setup and configuration tool unique to openSUSE. It can be
+thought of as a command-center utility; allows the control of many system
+services from one interface.
 
 </dd>
 </dl>
@@ -1282,7 +1301,7 @@ many system services from one interface.
 
 <br /><br />
 
-<!-- BEGIN LINK LABEL DEFINITIONS -->
+<!-- LINK LABEL DEFINITIONS - START -->
 
 [^1]: https://www.redhat.com/en/topics/linux/what-is-centos
 [^2]: https://docs.docker.com/get-started/overview/#images
@@ -1290,18 +1309,25 @@ many system services from one interface.
 [^3.7]: https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s07.html
 [^4]: https://docs.docker.com/engine/reference/commandline/images/#description
 [^4.1]: https://app.deepsource.com/directory/analyzers/docker/issues/DOK-W1001
-[^5]: https://docs.fedoraproject.org/en-US/quick-docs/fedora-and-red-hat-enterprise-linux/#relationship-between-fedora-and-red-hat-enterprise-linux
+[^5]:
+    https://docs.fedoraproject.org/en-US/quick-docs/fedora-and-red-hat-enterprise-linux/#relationship-between-fedora-and-red-hat-enterprise-linux
+
 [^6]: https://www.vmware.com/topics/glossary/content/hypervisor.html
 [^7]: https://en.wikipedia.org/wiki/Syslog-ng#Distributions
 [^8]: https://www.rsyslog.com/doc/master/index.html
-[^9]: https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/assembly_configuring-a-remote-logging-solution_configuring-basic-system-settings#the-rsyslog-logging-service_assembly_configuring-a-remote-logging-solution
-[^10]: https://documentation.suse.com/sles/12-SP5/html/SLES-all/cha-systemd.html#sec-boot-systemd-whatissystemd
+[^9]:
+    https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/assembly_configuring-a-remote-logging-solution_configuring-basic-system-settings#the-rsyslog-logging-service_assembly_configuring-a-remote-logging-solution
+
+[^10]:
+    https://documentation.suse.com/sles/12-SP5/html/SLES-all/cha-systemd.html#sec-boot-systemd-whatissystemd
+
 [^15.1]: https://en.wikipedia.org/wiki/Doas
 [^15.2]: https://wiki.gentoo.org/wiki/Doas
 [^15.3]: https://wiki.archlinux.org/title/Doas
 [^15.4]: https://why-openbsd.rocks/fact/doas/
+[^17.2]:
+    https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap03.html#tag_03_03
 
-[^17.2]: https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap03.html#tag_03_03
 [^17.7]: http://www.watson.org/fbsd-hardening/posix1e/acl/
 
 <!-- Glossary Entries -->
@@ -1337,57 +1363,158 @@ many system services from one interface.
 [syslogd]: ./glossary.md#syslogd
 [Systemd]: ./glossary.md#systemd
 [Unix file permissions]: ./glossary.md#unix-file-perms
+[⓪📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=1#top
+  'uCertify ch. 0'
+[①📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=2#top
+  'uCertify ch. 1'
+[②📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=3#top
+  'uCertify ch. 2'
+[③📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=4#top
+  'uCertify ch. 3'
+[④📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=5#top
+  'uCertify ch. 4'
+[⑤📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=6#top
+  'uCertify ch. 5'
+[⑥📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=7#top
+  'uCertify ch. 6'
+[⑦📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=8#top
+  'uCertify ch. 7'
+[⑧📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=9#top
+  'uCertify ch. 8'
+[⑨📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=10#top
+  'uCertify ch. 9'
+[⑩📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=11#top
+  'uCertify ch. 10'
+[⑪📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=12#top
+  'uCertify ch. 11'
+[⑫📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=13#top
+  'uCertify ch. 12'
+[⑬📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=14#top
+  'uCertify ch. 13'
+[⑭📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=15#top
+  'uCertify ch. 14'
+[⑮📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=16#top
+  'uCertify ch. 15'
+[⑯📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=17#top
+  'uCertify ch. 16'
+[⑰📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=18#top
+  'uCertify ch. 17'
+[⑱📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=19#top
+  'uCertify ch. 18'
+[⑲📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=20#top
+  'uCertify ch. 19'
+[⑳📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=21#top
+  'uCertify ch. 20'
+[㉑📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=22#top
+  'uCertify ch. 21'
+[㉒📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=23#top
+  'uCertify ch. 22'
+[㉓📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=24#top
+  'uCertify ch. 23'
+[㉔📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=25#top
+  'uCertify ch. 24'
+[㉕📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=26#top
+  'uCertify ch. 25'
+[㉖📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=27#top
+  'uCertify ch. 26'
+[㉗📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=28#top
+  'uCertify ch. 27'
+[㉘📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=29#top
+  'uCertify ch. 28'
+[㉙📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=30#top
+  'uCertify ch. 29'
+[㉚📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=31#top
+  'uCertify ch. 30'
+[㉛📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=32#top
+  'uCertify ch. 31'
+[㉜📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=33#top
+  'uCertify ch. 32'
+[㉝📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=34#top
+  'uCertify ch. 33'
+[㉞📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=35#top
+  'uCertify ch. 34'
+[㉟📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=36#top
+  'uCertify ch. 35'
+[㊱📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=37#top
+  'uCertify ch. 36'
+[㊲📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=38#top
+  'uCertify ch. 37'
+[㊳📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=39#top
+  'uCertify ch. 38'
+[㊴📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=40#top
+  'uCertify ch. 39'
+[㊵📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=41#top
+  'uCertify ch. 40'
+[㊶📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=42#top
+  'uCertify ch. 41'
+[㊷📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=43#top
+  'uCertify ch. 42'
+[㊸📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=44#top
+  'uCertify ch. 43'
+[㊹📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=45#top
+  'uCertify ch. 44'
+[㊺📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=46#top
+  'uCertify ch. 45'
+[㊻📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=47#top
+  'uCertify ch. 46'
+[㊼📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=48#top
+  'uCertify ch. 47'
+[㊽📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=49#top
+  'uCertify ch. 48'
+[㊾📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=50#top
+  'uCertify ch. 49'
+[㊿📑]:
+  https://www.ucertify.com/app/?func=ebook&chapter_no=51#top
+  'uCertify ch. 50'
 
-[⓪📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=1#top "uCertify ch. 0"
-[①📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=2#top "uCertify ch. 1"
-[②📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=3#top "uCertify ch. 2" 
-[③📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=4#top "uCertify ch. 3"
-[④📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=5#top "uCertify ch. 4"
-[⑤📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=6#top "uCertify ch. 5"
-[⑥📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=7#top "uCertify ch. 6"
-[⑦📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=8#top "uCertify ch. 7"  
-[⑧📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=9#top "uCertify ch. 8"
-[⑨📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=10#top "uCertify ch. 9"
-[⑩📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=11#top "uCertify ch. 10" 
-[⑪📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=12#top "uCertify ch. 11"
-[⑫📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=13#top "uCertify ch. 12"
-[⑬📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=14#top "uCertify ch. 13"
-[⑭📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=15#top "uCertify ch. 14"
-[⑮📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=16#top "uCertify ch. 15"  
-[⑯📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=17#top "uCertify ch. 16"
-[⑰📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=18#top "uCertify ch. 17"
-[⑱📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=19#top "uCertify ch. 18"
-[⑲📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=20#top "uCertify ch. 19"
-[⑳📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=21#top "uCertify ch. 20"
-[㉑📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=22#top "uCertify ch. 21"
-[㉒📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=23#top "uCertify ch. 22"
-[㉓📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=24#top "uCertify ch. 23"
-[㉔📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=25#top "uCertify ch. 24"
-[㉕📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=26#top "uCertify ch. 25"
-[㉖📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=27#top "uCertify ch. 26"
-[㉗📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=28#top "uCertify ch. 27"
-[㉘📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=29#top "uCertify ch. 28"
-[㉙📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=30#top "uCertify ch. 29"
-[㉚📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=31#top "uCertify ch. 30"
-[㉛📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=32#top "uCertify ch. 31"
-[㉜📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=33#top "uCertify ch. 32"
-[㉝📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=34#top "uCertify ch. 33"
-[㉞📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=35#top "uCertify ch. 34"
-[㉟📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=36#top "uCertify ch. 35"
-[㊱📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=37#top "uCertify ch. 36"
-[㊲📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=38#top "uCertify ch. 37"
-[㊳📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=39#top "uCertify ch. 38"
-[㊴📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=40#top "uCertify ch. 39"
-[㊵📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=41#top "uCertify ch. 40"
-[㊶📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=42#top "uCertify ch. 41"
-[㊷📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=43#top "uCertify ch. 42"
-[㊸📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=44#top "uCertify ch. 43"
-[㊹📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=45#top "uCertify ch. 44"
-[㊺📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=46#top "uCertify ch. 45"
-[㊻📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=47#top "uCertify ch. 46"
-[㊼📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=48#top "uCertify ch. 47"
-[㊽📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=49#top "uCertify ch. 48"
-[㊾📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=50#top "uCertify ch. 49"
-[㊿📑]: https://www.ucertify.com/app/?func=ebook&chapter_no=51#top "uCertify ch. 50"
-
-<!-- END LINK LABEL DEFINITIONS -->
+<!-- LINK LABEL DEFINITIONS - END -->

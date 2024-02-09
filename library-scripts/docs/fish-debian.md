@@ -1,4 +1,4 @@
-# fish Install Script
+## fish Install Script
 
 > **Note:** This is a community contributed and maintained script.
 
@@ -8,9 +8,9 @@ _Adds [fish shell](https://github.com/fish-shell/fish-shell) to a container._
 
 **OS support**: Debian 11/Ubuntu Lunar
 
-**Maintainer:** [@DerekNonGeneric](https://github.com/DerekNonGeneric)
+**Maintainer:** The OpenINF Community
 
-## Syntax
+### Syntax
 
 ```console
 ./fish-debian.sh [Install Fisher flag] [Non-root user]
@@ -21,7 +21,7 @@ _Adds [fish shell](https://github.com/fish-shell/fish-shell) to a container._
 | Install Fisher flag | `true`      | A `true`/`false` flag that indicates whether to install [Fisher plugin manager](https://github.com/jorgebucaran/fisher).                                                                                                                                       |
 | Non-root user       | `automatic` | Specifies a user in the container other than root that will use fish shell. A value of `automatic` will cause the script to check for a user called `vscode`, then `node`, `codespace`, and finally a user with a UID of `1000` before falling back to `root`. |
 
-## Usage
+### Usage
 
 Usage:
 
@@ -35,3 +35,7 @@ Usage:
    ```
 
 That's it!
+
+<!-- LINK LABEL DEFINITIONS - START -->
+
+<!-- LINK LABEL DEFINITIONS - END -->
