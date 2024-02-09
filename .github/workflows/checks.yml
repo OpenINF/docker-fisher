@@ -107,7 +107,10 @@
               node-version: 20
     
           - name: Installing Node.js packages
-            run: npm ci
+            run: |
+              corepack enable
+              corepack prepare pnpm@latest --activate
+              pnpm install
     
           - name: Running tests
             if: ${{ steps.changes.outputs.js == 'true' }}
