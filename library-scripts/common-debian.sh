@@ -61,7 +61,7 @@ export DEBIAN_FRONTEND=noninteractive
 
 # Function to call apt-get if needed
 apt_get_update_if_needed() {
-  if [ ! -d "/var/lib/apt/lists" ] || [ $(($(wc -c <"/var/lib/apt/lists/"))) = "0" ]; then
+  if [ ! -d "/var/lib/apt/lists" ] || [ $(( $(wc -c < "/var/lib/apt/lists/") )) = "0" ]; then
     echo "Running apt-get update..."
     apt-get update
   else
