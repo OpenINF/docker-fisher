@@ -16,7 +16,7 @@ Code and Codespaces teams no longer support them, we maintain this script
 library separately. If you encounter any issues or have questions about the
 scripts, please [open an issue][] on the GitHub repository for _this_ project.
 
-<!-- BEGIN LINK DEFINITIONS -->
+<!-- LINK LABEL DEFINITIONS - START -->
 
 [devcontainers-features]: https://github.com/devcontainers/features
 [Fisher]: https://github.com/jorgebucaran/fisher
@@ -26,4 +26,4 @@ scripts, please [open an issue][] on the GitHub repository for _this_ project.
   https://github.com/microsoft/vscode-dev-containers/tree/HEAD/script-library
 [vscode-dev-containers]: https://github.com/microsoft/vscode-dev-containers
 
-<!-- END LINK DEFINITIONS -->
+<!-- LINK LABEL DEFINITIONS - END -->

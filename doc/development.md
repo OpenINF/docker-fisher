@@ -4,7 +4,8 @@
 
 **📘 Development**
 
-_Explains how to fork, set up a development environment, and iterate to get started contributing_
+_Explains how to fork, set up a development environment, and iterate to get
+started contributing_
 
 <br />
 
@@ -21,10 +22,11 @@ _Explains how to fork, set up a development environment, and iterate to get star
 Before cloning this repository, please ensure appropriate safety precautions are
 taken. This means being sure to use an air-tight and ephemeral development
 environment to essentially create a disposable sandbox. This may be accomplished
-using virtualization software. There are several excellent and free virtualization
-products (called hypervisors or virtual machine managers). One such as product is
-[Oracle VM VirtualBox][], which can be used for local development or perhaps
-consider using cloud-based virtualization offerings.<br /><br />
+using virtualization software. There are several excellent and free
+virtualization products (called hypervisors or virtual machine managers). One
+such as product is [Oracle VM VirtualBox][], which can be used for local
+development or perhaps consider using cloud-based virtualization
+offerings.<br /><br />
 
 <details open><summary>
 [EXCERPT]：<em><a title="Oracle® VM VirtualBox® User Manual" <a
@@ -53,7 +55,7 @@ consider using cloud-based virtualization offerings.<br /><br />
 > forward in virtual machine time. You can delete snapshots while a VM is
 > running to reclaim disk space.
 >
-> &mdash;&nbsp;https://www.virtualbox.org/manual/ch01.html#virt-why-useful
+> &mdash;&nbsp;<https://www.virtualbox.org/manual/ch01.html#virt-why-useful>
 
 </details><br />
 
@@ -79,7 +81,7 @@ however, suggested to the original author of this document by his professor.
   href="https://firefox-source-docs.mozilla.org/taskcluster/kinds.html"
                 >Task Kinds &mdash; Firefox Source
                   Documentation</a></em>&nbsp;&mdash;&nbsp;
-  <strong>Section&nbsp;&ldquo;<code>docker-image</code>&rdquo;, Firefox CI and 
+  <strong>Section&nbsp;&ldquo;<code>docker-image</code>&rdquo;, Firefox CI and
     Taskgraph Reference</strong>
 </summary><br />
 
@@ -94,7 +96,7 @@ however, suggested to the original author of this document by his professor.
 > depend on another in-tree docker image, without uploading the latter to a
 > Docker repository.
 >
-> &mdash;&nbsp;https://firefox-source-docs.mozilla.org/taskcluster/kinds.html#docker-image
+> &mdash;&nbsp;<https://firefox-source-docs.mozilla.org/taskcluster/kinds.html#docker-image>
 
 </details><br />
 
@@ -102,30 +104,24 @@ however, suggested to the original author of this document by his professor.
 
 [![Orange banner indicating a preview software component][release-level-banner--unstable]](##)
 
-<!-- BEGIN LINK DEFINITIONS -->
+<!-- LINK LABEL DEFINITIONS - START -->
 
 [^1]:
-    https://www.whonix.org/wiki/VirtualBox 
-    "Whonix ™ for Windows, macOS, Linux inside VirtualBox"
+    <https://www.whonix.org/wiki/VirtualBox> "Whonix ™ for Windows, macOS,
+    Linux inside VirtualBox"
 
 [`docker build`]:
   https://docs.docker.com/engine/reference/commandline/build/
-  "docker build | Docker Documentation"
-
-[Oracle VM VirtualBox]:
-  https://www.virtualbox.org
-  "Oracle VM VirtualBox"
-
+  'docker build | Docker Documentation'
+[Oracle VM VirtualBox]: https://www.virtualbox.org 'Oracle VM VirtualBox'
 [Watertight Privacy Architecture]:
   https://www.whonix.org/wiki/About#Whonix_%E2%84%A2_Architecture
-  "Whonix ™ Architecture"
-
+  'Whonix ™ Architecture'
 [_VirtualBox User Manual_]:
   https://www.virtualbox.org/manual/
-  "Oracle® VM VirtualBox® User Manual"
-
+  'Oracle® VM VirtualBox® User Manual'
 [release-level-banner--unstable]:
   https://raw.githubusercontent.com/OpenINF/openinf.github.io/live/assets/img/svg/release-level-banner--unstable.svg?sanitize=true
-  "Banner for Release Level: Unstable"
+  'Banner for Release Level: Unstable'
 
-<!-- END LINK DEFINITIONS -->
+<!-- LINK LABEL DEFINITIONS - END -->
