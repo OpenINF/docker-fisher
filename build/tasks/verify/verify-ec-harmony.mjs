@@ -1,4 +1,4 @@
-import { execute } from '@yarnpkg/shell';
+// import { execute } from '@yarnpkg/shell';
 
 import { echoTaskRunning } from '../util.mjs';
 
