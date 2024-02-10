@@ -1,43 +1,37 @@
 {
-  "#": "Derivative of https://github.com/OpenINF/openinf.github.io/blob/main/package.json",
-  "##": "All Rights Reserved.",
   "name": "@openinf/docker-fisher",
   "private": "true",
   "description": "The OpenINF Docker container construction yard",
-  "packageManager": "pnpm@8.15.1",
-  "engines": {
-    "node": "16.13.0"
-  },
   "homepage": "open.inf.is",
   "repository": "OpenINF/docker-fisher",
   "license": "MIT OR Apache-2.0 OR BlueOak-1.0.0",
   "author": "The OpenINF Authors",
   "scripts": {
     "format:all": "for i in build/tasks/format/*.mjs; do node \"$i\"; done",
+    "format:bash": "node build/tasks/format/format-bash.mjs",
     "format:css": "node build/tasks/format/format-css.mjs",
+    "format:dockerfile": "node build/tasks/format/format-dockerfile.mjs",
+    "format:fish": "node build/tasks/format/format-fish.mjs",
     "format:html": "node build/tasks/format/format-html.mjs",
     "format:js": "node build/tasks/format/format-js.mjs",
     "format:json": "node build/tasks/format/format-json.mjs",
     "format:md": "node build/tasks/format/format-md.mjs",
     "format:svg": "node build/tasks/format/format-svg.mjs",
     "format:yaml": "node build/tasks/format/format-yaml.mjs",
-    "format:fish": "node build/tasks/format/format-fish.mjs",
-    "format:bash": "node build/tasks/format/format-bash.mjs",
-    "format:dockerfile": "node build/tasks/format/format-dockerfile.mjs",
     "test": "npm run verify:all",
     "verify:all": "for i in build/tasks/verify/*.mjs; do node \"$i\"; done",
+    "verify:bash": "node build/tasks/verify/verify-bash.mjs",
     "verify:css": "node build/tasks/verify/verify-css.mjs",
+    "verify:dockerfile": "node build/tasks/verify/verify-dockerfile.mjs",
     "verify:ec-harmony": "node build/tasks/verify/verify-ec-harmony.mjs",
-    "verify:sc-harmony": "node build/tasks/verify/verify-sc-harmony.mjs",
+    "verify:fish": "node build/tasks/verify/verify-fish.mjs",
     "verify:html": "node build/tasks/verify/verify-html.mjs",
     "verify:js": "node build/tasks/verify/verify-js.mjs",
     "verify:json": "node build/tasks/verify/verify-json.mjs",
     "verify:md": "node build/tasks/verify/verify-md.mjs",
+    "verify:sc-harmony": "node build/tasks/verify/verify-sc-harmony.mjs",
     "verify:svg": "node build/tasks/verify/verify-svg.mjs",
-    "verify:yaml": "node build/tasks/verify/verify-yaml.mjs",
-    "verify:fish": "node build/tasks/verify/verify-fish.mjs",
-    "verify:bash": "node build/tasks/verify/verify-bash.mjs",
-    "verify:dockerfile": "node build/tasks/verify/verify-dockerfile.mjs"
+    "verify:yaml": "node build/tasks/verify/verify-yaml.mjs"
   },
   "devDependencies": {
     "@babel/core": "7.23.9",
@@ -89,5 +83,11 @@
     "strip-comments": "2.0.1",
     "unified": "11.0.4",
     "vnu-jar": "23.4.11"
-  }
+  },
+  "packageManager": "pnpm@8.15.1",
+  "engines": {
+    "node": "16.13.0"
+  },
+  "#": "Derivative of https://github.com/OpenINF/openinf.github.io/blob/main/package.json",
+  "##": "All Rights Reserved."
 }
