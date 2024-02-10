@@ -1,4 +1,7 @@
-import { exec } from 'node:child_process/promises';
+import { createRequire } from 'node:module';
+const require = createRequire(import.meta.url);
+const util = require('node:util');
+const exec = util.promisify(require('node:child_process').exec);
 
 import { echoTaskRunning } from '../util.mjs';
 
