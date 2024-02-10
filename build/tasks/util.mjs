@@ -1,6 +1,5 @@
 import text from '@openinf/util-text';
 import url from 'node:url';
-import { chalk, echo, os, path } from 'node:child_process/promises';
 
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
