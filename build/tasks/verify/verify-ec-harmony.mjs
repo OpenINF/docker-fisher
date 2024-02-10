@@ -9,7 +9,7 @@ const scripts = ["editorconfig-checker -config '.ecrc.json'"];
 
 for await (const element of scripts) {
   try {
-    exitCode = await execute(`pnpm exec ${element}`);
+    exitCode = await $(execute(`pnpm exec ${element}`));
   } catch (p) {
     exitCode = p.exitCode;
   }

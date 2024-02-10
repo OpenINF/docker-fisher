@@ -1,5 +1,3 @@
-// import { execute } from '@yarnpkg/shell';
-
 import { echoTaskRunning } from '../util.mjs';
 
 echoTaskRunning('verify-css', import.meta.url);

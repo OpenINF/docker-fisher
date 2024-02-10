@@ -1,4 +1,3 @@
-// import { execute } from '@yarnpkg/shell';
 import { $ } from 'zx';
 
 import { echoTaskRunning } from '../util.mjs';
@@ -16,7 +15,7 @@ const scripts = [
 
 for await (const element of scripts) {
   try {
-    exitCode = await execute(`pnpm exec ${element}`);
+    exitCode = await $(execute(`pnpm exec ${element}`));
   } catch (p) {
     exitCode = p.exitCode;
   }
