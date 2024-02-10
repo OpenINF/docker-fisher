@@ -1,5 +1,5 @@
 import text from '@openinf/util-text';
-import url from 'url';
+import url from 'node:url';
 import { chalk, echo, os, path } from 'zx';
 
 const __filename = url.fileURLToPath(import.meta.url);
