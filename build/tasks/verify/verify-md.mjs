@@ -1,4 +1,4 @@
-import { $ } from 'zx';
+import { exec } from 'node:child_process/promises';
 
 import { echoTaskRunning } from '../util.mjs';
 
@@ -19,7 +19,7 @@ const scripts = [
 
 for (const element of scripts) {
   try {
-    exitCode = await $(execute(`pnpm exec ${element}`));
+    exitCode = await exec(`pnpm exec ${element}`);
   } catch (p) {
     exitCode = p.exitCode;
   }
