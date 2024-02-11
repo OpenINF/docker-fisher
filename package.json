@@ -87,7 +87,5 @@
   "packageManager": "pnpm@8.15.1",
   "engines": {
     "node": "16.13.0"
-  },
-  "#": "Derivative of https://github.com/OpenINF/openinf.github.io/blob/main/package.json",
-  "##": "All Rights Reserved."
+  }
 }
