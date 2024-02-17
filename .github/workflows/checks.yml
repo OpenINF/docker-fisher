@@ -15,7 +15,7 @@
               cancel_others: true
               skip_after_successful_duplicate: true
               do_not_skip: '["workflow_dispatch", "schedule"]'
-    
+
       lint:
         needs: queue
         runs-on: ubuntu-latest
@@ -40,13 +40,12 @@
                   - '**/Dockerfile'
     
           - name: Cloning repository
-            uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+            uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
     
           - name: Setting up Node.js
             uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
             with:
-              cache: pnpm
-              node-version: 20
+              node-version: 16.20.2
     
           - name: Installing Node.js packages
             run: |
@@ -61,27 +60,27 @@
           - name: Linting JavaScript
             if: ${{ steps.changes.outputs.js == 'true' }}
             run: |
-              pnpm run lint:js
+              pnpm run verify:js
     
           - name: Linting Markdown
             if: ${{ steps.changes.outputs.md == 'true' }}
-            run: pnpm run lint:md
+            run: pnpm run verify:md
     
           - name: Linting SCSS
             if: ${{ steps.changes.outputs.scss == 'true' }}
-            run: pnpm run lint:scss
+            run: pnpm run verify:scss
 
           - name: Linting Bash
             if: ${{ steps.changes.outputs.bash == 'true' }}
-            run: pnpm run lint:bash
+            run: pnpm run verify:bash
           
           - name: Linting Fish
             if: ${{ steps.changes.outputs.fish == 'true' }}
-            run: pnpm run lint:fish
+            run: pnpm run verify:fish
 
           - name: Linting Dockerfiles
             if: ${{ steps.changes.outputs.dockerfile == 'true' }}
-            run: pnpm run lint:dockerfile
+            run: pnpm run verify:dockerfile
     
       test:
         needs: queue
@@ -99,13 +98,12 @@
                   - 'tests/**.js'
     
           - name: Cloning repository
-            uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+            uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
     
           - name: Setting up Node.js
             uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
             with:
-              cache: pnpm
-              node-version: 20
+              node-version: 16.20.2
     
           - name: Installing Node.js packages
             run: |
@@ -116,6 +114,8 @@
           - name: Running tests
             if: ${{ steps.changes.outputs.js == 'true' }}
             run: |
+              corepack enable
+              corepack prepare pnpm@latest --activate
               pnpm run test
     
       build:
@@ -123,13 +123,12 @@
         runs-on: ubuntu-latest
         steps:
           - name: Cloning repository
-            uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+            uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
     
           - name: Setting up Node.js
             uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
             with:
-              cache: pnpm
-              node-version: 20
+              node-version: 16.20.2
     
           - name: Installing Node.js packages
             run: |
@@ -142,5 +141,8 @@
               # Increase memory limit as a full build requires around 8GB
               NODE_OPTIONS: --max_old_space_size=8192
               ELEVENTY_ENV: staging
-            run: pnpm run build
+            run:
+              corepack enable
+              corepack prepare pnpm@latest --activate
+              pnpm run build
     
