@@ -137,7 +137,7 @@ href="https://open.inf.is" rel="author"> <img
 [Issue Tracker]: https://github.com/OpenINF/docker-fisher/issues 'Issue Tracker'
 [license-badge--shields]:
   https://img.shields.io/badge/license-MIT%2FApache--2.0%2FBlueOak--1.0.0-blue.svg?logo=github
-  'License: MIT/Apache-2.0/BlueOak-1.0.0'
+  'License: MIT/Apache 2.0/BlueOak 1.0.0'
 [license-badge-url]: ./#license 'License: MIT/Apache 2.0/BlueOak-1.0.0'
 [matrix-badge--shields]:
   https://img.shields.io/badge/matrix-join%20chat-%2346BC99?logo=matrix
