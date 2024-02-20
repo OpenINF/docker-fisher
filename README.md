@@ -149,6 +149,7 @@ href="https://open.inf.is" rel="author">
 [matrix-url]:
   https://matrix.to/#/#openinf-space:matrix.org
   "You're invited to talk on Matrix"
+[opening an issue]: https://github.com/OpenINF/docker-fisher/issues
 [prettier-badge]:
   https://img.shields.io/badge/code_style-Prettier-ff69b4.svg?logo=prettier
   'Code Style: Prettier'
