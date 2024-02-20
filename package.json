@@ -5,7 +5,7 @@
   "homepage": "open.inf.is",
   "repository": "OpenINF/docker-fisher",
   "license": "MIT OR Apache-2.0 OR BlueOak-1.0.0",
-  "author": "The OpenINF Authors",
+  "author": "The OpenINF Authors and Friends",
   "scripts": {
     "format:all": "for i in build/tasks/format/*.mjs; do node \"$i\"; done",
     "format:bash": "node build/tasks/format/format-bash.mjs",
