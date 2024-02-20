@@ -15,7 +15,7 @@
 
 <br />
 
-[!['License: MIT/Apache-2.0'][license-badge--shields]][license-badge-url]
+[!['License: MIT/Apache-2.0/BlueOak-1.0.0'][license-badge--shields]][license-badge-url]
 
 </div>
 
