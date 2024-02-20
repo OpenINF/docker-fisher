@@ -53,27 +53,40 @@ It was introduced to [@DerekNonGeneric][] by [@jorgebucaran][]: Thank you so
 much to [@jorgebucaran][] for the introduction as it is now able to serve as the
 inspiration/basis for this project. Thank you to all our contributors!&nbsp;<3
 
-<br />
+<br /><br />
+
+<section id="contribution">
 
 ### Contributing
 
-Pull requests are welcome. For major changes, please open an issue first to
-discuss what you would like to change. If for whatever reason you spot something
-to fix but cannot patch it yourself, please [open an issue][].
-
 <br />
+
+Pull requests are welcome. If you plan to make significant changes, please open
+an issue to discuss the change first. If you notice something that needs fixing
+but can't do it yourself, please let us know by [opening an issue][].
+
+</section>
+
+<br /><br />
+
+<section id="licenses">
 
 ### License
 
-This project is licensed under either of
+<br />
+
+This project is licensed under either of the following:
 
 - [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 - [MIT license](https://opensource.org/licenses/MIT)
+- [Blue Oak 1.0.0](https://blueoakcouncil.org/license/1.0.0)
 
 at your option.
 
 The [SPDX](https://spdx.dev) license identifier for this project is
-`MIT OR Apache-2.0`.
+`MIT OR Apache-2.0 OR BlueOak-1.0.0`.
+
+</section>
 
 <br /><br />
 
@@ -83,7 +96,11 @@ The [SPDX](https://spdx.dev) license identifier for this project is
 
 <div align="center">
 
-[Roadmap][] | [Development][] | [Issue Tracker][] | [Changelog][] | [Credits][]
+[Roadmap][] |
+[Development][] |
+[Issue Tracker][] |
+[Changelog][] |
+[Credits][]
 
 <br />
 
@@ -93,8 +110,14 @@ The [SPDX](https://spdx.dev) license identifier for this project is
 
 <br /><br />
 
-<a title="The OpenINF website" href="https://open.inf.is" rel="author">
-  <img alt="The OpenINF logo" height="32px" width="32px" src="https://raw.githubusercontent.com/openinf/openinf.github.io/live/assets/img/svg/logo.svg?sanitize=true" />
+<a title="The OpenINF website" target="_blank" rel="noopener noreferrer"
+href="https://open.inf.is" rel="author">
+<img
+    alt="The OpenINF logo"
+    height="32px"
+    width="32px"
+    src="https://raw.githubusercontent.com/openinf/openinf.github.io/live/assets/img/svg/logo.svg?sanitize=true"
+  />
 </a>
 
 </div>
@@ -118,17 +141,14 @@ The [SPDX](https://spdx.dev) license identifier for this project is
 [Fisher&nbsp;plugin&nbsp;manager]: https://github.com/jorgebucaran/fisher
 [fish&nbsp;shell]: https://fishshell.com
 [Issue Tracker]: https://github.com/OpenINF/docker-fisher/issues 'Issue Tracker'
-[license-badge--shields]:
-  https://img.shields.io/badge/license-MIT%2FApache--2.0-blue.svg?logo=github
-  'License: MIT/Apache 2.0'
-[license-badge-url]: #license 'License: MIT/Apache 2.0'
+[license-badge--shields]: https://img.shields.io/badge/license-MIT%2FApache--2.0%2FBlueOak--1.0.0-blue.svg?logo=github 'License: MIT/Apache-2.0/BlueOak-1.0.0'
+[license-badge-url]: ./#license 'License: MIT/Apache 2.0/BlueOak-1.0.0'
 [matrix-badge--shields]:
   https://img.shields.io/badge/matrix-join%20chat-%2346BC99?logo=matrix
   'Chat on Matrix'
 [matrix-url]:
   https://matrix.to/#/#openinf-space:matrix.org
   "You're invited to talk on Matrix"
-[open an issue]: https://github.com/OpenINF/docker-fisher/issues
 [prettier-badge]:
   https://img.shields.io/badge/code_style-Prettier-ff69b4.svg?logo=prettier
   'Code Style: Prettier'
