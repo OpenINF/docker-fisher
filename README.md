@@ -78,7 +78,7 @@ but can't do it yourself, please let us know by [opening an issue][].
 This project is licensed under either of the following:
 
 - [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-- [MIT License](https://opensource.org/licenses/MIT)
+- [The MIT License](https://opensource.org/licenses/MIT)
 - [Blue Oak Model License, Version 1.0.0](https://blueoakcouncil.org/license/1.0.0)
 
 at your option.
