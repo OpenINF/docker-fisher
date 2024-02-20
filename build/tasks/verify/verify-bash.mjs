@@ -1,6 +1,6 @@
 import { echoTaskRunning } from '../util.mjs';
 
-echoTaskRunning('verify-css', import.meta.url);
+echoTaskRunning('verify-bash', import.meta.url);
 
 // TODO(DerekNonGeneric): Implement this task.
 process.exitCode = 0;
