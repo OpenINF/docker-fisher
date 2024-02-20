@@ -41,6 +41,7 @@
     "@babel/preset-env": "7.23.9",
     "@openinf/util-text": "OpenINF/openinf-util-text#next",
     "dictionary-en": "4.0.0",
+    "editorconfig-checker": "5.1.4",
     "eslint": "8.56.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-json": "3.1.0",

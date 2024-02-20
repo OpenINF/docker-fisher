@@ -22,7 +22,7 @@
         steps:
           - name: Getting changes
             id: changes
-            uses: dorny/paths-filter@v2
+            uses: dorny/paths-filter@ebc4d7e9ebcb0b1eb21480bb8f43113e996ac77a # v3
             with:
               filters: |
                 js:
@@ -88,7 +88,7 @@
         steps:
           - name: Getting changes
             id: changes
-            uses: dorny/paths-filter@v2
+            uses: dorny/paths-filter@ebc4d7e9ebcb0b1eb21480bb8f43113e996ac77a # v3
             with:
               filters: |
                 js:
