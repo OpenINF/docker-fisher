@@ -135,13 +135,12 @@
               corepack enable
               corepack prepare pnpm@latest --activate
               pnpm install
-    
           # - name: Building containers
           #   env:
           #     # Increase memory limit as a full build requires around 8GB
           #     NODE_OPTIONS: --max_old_space_size=8192
           #     ELEVENTY_ENV: staging
-          #   run:
+          #   run: |
           #     corepack enable
           #     corepack prepare pnpm@latest --activate
           #     pnpm run build

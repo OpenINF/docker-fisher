@@ -1,6 +1,6 @@
 import { echoTaskRunning } from '../util.mjs';
 
-echoTaskRunning('verify-fish', import.meta.url);
+echoTaskRunning('verify-yaml', import.meta.url);
 
 // TODO(DerekNonGeneric): Implement this task.
 process.exitCode = 0;

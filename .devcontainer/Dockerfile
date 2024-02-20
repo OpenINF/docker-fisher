@@ -6,7 +6,7 @@ FROM centos:centos7@sha256:be65f488b7764ad3638f236b7b515b3678369a5124c47b8d32916
 # Build dependency # skipcq: DOK-W1003
 RUN yum update -y \
   && yum install -y epel-release \
-  && yum install -y clang cmake3 gcc-c++ make ncurses-devel \
+  && yum install -y clang cmake3 gcc-c++ make ncurses-devel ShellCheck \
   && yum clean all
 
 # Test dependency # skipcq: DOK-W1003
