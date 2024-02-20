@@ -39,6 +39,7 @@
     "@babel/plugin-syntax-jsx": "7.23.3",
     "@babel/plugin-syntax-top-level-await": "7.14.5",
     "@babel/preset-env": "7.23.9",
+    "@openinf/util-text": "1.1.2",
     "dictionary-en": "4.0.0",
     "eslint": "8.56.0",
     "eslint-config-prettier": "9.1.0",
