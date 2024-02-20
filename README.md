@@ -30,7 +30,6 @@ Thanks!
 <div align="center">
 
 [![Code Style: Prettier][prettier-badge]][prettier-url]
-[![Commit Style: Conventional Commits][conventional-commits-badge]][conventional-commits-url]
 [![Chat on Matrix][matrix-badge--shields]][matrix-url]
 
 </div>
@@ -112,12 +111,6 @@ The [SPDX](https://spdx.dev) license identifier for this project is
 [@jorgebucaran]: https://github.com/jorgebucaran
 [Alpine Linux]: https://www.alpinelinux.org
 [Changelog]: https://github.com/OpenINF/docker-fisher/commits/HEAD 'Changelog'
-[conventional-commits-badge]:
-  https://img.shields.io/badge/commit%20style-Conventional-%23fa6673?logoColor=white&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMCAzMCI+PHBhdGggc3R5bGU9ImZpbGw6ICNGRkYiIGQ9Ik0xNSwyQTEzLDEzLDAsMSwxLDIsMTUsMTMsMTMsMCwwLDEsMTUsMm0wLTJBMTUsMTUsMCwxLDAsMzAsMTUsMTUsMTUsMCwwLDAsMTUsMFoiLz48L3N2Zz4K
-  'Commit Style: Conventional Commits'
-[conventional-commits-url]:
-  https://www.conventionalcommits.org
-  'Commit Style: Conventional Commits'
 [Credits]:
   https://github.com/OpenINF/docker-fisher/graphs/contributors
   'Credits'
