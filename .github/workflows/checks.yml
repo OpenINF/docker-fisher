@@ -25,6 +25,8 @@
             uses: dorny/paths-filter@ebc4d7e9ebcb0b1eb21480bb8f43113e996ac77a # v3
             with:
               filters: |
+                html:
+                  - '**/*.html'
                 js:
                   - '**/*.js'
                   - '**/*.json'
@@ -38,6 +40,8 @@
                   - '**/*.fish'
                 dockerfile:
                   - '**/Dockerfile'
+                yaml:
+                  - '**/*.yaml'
     
           - name: Cloning repository
             uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
@@ -56,7 +60,11 @@
           - name: Lint Tags
             if: ${{ steps.filter.outputs.tags == 'true' || steps.filter.outputs.md == 'true' }}
             uses: ./.github/actions/lint-tags
-    
+
+          - name: Linting HTML
+            if: ${{ steps.changes.outputs.js == 'true' }}
+            run: pnpm exec nps verify.html
+
           - name: Linting JavaScript
             if: ${{ steps.changes.outputs.js == 'true' }}
             run: pnpm exec nps verify.js
@@ -80,6 +88,10 @@
           - name: Linting Dockerfiles
             if: ${{ steps.changes.outputs.dockerfile == 'true' }}
             run: pnpm exec nps verify.dockerfile
+
+          - name: Linting YAML
+            if: ${{ steps.changes.outputs.dockerfile == 'true' }}
+            run: pnpm exec nps verify.yaml
     
       test:
         needs: queue
