@@ -1,0 +1,28 @@
+scripts:
+  format:
+    all: for i in build/tasks/format/*.mjs; do node "$i"; done
+    bash: node build/tasks/format/format-bash.mjs
+    css: node build/tasks/format/format-css.mjs
+    dockerfile: node build/tasks/format/format-dockerfile.mjs
+    fish: node build/tasks/format/format-fish.mjs
+    html: node build/tasks/format/format-html.mjs
+    js: node build/tasks/format/format-js.mjs
+    json: node build/tasks/format/format-json.mjs
+    md: node build/tasks/format/format-md.mjs
+    svg: node build/tasks/format/format-svg.mjs
+    yaml: node build/tasks/format/format-yaml.mjs
+  test: nps verify.all
+  verify:
+    all: for i in build/tasks/verify/*.mjs; do node "$i"; done
+    bash: node build/tasks/verify/verify-bash.mjs
+    css: node build/tasks/verify/verify-css.mjs
+    dockerfile: node build/tasks/verify/verify-dockerfile.mjs
+    ecHarmony: node build/tasks/verify/verify-ec-harmony.mjs
+    fish: node build/tasks/verify/verify-fish.mjs
+    html: node build/tasks/verify/verify-html.mjs
+    js: node build/tasks/verify/verify-js.mjs
+    json: node build/tasks/verify/verify-json.mjs
+    md: node build/tasks/verify/verify-md.mjs
+    scHarmony: node build/tasks/verify/verify-sc-harmony.mjs
+    svg: node build/tasks/verify/verify-svg.mjs
+    yaml: node build/tasks/verify/verify-yaml.mjs
