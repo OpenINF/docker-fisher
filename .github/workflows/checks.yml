@@ -24,7 +24,16 @@
             id: changes
             uses: dorny/paths-filter@ebc4d7e9ebcb0b1eb21480bb8f43113e996ac77a # v3
             with:
+
+	      # Checks to see if any files in the PR match one of the listed file types.
+	      # We can use this filter to decide whether or not to run linters or tests.
+	      # One can check if a file with a listed file type is in the PR by doing:
+	      # if: ${{ steps.filter.outputs.md == 'true' }}
+	      # That will return true if there's a Markdown file the PR has changed.
+
               filters: |
+                html:
+                  - '**/*.html'
                 js:
                   - '**/*.js'
                   - '**/*.json'
@@ -32,12 +41,20 @@
                   - '**/*.md'
                 scss:
                   - '**/*.scss'
+                svg:
+                  - '**/*.svg'
                 bash:
                   - '**/*.bash'
                 fish:
                   - '**/*.fish'
                 dockerfile:
                   - '**/Dockerfile'
+                yaml:
+                  - '**/*.yaml'
+                toml:
+                  - '**/*.toml'
+                ts:
+                  - '**/*.ts'
     
           - name: Cloning repository
             uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
@@ -53,34 +70,56 @@
               corepack prepare pnpm@latest --activate
               pnpm install
     
+          # Use the filter to check if files with a specific file type were changed
+          # in the PR. If they were, run the relevant linters. Otherwise, skip.
+
           - name: Lint Tags
             if: ${{ steps.filter.outputs.tags == 'true' || steps.filter.outputs.md == 'true' }}
             uses: ./.github/actions/lint-tags
-    
+
+          - name: Linting HTML
+            if: ${{ steps.changes.outputs.html == 'true' }}
+            run: pnpm exec nps verify.html
+
           - name: Linting JavaScript
             if: ${{ steps.changes.outputs.js == 'true' }}
-            run: |
-              pnpm run verify:js
+            run: pnpm exec nps verify.js
     
           - name: Linting Markdown
             if: ${{ steps.changes.outputs.md == 'true' }}
-            run: pnpm run verify:md
+            run: pnpm exec nps verify.md
     
           - name: Linting SCSS
             if: ${{ steps.changes.outputs.scss == 'true' }}
-            run: pnpm run verify:scss
+            run: pnpm exec nps verify.scss
+
+          - name: Linting SVG
+            if: ${{ steps.changes.outputs.svg == 'true' }}
+            run: pnpm exec nps verify.svg
 
           - name: Linting Bash
             if: ${{ steps.changes.outputs.bash == 'true' }}
-            run: pnpm run verify:bash
+            run: pnpm exec nps verify.bash
           
           - name: Linting Fish
             if: ${{ steps.changes.outputs.fish == 'true' }}
-            run: pnpm run verify:fish
+            run: pnpm exec nps verify.fish
 
           - name: Linting Dockerfiles
             if: ${{ steps.changes.outputs.dockerfile == 'true' }}
-            run: pnpm run verify:dockerfile
+            run: pnpm exec nps verify.dockerfile
+
+          - name: Linting YAML
+            if: ${{ steps.changes.outputs.yaml == 'true' }}
+            run: pnpm exec nps verify.yaml
+
+          - name: Linting TOML
+            if: ${{ steps.changes.outputs.toml == 'true' }}
+            run: pnpm exec nps verify.toml
+
+          - name: Linting TypeScript
+            if: ${{ steps.changes.outputs.typescript == 'true' }}
+            run: pnpm exec nps verify.ts
     
       test:
         needs: queue
