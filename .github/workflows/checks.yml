@@ -59,28 +59,27 @@
     
           - name: Linting JavaScript
             if: ${{ steps.changes.outputs.js == 'true' }}
-            run: |
-              pnpm run verify:js
+            run: pnpm exec nps verify.js
     
           - name: Linting Markdown
             if: ${{ steps.changes.outputs.md == 'true' }}
-            run: pnpm run verify:md
+            run: pnpm exec nps verify.md
     
           - name: Linting SCSS
             if: ${{ steps.changes.outputs.scss == 'true' }}
-            run: pnpm run verify:scss
+            run: pnpm exec nps verify.scss
 
           - name: Linting Bash
             if: ${{ steps.changes.outputs.bash == 'true' }}
-            run: pnpm run verify:bash
+            run: pnpm exec nps verify.bash
           
           - name: Linting Fish
             if: ${{ steps.changes.outputs.fish == 'true' }}
-            run: pnpm run verify:fish
+            run: pnpm exec nps verify.fish
 
           - name: Linting Dockerfiles
             if: ${{ steps.changes.outputs.dockerfile == 'true' }}
-            run: pnpm run verify:dockerfile
+            run: pnpm exec nps verify.dockerfile
     
       test:
         needs: queue
