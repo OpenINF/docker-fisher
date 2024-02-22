@@ -34,6 +34,8 @@
                   - '**/*.md'
                 scss:
                   - '**/*.scss'
+                svg:
+                  - '**/*.svg'
                 bash:
                   - '**/*.bash'
                 fish:
@@ -80,6 +82,10 @@
           - name: Linting SCSS
             if: ${{ steps.changes.outputs.scss == 'true' }}
             run: pnpm exec nps verify.scss
+
+          - name: Linting SVG
+            if: ${{ steps.changes.outputs.svg == 'true' }}
+            run: pnpm exec nps verify.svg
 
           - name: Linting Bash
             if: ${{ steps.changes.outputs.bash == 'true' }}
