@@ -1,12 +1,17 @@
 {
   "name": "@openinf/docker-fisher",
   "private": "true",
+  "packageManager": "pnpm@8.15.3",
+  "engines": {
+    "node": "^16.13.0"
+  },
   "description": "The OpenINF Docker container construction yard",
   "homepage": "open.inf.is",
   "repository": "OpenINF/docker-fisher",
   "license": "MIT OR Apache-2.0 OR BlueOak-1.0.0",
   "author": "The OpenINF Authors and Friends",
   "scripts": {
+    "build": "nps build",
     "start": "nps",
     "test": "nps test"
   },
@@ -62,9 +67,5 @@
     "unified": "11.0.4",
     "vnu-jar": "23.4.11",
     "zx": "7.2.3"
-  },
-  "packageManager": "pnpm@8.15.3",
-  "engines": {
-    "node": "^16.13.0"
   }
 }
