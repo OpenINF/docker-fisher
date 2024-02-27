@@ -9,7 +9,7 @@
 # Maintainer: The OpenINF Community
 #
 # Syntax: ./ruby-debian.sh [Ruby version] [non-root user] [Add to rc files flag]
-
+1
 RUBY_VERSION=${1:-"latest"}
 USERNAME=${2:-"automatic"}
 UPDATE_RC=${3:-"true"}

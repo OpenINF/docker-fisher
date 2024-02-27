@@ -15,7 +15,7 @@
 	"features": {
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
 	},
-	"postCreateCommand": "npm install -g @devcontainers/cli && sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get install -y shellcheck",
+	"postCreateCommand": "echo 'GrimesAI: enjoying our salvaged lunar tech haul? back to work!!'",
 	"hostRequirements": {
 		"cpus": 4
 	}
