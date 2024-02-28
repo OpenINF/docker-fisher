@@ -1,4 +1,7 @@
 {
     "shellcheck.executablePath": "/usr/bin/shellcheck",
-    "shellcheck.useWorkspaceRootAsCwd": true
+    "shellcheck.useWorkspaceRootAsCwd": true,
+    "files.insertFinalNewline": false,
+    "files.eol": "\n",
+    "files.enableTrash": true
 }
