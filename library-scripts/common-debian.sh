@@ -144,7 +144,7 @@ if [ "${PACKAGES_ALREADY_INSTALLED}" != "true" ]; then
     fi
 
     echo "Packages to verify are installed: ${package_list}"
-    apt-get -y install --no-install-recommends ${package_list} 2> >( grep -v 'debconf: delaying package configuration, since apt-utils is not installed' >&2 )
+    apt-get -y install --no-install-recommends "${package_list}" 2> >( grep -v 'debconf: delaying package configuration, since apt-utils is not installed' >&2 )
         
     # Install git if not already installed (may be more recent than distro version)
     if ! type git > /dev/null 2>&1; then
@@ -170,34 +170,34 @@ fi
 
 # Create or update a non-root user to match UID/GID.
 group_name="${USERNAME}"
-if id -u ${USERNAME} > /dev/null 2>&1; then
+if id -u "${USERNAME}" > /dev/null 2>&1; then
     # User exists, update if needed
-    if [ "${USER_GID}" != "automatic" ] && [ "$USER_GID" != "$(id -g $USERNAME)" ]; then 
-        group_name="$(id -gn $USERNAME)"
-        groupmod --gid $USER_GID ${group_name}
-        usermod --gid $USER_GID $USERNAME
+    if [ "${USER_GID}" != "automatic" ] && [ "$USER_GID" != "$(id -g "$USERNAME")" ]; then 
+        group_name="$(id -gn "$USERNAME")"
+        groupmod --gid "$USER_GID" "${group_name}"
+        usermod --gid "$USER_GID" "$USERNAME"
     fi
-    if [ "${USER_UID}" != "automatic" ] && [ "$USER_UID" != "$(id -u $USERNAME)" ]; then 
-        usermod --uid $USER_UID $USERNAME
+    if [ "${USER_UID}" != "automatic" ] && [ "$USER_UID" != "$(id -u "$USERNAME")" ]; then 
+        usermod --uid "$USER_UID" "$USERNAME"
     fi
 else
     # Create user
     if [ "${USER_GID}" = "automatic" ]; then
-        groupadd $USERNAME
+        groupadd "$USERNAME"
     else
-        groupadd --gid $USER_GID $USERNAME
+        groupadd --gid "$USER_GID" "$USERNAME"
     fi
     if [ "${USER_UID}" = "automatic" ]; then 
-        useradd -s /bin/bash --gid $USERNAME -m $USERNAME
+        useradd -s /bin/bash --gid "$USERNAME" -m "$USERNAME"
     else
-        useradd -s /bin/bash --uid $USER_UID --gid $USERNAME -m $USERNAME
+        useradd -s /bin/bash --uid "$USER_UID" --gid "$USERNAME" -m "$USERNAME"
     fi
 fi
 
 # Add sudo support for non-root user
 if [ "${USERNAME}" != "root" ] && [ "${EXISTING_NON_ROOT_USER}" != "${USERNAME}" ]; then
-    echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME
-    chmod 0440 /etc/sudoers.d/$USERNAME
+    echo "$USERNAME" ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/"$USERNAME"
+    chmod 0440 /etc/sudoers.d/"$USERNAME"
     EXISTING_NON_ROOT_USER="${USERNAME}"
 fi
 
@@ -285,7 +285,7 @@ if [ "${RC_SNIPPET_ALREADY_ADDED}" != "true" ]; then
         echo "${codespaces_bash}" >> "/root/.bashrc"
         echo 'export PROMPT_DIRTRIM=4' >> "/root/.bashrc"
     fi
-    chown ${USERNAME}:${group_name} "${user_rc_path}/.bashrc"
+    chown "${USERNAME}":"${group_name}" "${user_rc_path}/.bashrc"
     RC_SNIPPET_ALREADY_ADDED="true"
 fi
 
