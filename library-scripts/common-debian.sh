@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #-------------------------------------------------------------------------------------------------------------
 # Copyright (c) The OpenINF Authors and Friends. All rights reserved.
-# Triply re-licensed under MIT/Apache-2.0/BlueOak-1.0.0. See LICENSE/ at project root for more info.
+# Triply re-licensed under MIT/Apache-2.0/BlueOak-1.0.0 at your option. See LICENSE/ at project root for info.
 #-------------------------------------------------------------------------------------------------------------
 #
 # ** This script is community supported **
