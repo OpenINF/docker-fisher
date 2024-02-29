@@ -237,19 +237,6 @@ fi
 EOF
 chmod +x /usr/local/bin/systemctl
 
-# Add RC snippet and custom bash prompt
-if [ "$RC_SNIPPET_ALREADY_ADDED" != "true" ]; then
-  echo "$(rc_snippet)" >>/etc/bash.bashrc
-  echo "$(codespaces_bash)" >>"$(user_rc_path)/.bashrc"
-  echo 'export PROMPT_DIRTRIM=4' >>"$(user_rc_path)/.bashrc"
-  if [ "$USERNAME" != "root" ]; then
-    echo "$(codespaces_bash)" >>"/root/.bashrc"
-    echo 'export PROMPT_DIRTRIM=4' >>"/root/.bashrc"
-  fi
-  chown "$USERNAME":"$group_name" "$user_rc_path/.bashrc"
-  RC_SNIPPET_ALREADY_ADDED="true"
-fi
-
 # Persist image metadata info, script if meta.env found in same directory
 meta_info_script="$(
   cat <<'EOF'
