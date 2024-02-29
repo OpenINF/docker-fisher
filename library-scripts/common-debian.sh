@@ -59,13 +59,20 @@ fi
 # Ensure apt is in non-interactive to avoid prompts
 export DEBIAN_FRONTEND=noninteractive
 
+function check_apt_db_stale {
+  # Check if the apt database is up-to-date instead of lists directory
+  if apt-get update 2>&1 | grep -q 'apt database out of date'
+  then
+    return 0
+  fi
+}
+
 # Function to call apt-get if needed
 apt_get_update_if_needed() {
-  # Check if the apt database is up-to-date instead of lists directory
-  if $(apt-get update 2>&1 | grep -q 'apt database out of date')
+  if eval check_apt_db_stale
   then
     echo "Running apt-get update..."
-    $(sudo apt-get update)
+    sudo apt-get update
   fi
 }
 
