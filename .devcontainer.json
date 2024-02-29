@@ -15,7 +15,7 @@
 	"features": {
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
 	},
-	"postCreateCommand": "echo 'GrimesAI: enjoying our salvaged lunar tech haul? back to work!!'",
+	"postCreateCommand": "echo 'GrimesAI: enjoying our salvaged lunar tech haul? Back to work!!'",
 	"hostRequirements": {
 		"cpus": 4
 	}
