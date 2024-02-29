@@ -60,14 +60,13 @@ fi
 export DEBIAN_FRONTEND=noninteractive
 
 # Function to call apt-get if needed
+
 apt_get_update_if_needed() {
-  if [ ! -d "/var/lib/apt/lists" ] || [ "$(ls /var/lib/apt/lists/ | wc -l)" = "0" ]; then
+
+  if [ ! -d "/var/lib/apt/lists" ] || [ "$(find /var/lib/apt/lists/ -mindepth 1 -print -quit | wc -l)" = "0" ]; then
     echo "Running apt-get update..."
     apt-get update
-  else
-    echo "Skipping apt-get update."
-  fi
-}
+else
 
 # Run install apt-utils to avoid debconf warning then verify presence of other common developer tools and dependencies
 if [ "$PACKAGES_ALREADY_INSTALLED" != "true" ]; then
