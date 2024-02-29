@@ -59,13 +59,18 @@ fi
 # Ensure apt is in non-interactive to avoid prompts
 export DEBIAN_FRONTEND=noninteractive
 
+function check_apt_db_stale {
+  # Check if the apt database is up-to-date instead of lists directory
+  if apt-get update 2>&1 | grep -q 'apt database out of date'; then
+    return 0
+  fi
+}
+
 # Function to call apt-get if needed
 apt_get_update_if_needed() {
-  if [ ! -d "/var/lib/apt/lists" ] || [ "$(ls /var/lib/apt/lists/ | wc -l)" = "0" ]; then
+  if eval check_apt_db_stale; then
     echo "Running apt-get update..."
-    apt-get update
-  else
-    echo "Skipping apt-get update."
+    sudo apt-get update
   fi
 }
 
@@ -232,14 +237,14 @@ chmod +x /usr/local/bin/systemctl
 
 # Add RC snippet and custom bash prompt
 if [ "$RC_SNIPPET_ALREADY_ADDED" != "true" ]; then
-  echo "$rc_snippet" >>/etc/bash.bashrc
-  echo "$codespaces_bash" >>"$user_rc_path/.bashrc"
-  echo 'export PROMPT_DIRTRIM=4' >>"$user_rc_path/.bashrc"
+  cat "$(rc_snippet)" >>/etc/bash.bashrc
+  cat "$(codespaces_bash)" >>"$(user_rc_path)/.bashrc"
+  echo 'export PROMPT_DIRTRIM=4' >>"$(user_rc_path)/.bashrc"
   if [ "$USERNAME" != "root" ]; then
-    echo "$codespaces_bash" >>"/root/.bashrc"
+    cat "$(codespaces_bash)" >>"/root/.bashrc"
     echo 'export PROMPT_DIRTRIM=4' >>"/root/.bashrc"
   fi
-  chown "$USERNAME":"$group_name" "$user_rc_path/.bashrc"
+  chown "$USERNAME":"$group_name" "$(user_rc_path)/.bashrc"
   RC_SNIPPET_ALREADY_ADDED="true"
 fi
 
@@ -287,5 +292,4 @@ echo -e "\
     LOCALE_ALREADY_SET=$LOCALE_ALREADY_SET\n\
     EXISTING_NON_ROOT_USER=$EXISTING_NON_ROOT_USER\n\
     RC_SNIPPET_ALREADY_ADDED=$RC_SNIPPET_ALREADY_ADDED"
-
 echo "Done!"
