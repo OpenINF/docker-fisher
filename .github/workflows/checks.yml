@@ -1,0 +1,186 @@
+--- # Derivative of https://github.com/GoogleChrome/web.dev/blob/main/.github/workflows/check.yml
+    # Copyrights retained by their respective owners.
+    name: 'Check'
+    
+    on: pull_request
+    
+    jobs:
+      queue:
+        runs-on: ubuntu-latest
+        steps:
+          - id: skip
+            uses: fkirc/skip-duplicate-actions@master
+            with:
+              concurrent_skipping: 'outdated_runs'
+              cancel_others: true
+              skip_after_successful_duplicate: true
+              do_not_skip: '["workflow_dispatch", "schedule"]'
+
+      lint:
+        needs: queue
+        runs-on: ubuntu-latest
+        steps:
+          - name: Getting changes
+            id: changes
+            uses: dorny/paths-filter@ebc4d7e9ebcb0b1eb21480bb8f43113e996ac77a # v3
+            with:
+
+            # Checks to see if any files in the PR match one of the listed file types.
+            # We can use this filter to decide whether or not to run linters or tests.
+            # One can check if a file with a listed file type is in the PR by doing:
+            # if: ${{ steps.filter.outputs.md == 'true' }}
+            # That'll be thruthy if a Markdown file was amongst those changed by the PR.
+
+              filters: |
+                html:
+                  - '**/*.html'
+                js:
+                  - '**/*.js'
+                  - '**/*.json'
+                md:
+                  - '**/*.md'
+                scss:
+                  - '**/*.scss'
+                svg:
+                  - '**/*.svg'
+                bash:
+                  - '**/*.bash'
+                fish:
+                  - '**/*.fish'
+                dockerfile:
+                  - '**/Dockerfile'
+                yaml:
+                  - '**/*.yaml'
+                toml:
+                  - '**/*.toml'
+                ts:
+                  - '**/*.ts'
+    
+          - name: Cloning repository
+            uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+    
+          - name: Setting up Node.js
+            uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
+            with:
+              node-version: 16.20.2
+    
+          - name: Installing Node.js packages
+            run: |
+              corepack enable
+              corepack prepare pnpm@latest --activate
+              pnpm install
+    
+          # Use the filter to check if files with a specific file type were changed
+          # in the PR. If they were, run the relevant linters. Otherwise, skip.
+
+          - name: Lint Tags
+            if: ${{ steps.filter.outputs.tags == 'true' || steps.filter.outputs.md == 'true' }}
+            uses: ./.github/actions/lint-tags
+
+          - name: Linting HTML
+            if: ${{ steps.changes.outputs.html == 'true' }}
+            run: pnpm exec nps verify.html
+
+          - name: Linting JavaScript
+            if: ${{ steps.changes.outputs.js == 'true' }}
+            run: pnpm exec nps verify.js
+    
+          - name: Linting Markdown
+            if: ${{ steps.changes.outputs.md == 'true' }}
+            run: pnpm exec nps verify.md
+    
+          - name: Linting SCSS
+            if: ${{ steps.changes.outputs.scss == 'true' }}
+            run: pnpm exec nps verify.scss
+
+          - name: Linting SVG
+            if: ${{ steps.changes.outputs.svg == 'true' }}
+            run: pnpm exec nps verify.svg
+
+          - name: Linting Bash
+            if: ${{ steps.changes.outputs.bash == 'true' }}
+            run: pnpm exec nps verify.bash
+          
+          - name: Linting Fish
+            if: ${{ steps.changes.outputs.fish == 'true' }}
+            run: pnpm exec nps verify.fish
+
+          - name: Linting Dockerfiles
+            if: ${{ steps.changes.outputs.dockerfile == 'true' }}
+            run: pnpm exec nps verify.dockerfile
+
+          - name: Linting YAML
+            if: ${{ steps.changes.outputs.yaml == 'true' }}
+            run: pnpm exec nps verify.yaml
+
+          - name: Linting TOML
+            if: ${{ steps.changes.outputs.toml == 'true' }}
+            run: pnpm exec nps verify.toml
+
+          - name: Linting TypeScript
+            if: ${{ steps.changes.outputs.typescript == 'true' }}
+            run: pnpm exec nps verify.ts
+    
+      test:
+        needs: queue
+        runs-on: ubuntu-latest
+        steps:
+          - name: Getting changes
+            id: changes
+            uses: dorny/paths-filter@ebc4d7e9ebcb0b1eb21480bb8f43113e996ac77a # v3
+            with:
+              filters: |
+                js:
+                  - 'package.json'
+                  - 'site/**/*.js'
+                  - 'server/**.js'
+                  - 'tests/**.js'
+    
+          - name: Cloning repository
+            uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+    
+          - name: Setting up Node.js
+            uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
+            with:
+              node-version: 16.20.2
+    
+          - name: Installing Node.js packages
+            run: |
+              corepack enable
+              corepack prepare pnpm@latest --activate
+              pnpm install
+    
+          - name: Running tests
+            if: ${{ steps.changes.outputs.js == 'true' }}
+            run: |
+              corepack enable
+              corepack prepare pnpm@latest --activate
+              pnpm run test
+    
+      build:
+        needs: queue
+        runs-on: ubuntu-latest
+        steps:
+          - name: Cloning repository
+            uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+    
+          - name: Setting up Node.js
+            uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
+            with:
+              node-version: 16.20.2
+    
+          - name: Installing Node.js packages
+            run: |
+              corepack enable
+              corepack prepare pnpm@latest --activate
+              pnpm install
+          # - name: Building containers
+          #   env:
+          #     # Increase memory limit as a full build requires around 8GB
+          #     NODE_OPTIONS: --max_old_space_size=8192
+          #     ELEVENTY_ENV: staging
+          #   run: |
+          #     corepack enable
+          #     corepack prepare pnpm@latest --activate
+          #     pnpm run build
+    
