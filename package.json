@@ -3,7 +3,7 @@
   "private": "true",
   "packageManager": "pnpm@8.15.4",
   "engines": {
-    "node": "^16.13.0"
+    "node": "^20.0.0"
   },
   "description": "The OpenINF Docker container construction yard",
   "homepage": "open.inf.is",
