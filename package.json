@@ -1,7 +1,7 @@
 {
   "name": "@openinf/docker-fisher",
   "private": "true",
-  "packageManager": "pnpm@8.15.3",
+  "packageManager": "pnpm@8.15.4",
   "engines": {
     "node": "^16.13.0"
   },
