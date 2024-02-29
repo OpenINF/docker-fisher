@@ -1,38 +1,7 @@
 {
-  "[markdown]": {
-    "editor.codeActionsOnSave": {
-      "source.fixAll.markdownlint": "explicit"
-    },
-    "editor.formatOnSave": true,
-    // "editor.defaultFormatter": "unifiedjs.vscode-remark"
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-
-  // Render vertical rulers after a certain number of monospace characters.
-  "editor.rulers": [80, 100], // Uses multiple values for multiple rulers.
-
-  // Files
-  //////////////////////////////////////////////////////////////////////////////
-
-  "files.associations": {
-    ".devcontainer/*.json": "jsonc",
-    ".vscode/*.json": "jsonc",
-    "tsconfig.*.json": "jsonc",
-    "tsconfig.json": "jsonc",
-    ".ecrc.json": "json",
-    ".eslintrc.json": "jsonc",
-    ".prettierrc.json5": "json5",
-    ".deepsource.toml": "toml",
-    ".renovaterc.json": "json5",
-    ".snyk": "yaml"
-  },
-
-  // Extensions
-  //////////////////////////////////////////////////////////////////////////////
-
-  // ShellCheck
-  /////////////////////////////////////////////
-
-  "shellcheck.executablePath": "/usr/bin/shellcheck",
-  "shellcheck.useWorkspaceRootAsCwd": true
+    "shellcheck.executablePath": "/usr/bin/shellcheck",
+    "shellcheck.useWorkspaceRootAsCwd": true,
+    "files.insertFinalNewline": false,
+    "files.eol": "\n",
+    "files.enableTrash": true
 }

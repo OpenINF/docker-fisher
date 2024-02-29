@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 #-------------------------------------------------------------------------------------------------------------
-# Copyright (c) The OpenINF Authors. All rights reserved.
-# Dual licensed under MIT/Apache-2.0. See the LICENSE folder at the root of the source tree for more info.
+# Copyright (c) The OpenINF Authors and Friends. All rights reserved.
+# Triply-licensed under an MIT, Apache, BlueOak model. See LICENSE/ at project root for more info needed.
 #-------------------------------------------------------------------------------------------------------------
 #
 # ** This script is community supported **
-# Docs: https://github.com/OpenINF/docker-fisher/blob/HEAD/library-scripts/docs/common-debian.md
+# Docs: https://github.com/OpenINF/docker-fisher/blob/HEAD/library-scripts/docs/common.md
 # Maintainer: The OpenINF Community
 #
 # Syntax: ./common-debian.sh [username] [user UID] [user GID] [upgrade packages flag] [Add non-free packages]
@@ -59,13 +59,18 @@ fi
 # Ensure apt is in non-interactive to avoid prompts
 export DEBIAN_FRONTEND=noninteractive
 
+function check_apt_db_stale {
+  # Check if the apt database is up-to-date instead of lists directory
+  if apt-get update 2>&1 | grep -q 'apt database out of date'; then
+    return 0
+  fi
+}
+
 # Function to call apt-get if needed
 apt_get_update_if_needed() {
-  if [ ! -d "/var/lib/apt/lists" ] || [ "$(find /var/lib/apt/lists/* | wc -l)" = "0" ]; then
+  if eval check_apt_db_stale; then
     echo "Running apt-get update..."
-    apt-get update
-  else
-    echo "Skipping apt-get update."
+    sudo apt-get update
   fi
 }
 
@@ -200,52 +205,6 @@ if [ "$USERNAME" != "root" ] && [ "$EXISTING_NON_ROOT_USER" != "$USERNAME" ]; th
   EXISTING_NON_ROOT_USER="$USERNAME"
 fi
 
-# ** Shell customization section **
-if [ "$USERNAME" = "root" ]; then
-  user_rc_path="/root"
-else
-  user_rc_path="/home/$USERNAME"
-fi
-
-# Restore user .bashrc defaults from skeleton file if it doesn't exist or is empty
-if [ ! -f "$user_rc_path/.bashrc" ] || [ ! -s "$user_rc_path/.bashrc" ]; then
-  cp /etc/skel/.bashrc "$user_rc_path/.bashrc"
-fi
-
-# Restore user .profile defaults from skeleton file if it doesn't exist or is empty
-if [ ! -f "$user_rc_path/.profile" ] || [ ! -s "$user_rc_path/.profile" ]; then
-  cp /etc/skel/.profile "$user_rc_path/.profile"
-fi
-
-# .bashrc snippet
-rc_snippet="$(
-  cat <<'EOF'
-if [ -z "${USER}" ]; then export USER=$(whoami); fi
-if [[ "${PATH}" != *"$HOME/.local/bin"* ]]; then export PATH="${PATH}:$HOME/.local/bin"; fi
-# Display optional first run image specific notice if configured and terminal is interactive
-if [ -t 1 ] && [[ "${TERM_PROGRAM}" = "vscode" || "${TERM_PROGRAM}" = "codespaces" ]] && [ ! -f "$HOME/.config/vscode-dev-containers/first-run-notice-already-displayed" ]; then
-    if [ -f "/usr/local/etc/vscode-dev-containers/first-run-notice.txt" ]; then
-        cat "/usr/local/etc/vscode-dev-containers/first-run-notice.txt"
-    elif [ -f "/workspaces/.codespaces/shared/first-run-notice.txt" ]; then
-        cat "/workspaces/.codespaces/shared/first-run-notice.txt"
-    fi
-    mkdir -p "$HOME/.config/vscode-dev-containers"
-    # Mark first run notice as displayed after 10s to avoid problems with fast terminal refreshes hiding it
-    ((sleep 10s; touch "$HOME/.config/vscode-dev-containers/first-run-notice-already-displayed") &)
-fi
-# Set the default git editor if not already set
-if [ -z "$(git config --get core.editor)" ] && [ -z "${GIT_EDITOR}" ]; then
-    if  [ "${TERM_PROGRAM}" = "vscode" ]; then
-        if [[ -n $(command -v code-insiders) &&  -z $(command -v code) ]]; then
-            export GIT_EDITOR="code-insiders --wait"
-        else
-            export GIT_EDITOR="code --wait"
-        fi
-    fi
-fi
-EOF
-)"
-
 # code shim, it fallbacks to code-insiders if code is not available
 cat <<'EOF' >/usr/local/bin/code
 #!/bin/sh
@@ -278,14 +237,14 @@ chmod +x /usr/local/bin/systemctl
 
 # Add RC snippet and custom bash prompt
 if [ "$RC_SNIPPET_ALREADY_ADDED" != "true" ]; then
-  echo "$rc_snippet" >>/etc/bash.bashrc
-  echo "$codespaces_bash" >>"$user_rc_path/.bashrc"
-  echo 'export PROMPT_DIRTRIM=4' >>"$user_rc_path/.bashrc"
+  cat "$(rc_snippet)" >>/etc/bash.bashrc
+  cat "$(codespaces_bash)" >>"$(user_rc_path)/.bashrc"
+  echo 'export PROMPT_DIRTRIM=4' >>"$(user_rc_path)/.bashrc"
   if [ "$USERNAME" != "root" ]; then
-    echo "$codespaces_bash" >>"/root/.bashrc"
+    cat "$(codespaces_bash)" >>"/root/.bashrc"
     echo 'export PROMPT_DIRTRIM=4' >>"/root/.bashrc"
   fi
-  chown "$USERNAME":"$group_name" "$user_rc_path/.bashrc"
+  chown "$USERNAME":"$group_name" "$(user_rc_path)/.bashrc"
   RC_SNIPPET_ALREADY_ADDED="true"
 fi
 
@@ -333,5 +292,4 @@ echo -e "\
     LOCALE_ALREADY_SET=$LOCALE_ALREADY_SET\n\
     EXISTING_NON_ROOT_USER=$EXISTING_NON_ROOT_USER\n\
     RC_SNIPPET_ALREADY_ADDED=$RC_SNIPPET_ALREADY_ADDED"
-
 echo "Done!"
