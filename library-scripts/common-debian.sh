@@ -244,7 +244,7 @@ if [ "$RC_SNIPPET_ALREADY_ADDED" != "true" ]; then
     echo "$(codespaces_bash)" >>"/root/.bashrc"
     echo 'export PROMPT_DIRTRIM=4' >>"/root/.bashrc"
   fi
-  chown "$USERNAME":"$group_name" "$user_rc_path/.bashrc"
+  chown "$USERNAME":"$group_name" "$(user_rc_path)/.bashrc"
   RC_SNIPPET_ALREADY_ADDED="true"
 fi
 
