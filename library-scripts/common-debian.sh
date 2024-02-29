@@ -60,13 +60,13 @@ fi
 export DEBIAN_FRONTEND=noninteractive
 
 # Function to call apt-get if needed
-
 apt_get_update_if_needed() {
-
-  if [ ! -d "/var/lib/apt/lists" ] || [ "$(find /var/lib/apt/lists/ -mindepth 1 -print -quit | wc -l)" = "0" ]; then
+  # Check if the apt database is up-to-date instead of lists directory
+  if [[ -n $(apt-get update 2>&1 | grep -i "apt database out of date") ]]; then
     echo "Running apt-get update..."
-    apt-get update
-else
+    sudo apt-get update
+  fi
+}
 
 # Run install apt-utils to avoid debconf warning then verify presence of other common developer tools and dependencies
 if [ "$PACKAGES_ALREADY_INSTALLED" != "true" ]; then
