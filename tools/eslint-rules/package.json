@@ -1,0 +1,9 @@
+{
+  "name": "eslint-plugin-internal-rules",
+  "version": "0.0.0",
+  "private": true,
+  "files": [],
+  "dependencies": {
+    "esm": "3.2.25"
+  }
+}
