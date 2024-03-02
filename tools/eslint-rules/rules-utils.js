@@ -13,10 +13,8 @@ module.exports.isString = function(node) {
 };
 
 module.exports.isDefiningError = function(node) {
-  return node.expression &&
-         node.expression.type === 'CallExpression' &&
-         node.expression.callee &&
-         node.expression.callee.name === 'E' &&
+  return node.expression && node.expression.type === 'CallExpression' &&
+         node.expression.callee && node.expression.callee.name === 'E' &&
          node.expression.arguments.length !== 0;
 };
 
@@ -26,17 +24,16 @@ module.exports.isDefiningError = function(node) {
  */
 module.exports.isRequired = function(node, modules) {
   return isRequireCall(node) && node.arguments.length !== 0 &&
-    modules.includes(node.arguments[0].value);
+         modules.includes(node.arguments[0].value);
 };
 
 /**
-* Return true if common module is required
-* in AST Node under inspection
-*/
+ * Return true if common module is required
+ * in AST Node under inspection
+ */
 const commonModuleRegExp = new RegExp(/^(\.\.\/)*common(\.js)?$/);
 module.exports.isCommonModule = function(node) {
-  return isRequireCall(node) &&
-         node.arguments.length !== 0 &&
+  return isRequireCall(node) && node.arguments.length !== 0 &&
          commonModuleRegExp.test(node.arguments[0].value);
 };
 
@@ -73,8 +70,7 @@ module.exports.usesCommonProperty = function(node, properties) {
  */
 module.exports.inSkipBlock = function(node) {
   let hasSkipBlock = false;
-  if (node.test &&
-      node.test.type === 'UnaryExpression' &&
+  if (node.test && node.test.type === 'UnaryExpression' &&
       node.test.operator === '!') {
     const consequent = node.consequent;
     if (consequent.body) {
@@ -92,10 +88,8 @@ module.exports.inSkipBlock = function(node) {
 };
 
 function hasSkip(expression) {
-  return expression &&
-         expression.callee &&
+  return expression && expression.callee &&
          (expression.callee.name === 'skip' ||
-         expression.callee.property &&
-         expression.callee.property.name === 'skip');
+          expression.callee.property &&
+              expression.callee.property.name === 'skip');
 }
-

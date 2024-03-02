@@ -11,11 +11,10 @@ module.exports = function(context) {
       }
 
       context.report({
-        node: comment,
-        message:
-          'Comments that contain "SPLIT_SINGLE_PASS" are reserved for single pass build',
+        node : comment,
+        message :
+            'Comments that contain "SPLIT_SINGLE_PASS" are reserved for single pass build',
       });
     },
   };
 };
-

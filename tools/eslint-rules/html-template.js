@@ -11,11 +11,9 @@ module.exports = function(context) {
     const {name} = node.callee;
     context.report({
       node,
-      message:
-        `The ${name} helper MUST NOT be called directly. ` +
-        'Instead, use it as a template literal tag: ``` ' +
-        name +
-        '`<div />` ```',
+      message : `The ${name} helper MUST NOT be called directly. ` +
+                    'Instead, use it as a template literal tag: ``` ' + name +
+                    '`<div />` ```',
     });
   }
 
@@ -29,30 +27,23 @@ module.exports = function(context) {
       return tagUsage(parent, `${name}()`);
     }
 
-    if (
-      parent.type === 'VariableDeclarator' &&
-      parent.init === node &&
-      parent.id.type === 'Identifier' &&
-      parent.id.name === expectedTagName
-    ) {
+    if (parent.type === 'VariableDeclarator' && parent.init === node &&
+        parent.id.type === 'Identifier' && parent.id.name === expectedTagName) {
       return;
     }
 
-    if (
-      parent.type === 'AssignmentExpression' &&
-      parent.right === node &&
-      parent.left.type === 'Identifier' &&
-      parent.left.name === expectedTagName
-    ) {
+    if (parent.type === 'AssignmentExpression' && parent.right === node &&
+        parent.left.type === 'Identifier' &&
+        parent.left.name === expectedTagName) {
       return;
     }
 
     context.report({
       node,
-      message:
-        `${name} result must be stored into a variable named ` +
-        `"${expectedTagName}", or used as the tag of a tagged template ` +
-        'literal.',
+      message :
+          `${name} result must be stored into a variable named ` +
+              `"${expectedTagName}", or used as the tag of a tagged template ` +
+              'literal.',
     });
   }
 
@@ -61,9 +52,10 @@ module.exports = function(context) {
     if (quasi.expressions.length !== 0) {
       context.report({
         node,
-        message:
-          `The ${opt_name || tag.name} template tag CANNOT accept expression.` +
-          ' The template MUST be static only.',
+        message :
+            `The ${
+                opt_name || tag.name} template tag CANNOT accept expression.` +
+                ' The template MUST be static only.',
       });
     }
 
@@ -71,18 +63,17 @@ module.exports = function(context) {
     const string = template.value.cooked;
     if (!string) {
       context.report({
-        node: template,
-        message: 'Illegal escape sequence detected in template literal.',
+        node : template,
+        message : 'Illegal escape sequence detected in template literal.',
       });
     }
 
     if (/<(html|body|head)/i.test(string)) {
       context.report({
-        node: template,
-        message:
-          'It it not possible to generate HTML, BODY, or' +
-          ' HEAD root elements. Please do so manually with' +
-          ' document.createElement.',
+        node : template,
+        message : 'It it not possible to generate HTML, BODY, or' +
+                      ' HEAD root elements. Please do so manually with' +
+                      ' document.createElement.',
       });
     }
 
@@ -94,9 +85,9 @@ module.exports = function(context) {
       for (let i = 0; i < invalids.length; i++) {
         const {tag, offset} = invalids[i];
         context.report({
-          node: template,
-          loc: sourceCode.getLocFromIndex(start + offset),
-          message: `Invalid void tag "${tag}"`,
+          node : template,
+          loc : sourceCode.getLocFromIndex(start + offset),
+          message : `Invalid void tag "${tag}"`,
         });
       }
     }
@@ -105,14 +96,15 @@ module.exports = function(context) {
   function invalidVoidTag(string) {
     // Void tags are defined at
     // https://html.spec.whatwg.org/multipage/syntax.html#void-elements
-    const invalid = /<(?!area|base|br|col|embed|hr|img|input|link|meta|param|source|track|wbr)([a-zA-Z-]+)( [^>]*)?\/>/g;
+    const invalid =
+        /<(?!area|base|br|col|embed|hr|img|input|link|meta|param|source|track|wbr)([a-zA-Z-]+)( [^>]*)?\/>/g;
     const matches = [];
 
     let match;
     while ((match = invalid.exec(string))) {
       matches.push({
-        tag: match[1],
-        offset: match.index,
+        tag : match[1],
+        offset : match.index,
       });
     }
 
@@ -148,4 +140,3 @@ module.exports = function(context) {
     },
   };
 };
-

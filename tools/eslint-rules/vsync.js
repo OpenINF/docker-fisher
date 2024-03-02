@@ -18,9 +18,8 @@ module.exports = function(context) {
       }
 
       if (property.leadingComments) {
-        const ok = property.leadingComments.some(comment => {
-          return comment.value === 'OK';
-        });
+        const ok = property.leadingComments.some(
+            comment => { return comment.value === 'OK'; });
         if (ok) {
           return;
         }
@@ -28,14 +27,13 @@ module.exports = function(context) {
 
       context.report({
         node,
-        message: [
+        message : [
           'VSync is now a privileged service.',
           'You likely want to use the `BaseElement` methods' +
-            ' `measureElement`, `mutateElement`, or `runElement`.',
+              ' `measureElement`, `mutateElement`, or `runElement`.',
           'In the worst case use the same methods on `Resources`.',
         ].join('\n\t'),
       });
     },
   };
 };
-
