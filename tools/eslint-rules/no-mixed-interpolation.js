@@ -30,15 +30,17 @@ function hasTemplateLiteral(node) {
   return false;
 }
 
-const selector = Object.keys(transformableMethods)
-  .map((name) => `CallExpression[callee.property.name=${name}]`)
-  .concat(assertAliases.map((name) => `CallExpression[callee.name=${name}]`))
-  .join(',');
+const selector =
+    Object.keys(transformableMethods)
+        .map((name) => `CallExpression[callee.property.name=${name}]`)
+        .concat(
+            assertAliases.map((name) => `CallExpression[callee.name=${name}]`))
+        .join(',');
 
 module.exports = {
   create(context) {
     return {
-      [selector]: function (node) {
+      [selector] : function(node) {
         // Don't evaluate or transform log.js
         if (context.getFilename().endsWith(definitionFile)) {
           return;
@@ -46,13 +48,11 @@ module.exports = {
 
         let methodInvokedName;
 
-        const { callee } = node;
+        const {callee} = node;
 
         // userAssert() and devAssert() aliases
-        if (
-          callee.type == 'Identifier' &&
-          assertAliases.includes(callee.name)
-        ) {
+        if (callee.type == 'Identifier' &&
+            assertAliases.includes(callee.name)) {
           methodInvokedName = 'assert';
         } else {
           // dev().assert() // enforce rule
@@ -79,7 +79,7 @@ module.exports = {
           return;
         }
 
-        const { variadic, messageArgPos } = metadata;
+        const {variadic, messageArgPos} = metadata;
         // If method is not variadic we don't need to check.
         if (!variadic) {
           return;
@@ -100,8 +100,8 @@ module.exports = {
         const hasVariadicInterpolation = node.arguments[metadata.startPos + 1];
         if (hasVariadicInterpolation && hasTemplateLiteral(argToEval)) {
           context.report({
-            node: argToEval,
-            message: errMsg,
+            node : argToEval,
+            message : errMsg,
           });
         }
       },

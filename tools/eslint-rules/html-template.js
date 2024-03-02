@@ -6,22 +6,20 @@ const {
   staticTemplateFactoryFns,
 } = require('../babel-plugins/static-template-metadata');
 
-module.exports = function (context) {
+module.exports = function(context) {
   function tagCannotBeCalled(node) {
-    const { name } = node.callee;
+    const {name} = node.callee;
     context.report({
       node,
-      message:
-        `The ${name} helper MUST NOT be called directly. ` +
-        'Instead, use it as a template literal tag: ``` ' +
-        name +
-        '`<div />` ```',
+      message : `The ${name} helper MUST NOT be called directly. ` +
+                    'Instead, use it as a template literal tag: ``` ' + name +
+                    '`<div />` ```',
     });
   }
 
   function factoryUsage(node) {
-    const { parent } = node;
-    const { name } = node.callee;
+    const {parent} = node;
+    const {name} = node.callee;
 
     const expectedTagName = staticTemplateFactories[name];
 
@@ -29,41 +27,35 @@ module.exports = function (context) {
       return tagUsage(parent, `${name}()`);
     }
 
-    if (
-      parent.type === 'VariableDeclarator' &&
-      parent.init === node &&
-      parent.id.type === 'Identifier' &&
-      parent.id.name === expectedTagName
-    ) {
+    if (parent.type === 'VariableDeclarator' && parent.init === node &&
+        parent.id.type === 'Identifier' && parent.id.name === expectedTagName) {
       return;
     }
 
-    if (
-      parent.type === 'AssignmentExpression' &&
-      parent.right === node &&
-      parent.left.type === 'Identifier' &&
-      parent.left.name === expectedTagName
-    ) {
+    if (parent.type === 'AssignmentExpression' && parent.right === node &&
+        parent.left.type === 'Identifier' &&
+        parent.left.name === expectedTagName) {
       return;
     }
 
     context.report({
       node,
-      message:
-        `${name} result must be stored into a variable named ` +
-        `"${expectedTagName}", or used as the tag of a tagged template ` +
-        'literal.',
+      message :
+          `${name} result must be stored into a variable named ` +
+              `"${expectedTagName}", or used as the tag of a tagged template ` +
+              'literal.',
     });
   }
 
   function tagUsage(node, opt_name) {
-    const { quasi, tag } = node;
+    const {quasi, tag} = node;
     if (quasi.expressions.length !== 0) {
       context.report({
         node,
-        message:
-          `The ${opt_name || tag.name} template tag CANNOT accept expression.` +
-          ' The template MUST be static only.',
+        message :
+            `The ${
+                opt_name || tag.name} template tag CANNOT accept expression.` +
+                ' The template MUST be static only.',
       });
     }
 
@@ -71,32 +63,31 @@ module.exports = function (context) {
     const string = template.value.cooked;
     if (!string) {
       context.report({
-        node: template,
-        message: 'Illegal escape sequence detected in template literal.',
+        node : template,
+        message : 'Illegal escape sequence detected in template literal.',
       });
     }
 
     if (/<(html|body|head)/i.test(string)) {
       context.report({
-        node: template,
-        message:
-          'It it not possible to generate HTML, BODY, or' +
-          ' HEAD root elements. Please do so manually with' +
-          ' document.createElement.',
+        node : template,
+        message : 'It it not possible to generate HTML, BODY, or' +
+                      ' HEAD root elements. Please do so manually with' +
+                      ' document.createElement.',
       });
     }
 
     const invalids = invalidVoidTag(string);
     if (invalids.length) {
       const sourceCode = context.getSourceCode();
-      const { start } = template;
+      const {start} = template;
 
       for (let i = 0; i < invalids.length; i++) {
-        const { tag, offset } = invalids[i];
+        const {tag, offset} = invalids[i];
         context.report({
-          node: template,
-          loc: sourceCode.getLocFromIndex(start + offset),
-          message: `Invalid void tag "${tag}"`,
+          node : template,
+          loc : sourceCode.getLocFromIndex(start + offset),
+          message : `Invalid void tag "${tag}"`,
         });
       }
     }
@@ -106,14 +97,14 @@ module.exports = function (context) {
     // Void tags are defined at
     // https://html.spec.whatwg.org/multipage/syntax.html#void-elements
     const invalid =
-      /<(?!area|base|br|col|embed|hr|img|input|link|meta|param|source|track|wbr)([a-zA-Z-]+)( [^>]*)?\/>/g;
+        /<(?!area|base|br|col|embed|hr|img|input|link|meta|param|source|track|wbr)([a-zA-Z-]+)( [^>]*)?\/>/g;
     const matches = [];
 
     let match;
     while ((match = invalid.exec(string))) {
       matches.push({
-        tag: match[1],
-        offset: match.index,
+        tag : match[1],
+        offset : match.index,
       });
     }
 
@@ -126,7 +117,7 @@ module.exports = function (context) {
         return;
       }
 
-      const { callee } = node;
+      const {callee} = node;
       if (callee.type !== 'Identifier') {
         return;
       }
@@ -140,7 +131,7 @@ module.exports = function (context) {
     },
 
     TaggedTemplateExpression(node) {
-      const { tag } = node;
+      const {tag} = node;
       if (tag.type !== 'Identifier' || !staticTemplateTags.has(tag.name)) {
         return;
       }
