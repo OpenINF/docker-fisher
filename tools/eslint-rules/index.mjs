@@ -1,13 +1,6 @@
-/**
- * @file Index of internal ESLint rules.
- * @author Derek Lewis <DerekNonGeneric@inf.is>
- * @license 0BSD
- * @module {EsModule} tools/eslint-rules/index
- */
-
-//------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 // Requirements
-//------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 import { createRequire } from 'module';
 import {
@@ -23,9 +16,9 @@ const __filename = pathFromFileUrl(import.meta.url);
 const __dirname = pathDirname(__filename);
 const require = createRequire(import.meta.url);
 
-//------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 // Main
-//------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 const rules = { 'no-assign-mutated-array': noAssignMutatedArray };
 const ruleFiles = readdirSync(__dirname).filter(

@@ -1,16 +1,6 @@
-/**
- **Derivative work of `no-assign-mutated-array.ts` by Nicholas Jamieson.
- * @file Ban direct assignment of arrays mutated by impure array mehods.
- * @author Derek Lewis <dereklewis@inf.is>
- * @license MIT
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://github.com/cartant/eslint-plugin-etc.
- * @see https://github.com/cartant/eslint-plugin-etc/blob/master/source/rules/no-assign-mutated-array.ts
- */
-
-//------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 // Requirements
-//------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 import * as tsutils from 'tsutils';
 import { default as ts } from 'typescript';
@@ -18,9 +8,9 @@ import { default as ts } from 'typescript';
 const mutatorRegExp = /^(fill|reverse|sort|splice)$/;
 const creatorRegExp = /^(concat|entries|filter|keys|map|slice|values)$/;
 
-//------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 // Typedefs
-//------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 /**
  * @typedef {Object} es
@@ -36,9 +26,9 @@ const Rule = {};
 Rule.RuleContext = {};
 Rule.RuleModule = {};
 
-//------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 // Helpers
-//------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 /**
  * @param {ts.Type} type
@@ -156,9 +146,9 @@ function isExpressionStatement(node) {
   return node && node.type === 'ExpressionStatement';
 }
 
-//------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 // Rule Definition
-//------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 /** @type {Rule.RuleModule} */
 const rule = {
@@ -198,9 +188,9 @@ const rule = {
       return true;
     }
 
-    //--------------------------------------------------------------------------
+    // -------------------------------------------------------------------------
     // Public API
-    //--------------------------------------------------------------------------
+    // -------------------------------------------------------------------------
 
     return {
       [`CallExpression > MemberExpression[property.name=${mutatorRegExp}]`]: (
