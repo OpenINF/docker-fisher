@@ -1,25 +1,26 @@
 'use strict';
 
-module.exports = function(context) {
+module.exports = function (context) {
   return {
     CallExpression(node) {
       if (/test-/.test(context.getFilename())) {
         return;
       }
 
-      const {callee} = node;
+      const { callee } = node;
       if (callee.type !== 'MemberExpression') {
         return;
       }
 
-      const {property} = callee;
+      const { property } = callee;
       if (property.type !== 'Identifier' || property.name !== 'vsyncFor') {
         return;
       }
 
       if (property.leadingComments) {
-        const ok = property.leadingComments.some(
-            comment => { return comment.value === 'OK'; });
+        const ok = property.leadingComments.some((comment) => {
+          return comment.value === 'OK';
+        });
         if (ok) {
           return;
         }
@@ -27,10 +28,10 @@ module.exports = function(context) {
 
       context.report({
         node,
-        message : [
+        message: [
           'VSync is now a privileged service.',
           'You likely want to use the `BaseElement` methods' +
-              ' `measureElement`, `mutateElement`, or `runElement`.',
+            ' `measureElement`, `mutateElement`, or `runElement`.',
           'In the worst case use the same methods on `Resources`.',
         ].join('\n\t'),
       });

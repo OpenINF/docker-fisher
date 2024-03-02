@@ -1,24 +1,32 @@
 const fs = require('fs');
 const path = require('path');
-const {isDefiningError} = require('./rules-utils.js');
+const { isDefiningError } = require('./rules-utils.js');
 
-const doc = fs.readFileSync(path.resolve(__dirname, '../../docs/api/errors.md'),
-                            'utf8');
-
-/**
- * @param code
- */
-function isInDoc(code) { return doc.includes(`### \`${code}\``); }
+const doc = fs.readFileSync(
+  path.resolve(__dirname, '../../docs/api/errors.md'),
+  'utf8'
+);
 
 /**
  * @param code
  */
-function includesAnchor(code) { return doc.includes(`<a id="${code}"></a>`); }
+function isInDoc(code) {
+  return doc.includes(`### \`${code}\``);
+}
+
+/**
+ * @param code
+ */
+function includesAnchor(code) {
+  return doc.includes(`<a id="${code}"></a>`);
+}
 
 /**
  * @param node
  */
-function errorForNode(node) { return node.expression.arguments[0].value; }
+function errorForNode(node) {
+  return node.expression.arguments[0].value;
+}
 
 module.exports = {
   create: function (context) {

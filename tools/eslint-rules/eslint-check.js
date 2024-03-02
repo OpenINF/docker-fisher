@@ -9,16 +9,17 @@ const utils = require('./rules-utils.js');
 //------------------------------------------------------------------------------
 // Rule Definition
 //------------------------------------------------------------------------------
-const msg = 'Please add a skipIfEslintMissing() call to allow this test to ' +
-            'be skipped when Node.js is built from a source tarball.';
+const msg =
+  'Please add a skipIfEslintMissing() call to allow this test to ' +
+  'be skipped when Node.js is built from a source tarball.';
 
-module.exports = function(context) {
+module.exports = function (context) {
   const missingCheckNodes = [];
   let commonModuleNode = null;
   let hasEslintCheck = false;
 
   function testEslintUsage(context, node) {
-    if (utils.isRequired(node, [ '../../tools/node_modules/eslint' ])) {
+    if (utils.isRequired(node, ['../../tools/node_modules/eslint'])) {
       missingCheckNodes.push(node);
     }
 
@@ -28,7 +29,7 @@ module.exports = function(context) {
   }
 
   function checkMemberExpression(context, node) {
-    if (utils.usesCommonProperty(node, [ 'skipIfEslintMissing' ])) {
+    if (utils.usesCommonProperty(node, ['skipIfEslintMissing'])) {
       hasEslintCheck = true;
     }
   }
@@ -38,21 +39,23 @@ module.exports = function(context) {
       missingCheckNodes.forEach((node) => {
         context.report({
           node,
-          message : msg,
-          fix : (fixer) => {
+          message: msg,
+          fix: (fixer) => {
             if (commonModuleNode) {
-              return fixer.insertTextAfter(commonModuleNode,
-                                           '\ncommon.skipIfEslintMissing();');
+              return fixer.insertTextAfter(
+                commonModuleNode,
+                '\ncommon.skipIfEslintMissing();'
+              );
             }
-          }
+          },
         });
       });
     }
   }
 
   return {
-    'CallExpression' : (node) => testEslintUsage(context, node),
-    'MemberExpression' : (node) => checkMemberExpression(context, node),
-    'Program:exit' : () => reportIfMissing(context)
+    CallExpression: (node) => testEslintUsage(context, node),
+    MemberExpression: (node) => checkMemberExpression(context, node),
+    'Program:exit': () => reportIfMissing(context),
   };
 };
