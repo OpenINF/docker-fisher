@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-#-------------------------------------------------------------------------------------------------------------
-# Copyright (c) The OpenINF Authors. All rights reserved.
-# Dual licensed under MIT/Apache-2.0. See the LICENSE.md file at the root of the source tree for more info.
-#-------------------------------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
+# Copyright (c) The OpenINF Authors & Friends. All rights reserved.
+# License: MIT OR Apache-2.0 OR BlueOak-1.0.0
+# ------------------------------------------------------------------------------
 #
 # ** This script is community supported **
 # Docs: https://github.com/OpenINF/docker-fisher/blob/HEAD/library-scripts/docs/github-debian.md

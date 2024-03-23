@@ -1,11 +1,8 @@
 #!/usr/bin/env bash
-#-------------------------------------------------------------------------------------------------------------
-# Copyright (c) The OpenINF Authors. All rights reserved. Dual licensed under MIT/Apache-2.0.
-# See the LICENSE.md file at the root of the source tree for more info.
-# Adapted from https://github.com/microsoft/vscode-dev-containers/blob/main/script-library/sshd-debian.sh
-# Copyright (c) Microsoft Corporation and other contributors.
-# Original license at https://github.com/Microsoft/vscode-dev-containers/blob/main/LICENSE
-#-------------------------------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
+# Copyright (c) The OpenINF Authors & Friends. All rights reserved.
+# License: MIT OR Apache-2.0 OR BlueOak-1.0.0
+# ------------------------------------------------------------------------------
 #
 # ** This script is community supported **
 # Docs: https://github.com/OpenINF/docker-fisher/blob/HEAD/library-scripts/docs/sshd-debian.md
