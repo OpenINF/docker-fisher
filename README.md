@@ -130,13 +130,13 @@ href="https://open.inf.is" rel="author"> <img
 
 [The MIT License]:
   https://opensource.org/license/mit
-  'The MIT License &#8211; Open Source Initiative'
+  'The MIT License – Open Source Initiative'
 [Apache License, Version 2.0]:
   https://opensource.org/license/apache-2-0
-  'Apache License, Version 2.0 &#8211; Open Source Initiative'
+  'Apache License, Version 2.0 – Open Source Initiative'
 [Blue Oak Model License, Version 1.0.0]:
   https://opensource.org/license/blue-oak-model-license
-  'Blue Oak Model License 1.0.0 &#8211; Open Source Initiative'
+  'Blue Oak Model License 1.0.0 – Open Source Initiative'
 
 <!--
 // Template boilerplate, et al.
