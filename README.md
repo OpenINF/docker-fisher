@@ -75,13 +75,13 @@ but can't do it yourself, please let us know by [opening an issue][].
 
 <br />
 
-This project is licensed under either of the following:
+This project is permissively licensed under either of&hellip;
 
-- [The MIT License](https://opensource.org/licenses/MIT)
-- [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-- [Blue Oak Model License, Version 1.0.0](https://blueoakcouncil.org/license/1.0.0)
+- [The MIT License][]
+- [Apache License, Version 2.0][]
+- [Blue Oak Model License, Version 1.0.0][]
 
-at your option.
+&hellip;at your option.
 
 The [SPDX](https://spdx.dev) license identifier for this project is
 `MIT OR Apache-2.0 OR BlueOak-1.0.0`.
@@ -120,7 +120,17 @@ href="https://open.inf.is" rel="author"> <img
 
 [![Orange banner indicating a preview software component][release-level-banner--unstable]](##)
 
-<!-- LINK LABEL DEFINITIONS - START -->
+<!-- ///////////////////////////////////////////////////////////////////////////
+///// LINK LABEL DEFINITIONS
+//////////////////////////////////////////////////////////////////////////// -->
+
+<!--
+// License, etc.
+//////////////////////////////////////////////////////////////////////////// -->
+
+[The MIT License]: https://opensource.org/licenses/MIT "The MIT License – Open Source Initiative"
+[Apache License, Version 2.0]: https://opensource.org/license/apache-2-0 "Apache License, Version 2.0 – Open Source Initiative"
+[Blue Oak Model License, Version 1.0.0]: https://opensource.org/license/blue-oak-model-license "Blue Oak Model License 1.0.0 – Open Source Initiative"
 
 [`docker-fish`]: https://github.com/meaningful-ooo/docker-fish
 [@andreiborisov]: https://github.com/andreiborisov
@@ -166,5 +176,3 @@ href="https://open.inf.is" rel="author"> <img
 [stargazers-badge--shields]:
   https://img.shields.io/github/stars/OpenINF/docker-fisher.svg?style=social&maxAge=3600&label=Star
   'Stargazers'
-
-<!-- LINK LABEL DEFINITIONS - END -->
