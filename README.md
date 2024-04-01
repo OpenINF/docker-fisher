@@ -137,6 +137,11 @@ href="https://open.inf.is" rel="author"> <img
 [Blue Oak Model License, Version 1.0.0]:
   https://opensource.org/license/blue-oak-model-license
   'Blue Oak Model License 1.0.0 &#8211; Open Source Initiative'
+
+<!--
+// Template boilerplate, et al.
+//////////////////////////////////////////////////////////////////////////// -->
+
 [`docker-fish`]: https://github.com/meaningful-ooo/docker-fish
 [@andreiborisov]: https://github.com/andreiborisov
 [@DerekNonGeneric]: https://github.com/DerekNonGeneric
