@@ -75,7 +75,7 @@ but can't do it yourself, please let us know by [opening an issue][].
 
 <br />
 
-This project is permissively licensed under either:
+This project is permissively licensed under either of the the following.
 
 - [The MIT License][]
 - [Apache License, Version 2.0][]
