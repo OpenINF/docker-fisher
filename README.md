@@ -81,7 +81,7 @@ This project is permissively licensed under either:
 - [Apache License, Version 2.0][]
 - [Blue Oak Model License, Version 1.0.0][]
 
-&hellip;at your option.
+at your option&hellip;
 
 The [SPDX](https://spdx.dev) license identifier for this project is
 `MIT OR Apache-2.0 OR BlueOak-1.0.0`.
