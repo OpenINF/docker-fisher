@@ -128,16 +128,19 @@ href="https://open.inf.is" rel="author"> <img
 // License, etc.
 ////////////////////////////////////////////// -->
 
+<!-- prettier-ignore -->
 [The MIT License]:
-  https://opensource.org/license/mit <!-- prettier-ignore -->
+  https://opensource.org/license/mit
   'The MIT License &ndash; Open Source Initiative'
 
+<!-- prettier-ignore -->
 [Apache License, Version 2.0]:
-  https://opensource.org/license/apache-2-0 <!-- prettier-ignore -->
+  https://opensource.org/license/apache-2-0
   'Apache License, Version 2.0 &ndash; Open Source Initiative'
 
+<!-- prettier-ignore -->
 [Blue Oak Model License, Version 1.0.0]:
-  https://opensource.org/license/blue-oak-model-license <!-- prettier-ignore -->
+  https://opensource.org/license/blue-oak-model-license
   'Blue Oak Model License 1.0.0 &ndash; Open Source Initiative'
 
 <!--
