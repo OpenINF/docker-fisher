@@ -138,9 +138,8 @@ href="https://open.inf.is" rel="author"> <img
   https://opensource.org/license/blue-oak-model-license
   'Blue Oak Model License 1.0.0 &ndash; Open Source Initiative'
 
-<!-- prettier-ignore-end -->
 
-<!--
+<!-- prettier-ignore-end
 // Template boilerplate, et al.
 ////////////////////////////////////////////// -->
 
