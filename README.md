@@ -124,11 +124,9 @@ href="https://open.inf.is" rel="author"> <img
 ////// LINK LABEL DEFINITIONS                         //////////////////////////
 //////////////////////////////////////////////////////////////////////////// -->
 
-<!--
+<!-- prettier-ignore-start
 // License, etc.
 ////////////////////////////////////////////// -->
-
-<!-- prettier-ignore-start -->
 
 [The MIT License]:
   https://opensource.org/license/mit
