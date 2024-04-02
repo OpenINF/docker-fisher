@@ -140,7 +140,7 @@ href="https://open.inf.is" rel="author"> <img
 
 <!--
 // Template boilerplate, et al.
-//////////////////////////////////////////////////////////////////////////// -->
+////////////////////////////////////////////// -->
 
 [`docker-fish`]: https://github.com/meaningful-ooo/docker-fish
 [@andreiborisov]: https://github.com/andreiborisov
