@@ -42,6 +42,8 @@ Thanks!
 
 ### Acknowledgments
 
+<br />
+
 This project was originally inspired by the [`docker-fish`][] project.
 
 `docker-fish` started out in 2020 by [@andreiborisov][] as a project to build
