@@ -62,8 +62,8 @@ inspiration/basis for this project. Thank you to all our contributors!&nbsp;<3
 
 As pull requests are welcome, if one would like to make significant changes,
 preferably, please do discuss the changes first. Likewise, if something needs
-repair and would like assistance in doing so, please do let us know beforehand by first
-[opening an issue][].
+repair and would like assistance in doing so, please do let us know beforehand
+by first [opening an issue][].
 
 </section>
 
@@ -185,10 +185,9 @@ href="https://open.inf.is" rel="author"> <img
   https://raw.githubusercontent.com/OpenINF/openinf.github.io/live/assets/img/svg/release-level-banner--unstable.svg?sanitize=true
   'Banner for Release Level: Unstable'
 [Roadmap]: https://github.com/OpenINF/docker-fish/issues 'Roadmap'
-[SPDX]: https:// spdx.dev
-[stargazers-badge-url]:
-  <https://github.com/OpenINF/docker-fisher/stargazers>
-  'Stargazers'
+
+[SPDX]: https:// spdx.dev [stargazers-badge-url]:
+<https://github.com/OpenINF/docker-fisher/stargazers> 'Stargazers'
 [stargazers-badge--shields]:
-  <https://img.shields.io/github/stars/OpenINF/docker-fisher.svg?style=social&maxAge=3600&label=Star>
-  'Stargazers'
+<https://img.shields.io/github/stars/OpenINF/docker-fisher.svg?style=social&maxAge=3600&label=Star>
+'Stargazers'
