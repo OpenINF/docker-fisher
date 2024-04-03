@@ -189,5 +189,5 @@ href="https://open.inf.is" rel="author"> <img
 [SPDX]: https:// spdx.dev [stargazers-badge-url]:
 <https://github.com/OpenINF/docker-fisher/stargazers> 'Stargazers'
 [stargazers-badge--shields]:
-<https://img.shields.io/github/stars/OpenINF/docker-fisher.svg?style=social&maxAge=3600&label=Star>
-'Stargazers'
+  https://img.shields.io/github/stars/OpenINF/docker-fisher.svg?style=social&maxAge=3600&label=Star
+  'Stargazers'
