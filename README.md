@@ -184,10 +184,8 @@ href="https://open.inf.is" rel="author"> <img
 [release-level-banner--unstable]:
   https://raw.githubusercontent.com/OpenINF/openinf.github.io/live/assets/img/svg/release-level-banner--unstable.svg?sanitize=true
   'Banner for Release Level: Unstable'
-[Roadmap]: https://github.com/OpenINF/docker-fish/issues 'Roadmap'
-
-[SPDX]: https:// spdx.dev [stargazers-badge-url]:
-<https://github.com/OpenINF/docker-fisher/stargazers> 'Stargazers'
+[Roadmap]: https://github.com/OpenINF/docker-fisher/issues 'Roadmap'
+[SPDX]: https://spdx.dev 'SPDX &#8211; Linux Foundation Projects Site'
 [stargazers-badge--shields]:
   https://img.shields.io/github/stars/OpenINF/docker-fisher.svg?style=social&maxAge=3600&label=Star
   'Stargazers'
