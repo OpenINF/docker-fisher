@@ -85,7 +85,7 @@ This project is permissively licensed under either of the following.
 Optionally, the [SPDX](https://spdx.dev) license identifier for this project is
 mostly `MIT OR Apache-2.0 OR BlueOak-1.0.0` (if necessary).
 
-<!-- TODO(DerekNonGeeneric): continue to elaborate on exceptions or otherises. -->
+<!-- TODO(DerekNonGeeneric): continue to elaborate on exceptions or otherwise. -->
 
 </section>
 
