@@ -61,9 +61,10 @@ inspiration/basis for this project. Thank you to all our contributors!&nbsp;<3
 
 <br />
 
-Pull requests are welcome. If you plan to make significant changes, please open
-an issue to discuss the change first. If you notice something that needs fixing
-but can't do it yourself, please let us know by [opening an issue][].
+As pull requests are welcome, if one would like to make significant changes,
+preferably, please do discuss the shift first. Likeiwse, if something needs
+fixing and would like assistance in doing it yourself, please let us know by
+[opening an issue][].
 
 </section>
 
@@ -75,16 +76,14 @@ but can't do it yourself, please let us know by [opening an issue][].
 
 <br />
 
-This project is permissively licensed under either of the the following.
+This project is permissively licensed under either of the following.
 
 - [The MIT License][]
 - [Apache License, Version 2.0][]
 - [Blue Oak Model License, Version 1.0.0][]
 
-at your option&hellip;
-
-The [SPDX](https://spdx.dev) license identifier for this project is
-`MIT OR Apache-2.0 OR BlueOak-1.0.0`.
+Optionally, the [SPDX](https://spdx.dev) license identifier for this project is
+mostly `MIT OR Apache-2.0 OR BlueOak-1.0.0`.
 
 </section>
 
