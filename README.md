@@ -46,8 +46,7 @@ This project was originally inspired by the [`docker-fish`][] project.
 
 `docker-fish` started out in 2020 by [@andreiborisov][] as a project to build
 [Alpine Linux][] Docker container(s) for the [fish&nbsp;shell][]. Notably, it
-was originally hosted on Andrei's personal GitHub account, but was later moved
-ooo.
+was originally hosted on Andrei's personal GitHub account, but was later moved.
 
 It was introduced to [@DerekNonGeneric][] by [@jorgebucaran][]: Thank you so
 much to [@jorgebucaran][] for the introduction as it is now able to serve as the
@@ -82,8 +81,8 @@ This project is permissively licensed under either of the following.
 - [Apache License, Version 2.0][]
 - [Blue Oak Model License, Version 1.0.0][]
 
-Optionally, the [SPDX](https://spdx.dev) license identifier for this project is
-mostly `MIT OR Apache-2.0 OR BlueOak-1.0.0`; however, perhaps may not be applicable.
+Optionally, the [SPDX][] license identifier for this project is mostly
+`MIT OR Apache-2.0 OR BlueOak-1.0.0`; however, may not be broadly applicable.
 
 <!-- TODO(DerekNonGeeneric): continue to elaborate on exceptions or otherwise. -->
 
@@ -185,10 +184,11 @@ href="https://open.inf.is" rel="author"> <img
 [release-level-banner--unstable]:
   https://raw.githubusercontent.com/OpenINF/openinf.github.io/live/assets/img/svg/release-level-banner--unstable.svg?sanitize=true
   'Banner for Release Level: Unstable'
-[Roadmap]: https://github.com/OpenINF/docker-fisher/issues 'Roadmap'
+[Roadmap]: https://github.com/OpenINF/docker-fish/issues 'Roadmap'
+[SPDX]: https:// spdx.dev
 [stargazers-badge-url]:
-  https://github.com/OpenINF/docker-fisher/stargazers
+  <https://github.com/OpenINF/docker-fisher/stargazers>
   'Stargazers'
 [stargazers-badge--shields]:
-  https://img.shields.io/github/stars/OpenINF/docker-fisher.svg?style=social&maxAge=3600&label=Star
+  <https://img.shields.io/github/stars/OpenINF/docker-fisher.svg?style=social&maxAge=3600&label=Star>
   'Stargazers'
