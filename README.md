@@ -63,7 +63,7 @@ inspiration/basis for this project. Thank you to all our contributors!&nbsp;<3
 
 As pull requests are welcome, if one would like to make significant changes,
 preferably, please discuss the changes first. Likewise, if something needs
-fixing, and would like assistance in doing so, please let us know by [opening an
+repair and would like assistance in doing so, please let us know by [opening an
 issue][].
 
 </section>
