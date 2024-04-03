@@ -8,7 +8,7 @@
 
 <div align="left">
 
-## `docker-fisher` [![Stars][stargazers-badge--shields]][stargazers-badge-url]
+## `docker-fisher`
 
 > Dockerfiles built for plug-and-play [Fish&nbsp;shell][] components powered by
 > the scorching&nbsp;fast [Fisher&nbsp;plugin&nbsp;manager][]
@@ -186,6 +186,3 @@ href="https://open.inf.is" rel="author"> <img
   'Banner for Release Level: Unstable'
 [Roadmap]: https://github.com/OpenINF/docker-fisher/issues 'Roadmap'
 [SPDX]: https://spdx.dev 'SPDX &#8211; Linux Foundation Projects Site'
-[stargazers-badge--shields]:
-  https://img.shields.io/github/stars/OpenINF/docker-fisher.svg?style=social&maxAge=3600&label=Star
-  'Stargazers'
