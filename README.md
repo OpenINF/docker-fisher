@@ -189,4 +189,4 @@ href="https://open.inf.is" rel="author"> <img
   https://raw.githubusercontent.com/OpenINF/openinf.github.io/live/assets/img/svg/release-level-banner--unstable.svg?sanitize=true
   'Banner for Release Level: Unstable'
 [Roadmap]: https://github.com/OpenINF/docker-fisher/issues 'Roadmap'
-[SPDX]: https://spdx.dev 'SPDX – Linux Foundation Projects Site'
+[SPDX]: https://spdx.dev 'SPDX &#8211; Linux Foundation Projects Site'
