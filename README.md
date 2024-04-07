@@ -1,6 +1,8 @@
 <div align="center">
 
-[![Fish masthead for Fisher](https://i.imgur.com/sgVoeK6.png)](##)
+<a href="##" height="289" width="996"
+	><img src="https://i.imgur.com/sgVoeK6.png" title="Fish masthead for Fisher"
+/></a>
 
 </div>
 <!-- markdownlint-disable-next-line line-length -->
