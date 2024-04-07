@@ -3,7 +3,7 @@
 [![Orange banner indicating a preview software component][release-level-banner--unstable]](##)
 
 <a href="##" height="289" width="996"
-	><img src="https://i.imgur.com/sgVoeK6.png" title="Fish masthead for Fisher"
+	><img src="https://i.imgur.com/sgVoeK6.png" title="Fish Masthead for Fisher"
 /></a>
 
 </div>
