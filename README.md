@@ -1,6 +1,6 @@
 <div align="center">
 
-[![Fish masthead for Fisher](https://i.imgur.com/7Mb6cHq.png)](##)
+[![Fish masthead for Fisher](https://i.imgur.com/sgVoeK6.png)](##)
 
 </div>
 
