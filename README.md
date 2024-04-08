@@ -3,7 +3,10 @@
 [![Orange banner indicating a preview software component][release-level-banner--unstable]](##)
 
 <a href="##" height="289" width="996"
-	><img alt="NOT Pablo Picasso and NOT Vincent van Gogh" src="https://github.com/OpenINF/docker-fisher/assets/132791922/19063f11-a726-41e3-bb8d-a30342c03683" /></a>
+	><img
+		alt="NOT Pablo Picasso and NOT Vincent van Gogh"
+		src="https://github-production-user-asset-6210df.s3.amazonaws.com/132791922/320540533-19063f11-a726-41e3-bb8d-a30342c03683.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240408%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240408T151840Z&X-Amz-Expires=300&X-Amz-Signature=7560f942de8bbf5e9e0887e942bae28ad2b3939907424a0ca3e6c1286ef5a309&X-Amz-SignedHeaders=host&actor_id=132791922&key_id=0&repo_id=525886105"
+/></a>
 
 </div>
 <!-- markdownlint-disable-next-line line-length -->
