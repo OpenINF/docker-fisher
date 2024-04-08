@@ -2,8 +2,8 @@
 
 [![Orange banner indicating a preview software component][release-level-banner--unstable]](##)
 
-<a href="##" height="289" width="996"
-	><img
+<a href="##">
+<img height="289" width="996"
 		alt="NOT Pablo Picasso and NOT Vincent van Gogh"
 		src="https://assets.codepen.io/564234/sgVoeK6_-_Imgur.png"
 /></a>
@@ -13,8 +13,8 @@
 <br />
 
 <!-- markdownlint-disable-next-line line-length -->
-<a href="##"
-  ><img
+<a href="##" title="">
+<img
     src="https://raw.githubusercontent.com/OpenINF/openinf.github.io/live/assets/img/svg/logogram-color.svg?sanitize=true"
     alt="OpenINF logo"
     title="OpenINF"
