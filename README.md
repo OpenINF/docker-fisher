@@ -1,10 +1,27 @@
+<div align="center">
+
 [![Orange banner indicating a preview software component][release-level-banner--unstable]](##)
+
+<a href="##" height="289" width="996"
+	><img
+		alt="NOT Pablo Picasso and NOT Vincent van Gogh"
+		src="https://assets.codepen.io/564234/sgVoeK6_-_Imgur.png"
+/></a>
+
+</div>
 
 <br />
 
 <!-- markdownlint-disable-next-line line-length -->
-
-<a href="##"><img src="https://raw.githubusercontent.com/OpenINF/openinf.github.io/live/assets/img/svg/logogram-color.svg?sanitize=true" alt="OpenINF logo" title="OpenINF" align="right" height="96" width="96" /></a>
+<a href="##"
+  ><img
+    src="https://raw.githubusercontent.com/OpenINF/openinf.github.io/live/assets/img/svg/logogram-color.svg?sanitize=true"
+    alt="OpenINF logo"
+    title="OpenINF"
+    align="right"
+    height="96"
+    width="96"
+/></a>
 
 <div align="left">
 
