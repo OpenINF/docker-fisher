@@ -3,10 +3,12 @@
 [![Orange banner indicating a preview software component][release-level-banner--unstable]](##)
 
 <a href="##">
-<img height="289" width="996"
-		alt="NOT Pablo Picasso and NOT Vincent van Gogh"
-		src="https://assets.codepen.io/564234/sgVoeK6_-_Imgur.png"
+
+!['TODO: Properly describe image'](https://assets.codepen.io/564234/sgVoeK6_-_Imgur.png 'NOT Pablo Picasso and NOT Vincent van Gogh')
+
 /></a>
+
+
 
 </div>
 
