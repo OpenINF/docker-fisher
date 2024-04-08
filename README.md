@@ -13,14 +13,18 @@
 <br />
 
 <!-- markdownlint-disable-next-line line-length -->
+
 <a href="##"
-  ><img
+
+> <img
+
     src="https://raw.githubusercontent.com/OpenINF/openinf.github.io/live/assets/img/svg/logogram-color.svg?sanitize=true"
     alt="OpenINF logo"
     title="OpenINF"
     align="right"
     height="96"
     width="96"
+
 /></a>
 
 <div align="left">
@@ -204,4 +208,4 @@ href="https://open.inf.is" rel="author"> <img
   https://raw.githubusercontent.com/OpenINF/openinf.github.io/live/assets/img/svg/release-level-banner--unstable.svg?sanitize=true
   'Banner for Release Level: Unstable'
 [Roadmap]: https://github.com/OpenINF/docker-fisher/issues 'Roadmap'
-[SPDX]: https://spdx.dev 'SPDX &#8211; Linux Foundation Projects Site'
+[SPDX]: https://spdx.dev 'SPDX – Linux Foundation Projects Site'
