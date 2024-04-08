@@ -6,9 +6,7 @@
 
 !['TODO: Properly describe image'](https://assets.codepen.io/564234/sgVoeK6_-_Imgur.png 'NOT Pablo Picasso and NOT Vincent van Gogh')
 
-/></a>
-
-
+</a>
 
 </div>
 
