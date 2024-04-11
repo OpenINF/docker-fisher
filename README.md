@@ -25,7 +25,7 @@
 
 <div align="left">
 
-## `docker-fisher`
+# `docker-fisher`
 
 > Dockerfiles built for plug-and-play [Fish&nbsp;shell][] components powered by
 > the scorching&nbsp;fast [Fisher&nbsp;plugin&nbsp;manager][]
