@@ -1,12 +1,8 @@
 <div align="center">
 
+[!['Tesselation of swarm of cicadas flying into school of fish and translating into flying doves'][main-readme-hero]][main-readme-hero-url]
+<br />
 [![Orange banner indicating a preview software component][release-level-banner--unstable]](##)
-
-<a href="##">
-
-!['TODO: Properly describe image'](https://assets.codepen.io/564234/header4indigo.png?format=auto 'NOT Pablo Picasso and NOT Vincent van Gogh')
-
-</a>
 
 </div>
 
@@ -183,6 +179,10 @@ href="https://open.inf.is" rel="author"> <img
   https://img.shields.io/badge/license-MIT%2FApache--2.0%2FBlueOak--1.0.0-blue.svg?logo=github
   'License: MIT/Apache 2.0/BlueOak 1.0.0'
 [license-badge-url]: ./#license 'License: MIT/Apache 2.0/BlueOak 1.0.0'
+[main-readme-hero]:
+  https://assets.codepen.io/564234/docker-fisher-repo-hero-gray-alpha0.png
+  '(p)Op Art illustartion by DerekNonGeneric derived from woodcut print titled "Metamorphosis II, Excerpt 4" by M.C. Escher'
+[main-readme-hero-url]: https://www.wikiart.org/en/m-c-escher/metamorphosis-ii-excerpt-4 'Metamorphosis II excerpt 4, 1939 - M.C. Escher - WikiArt.org'
 [matrix-badge--shields]:
   https://img.shields.io/badge/matrix-join%20chat-%2346BC99?logo=matrix
   'Chat on Matrix'
