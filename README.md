@@ -4,7 +4,7 @@
 
 <a href="##">
 
-!['TODO: Properly describe image'](https://assets.codepen.io/564234/header9.png?format=auto 'NOT Pablo Picasso and NOT Vincent van Gogh')
+!['TODO: Properly describe image'](https://assets.codepen.io/564234/header8na.png?format=auto 'NOT Pablo Picasso and NOT Vincent van Gogh')
 
 </a>
 
