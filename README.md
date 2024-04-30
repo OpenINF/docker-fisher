@@ -1,7 +1,6 @@
 <div align="center">
 
 [!['Tesselation of swarm of cicadas flying into school of fish and translating into flying doves'][main-readme-hero]][main-readme-hero-url]
-<br />
 [![Orange banner indicating a preview software component][release-level-banner--unstable]](##)
 
 </div>
