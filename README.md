@@ -33,6 +33,7 @@
 <br />
 
 [!['License: MIT/Apache 2.0/BlueOak 1.0.0'][license-badge--shields]][license-badge-url]
+[!['Status: Hibernating][project-status-badge--shields]](https://github.com/OpenINF/docker-fisher/issues/101)
 
 </div>
 
@@ -121,7 +122,6 @@ Optionally, the [SPDX][] license identifier for this project is mostly
 
 [!['Project Type: Prototype'][project-type-badge--shields]](##)
 [!['Prototyping Scheme: Evolutionary'][prototyping-scheme-badge--shields]](##)
-[!['Status: Under construction'][project-status-badge--shields]](##)
 
 <br /><br />
 
@@ -195,7 +195,7 @@ href="https://open.inf.is" rel="author"> <img
   'Code Style: Prettier'
 [prettier-url]: https://prettier.io/playground 'Code Style: Prettier'
 [project-status-badge--shields]:
-  https://img.shields.io/badge/status-under%20construction-yellow.svg
+  https://img.shields.io/badge/status-hibernating-indigo.svg
 [project-type-badge--shields]:
   https://img.shields.io/badge/type-prototype-blue.svg
 [prototyping-scheme-badge--shields]:
