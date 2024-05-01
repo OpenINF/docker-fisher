@@ -1,5 +1,5 @@
 {
-	"image": "mcr.microsoft.com/vscode/devcontainers/javascript-node:0-18",
+	"image": "mcr.microsoft.com/vscode/devcontainers/javascript-node:0-18@sha256:ed57dd8755b4e75a0426bd10ab1d3a60a22bb21fc2e093801375990978c42fb5",
 	"remoteUser": "node",
 	"customizations": {
 		"vscode": {
@@ -13,7 +13,7 @@
 		}
 	},
 	"features": {
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
+		"ghcr.io/devcontainers/features/docker-in-docker:2@sha256:23ae11a86089da5f0b98a6edd603f91831802b7f2d5ef1e104e1b94a3beb546c": {}
 	},
 	"postCreateCommand": "echo 'GrimesAI: enjoying our salvaged lunar tech haul? Back to work!!'",
 	"hostRequirements": {
