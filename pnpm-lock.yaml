@@ -43,7 +43,7 @@ importers:
         version: 4.0.1(eslint@9.0.0)
       eslint-plugin-prettier:
         specifier: 5.1.3
-        version: 5.1.3(eslint-config-prettier@9.1.0)(eslint@9.0.0)(prettier@3.2.5)
+        version: 5.1.3(eslint-config-prettier@9.1.0(eslint@9.0.0))(eslint@9.0.0)(prettier@3.2.5)
       nps:
         specifier: 5.10.0
         version: 5.10.0
@@ -120,8 +120,8 @@ importers:
         specifier: 5.0.0
         version: 5.0.0
       retext-equality:
-        specifier: 7.0.0
-        version: 7.0.0
+        specifier: 7.1.0
+        version: 7.1.0
       retext-passive:
         specifier: 5.0.0
         version: 5.0.0
@@ -2122,8 +2122,8 @@ packages:
   retext-english@5.0.0:
     resolution: {integrity: sha512-BS4Ycj2cMbxNMcXqnM+TL+aMHM0Fzalm08fHCiHaNbBs4jx1RBbpC4oeWOptBNUf8cBTi2Qrs81b9yn/KND65A==}
 
-  retext-equality@7.0.0:
-    resolution: {integrity: sha512-ZbrjgdgREO7EyEqvLDYnHTsMa8qxTZj+ijT61Grw8X6w0ZsbwajjQdQw+Wwd24Uqt7rlrqYs38NunoyrH8zbCg==}
+  retext-equality@7.1.0:
+    resolution: {integrity: sha512-YzrGxIfubNetpi5xEZXFaWKaQNdDHYal0JNaIllTRO+vkjO0FRuGgLoYixR1BYR3vx7k6p7c+MdVM1NxTlC+MQ==}
 
   retext-passive@5.0.0:
     resolution: {integrity: sha512-N9PpBPvE37Z5h/hvgfSIFJNB4E/iYJ9EHr848t53hbKRJkD7hWJf4D+UOIj5fxjOOO/WQKX53xLypEQxHWuCtA==}
@@ -3582,13 +3582,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-prettier@5.1.3(eslint-config-prettier@9.1.0)(eslint@9.0.0)(prettier@3.2.5):
+  eslint-plugin-prettier@5.1.3(eslint-config-prettier@9.1.0(eslint@9.0.0))(eslint@9.0.0)(prettier@3.2.5):
     dependencies:
       eslint: 9.0.0
-      eslint-config-prettier: 9.1.0(eslint@9.0.0)
       prettier: 3.2.5
       prettier-linter-helpers: 1.0.0
       synckit: 0.8.8
+    optionalDependencies:
+      eslint-config-prettier: 9.1.0(eslint@9.0.0)
 
   eslint-scope@5.1.1:
     dependencies:
@@ -5321,7 +5322,7 @@ snapshots:
       parse-english: 7.0.0
       unified: 11.0.4
 
-  retext-equality@7.0.0:
+  retext-equality@7.1.0:
     dependencies:
       '@types/nlcst': 2.0.3
       devlop: 1.1.0
