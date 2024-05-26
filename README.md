@@ -1,22 +1,21 @@
 <div align="center">
 
 [!['Tesselation of swarm of cicadas flying into school of fish and translating into flying doves'][main-readme-hero]][main-readme-hero-url]
-[![Orange banner indicating a preview software component][release-level-banner--unstable]](##)
 
 </div>
 
 <br />
 
-<!-- markdownlint-disable-next-line line-length -->
-<a href="##" title="">
-<img
-    src="https://raw.githubusercontent.com/OpenINF/openinf.github.io/live/assets/img/svg/logogram-color.svg?sanitize=true"
+<a href="https://open.inf.is">
+  <img
+    src="https://open.inf.is/assets/img/svg/logogram-color.svg"
     alt="OpenINF logo"
     title="OpenINF"
     align="right"
     height="96"
     width="96"
-/></a>
+  />
+</a>
 
 <div align="left">
 
@@ -125,14 +124,10 @@ href="https://open.inf.is" rel="author"> <img
     alt="The OpenINF logo"
     height="32px"
     width="32px"
-    src="https://open.inf.is/assets/img/svg/logo.svg"
+    src="https://open.inf.is/assets/img/svg/logogram-color.svg"
   /> </a>
 
 </div>
-
-<br /><br />
-
-[![Orange banner indicating a preview software component][release-level-banner--unstable]](##)
 
 <!-- ///////////////////////////////////////////////////////////////////////////
 ////// LINK LABEL DEFINITIONS                         //////////////////////////
@@ -199,8 +194,5 @@ href="https://open.inf.is" rel="author"> <img
   https://img.shields.io/badge/type-prototype-blue.svg
 [prototyping-scheme-badge--shields]:
   https://img.shields.io/badge/scheme-evolutionary-blue.svg
-[release-level-banner--unstable]:
-  https://raw.githubusercontent.com/OpenINF/openinf.github.io/live/assets/img/svg/release-level-banner--unstable.svg?sanitize=true
-  'Banner for Release Level: Unstable'
 [Roadmap]: https://github.com/OpenINF/docker-fisher/issues 'Roadmap'
 [SPDX]: https://spdx.dev 'SPDX &#8211; Linux Foundation Projects Site'
