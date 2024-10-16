@@ -1,5 +1,5 @@
 {
-	"image": "mcr.microsoft.com/vscode/devcontainers/javascript-node:0-18@sha256:ed57dd8755b4e75a0426bd10ab1d3a60a22bb21fc2e093801375990978c42fb5",
+	"image": "mcr.microsoft.com/vscode/devcontainers/javascript-node:1-18@sha256:92b710068995d594212192b8ba1a8bd91173f051aa958be253020ac5dc1e64b9",
 	"remoteUser": "node",
 	"customizations": {
 		"vscode": {
